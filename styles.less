@@ -1,0 +1,170 @@
+/**
+ * Fine-tune Ariake-Dark-Syntax
+ */
+@selected: rgba(63, 17, 175, 0.25);
+@selected-focused: rgba(63, 17, 175, 0.5);
+@current: rgba(24, 17, 168, 0.25);
+@current-focused: rgba(24, 17, 168, 0.5);
+@cursor: rgba(255, 255, 255, 0.85);
+@matched: rgb(63, 17, 175);
+@pane-frame: rgba(63, 17, 175, 0.75);
+@minimap-scroll-indicator: rgba(255, 255, 255, 0.75);
+@hydrogen-cell: rgb(35, 38, 46);
+atom-text-editor.editor {
+  // Highlight-Selection style
+  .highlights {
+    .highlight.selection .region {
+      background-color: @selected;
+    }
+  }
+  // Highlight-Line style
+  .line.cursor-line,
+  .line.highlight-line {
+    background: @current  !important;
+  }
+  // stop cursor from blinking
+  .cursor {
+    border-color: @cursor  !important;
+  }
+  .cursors.blink-off .cursor {
+    opacity: 1;
+  }
+  // Bracket-Matcher style
+  .bracket-matcher .region {
+    background: @matched;
+    position: absolute;
+  }
+}
+atom-text-editor.editor.is-focused {
+  // Highlight-Selection style
+  .highlights {
+    .highlight.selection .region {
+      background-color: @selected-focused;
+    }
+  }
+  // Highlight-Line style
+  .line.cursor-line,
+  .line.highlight-line {
+    background: @current-focused  !important;
+  }
+}
+// Tree-view style
+.tree-view .selected:before {
+  background: @current  !important;
+}
+.tree-view:focus {
+  .selected:before {
+    background: @current-focused  !important;
+  }
+}
+// pane border
+.vertical {
+  .panes .pane-column>*,
+  .panes .pane-row>* {
+    border-top: 1px solid @pane-frame;
+    border-right: 1px solid @pane-frame;
+  }
+}
+// off scroll bar
+::-webkit-scrollbar {
+  display: none;
+}
+// Minimap style
+.minimap-selection {
+  .region {
+    background: @selected;
+  }
+  .cursor-line {
+    background: @current-focused;
+  }
+}
+atom-text-editor atom-text-editor-minimap {
+  .minimap-visible-area::after {
+    background-color: @current;
+  }
+  // emphasize scroll-indicator in minimap instead of scroll
+  .minimap-scroll-indicator {
+    background-color: @minimap-scroll-indicator;
+    width: 2px;
+  }
+}
+// Termination style
+.termination.status-bar {
+  display: none;
+}
+// DQS-Shell-Commands style
+.dqs-shell-commands-console {
+  margin: -2px;
+}
+// Hydrogen style
+.hydrogen {
+  .multiline-container {
+    background-color: @hydrogen-cell;
+    .toolbar .icon:hover {
+      background-color: @selected-focused;
+    }
+  }
+}
+
+
+/**
+ * Customize code　cell style in .pmd & .Rmd files
+ */
+atom-text-editor.editor {
+  .line {
+    position: relative;
+    .syntax--embedded {
+      &.syntax--python::before,
+      &.syntax--r::before {
+        background-color: @hydrogen-cell;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+
+/**
+ * Tree-View style customize
+ */
+.tree-view {
+  font-size: 1.0rem;
+}
+.tree-view .full-menu {
+  padding-left: 4px;
+}
+.list-tree .list-nested-item>.list-group>li,
+.list-tree .list-nested-item>.list-tree>li {
+  padding-left: 16px;
+}
+.list-tree.has-collapsable-children .list-nested-item>.list-item::before {
+  margin-right: 4px;
+}
+.list-group .icon::before,
+.list-tree .icon::before {
+  margin-right: 8px;
+}
+.list-tree.has-collapsable-children li.list-item {
+  margin-left: 14px;
+}
+.list-tree.has-collapsable-children .list-nested-item>.list-group>li,
+.list-tree.has-collapsable-children .list-nested-item>.list-tree>li {
+  padding-left: 24px;
+}
+.list-group li.list-nested-item>.list-item,
+.list-group li:not(.list-nested-item),
+.list-tree li.list-nested-item>.list-item,
+.list-tree li:not(.list-nested-item) {
+  line-height: 1.5rem;
+}
+.list-group .selected::before,
+.list-tree .selected::before {
+  height: 1.5rem;
+}

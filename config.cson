@@ -1,0 +1,291 @@
+"*":
+  Hydrogen:
+    gateways: "[{ \"name\": \"Local notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthToken\" } }]"
+    outputAreaDock: true
+    outputAreaFontSize: 13
+    startDir: "dirOfFile"
+  Zen:
+    fullscreen: false
+  "atom-beautify":
+    coffeescript:
+      indent_size: 2
+    css:
+      align_assignments: true
+      end_with_newline: true
+      newline_between_rules: false
+      preserve_newlines: true
+    general:
+      _analyticsUserId: "363e3982-c20c-4871-b3aa-b60bce401914"
+    less:
+      align_assignments: true
+      indent_comments: false
+      indent_size: 2
+      newline_between_rules: false
+    markdown:
+      disabled: true
+  "atom-clock":
+    dateFormat: "YYYY/MM/DD/HH:mm"
+  "atom-html-preview":
+    enableMathJax: true
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui": {}
+    "atom-ide-outline-view": {}
+    "atom-ide-signature-help": {}
+    "debugger-exceptionBreakpointsCollapsed": true
+    use:
+      "atom-ide-terminal": "never"
+  "autocomplete-plus":
+    minimumWordLength: 2
+  "bracket-matcher": {}
+  core:
+    audioBeep: false
+    autoHideMenuBar: true
+    customFileTypes:
+      "text.md": [
+        "Pmd"
+        "pmd"
+        "Rmd"
+        "rmd"
+      ]
+    disabledPackages: [
+      "markdown-preview"
+      "language-gfm"
+      "spell-check"
+      "indent-detective"
+      "julia-client"
+      "latex-completions"
+      "tool-bar"
+    ]
+    ignoredNames: [
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "node_modules"
+    ]
+    packagesWithKeymapsDisabled: [
+      "Hydrogen"
+      "Zen"
+      "atom-beautify"
+      "atom-html-preview"
+      "git-diff"
+      "git-time-machine"
+      "markdown-preview-enhanced"
+      "markdown-writer"
+      "open-in-browser"
+      "script"
+      "split-diff"
+      "termination"
+      "tool-bar"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "ariake-dark-syntax"
+    ]
+    uriHandlerRegistration: "always"
+    useTreeSitterParsers: false
+  "document-outline":
+    showByDefault: false
+  "dqs-shell-commands": {}
+  editor:
+    fontFamily: "Fira Code, Source Han Code JP"
+    fontSize: 12
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrap: true
+    softWrapHangingIndent: 2
+    tabLength: 4
+  "emacs-plus": {}
+  "exception-reporting":
+    userId: "9e026ba7-7268-13e9-0769-5cb4ad435f2f"
+  "file-icons": {}
+  "find-and-replace":
+    closeFindPanelAfterSearch: true
+  "git-diff": {}
+  "git-plus":
+    diffs:
+      useSplitDiff: true
+      wordDiff: true
+    general:
+      enableStatusBarIcon: false
+  "highlight-line":
+    hideHighlightOnSelect: true
+  "highlight-selected":
+    onlyHighlightWholeWords: false
+  "ide-python":
+    pylsPlugins:
+      autopep8:
+        enabled: false
+      jedi_definition:
+        follow_imports: true
+      pycodestyle:
+        ignore: [
+          "E121"
+          "E123"
+          "E126"
+          "E226"
+          "E24"
+          "E704"
+          "W503"
+          "E127"
+        ]
+      yapf:
+        enabled: true
+    python: "C:\\Users\\aviat\\Anaconda3\\envs\\ml\\python.exe"
+  "markdown-preview-enhanced":
+    codeBlockTheme: "github.css"
+    enableCriticMarkupSyntax: true
+    enableExtendedTableSyntax: true
+    enableScriptExecution: true
+    fileExtension: ".md, .MD, .pmd, .Pmd, .rmd, .Rmd"
+    openPreviewPaneAutomatically: false
+    printBackground: true
+    singlePreview: false
+  "markdown-writer":
+    grammars: [
+      "source.gfm"
+      "source.gfm.nvatom"
+      "source.litcoffee"
+      "text.md"
+      "text.plain"
+      "text.plain.null-grammar"
+    ]
+    relativeImagePath: true
+    siteDraftsDir: ".drafts/"
+    siteImagesDir: "./assets/"
+    tableExtraPipes: true
+    templateVariables:
+      ulBullet0: "-"
+      ulBullet1: "*"
+      ulBullet2: "+"
+      ulBullet3: "-"
+      ulBullet4: "*"
+      ulBullet5: "+"
+    textStyles:
+      italic:
+        after: "*"
+        before: "*"
+  minimap:
+    plugins:
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      "minimap-autohider": true
+      "minimap-autohiderDecorationsZIndex": 0
+      selection: true
+      selectionDecorationsZIndex: 0
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
+  "minimap-autohider": {}
+  "minimap-git-diff": {}
+  "minimap-selection":
+    highlightCursorsLines: true
+    outlineSelection: true
+  script:
+    cwdBehavior: "Directory of the script"
+  "spell-check":
+    addKnownWords: true
+    excludedScopes: [
+      "front-matter.yaml.source.md"
+      "special-attributes.raw.markup.md"
+      "meta.tag"
+      "code.raw.markup.md"
+      "fenced.code.md"
+      "math.markup.md"
+      "quote.markup.md"
+      "destination.link.md"
+      "comment.md"
+      "comment.critic.markup.md"
+    ]
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "source.rst"
+      "text.restructuredtext"
+      "text.md"
+    ]
+    knownWords: [
+      "aviatesk"
+      "aviat"
+      "th"
+      "s"
+    ]
+  "split-diff":
+    ignoreWhitespace: true
+    muteNotifications: true
+    syncHorizontalScroll: true
+    turnOffSoftWrap: true
+  "status-bar":
+    cursorPositionFormat: "%L L | %C C"
+    selectionCountFormat: "(%L L | %C Char)"
+  termination:
+    core:
+      shell: "C:\\Program Files\\Git\\bin\\bash.exe"
+      workingDirectory: "Active File"
+    customTexts:
+      customText1: "apm list --installed --bare > ~/.atom/my-packages.txt"
+      customText2: "bash ~/.atom/scripts/process-md.sh $F"
+      customText3: "C:\\Users\\aviat\\.atom\\scripts\\process-md.bat $F"
+    style:
+      fontFamily: "Myrica M"
+      fontSize: "14"
+      theme: "one-dark"
+    toggles:
+      cursorBlink: false
+      runInsertedText: false
+  "tree-view":
+    squashDirectoryNames: true
+  "tree-view-git-status":
+    gitFlow: {}
+  "uber-juno":
+    disable: true
+  welcome:
+    showOnStartup: false
+  wordcount:
+    ignorecode: true
+    ignorecomments: true
+  "wrap-guide":
+    enabled: false
+".coffee.source":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
+".css.less.source":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
+".css.source":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
+".gfm.rmd.source":
+  editor:
+    tabType: "soft"
+  whitespace:
+    removeTrailingWhitespace: false
+".java.source":
+  editor:
+    preferredLineLength: 100
+    tabType: "soft"
+  "wrap-guide":
+    enabled: true
+".md.text":
+  editor:
+    tabType: "soft"
+  whitespace:
+    ensureSingleTrailingNewline: false
+    removeTrailingWhitespace: false
+".python.source":
+  editor:
+    preferredLineLength: 79
+    tabType: "soft"
+  "wrap-guide":
+    enabled: true

@@ -1,0 +1,105 @@
+###
+Config settings specially tuned for Julia project
+All values for the other Per-project configs are set as default
+###
+
+
+"*":
+
+  ### Julia-specific configs ###
+  core:
+    disabledPackages: [
+      "markdown-preview"
+      "language-gfm"
+      "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
+      # Enable Julia packages ! #
+      # "indent-detective"
+      # "julia-client"
+      # "latex-completions"
+      # "tool-bar"
+    ]
+    packagesWithKeymapsDisabled: [
+      "Hydrogen"
+      "Zen"
+      "atom-beautify"
+      "atom-html-preview"
+      "git-diff"
+      "git-time-machine"
+      "markdown-preview-enhanced"
+      "markdown-writer"
+      "open-in-browser"
+      "script"
+      "split-diff"
+      "termination"
+      "julia-client" # Disable Julia-Client's keybindings (which are defined in .atom/kaymap.cson instead)
+    ]
+  "julia-client":
+    consoleOptions:
+      whitelistedKeybindingsREPL: [
+        "Ctrl-:"
+        "Alt-B"
+        "Ctrl-Tab"
+        "Ctrl-Shift-Tab"
+        "Ctrl-W"
+        "Alt-W"
+        "Ctrl-Y"
+        "Ctrl-C"
+        "Ctrl-H"
+        "Alt-X"
+        "Alt-T"
+        "Ctrl-T"
+        "Alt-:"
+        "Ctrl-:"
+        "Alt-H"
+        "Ctrl-M"
+        "Ctrl-L"
+      ]
+    firstBoot: false
+    juliaOptions:
+      optimisationLevel: 2 # Increasing to 3 produces slower completions but faster code, and decreasing to 1 vice versa
+    juliaPath: "C:\\Users\\aviat\\AppData\\Local\\Julia-1.0.3\\bin\\julia.exe"
+    uiOptions:
+      enableMenu: true
+      enableToolBar: true
+  "latex-completions":
+    selector: ".source.julia"
+  "tool-bar":
+    iconSize: "24px"
+    position: "Left"
+    visible: true
+
+  ### General Per-project configs ###
+  Zen:
+    width: 80 # Set Zen width
+  "document-outline":
+    maxHeadingDepth: 4 # Limit outlined depth
+  "markdown-preview-enhanced":
+    codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
+    previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred
+  # Markdown-Writer: Change the directory where copy & pasted images would be saved
+  "markdown-writer":
+    siteImagesDir: "./assets/" # Set `"./assets/{slug}"` in order to include its file name into saving directories
+  "spell-check":
+    knownWords: [
+      "aviatesk"
+      "aviat"
+      "th"
+      "s"
+      # Additional known (ignored) words come here
+    ]
+  # Tree-View-Autoresize: For MPE preview in the Tree-View pane
+  "tree-view-autoresize":
+    minimumWidth: 0 # Set `300` for MPE previewing in Tree-View pane
+
+### Config for specific file types ###
+".julia.source":
+  # editor:
+  #   preferredLineLength: 80
+  "wrap-guide":
+    enabled: false
+".md.text":
+  editor:
+    showLineNumbers: true # Set `false` not to show line numbers with markdown files
+".python.source":
+  whitespace:
+    removeTrailingWhitespace: true # Set `false` for writing markdown cells with Hydrogen

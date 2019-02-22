@@ -1,0 +1,110 @@
+/**
+ * This is the style.less sheet with Markdown-Preview-Enhanced,
+ * which gonna be applied globally, and the default style defined
+ * in this file is for writing Github's README.
+ * Note that this file should be in the directory that
+ * `Markdown Preview Enhanced: Customize Css` command leads to,
+ * which is currently located at "~/.mume/"
+ */
+
+.markdown-preview.markdown-preview {
+
+  /** Fonts */
+  // Helvetica
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: local("Helvetica Neue Regular");
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: local("Helvetica Neue Regular");
+    font-weight: 200;
+  }
+  // Yu Gothic
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Bold");
+    font-weight: bold;
+  }
+  // Raleway
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Raleway Light'),
+    local('Raleway-Light'), url(http://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(http://fonts.gstatic.com/s/raleway/v9/xkvoNo9fC8O2RDydKj12b_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  }
+  // font family
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", YuGothic, sans-serif;
+
+  /** GitHub style */
+  // header
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Raleway, "Yu Gothic", YuGothic, sans-serif;
+  }
+  @header-line: #eaecef;
+  h1 {
+    border-bottom: 4px solid @header-line;
+  }
+  h2 {
+    border-bottom: 2px solid @header-line;
+  }
+  // table
+  th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+  }
+  td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+  }
+  tr {
+    background-color: #fff;
+  }
+  tr:nth-child(2n) {
+    background-color: #f6f8fa;
+  }
+
+}
+
+/** Sidebar TOC */
+.md-sidebar-toc {
+  font-family: Raleway, 'Yu Gothic', YuGothic, sans-serif;;
+}
+#sidebar-toc-btn {
+  bottom: unset;
+  top: 8px;
+}

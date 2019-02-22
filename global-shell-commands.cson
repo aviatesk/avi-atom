@@ -1,0 +1,108 @@
+commands: [
+
+  # Switch styles.less
+  {
+    name: "ariake-style"
+    command: "git"
+    arguments: [
+      "checkout"
+      "master"
+      "styles.less"
+    ]
+    options:
+      cwd: "C:\\Users\\aviat\\.atom\\"
+      closeWhenFinished: true
+      keymap: 'ctrl-x z'
+  }
+  {
+    name: "shiki-style"
+    command: "git"
+    arguments: [
+      "checkout"
+      "shiki-style"
+      "styles.less"
+    ]
+    options:
+      cwd: "C:\\Users\\aviat\\.atom\\"
+      closeWhenFinished: true
+      keymap: 'ctrl-x ctrl-z'
+  }
+
+  # Create per-project configs
+  {
+    name: "create-project-config"
+    command: "python"
+    arguments: [
+      "C:\\Users\\aviat\\.atom\\scripts\\create-config.py"
+      "C:\\Users\\aviat\\.atom\\scripts\\general.cson"
+    ]
+    options:
+      cwd: "{ProjectDir}"
+      keymap: 'ctrl-alt-shift-p'
+  }
+
+  # Create Julia-project configs
+  {
+    name: "create-julia-project-config"
+    command: "python"
+    arguments: [
+      "C:\\Users\\aviat\\.atom\\scripts\\create-config.py"
+      "C:\\Users\\aviat\\.atom\\scripts\\general.cson"
+    ]
+    options:
+      cwd: "{ProjectDir}"
+      keymap: 'ctrl-alt-shift-j'
+  }
+
+
+  # Process pweave document or R-markdown
+  # The specified .bat file will automatically detect the file type,
+  #  and then run processing command accordingly.
+  {
+    name: "process-md"
+    command: "C:\\Users\\aviat\\.atom\\scripts\\process-md.bat"
+    arguments: [
+      "{FileName}"
+    ]
+    options:
+      cwd: "{FileDir}"
+      closeWhenFinished: true
+  }
+  {
+    name: "process-md-remain"
+    command: "C:\\Users\\aviat\\.atom\\scripts\\process-md.bat"
+    arguments: [
+      "{FileName}"
+    ]
+    options:
+      cwd: "{FileDir}"
+      closeWhenFinished: false
+  }
+
+  # Pweave - convert .pmd to .html
+  # **deprecated** (couldn't render tables and yaml won't work)
+  {
+    name: "pmd2html"
+    command: "pweave"
+    arguments: [
+      "-f"
+      "md2html"
+      "{FileName}"
+    ]
+    options:
+      cwd: "{FileDir}"
+      closeWhenFinished: true
+  }
+  {
+    name: "pmd2html-remain"
+    command: "pweave"
+    arguments: [
+      "-f"
+      "md2html"
+      "{FileName}"
+    ]
+    options:
+      cwd: "{FileDir}"
+  }
+
+]

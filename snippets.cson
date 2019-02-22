@@ -1,0 +1,734 @@
+### Global ###
+'.source.py, .source.r, .text.md, .source.coffee':
+
+  'Global: Backslash \\':
+    'prefix': 'bs'
+    'body': '\\\\$1'
+    'description': 'Inserts backslash \\'
+
+
+
+### Python ###
+'.source.python':
+
+  ## Insertions
+  'print':
+    'prefix': 'pr'
+    'body': "print(${1:expr})"
+    'description': 'Inserts print snippet'
+
+  ## Imports
+  'Utility libraries':
+    'prefix': 'utils'
+    'body':
+      '''
+      import os
+      import sys
+      import numpy as np
+      import pandas as pd
+      import matplotlib.pyplot as plt$1
+      '''
+    'description': 'Imports utility libraries'
+  'numpy':
+    'prefix': 'np'
+    'body':
+      '''
+      import numpy as np$1
+      '''
+    'description': 'Imports numpy as np'
+  'matplotlib.pyplot':
+    'prefix': 'plt'
+    'body':
+      '''
+      import matplotlib.pyplot as plt$1
+      '''
+    'description': 'Imports matplotlib.pyplot as plt'
+  'pandas':
+    'prefix': 'pd'
+    'body':
+      '''
+      import pandas as pd$1
+      '''
+    'description': 'Imports pandas as pd'
+
+  ## matplotlib.pyplot
+  # plt.plot
+  'plt.plot: xlabel':
+    'prefix': 'xl'
+    'body': "plt.xlabel('$1')"
+    'description': 'Sets xlabel to plt.plot object'
+  'plt.plot: ylabel':
+    'prefix': 'yl'
+    'body': "plt.ylabel('$1')"
+    'description': 'Sets ylabel to plt.plot object'
+  'plt.plot: title':
+    'prefix': 'ti'
+    'body': "plt.title('$1')"
+    'description': 'Sets title to plt.plot object'
+  'plt.plot: tight_layout':
+    'prefix': 'tl'
+    'body': "plt.tight_layout()$1"
+    'description': 'Sets tight_layout to plt.plot object'
+  'plt.plot: grid':
+    'prefix': 'gr'
+    'body': "plt.grid(${1:True})"
+    'description': 'Sets grid to plt.plot object'
+  'plt.plot: show':
+    'prefix': 'show'
+    'body': "plt.show()$1"
+    'description': 'Shows plt.plot'
+  # plt.subplots
+  'plt.subplots: plt.subplots':
+    'prefix': 'subplots'
+    'body': "fig, axes = plt.subplots(nrows=${1:1}, ncols=${2:1}, figsize=${3:None}, tight_layout=${4:False})"
+    'description': 'Creates plt.subplots object'
+  # plt.figure.add_subplot
+  'plt.figure.add_subplot: title':
+    'prefix': 'sti'
+    'body': ".set_title('$1')"
+    'description': 'Sets title to plt.figure.add_subplot object'
+
+  # Hydrogen
+  'Hydrogen: Code cell':
+    'prefix': 'cc'
+    'body':
+      '''
+      # %%
+      $1
+      '''
+    'description': 'Inserts Hydrogen code cell'
+  'Hydrogen: Markdown cell':
+    'prefix': 'mc'
+    'body':
+      '''
+      # %% markdown
+      $1
+      '''
+    'description': 'Inserts Hydrogen markdown cell'
+
+
+
+### Julia ###
+'.source.julia':
+
+  ## General
+  'Julia: print':
+    'prefix': 'p'
+    'body': "print(${1:expr})"
+    'description': 'Inserts print snippet'
+  'Julia: println':
+    'prefix': 'pl'
+    'body': "println(${1:expr})"
+    'description': 'Inserts println snippet'
+
+  # Julia-Client
+  'Julia-Client: Code cell':
+    'prefix': 'cc'
+    'body':
+      '''
+      # %%
+      $1
+      '''
+    'description': 'Inserts Julia-Client code cell'
+  'Julia-Client: Markdown cell':
+    'prefix': 'mc'
+    'body':
+      '''
+      # %% markdown
+      $1
+      '''
+    'description': 'Inserts Julia-Client markdown cell'
+
+
+
+### R ###
+'.source.r':
+
+  # Insertions
+  'print':
+    'prefix': 'pr'
+    'body': "print(${1:expr})"
+    'description': 'Inserts print snippet'
+  'cat':
+    'prefix': 'cat'
+    'body': "cat(${1:expr})"
+    'description': 'Inserts cat snippet'
+
+  # Hydrogen
+  'Hydrogen: Code cell':
+    'prefix': 'cc'
+    'body':
+      '''
+      # %%
+      $1
+      '''
+    'description': 'Inserts Hydrogen code cell'
+
+
+
+### Markdown (including pweave & R-markdown) ###
+'.text.md':
+
+  ## General
+
+  # Markdown
+  'Markdown: Code block':
+    'prefix': 'cb'
+    'body':
+      '''
+      ```${1:SYNTAX}
+      $2
+      ```
+      '''
+    'description': 'Inserts general code block'
+  'Markdown: Inline code block':
+    'prefix': 'ci'
+    'body': '`$1`'
+    'description': 'Inserts general inline code block'
+  'Markdown: Image file':
+    'prefix': 'img'
+    'body':
+      '''
+      <img src="$1"${2: width="$3px"}${4: height="$5px"}${6: title="$7"}>$8
+      '''
+    'description': 'Inserts link to an image file'
+
+  # Markdown-Preview-Enhanced
+  'MPE: Meta settings for HTML rendering':
+    'prefix': 'meta-md2html'
+    'body':
+      '''
+      ---
+      html:
+          embed_local_images: true
+          ${1:# }toc: true
+      ${2:toc:
+          depth_from: ${3:1}
+          depth_to: ${4:3}
+          ordered: ${5:false}}
+      export_on_save:
+          ${6:# }html: true
+      ---$7
+      '''
+    'description': 'Inserts YAML for rendering HTML from Markdown with MPE'
+  'MPE: Numbering sections from H1':
+    'prefix': 'numbering-from-h1'
+    'body':
+      '''
+      <!-- Importing styles for numbering sections from H1 -->
+      <!-- @import "C:\\\\Users\\\\aviat\\\\.atom\\\\mpe-styles\\\\numbering-from-h1.less" -->
+      '''
+    'description':
+      '''
+      Imports .less sheet for numbering sections in MPE-previewing.
+      Numbering starts from # H1, which may not be used as title.
+      E.g.) R-markdown, pweave document, or general markdown document to be rendered as html.
+      '''
+  'MPE: Numbering sections from H2':
+    'prefix': 'numbering-from-h2'
+    'body':
+      '''
+      <!-- Importing styles for numbering sections from H2 -->
+      <!-- @import "C:\\\\Users\\\\aviat\\\\.atom\\\\mpe-styles\\\\numbering-from-h2.less" -->
+      '''
+    'description':
+      '''
+      Imports .less sheet for numbering sections in MPE-previewing.
+      # H1 gonna be ignored from numbering, assuming it is used as a title.
+      E.g.) README.md
+      '''
+  'MPE: Fancy One-Dark Theme':
+    'prefix': 'one-dark-fancy'
+    'body':
+      '''
+      <!-- Importing fancy One-Dark theme -->
+      <!-- @import "C:\\\\Users\\\\aviat\\\\.atom\\\\mpe-styles\\\\fancy-one-dark.less" -->
+      '''
+    'description':
+      '''
+      Imports .less sheet of fancier One-Dark preview theme.
+      Colors headers fancily and modifies table coloring to match One-Dark theme.
+      '''
+  'MPE: Table of Contents':
+    'prefix': 'toc'
+    'body':
+      '''
+      ## TOC {ignore=True .ignorenumbering}
+
+      <!-- @import "[TOC]" {cmd="toc" depthFrom=${1:1} depthTo=${2:3} orderedList=${3:false}} -->
+      '''
+    'description':
+      '''
+      Creates code chunk for auto-generating TOC with MPE-previewing.
+      '''
+  'MPE: Header':
+    'prefix': 'h'
+    'body':
+      '''
+      ${1:#} ${2:HEADER}${3: {${4:ignore=True}${5: .ignorenumbering}\\}}$6
+      '''
+    'description': 'Inserts general header'
+  'MPE: H1':
+    'prefix': 'h1'
+    'body':
+      '''
+      # ${1:H1}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
+      '''
+    'description': 'Inserts H1 header'
+  'MPE: H2':
+    'prefix': 'h2'
+    'body':
+      '''
+      ## ${1:H2}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
+      '''
+    'description': 'Inserts H2 header'
+  'MPE: H3':
+    'prefix': 'h3'
+    'body':
+      '''
+      ### ${1:H3}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
+      '''
+    'description': 'Inserts H3 header'
+  'MPE: H4':
+    'prefix': 'h4'
+    'body':
+      '''
+      #### ${1:H4}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
+      '''
+    'description': 'Inserts H4 header'
+  'MPE: H5':
+    'prefix': 'h5'
+    'body':
+      '''
+      ##### ${1:H5}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
+      '''
+    'description': 'Inserts H5 header'
+  'MPE: H6':
+    'prefix': 'h6'
+    'body':
+      '''
+      ###### ${1:H6}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
+      '''
+    'description': 'Inserts H6 header'
+  'MPE: Ignore Numberings':
+    'prefix': 'ignores'
+    'body':
+      '''
+      ${1:{${2:ignore=True}${3: .ignorenumbering}\\}}$4
+      '''
+    'description': 'Inserts snippet to ignore TOC and/or preview numberings'
+  'Markdown: Break line':
+    'prefix': 'br'
+    'body': "<br>$1"
+    'description': 'Inserts break line'
+  'MPE: Slide cell':
+    'prefix': 'sl'
+    'body':
+      '''
+      <!-- slide -->
+      $1
+      '''
+    'description': 'Inserts slide cell with MPE-previewing'
+
+  # MathJax rendering
+  'MathJax: Inline MathJax block':
+    'prefix': 'mi'
+    'body': "\$${1:expr}\$"
+    'description': 'Inserts inline MathJax block'
+  'MathJax: MathJax block':
+    'prefix': 'mb'
+    'body':
+      '''
+      \$\$
+      \t${1:expr}
+      \$\$
+      '''
+    'description': 'Inserts MathJax block'
+  'MathJax: \\beta':
+    'prefix': 'beta'
+    'body': '\\\\beta_{$1}'
+    'description': 'Inserts \beta expression'
+  'MathJax: \\infty':
+    'pefix': 'inf'
+    'body': '\\\\infty$1'
+    'description': 'Inserts \infty expression'
+  'MathJax: \\hat section':
+    'prefix': 'hat'
+    'body': '{\\\\hat $1}'
+    'description': 'Inserts \\hat section'
+  'MathJax: \\rm section':
+    'prefix': 'rm'
+    'body': '{\\\\rm $1}'
+    'description': 'Inserts \\rm (italic-cancelled) section'
+
+
+  ## Settings for writing Github-Flavored-Markdown (README.md)
+  'README: Meta settings for README':
+    'prefix': 'meta-README'
+    'body':
+      '''
+      ---
+      markdown:
+        image_dir: /assets
+        path: ${1:README.md}
+        ignore_from_front_matter: true
+        absolute_image_path: false
+      export_on_save:
+          markdown: true
+      ---
+      '''
+    'description': 'Inserts meta settings for writting README'
+  'README: Conclusion':
+    'prefix': 'conclusion-README'
+    'body':
+      '''
+      <!-- ## License -->
+
+
+
+      <!-- ## Acknowledgements -->
+
+      <!-- ### References -->
+
+
+
+      ## Author
+
+      - **KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk]
+
+
+
+      <!-- ## links -->
+
+      [aviatesk]: https://github.com/aviatesk
+      '''
+    'description': 'Inserts conclusion sections for README'
+
+
+  ## Settings only for pweave (.pmd)
+  # General
+  'pweave Meta settings for pweave (-f markdown)':
+    'prefix': 'meta-pweave-markdown'
+    'body':
+      """
+      ---
+      # This front-matter would only be used in generated markdown document via Markdown-Preview-Enhanced package,
+      # and thus no html file would be generated from this pweave document.
+      # To render the final html file, first execute "Dqs Shell Commands: Pmd2md" and then
+      # open a generated markdown file, do "Markdown Preview Enhanced: Toggle" and finally save it.
+      # This process should render html file with all fancy rendering facilities available.
+      ```python name='meta-setup', echo=False, results='asis'
+      print('''
+      html:
+          embed_local_images: true
+          toc: true
+      export_on_save:
+          html: true
+      ''')
+      ```
+      ---
+      """
+    'description':
+      '''
+      Inserts pweave meta settings for generating markdown document,
+      which is supposed to be rendered as HTML with Markdown-Preview-Enhanced
+      '''
+  'pweave: Meta settings for pweave (-f md2html)':
+    'prefix': 'meta-pweave-md2html'
+    'body':
+      '''
+      % ${1:Title}
+      % ${2:KADOWAKI, Shuhei}
+      % ${3:Date}
+      $4
+      '''
+    'description': 'Inserts pweave meta settings for directly weaving pweave document as HTML file (deprecated)'
+  'pweave: Utilities set-up':
+    'prefix': 'putils'
+    'body':
+      """
+      ```python name='utilities-setup', echo=${1:False}
+      import os
+      import sys
+      import numpy as np
+      import pandas as pd
+      import matplotlib.pyplot as plt
+      %matplotlib inline
+
+      def print_df(df, stralign='center', showindex=True):
+          '''
+          Renders pandas.DataFrame object in markdown files.
+          (Supposed to be used in .pmd file with code chunk `results='asis'`)
+
+          ## Args
+          - df: pd.DataFrame object (Note: Use `df.head` for large data !)
+          - stralign: {'center', 'right', ...}
+          - showindex: {True, False, 'always', 'never', iterator}
+          '''
+
+          from tabulate import tabulate
+          print(tabulate(df, df.columns, tablefmt='pipe', stralign=stralign, showindex=showindex))
+      ```$2
+      """
+    'description':
+      '''
+      Inserts Python code block defining pweave utilities
+      - imports utility libraries
+      - sets matplotlib rendered inline
+      - defines function to render pandas.DataFrame beautifully
+      '''
+
+  # Insertions
+  'pweave: Python code block':
+    'prefix': 'pb'
+    'body':
+      '''
+      ```python
+      $1
+      ```
+      '''
+    'description': 'Inserts Python code block'
+  'pweave: Python inline code block':
+    'prefix': 'pi'
+    'body': '<% $1 %>'
+    'description': 'Inserts Python inline code block'
+  'pweave: Python code block (asis)':
+    'prefix': 'pba'
+    'body':
+      '''
+      ```python results='asis'
+      $1
+      ```
+      '''
+    'description': 'Inserts Python code block for rendering results without reformatting'
+  'pweave: Python code block (hidden)':
+    'prefix': 'pbh'
+    'body':
+      '''
+      ```python results='hidden'
+      $1
+      ```
+      '''
+    'description': 'Inserts Python code block with its results hidden in final document'
+  'pweave: Python code block (wrapping)':
+    'prefix': 'pbw'
+    'body':
+      '''
+      ```python wrap=${1:False}
+      $2
+      '''
+    'description': 'Inserts Python code block with results-wrapping option'
+  'pweave: Python code block (full default options)':
+    'prefix': 'pbfull'
+    'body':
+      '''
+      ```python name=None, echo=True, evaluate=True, results='verbatim', term=False, include=True, caption='', complete=True, wrap=True
+      $1
+      ```
+      '''
+    'description': 'Inserts Python code block with full options set to default values'
+
+
+  ## Settings only for Rmarkdown (.Rmd)
+  # General
+  'R-markdown: Meta settings for R-markdown':
+    'prefix': 'meta-R-markdown'
+    'body':
+      '''
+      ---
+      title: ${1:Title}
+      subtitle: ${2:# Subtitle}
+      author: ${3:KADOWAKI, Shuhei}
+      date: ${4:Date}
+      output:
+        html_document:
+          toc: true
+          toc_float: true
+          number_sections: true
+          theme: cosmo
+          code_folding: show
+          df_print: paged
+      ---
+      ```{r echo=FALSE}
+      ### Setting the global code chunk options ###
+      # Args
+      #   comment='': won't append any string to the start of each line of results
+      #   fig.align='center': align figures to the center of document
+      knitr::opts_chunk$set(comment="", fig.align="center")
+      ```
+      $5
+      '''
+    'description':
+      '''
+      Inserts meta settings for R-markdown rendering: YAML and knitr settings
+      '''
+
+  # Insertions
+  'R-markdown: R code block':
+    'prefix': 'rb'
+    'body':
+      '''
+      ```{r}
+      $1
+      ```
+      '''
+    'description': 'Inserts R code block'
+  'R-markdown: R inline code block':
+    'prefix': 'ri'
+    'body':
+      '''
+      `r $1`
+      '''
+    'description': 'Inserts R inline code block'
+  'R-markdown: R code block (multiple plots)':
+    'prefix': 'rbmp'
+    'body':
+      '''
+      ```{r fig.show="hold", out.width="50%", out.height="100%", fig.align="default"}
+      ${1:# This options puts 2 plots horizontally}
+      ```
+      '''
+    'description': 'Inserts R code block for rendering multiple plots in one figure'
+  'R-markdown: R code block (data.frame)':
+    'prefix': 'rbd'
+    'body':
+      '''
+      ```{r rows.print=5, max.print=25}
+      ${1:# only the first 25 rows gonna be rendered (5 rows per page)}
+      ${2:data.frame}
+      ```
+      '''
+    'description': 'Inserts R code block for rendering data.frame object with df_print set'
+  'R-markdown: R code block (full default options)':
+    'prefix': 'rbfull'
+    'body':
+      '''
+      ```{r echo=TRUE, eval=TRUE, results="markup", fig.show="asis", fig.cap=NULL, fig.align="default", out.width=NULL, out.height=NULL, include=TRUE, warning=FALSE, comment=""}
+      $1
+      ```
+      '''
+    'description': 'Inserts R code block with full options set to default values'
+
+
+
+### Java ###
+'.source.java':
+
+  ## Templates
+  'meta':
+    'prefix': 'meta'
+    'body':
+      '''
+      /**
+          Description for this class
+       */
+      public class ${1:NAME} ${2:extends ${3:PARENT}} ${4:implements ${5:INTERFACE}} {
+
+          /** Class variables */
+          // Define instance or static variables
+
+          /** Constructors */
+          // Type "c" for snippet to call template constructor
+
+          /** Methods */
+          // Type "m" for snippet to call template method
+
+          /** Main Method */
+          public static void main(String[] args) {
+              // What to do in this class
+          }
+
+      }
+      '''
+    'description': "Creates a template for writing class with meta information"
+
+  ## Insertions
+  'constructor':
+    'prefix': 'c'
+    'body':
+      '''
+      /**
+       * Description for this constructor
+       * @param PARAM: Description for this argment
+       */
+      public ${1:CLASSNAME}($2) {
+          ${3:// How to initialize an instance of this class}
+      }
+      '''
+    'description': "Inserts a template for writing constructor"
+  'method':
+    'prefix': 'm'
+    'body':
+      '''
+      /**
+       * ${5:Description for this method}
+       */
+      ${1:void} ${2:METHOD}($3) {
+          ${4:// What to do with this method}
+      }
+      '''
+    'description': "Inserts a template for writing method"
+  'method (main)':
+    'prefix': 'main'
+    'body':
+      '''
+      public static void main(String[] args) {
+          ${1:// What to do in this class}
+      }
+      '''
+    'description': "Inserts main method"
+  'for loop':
+    'prefix': 'f'
+    'body':
+      '''
+      for (${1:INITIALIZATION}; ${2:TERMINATION}; ${3:INCREMENT}) {
+          ${4:// STATEMENT}
+      }
+      '''
+    'description': 'Inserts for loop snippet'
+  'for loop (enhanced)':
+    'prefix': 'fe'
+    'body':
+      '''
+      for (${1:TYPE} ${2:ELEMENT} : ${3:ARRAY}) {
+          ${4:// STATEMENT}
+      }
+      '''
+    'description': 'Inserts enhanced for loop snippet'
+  'System.out.print':
+    'prefix': 'p'
+    'body': 'System.out.print($1);'
+    'description': 'Inserts print snippet'
+  'System.out.println':
+    'prefix': 'pl'
+    'body': 'System.out.println($1);'
+    'description': 'Inserts println snippet'
+  'Comment block':
+    'prefix': 'cb'
+    'body':
+      '''
+      /**
+       * ${1:Comment}
+       */
+      '''
+  'Line comment':
+    'prefix': 'ci'
+    'body': '/** ${1:Comment} */'
+    'description': 'Insert line comment block'
+
+
+
+### CSS ###
+'.source.css':
+  'Comment block':
+    'prefix': 'cb'
+    'body':
+      '''
+      /**
+       * ${1:Comment}
+       */
+      '''
+  'Line comment':
+    'prefix': 'ci'
+    'body': '/** ${1:Comment} */'
+    'description': 'Insert line comment block'

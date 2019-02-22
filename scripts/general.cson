@@ -1,0 +1,47 @@
+###
+General Per-project configs.
+All values are set as default.
+###
+
+
+### Config for all file types ###
+"*":
+  Zen:
+    width: 80 # Set Zen width
+  "document-outline":
+    maxHeadingDepth: 4 # Limit outlined depth
+  core:
+    disabledPackages: [
+      "markdown-preview"
+      "language-gfm"
+      "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
+      "indent-detective"
+      "julia-client"
+      "latex-completions"
+      "tool-bar"
+    ]
+  "markdown-preview-enhanced":
+    codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
+    previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred
+  # Markdown-Writer: Change the directory where copy & pasted images would be saved
+  "markdown-writer":
+    siteImagesDir: "./assets/" # Set `"./assets/{slug}"` in order to include its file name into saving directories
+  "spell-check":
+    knownWords: [
+      "aviatesk"
+      "aviat"
+      "th"
+      "s"
+      # Additional known (ignored) words come here
+    ]
+  # Tree-View-Autoresize: For MPE preview in the Tree-View pane
+  "tree-view-autoresize":
+    minimumWidth: 0 # Set `300` for MPE previewing in Tree-View pane
+
+### Config for specific file types ###
+".md.text":
+  editor:
+    showLineNumbers: true # Set `false` not to show line numbers with markdown files
+".python.source":
+  whitespace:
+    removeTrailingWhitespace: true # Set `false` for writing markdown cells with Hydrogen

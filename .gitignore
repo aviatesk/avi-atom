@@ -1,0 +1,13 @@
+.apm
+.node-gyp
+.npm
+blob-store
+compile-cache
+dev
+git-time-machine
+packages
+recovery
+split-diff
+storage
+projects.cson
+README_draft.md

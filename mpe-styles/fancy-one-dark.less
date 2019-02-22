@@ -1,0 +1,56 @@
+/**
+ * This .less sheet fine-tune one-dark.css preview theme, which
+ * comes along with Markdown-Preview-Enhanced package.
+ * Colors headers fancily and modifies default table coloring to
+ * match One-Dark theme.
+ * Note that this file location is specified in .atom/snippets.cson
+ * with "one-dark-fancy" prefix for easy usage.
+ */
+
+.markdown-preview.markdown-preview {
+
+  /** Coloring headers  */
+  @h1-color: #aed1e2;
+  @h2-color: #5baad0;
+  @h3-color: #8f8bdf;
+  @h4-color: #b378e7;
+  @h5-color: #a2eda1;
+  @h6-color: #e9ae87;
+  h1 {
+    color: @h1-color;
+    border-bottom: 4px solid @h1-color;
+  }
+  h2 {
+    color: @h2-color;
+    border-bottom: 2px solid @h2-color;
+  }
+  h3 {
+    color: @h3-color;
+    text-decoration: underline;
+  }
+  h4 {
+    color: @h4-color;
+  }
+  h5 {
+    color: @h5-color;
+  }
+  h6 {
+    color: @h6-color;
+  }
+
+  /** Tabel rendering */
+  th {
+    border: 1px solid #4b5362 !important;
+  }
+  td {
+    padding: 6px 13px;
+    border: 1px solid #4b5362 !important;
+  }
+  tr {
+    background-color: #282c34 !important;
+  }
+  tr:nth-child(2n) {
+    background-color: #30353e !important;
+  }
+
+}

@@ -1,0 +1,71 @@
+/**
+ * This .less sheet numbers headers in markdown preview, which is supposed
+ * to be used with Markdown-Preview-Enhanced.
+ * The numbering starts from H2, which would be good when writing
+ * documents in which we want to use H1 as tittle (e.g. README.md)
+ * Note that this file location is specified in .atom/snippets.cson
+ * with "numbering-from-h2" prefix for easy usage.
+ */
+
+.markdown-preview.markdown-preview {
+
+  /**
+   * Numbers sections with skipping numbering H1s
+   */
+  h2 {
+    counter-increment: h2counter;
+    counter-reset: h3counter;
+  }
+  h2.ignorenumbering {
+    counter-increment: none;
+    counter-reset: none;
+  }
+  h3 {
+    counter-increment: h3counter;
+    counter-reset: h4counter;
+  }
+  h3.ignorenumbering {
+    counter-increment: none;
+    counter-reset: none;
+  }
+  h4 {
+    counter-increment: h4counter;
+  }
+  h4.ignorenumbering {
+    counter-increment: none;
+    counter-reset: none;
+  }
+  h2:before {
+    content: counter(h2counter) ". ";
+  }
+  h2.ignorenumbering:before {
+    content: none;
+  }
+  h3:before {
+    content: counter(h2counter) "." counter(h3counter) ". ";
+  }
+  h3.ignorenumbering:before {
+    content: none;
+  }
+  h4:before {
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ". ";
+  }
+  h4.ignorenumbering:before {
+    content: none;
+  }
+
+  /** Skips numbering in presentation mode */
+  &[data-presentation-mode],
+  .preview-slides .slide {
+    h2:before {
+      content: none !important;
+    }
+    h3:before {
+      content: none !important;
+    }
+    h4:before {
+      content: none !important;
+    }
+  }
+
+}
