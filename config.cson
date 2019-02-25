@@ -16,6 +16,12 @@
       preserve_newlines: true
     general:
       _analyticsUserId: "363e3982-c20c-4871-b3aa-b60bce401914"
+    html:
+      end_with_newline: true
+      indent_size: 2
+    json:
+      end_with_newline: true
+      indent_size: 2
     less:
       align_assignments: true
       indent_comments: false
@@ -51,7 +57,6 @@
       "markdown-preview"
       "language-gfm"
       "spell-check"
-      "indent-detective"
       "julia-client"
       "latex-completions"
       "tool-bar"

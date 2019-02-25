@@ -47,7 +47,7 @@ commands: [
     command: "python"
     arguments: [
       "C:\\Users\\aviat\\.atom\\scripts\\create-config.py"
-      "C:\\Users\\aviat\\.atom\\scripts\\general.cson"
+      "C:\\Users\\aviat\\.atom\\scripts\\julia.cson"
     ]
     options:
       cwd: "{ProjectDir}"

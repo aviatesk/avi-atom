@@ -111,17 +111,25 @@
 ### Julia ###
 '.source.julia':
 
-  ## General
-  'Julia: print':
+  ## Base
+  'Base: print':
     'prefix': 'p'
     'body': "print(${1:expr})"
     'description': 'Inserts print snippet'
-  'Julia: println':
+  'Base: println':
     'prefix': 'pl'
     'body': "println(${1:expr})"
     'description': 'Inserts println snippet'
+  'Base: |> (Pipe)':
+    'prefix': 'pi'
+    'body': '|>\n$1'
+    'description': 'Inserts pipe snippet'
+  'Base: => (Pair)':
+    'prefix': 'pa'
+    'body': '$1 => $2'
+    'description': 'Inserts pair snippet'
 
-  # Julia-Client
+  ## Julia-Client
   'Julia-Client: Code cell':
     'prefix': 'cc'
     'body':

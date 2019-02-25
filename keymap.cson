@@ -319,12 +319,13 @@
   'ctrl-shift-r': 'find-and-replace:find-previous'
   'ctrl-t': 'tree-view:toggle-focus'
   'ctrl-w': 'core:close'
-  'ctrl-x ctrl-x': 'emacs-plus:exchange-point-and-mark'
   'ctrl-alt-c': 'color-picker:open'
   # Window
   'alt-down': 'unset!'
   'alt-right': 'unset!'
   'alt-left': 'unset!'
+  # Indent-Detective
+  'ctrl-x ctrl-i': 'indent-detective:choose-indent'
   # Git
   'alt-h': 'github:toggle-git-tab-focus'
   'alt-shift-h': 'github:toggle-github-tab-focus'
@@ -531,7 +532,7 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not
   'ctrl-c ctrl-n': 'julia-client:run-and-move'
   'ctrl-c ctrl-d': 'julia-client:run-cell'
   'ctrl-c ctrl-b': 'julia-client:run-cell-and-move'
-  'ctrl-c ctrl-r': 'hydrogen:run-file'
+  'ctrl-c ctrl-r': 'julia-client:run-file'
   'ctrl-enter': 'julia-client:run-block'
   'shift-enter': 'julia-client:run-and-move'
   'ctrl-shift-enter': 'julia-client:run-and-move'

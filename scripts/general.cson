@@ -15,7 +15,6 @@ All values are set as default.
       "markdown-preview"
       "language-gfm"
       "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
-      "indent-detective"
       "julia-client"
       "latex-completions"
       "tool-bar"
