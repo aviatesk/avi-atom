@@ -114,9 +114,11 @@ atom-text-editor.editor {
   .line {
     position: relative;
     .syntax--embedded {
+      &.syntax--julia::before,
       &.syntax--python::before,
       &.syntax--r::before {
         background-color: @hydrogen-cell;
+        opacity: 0.75;
         position: absolute;
         top: 0;
         left: 0;

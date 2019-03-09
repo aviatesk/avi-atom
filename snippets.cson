@@ -1,11 +1,132 @@
 ### Global ###
-'.source.py, .source.r, .text.md, .source.coffee':
+'.source':
 
   'Global: Backslash \\':
     'prefix': 'bs'
     'body': '\\\\$1'
     'description': 'Inserts backslash \\'
+  'Global: Single quotations \'\'':
+    'prefix': 'sq'
+    'body': "'$1'"
+    'description': 'Inserts single quotations'
+  'Global: Double quotations ""':
+    'prefix': 'dq'
+    'body': '"$1"'
+    'description': 'Inserts double quotations'
 
+
+### Julia ###
+'.source.julia':
+
+  ## General
+  'Julia: Struct':
+    'prefix': 'struct'
+    'body':
+      '''
+      struct ${1:Structname}
+          ${2:fields}
+      end  # struct ${1:Structname}
+      '''
+    'description': 'Inserts struct (composite types) blocks'
+  'Julia: Function':
+    'prefix': 'function'
+    'body':
+      '''
+      function ${1:funcname}(${2:args})
+          ${3:body}
+      end  # function ${1:funcname}
+      '''
+    'description': 'Inserts function block'
+  'Julia: Documented function':
+    'prefix': 'functiond'
+    'body':
+      '''
+      """
+          ${1:funcname}(${2:args})
+
+      ${4:document}
+      """
+      function ${1:funcname}(${2:args})
+          ${3:body}
+      end  # function ${1:funcname}
+      '''
+    'description': 'Inserts function block'
+  'Julia: Macro':
+    'prefix': 'macro'
+    'body':
+      '''
+      macro ${1:macroname}(${2:args})
+          ${3:body}
+      end  # macro ${1:macroname}
+      '''
+    'description': 'Inserts macro block'
+  'Julia: Documented macro':
+    'prefix': 'macrod'
+    'body':
+      '''
+      """
+          @${1:macroname}(${2:args})
+
+      ${4:document}
+      """
+      macro ${1:macroname}(${2:args})
+          ${3:body}
+      end  # macro ${1:macroname}
+      '''
+    'description': 'Inserts macro block'
+  'Julia: Module':
+    'prefix': 'module'
+    'body':
+      '''
+      module ${1:modulename}
+          $2
+      end  # module ${1:modulename}
+      '''
+    'description': 'Inserts module block'
+  'Julia: Quote':
+    'prefix': 'quote'
+    'body':
+      '''
+      quote
+          $1
+      end
+      '''
+
+  ## Base
+  'Base: print':
+    'prefix': 'p'
+    'body': "print(${1:expr})"
+    'description': 'Inserts print snippet'
+  'Base: println':
+    'prefix': 'pl'
+    'body': "println(${1:expr})"
+    'description': 'Inserts println snippet'
+  'Base: |> (Pipe)':
+    'prefix': 'pi'
+    'body': '|>\n$1'
+    'description': 'Inserts pipe snippet'
+  'Base: => (Pair)':
+    'prefix': 'pa'
+    'body': '$1 => $2'
+    'description': 'Inserts pair snippet'
+
+  ## Julia-Client
+  'Julia-Client: Code cell':
+    'prefix': 'cc'
+    'body':
+      '''
+      # %%
+      $1
+      '''
+    'description': 'Inserts Julia-Client code cell'
+  'Julia-Client: Markdown cell':
+    'prefix': 'mc'
+    'body':
+      '''
+      # %% markdown
+      $1
+      '''
+    'description': 'Inserts Julia-Client markdown cell'
 
 
 ### Python ###
@@ -88,7 +209,7 @@
     'body': ".set_title('$1')"
     'description': 'Sets title to plt.figure.add_subplot object'
 
-  # Hydrogen
+  ## Hydrogen
   'Hydrogen: Code cell':
     'prefix': 'cc'
     'body':
@@ -107,52 +228,10 @@
     'description': 'Inserts Hydrogen markdown cell'
 
 
-
-### Julia ###
-'.source.julia':
-
-  ## Base
-  'Base: print':
-    'prefix': 'p'
-    'body': "print(${1:expr})"
-    'description': 'Inserts print snippet'
-  'Base: println':
-    'prefix': 'pl'
-    'body': "println(${1:expr})"
-    'description': 'Inserts println snippet'
-  'Base: |> (Pipe)':
-    'prefix': 'pi'
-    'body': '|>\n$1'
-    'description': 'Inserts pipe snippet'
-  'Base: => (Pair)':
-    'prefix': 'pa'
-    'body': '$1 => $2'
-    'description': 'Inserts pair snippet'
-
-  ## Julia-Client
-  'Julia-Client: Code cell':
-    'prefix': 'cc'
-    'body':
-      '''
-      # %%
-      $1
-      '''
-    'description': 'Inserts Julia-Client code cell'
-  'Julia-Client: Markdown cell':
-    'prefix': 'mc'
-    'body':
-      '''
-      # %% markdown
-      $1
-      '''
-    'description': 'Inserts Julia-Client markdown cell'
-
-
-
 ### R ###
 '.source.r':
 
-  # Insertions
+  ## Insertions
   'print':
     'prefix': 'pr'
     'body': "print(${1:expr})"
@@ -162,7 +241,7 @@
     'body': "cat(${1:expr})"
     'description': 'Inserts cat snippet'
 
-  # Hydrogen
+  ## Hydrogen
   'Hydrogen: Code cell':
     'prefix': 'cc'
     'body':
@@ -173,13 +252,10 @@
     'description': 'Inserts Hydrogen code cell'
 
 
+### Markdowns (Markdown, Weave.jl, pweave, RMarkdown) ###
+'.source.pweave.md, .source.weave.md, .text.md':
 
-### Markdown (including pweave & R-markdown) ###
-'.text.md':
-
-  ## General
-
-  # Markdown
+  ## Insertions
   'Markdown: Code block':
     'prefix': 'cb'
     'body':
@@ -200,8 +276,12 @@
       <img src="$1"${2: width="$3px"}${4: height="$5px"}${6: title="$7"}>$8
       '''
     'description': 'Inserts link to an image file'
+  'Markdown: Break line':
+    'prefix': 'br'
+    'body': "<br>$1"
+    'description': 'Inserts break line'
 
-  # Markdown-Preview-Enhanced
+  ## Markdown-Preview-Enhanced
   'MPE: Meta settings for HTML rendering':
     'prefix': 'meta-md2html'
     'body':
@@ -224,7 +304,7 @@
     'body':
       '''
       <!-- Importing styles for numbering sections from H1 -->
-      <!-- @import "C:\\\\Users\\\\aviat\\\\.atom\\\\mpe-styles\\\\numbering-from-h1.less" -->
+      <!-- @import "/Users/aviat/.atom/mpe-styles/numbering-from-h1.less" -->
       '''
     'description':
       '''
@@ -237,7 +317,7 @@
     'body':
       '''
       <!-- Importing styles for numbering sections from H2 -->
-      <!-- @import "C:\\\\Users\\\\aviat\\\\.atom\\\\mpe-styles\\\\numbering-from-h2.less" -->
+      <!-- @import "/Users/aviat/.atom/mpe-styles/numbering-from-h2.less" -->
       '''
     'description':
       '''
@@ -250,7 +330,7 @@
     'body':
       '''
       <!-- Importing fancy One-Dark theme -->
-      <!-- @import "C:\\\\Users\\\\aviat\\\\.atom\\\\mpe-styles\\\\fancy-one-dark.less" -->
+      <!-- @import "/Users/aviat/.atom/mpe-styles/fancy-one-dark.less" -->
       '''
     'description':
       '''
@@ -325,10 +405,6 @@
       ${1:{${2:ignore=True}${3: .ignorenumbering}\\}}$4
       '''
     'description': 'Inserts snippet to ignore TOC and/or preview numberings'
-  'Markdown: Break line':
-    'prefix': 'br'
-    'body': "<br>$1"
-    'description': 'Inserts break line'
   'MPE: Slide cell':
     'prefix': 'sl'
     'body':
@@ -338,7 +414,7 @@
       '''
     'description': 'Inserts slide cell with MPE-previewing'
 
-  # MathJax rendering
+  ## MathJax rendering
   'MathJax: Inline MathJax block':
     'prefix': 'mi'
     'body': "\$${1:expr}\$"
@@ -370,7 +446,10 @@
     'description': 'Inserts \\rm (italic-cancelled) section'
 
 
-  ## Settings for writing Github-Flavored-Markdown (README.md)
+### Markdown & RMarkdown ###
+'.text.md':
+
+  # README.md
   'README: Meta settings for README':
     'prefix': 'meta-README'
     'body':
@@ -412,10 +491,119 @@
       '''
     'description': 'Inserts conclusion sections for README'
 
+  # RMarkdown
+  # RMarkdown - meta
+  'R-markdown: Meta settings for R-markdown':
+    'prefix': 'meta-R-markdown'
+    'body':
+      '''
+      ---
+      title: ${1:Title}
+      subtitle: ${2:# Subtitle}
+      author: ${3:KADOWAKI, Shuhei}
+      date: ${4:Date}
+      output:
+        html_document:
+          toc: true
+          toc_float: true
+          number_sections: true
+          theme: cosmo
+          code_folding: show
+          df_print: paged
+      ---
+      ```{r echo=FALSE}
+      ### Setting the global code chunk options ###
+      # Args
+      #   comment='': won't append any string to the start of each line of results
+      #   fig.align='center': align figures to the center of document
+      knitr::opts_chunk$set(comment="", fig.align="center")
+      ```
+      $5
+      '''
+    'description':
+      '''
+      Inserts meta settings for R-markdown rendering: YAML and knitr settings
+      '''
+  # RMarkdown - code blocks
+  'R-markdown: R code block':
+    'prefix': 'rb'
+    'body':
+      '''
+      ```{r}
+      $1
+      ```
+      '''
+    'description': 'Inserts R code block'
+  'R-markdown: R inline code block':
+    'prefix': 'ri'
+    'body':
+      '''
+      `r $1`
+      '''
+    'description': 'Inserts R inline code block'
+  'R-markdown: R code block (multiple plots)':
+    'prefix': 'rbmp'
+    'body':
+      '''
+      ```{r fig.show="hold", out.width="50%", out.height="100%", fig.align="default"}
+      ${1:# This options puts 2 plots horizontally}
+      ```
+      '''
+    'description': 'Inserts R code block for rendering multiple plots in one figure'
+  'R-markdown: R code block (data.frame)':
+    'prefix': 'rbd'
+    'body':
+      '''
+      ```{r rows.print=5, max.print=25}
+      ${1:# only the first 25 rows gonna be rendered (5 rows per page)}
+      ${2:data.frame}
+      ```
+      '''
+    'description': 'Inserts R code block for rendering data.frame object with df_print set'
+  'R-markdown: R code block (full default options)':
+    'prefix': 'rbfull'
+    'body':
+      '''
+      ```{r echo=TRUE, eval=TRUE, results="markup", fig.show="asis", fig.cap=NULL, fig.align="default", out.width=NULL, out.height=NULL, include=TRUE, warning=FALSE, comment=""}
+      $1
+      ```
+      '''
+    'description': 'Inserts R code block with full options set to default values'
 
-  ## Settings only for pweave (.pmd)
-  # General
-  'pweave Meta settings for pweave (-f markdown)':
+
+### Weave.jl ###
+'.source.weave.md':
+
+  ## code blocks
+  'Weave.jl: Julia code block':
+    'prefix': 'jb'
+    'body':
+      '''
+      ```julia
+      $1
+      ```
+      '''
+    'description': 'Inserts Julia code block'
+  'Wweave.jl: Julia inline code block':
+    'prefix': 'ji'
+    'body': '`j $1`'
+    'description': 'Inserts Julia inline code block'
+  'Weave.jl: Julia code block (hold)':
+    'prefix': 'jbh'
+    'body':
+      '''
+      ```julia hold = true
+      $1
+      ```
+      '''
+    'description': 'Inserts Julia code block holding generated results'
+
+
+### pweave ###
+'.source.pweave.md':
+
+  # meta
+  'pweave: Meta settings for pweave (-f markdown)':
     'prefix': 'meta-pweave-markdown'
     'body':
       """
@@ -452,7 +640,7 @@
       '''
     'description': 'Inserts pweave meta settings for directly weaving pweave document as HTML file (deprecated)'
   'pweave: Utilities set-up':
-    'prefix': 'putils'
+    'prefix': 'pweave-utils'
     'body':
       """
       ```python name='utilities-setup', echo=${1:False}
@@ -486,7 +674,7 @@
       - defines function to render pandas.DataFrame beautifully
       '''
 
-  # Insertions
+  # code blocks
   'pweave: Python code block':
     'prefix': 'pb'
     'body':
@@ -535,88 +723,6 @@
       ```
       '''
     'description': 'Inserts Python code block with full options set to default values'
-
-
-  ## Settings only for Rmarkdown (.Rmd)
-  # General
-  'R-markdown: Meta settings for R-markdown':
-    'prefix': 'meta-R-markdown'
-    'body':
-      '''
-      ---
-      title: ${1:Title}
-      subtitle: ${2:# Subtitle}
-      author: ${3:KADOWAKI, Shuhei}
-      date: ${4:Date}
-      output:
-        html_document:
-          toc: true
-          toc_float: true
-          number_sections: true
-          theme: cosmo
-          code_folding: show
-          df_print: paged
-      ---
-      ```{r echo=FALSE}
-      ### Setting the global code chunk options ###
-      # Args
-      #   comment='': won't append any string to the start of each line of results
-      #   fig.align='center': align figures to the center of document
-      knitr::opts_chunk$set(comment="", fig.align="center")
-      ```
-      $5
-      '''
-    'description':
-      '''
-      Inserts meta settings for R-markdown rendering: YAML and knitr settings
-      '''
-
-  # Insertions
-  'R-markdown: R code block':
-    'prefix': 'rb'
-    'body':
-      '''
-      ```{r}
-      $1
-      ```
-      '''
-    'description': 'Inserts R code block'
-  'R-markdown: R inline code block':
-    'prefix': 'ri'
-    'body':
-      '''
-      `r $1`
-      '''
-    'description': 'Inserts R inline code block'
-  'R-markdown: R code block (multiple plots)':
-    'prefix': 'rbmp'
-    'body':
-      '''
-      ```{r fig.show="hold", out.width="50%", out.height="100%", fig.align="default"}
-      ${1:# This options puts 2 plots horizontally}
-      ```
-      '''
-    'description': 'Inserts R code block for rendering multiple plots in one figure'
-  'R-markdown: R code block (data.frame)':
-    'prefix': 'rbd'
-    'body':
-      '''
-      ```{r rows.print=5, max.print=25}
-      ${1:# only the first 25 rows gonna be rendered (5 rows per page)}
-      ${2:data.frame}
-      ```
-      '''
-    'description': 'Inserts R code block for rendering data.frame object with df_print set'
-  'R-markdown: R code block (full default options)':
-    'prefix': 'rbfull'
-    'body':
-      '''
-      ```{r echo=TRUE, eval=TRUE, results="markup", fig.show="asis", fig.cap=NULL, fig.align="default", out.width=NULL, out.height=NULL, include=TRUE, warning=FALSE, comment=""}
-      $1
-      ```
-      '''
-    'description': 'Inserts R code block with full options set to default values'
-
 
 
 ### Java ###

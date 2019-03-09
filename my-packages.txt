@@ -1,3 +1,5 @@
+Hydrogen@2.8.0
+Zen@0.18.0
 advanced-open-file@0.16.8
 ariake-dark-syntax@0.1.3
 atom-beautify@0.33.4
@@ -16,13 +18,13 @@ git-plus@8.6.1
 git-time-machine@2.1.0
 highlight-line@0.12.0
 highlight-selected@0.14.0
-Hydrogen@2.8.0
-ide-python@1.2.3
+ide-python@1.3.0
 indent-detective@0.3.2
-ink@0.9.14
-julia-client@0.7.13
+ink@0.9.15
+julia-client@0.7.14
 language-julia@0.18.0
 language-markdown@0.29.0
+language-weave@0.6.0
 latex-completions@0.3.6
 markdown-preview-enhanced@0.15.8
 markdown-writer@2.11.5
@@ -44,5 +46,4 @@ tree-view-autoresize@2.3.0
 tree-view-git-status@1.5.2
 uber-juno@0.2.0
 wordcount@3.0.0
-Zen@0.18.0
 

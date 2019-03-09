@@ -24,6 +24,7 @@ All values for the other Per-project configs are set as default
       "atom-html-preview"
       "git-diff"
       "git-time-machine"
+      "language-weave"
       "markdown-preview-enhanced"
       "markdown-writer"
       "open-in-browser"
@@ -73,8 +74,10 @@ All values for the other Per-project configs are set as default
   "document-outline":
     maxHeadingDepth: 4 # Limit outlined depth
   "markdown-preview-enhanced":
+    automaticallyShowPreviewOfMarkdownBeingEdited: true # Set `false` when editting Weave documents
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
     previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred
+    scrollSync: true # Set `false` when editting Weave documents
   # Markdown-Writer: Change the directory where copy & pasted images would be saved
   "markdown-writer":
     siteImagesDir: "./assets/" # Set `"./assets/{slug}"` in order to include its file name into saving directories
@@ -92,10 +95,10 @@ All values for the other Per-project configs are set as default
 
 ### Config for specific file types ###
 ".julia.source":
-  # editor:
-  #   preferredLineLength: 80
+  editor:
+    preferredLineLength: 80
   "wrap-guide":
-    enabled: false
+    enabled: true
 ".md.text":
   editor:
     showLineNumbers: true # Set `false` not to show line numbers with markdown files

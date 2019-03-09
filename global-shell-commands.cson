@@ -54,7 +54,6 @@ commands: [
       keymap: 'ctrl-alt-shift-j'
   }
 
-
   # Process pweave document or R-markdown
   # The specified .bat file will automatically detect the file type,
   #  and then run processing command accordingly.
@@ -80,7 +79,7 @@ commands: [
   }
 
   # Pweave - convert .pmd to .html
-  # **deprecated** (couldn't render tables and yaml won't work)
+  # **deprecated** (yaml won't work & couldn't render tables properly)
   {
     name: "pmd2html"
     command: "pweave"

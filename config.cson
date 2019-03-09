@@ -52,8 +52,6 @@
     autoHideMenuBar: true
     customFileTypes:
       "text.md": [
-        "Pmd"
-        "pmd"
         "Rmd"
         "rmd"
       ]
@@ -81,6 +79,7 @@
       "atom-html-preview"
       "git-diff"
       "git-time-machine"
+      "language-weave"
       "markdown-preview-enhanced"
       "markdown-writer"
       "open-in-browser"
@@ -144,12 +143,14 @@
       yapf:
         enabled: true
     python: "C:\\Users\\aviat\\Anaconda3\\envs\\ml\\python.exe"
+  "language-weave":
+    showPreview: false
   "markdown-preview-enhanced":
     codeBlockTheme: "github.css"
     enableCriticMarkupSyntax: true
     enableExtendedTableSyntax: true
     enableScriptExecution: true
-    fileExtension: ".md, .MD, .pmd, .Pmd, .rmd, .Rmd"
+    fileExtension: ".md, .MD, .pmd, .Pmd, .jmd, Jmd, .rmd, .Rmd"
     openPreviewPaneAutomatically: false
     printBackground: true
     singlePreview: false
@@ -158,6 +159,8 @@
       "source.gfm"
       "source.gfm.nvatom"
       "source.litcoffee"
+      "source.pweave.md"
+      "source.weave.md"
       "text.md"
       "text.plain"
       "text.plain.null-grammar"
@@ -286,6 +289,21 @@
     tabType: "soft"
   "wrap-guide":
     enabled: true
+".julia.source":
+  "wrap-guide":
+    enabled: true
+".md.pweave.source":
+  editor:
+    tabType: "soft"
+  whitespace:
+    ensureSingleTrailingNewline: false
+    removeTrailingWhitespace: false
+".md.source.weave":
+  editor:
+    softWrap: true
+  whitespace:
+    ensureSingleTrailingNewline: false
+    removeTrailingWhitespace: false
 ".md.text":
   editor:
     tabType: "soft"

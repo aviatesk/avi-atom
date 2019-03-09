@@ -1,16 +1,19 @@
-# Core
+### Core ###
 'body':
-  # movements
+
+  ## movements
   'ctrl-o': 'core:move-up'
   'ctrl-p': 'core:page-up'
   'ctrl-l': 'core:move-right'
   'ctrl-n': 'core:move-down'
   'ctrl-shift-p': 'core:page-down'
   'ctrl-k': 'core:move-left'
-  # delete, copy, paste
+
+  ## delete, copy, paste
   'alt-w': 'core:copy'
   'ctrl-v': 'core:paste'
-  # operations
+
+  ## operations
   'ctrl-m': 'core:confirm'
   'ctrl-;': 'core:confirm'
   'ctrl-g': 'core:cancel'
@@ -22,9 +25,11 @@
   'ctrl-shift-tab': 'pane:show-previous-item'
 
 
-# All the atom-workspace
+
+### All the atom-workspace ###
 'atom-workspace':
-  # operations
+
+  ## operations
   'ctrl-shift-a': 'core:select-all'
   'ctrl-h': 'command-palette:toggle'
   'alt-x': 'command-palette:toggle'
@@ -33,14 +38,16 @@
   'f5': 'window:reload'
   'f11': 'window:toggle-full-screen'
   'ctrl-x ctrl-c': 'window:close'
-  # file, project
+
+  ## file, project
   'ctrl-x ctrl-f': 'advanced-open-file:toggle'
   'ctrl-x ctrl-p': 'project-manager:list-projects'
   'ctrl-t': 'tree-view:toggle-focus'
   'alt-t': 'tree-view:toggle'
   'ctrl-x ctrl-t': 'tree-view:toggle'
   'ctrl-x ctrl-j': 'tree-view:reveal-active-file'
-  # Tabs
+
+  ## tab
   'ctrl-right': 'pane:show-next-item'
   'ctrl-left': 'pane:show-previous-item'
   'ctrl-alt-right': 'pane:move-item-right'
@@ -56,12 +63,13 @@
   'ctrl-9': 'pane:show-item-9'
   'ctrl-w': 'core:close'
   'ctrl-shift-w': 'tabs:close-all-tabs'
-  # Pane & Dock
-  ## next / previous
+
+  ## pane
+  # next / previous
   'ctrl-x o': 'window:focus-next-pane'
   'ctrl-x n': 'window:focus-next-pane'
   'ctrl-x p': 'window:focus-previous-pane'
-  ## Up
+  # up
   'ctrl-x u': 'window:focus-pane-above'
   'ctrl-x ctrl-u': 'pane:split-up-and-move-active-item'
   'ctrl-alt-u': 'window:move-active-item-to-pane-above'
@@ -69,7 +77,7 @@
   'ctrl-x up': 'pane:split-up-and-copy-active-item'
   'ctrl-x ctrl-4': 'window:copy-active-item-to-pane-above'
   'ctrl-x ctrl-up': 'window:copy-active-item-to-pane-above'
-  ## Right
+  # right
   'ctrl-x l': 'window:focus-pane-on-right'
   'ctrl-x ctrl-l': 'pane:split-right-and-move-active-item'
   'ctrl-alt-l': 'window:move-active-item-to-pane-on-right'
@@ -77,7 +85,7 @@
   'ctrl-x right': 'pane:split-right-and-copy-active-item'
   'ctrl-x ctrl-3': 'window:copy-active-item-to-pane-on-right'
   'ctrl-x ctrl-right': 'window:copy-active-item-to-pane-on-right'
-  ## Down
+  # down
   'ctrl-x b': 'window:focus-pane-below'
   'ctrl-x ctrl-b': 'pane:split-down-and-move-active-item'
   'ctrl-alt-b': 'window:move-active-item-to-pane-below'
@@ -85,7 +93,7 @@
   'ctrl-x down': 'pane:split-down-and-copy-active-item'
   'ctrl-x ctrl-2': 'window:copy-active-item-to-pane-below'
   'ctrl-x ctrl-down': 'window:copy-active-item-to-pane-below'
-  ## Left
+  # left
   'ctrl-x k': 'window:focus-pane-on-left'
   'ctrl-x ctrl-k': 'pane:split-left-and-move-active-item'
   'ctrl-alt-k': 'window:move-active-item-to-pane-on-left'
@@ -93,49 +101,59 @@
   'ctrl-x left': 'pane:split-left-and-copy-active-item'
   'ctrl-x ctrl-5': 'window:copy-active-item-to-pane-on-left'
   'ctrl-x ctrl-left': 'window:copy-active-item-to-pane-on-left'
-  ## Docks
+
+  ## docks
   'alt-y': 'window:toggle-right-dock'
   'alt-l': 'window:toggle-right-dock'
   'alt-b': 'window:toggle-bottom-dock'
   'alt-down': 'window:toggle-bottom-dock'
   'alt-right': 'window:toggle-right-dock'
   'alt-left': 'window:toggle-left-dock'
-  # Dqs-Shell-Commands
+
+  ## Dqs-Shell-Commands
   'alt-q': 'dqs-shell-commands-config:toggle'
   'ctrl-g': 'dqs-shell-commands-config:hide'
-  # Git
+
+  ## Git
   'ctrl-x ctrl-g': 'git-plus:menu'
   'alt-h': 'github:toggle-git-tab'
   'alt-shift-h': 'github:toggle-github-tab'
-  # Atom-IDE
-  ## Find References
+
+  ## Atom-IDE
+  # Find references
   'alt-r': 'window:toggle-bottom-dock'
-  ## Diagnostics
+  # Diagnostics
   'alt-d': 'window:toggle-bottom-dock'
-  # open in browser
+
+  ## Open in Browser
   'ctrl-shift-b': 'open-in-browser:open'
-  # Hydrogen
+
+  ## Hydrogen
   'alt-o': 'window:focus-pane-on-left'
   'alt-k': 'window:toggle-bottom-dock'
   'ctrl-alt-o': 'window:focus-pane-on-left'
-  # Termination
+
+  ## Termination
   'alt-:': 'termination:toggle'
   'ctrl-:': 'termination:focus' # would be ignored if spell-check isn't unabled, but still you can use 'ctrl-@' instead
   'ctrl-@': 'termination:focus'
-  # Zen
+
+  ## Zen
   'alt-z': 'zen:toggle'
 
+### Per-mode settings -- NOT IN atom-editor-space ###
 
-# Per-mode settings outside of atom-text-editor space
 ## Tree-View
 '.tree-view':
-  # Meta
+
+  ## meta
   't': 'tree-view:toggle-focus'
   'ctrl-t': 'tree-view:toggle-focus'
   'ctrl-x o': 'tree-view:toggle-focus'
   'alt-t': 'tree-view:toggle'
   'ctrl-x ctrl-t': 'tree-view:toggle'
-  # Movements
+
+  ## movements
   'n': 'core:move-down'
   'ctrl-n': 'core:move-down'
   'o': 'core:move-up'
@@ -144,8 +162,9 @@
   'ctrl-a': 'core:move-to-top'
   'e': 'core:move-to-bottom'
   'ctrl-e': 'core:move-to-bottom'
-  # Operations
-  ## Select & View
+
+  ## operations
+  # select & view
   'm': 'tree-view:open-selected-entry'
   ';': 'tree-view:open-selected-entry'
   'ctrl-m': 'tree-view:open-selected-entry'
@@ -154,13 +173,13 @@
   'shift-;': 'tree-view:collapse-directory'
   'ctrl-shift-m': 'tree-view:collapse-directory'
   'ctrl-shift-;': 'tree-view:collapse-directory'
-  ## Manage folder
+  # manage folder
   'p': 'application:add-project-folder'
   'ctrl-p': 'application:add-project-folder'
   'shift-p': 'tree-view:remove-project-folder'
   'ctrl-shift-p': 'tree-view:remove-project-folder'
   'ctrl-x ctrl-p': 'application:reopen-project'
-  ## Manage file
+  # manage file
   'c': 'tree-view:copy'
   'ctrl-c': 'tree-view:copy'
   'alt-w': 'tree-view:copy'
@@ -174,28 +193,30 @@
   'ctrl-r': 'tree-view:rename'
   'd': 'tree-view:remove'
   'ctrl-d': 'tree-view:remove'
-  ## Path
+  # path
   'alt-c': 'tree-view:copy-project-path'
   'ctrl-alt-c': 'tree-view:copy-full-path'
-  ## Find
+  # find
   'f': 'fuzzy-finder:toggle-file-finder'
   'ctrl-f': 'fuzzy-finder:toggle-file-finder'
   'b': 'fuzzy-finder:toggle-buffer-finder'
   'ctrl-b': 'fuzzy-finder:toggle-buffer-finder'
   'g': 'fuzzy-finder:toggle-git-status-finder'
   'ctrl-g': 'fuzzy-finder:toggle-git-status-finder'
-  # Unsets
+  # unsets
   'i': 'unset!'
-## Git
+
+
+## Git ##
 '.github-StagingView':
-  # movements
+  ## movements
   'o': 'core:move-up'
   'n': 'core:move-down'
   'ctrl-o': 'core:move-up'
   'ctrl-n': 'core:move-down'
   'tab': 'core:focus-next'
   'shift-tab': 'core:focus-previous'
-  # operations
+  ## operations
   'm': 'core:confirm'
   'ctrl-m': 'core:confirm'
   'ctrl-alt-m': 'github:unstage-all-changes'
@@ -204,16 +225,16 @@
   'enter': 'github:jump-to-file'
   'ctrl-enter': 'github:jump-to-file'
 '.github-StagingView.unstaged-changes-focused':
-  # operations
+  ## operations
   'ctrl-m': 'core:confirm'
   'ctrl-alt-m': 'github:stage-all-changes'
 '.github-FilePatchView atom-text-editor:not([mini])':
-  # movements
+  ## movements
   'o': 'core:move-up'
   'n': 'core:move-down'
   'ctrl-o': 'core:move-up'
   'ctrl-n': 'core:move-down'
-  # operations
+  ## operations
   '/': 'github:toggle-patch-selection-mode'
   'ctrl-/': 'github:toggle-patch-selection-mode'
   'm': 'core:confirm'
@@ -223,7 +244,6 @@
   'enter': 'github:jump-to-file'
   'ctrl-enter': 'github:jump-to-file'
 '.github-FilePatchView--hunkMode atom-text-editor:not([mini])':
-  # movements
   'o': 'github:select-previous-hunk'
   'n': 'github:select-next-hunk'
   'ctrl-o': 'github:select-previous-hunk'
@@ -244,6 +264,7 @@
   'alt-x': 'command-palette:toggle'
   'alt-t': 'tree-view:toggle-focus'
   'alt-h': 'github:toggle-git-tab-focus'
+
 ## Advanced-open-file
 '.advanced-open-file atom-text-editor':
   'ctrl-o': 'advanced-open-file:move-cursor-up'
@@ -256,26 +277,24 @@
   'ctrl-z': 'advanced-open-file:undo'
 
 
-# All the atom-text-editor space, including one-line editoring (e.g. setting)
+### All the atom-text-editor space, including mini(one-line) editor space ###
 'atom-workspace atom-text-editor':
-  # movements
-  ## up
+
+  ## movements
   'ctrl-o': 'core:move-up'
   'ctrl-u': 'editor:move-to-beginning-of-previous-paragraph'
   'ctrl-p': 'core:page-up'
-  ## right
   'ctrl-l': 'core:move-right'
   'ctrl-.': 'editor:move-to-end-of-word'
   'ctrl-e': 'editor:move-to-end-of-screen-line'
-  ## down
   'ctrl-n': 'core:move-down'
   'ctrl-b': 'editor:move-to-beginning-of-next-paragraph'
   'ctrl-shift-p': 'core:page-down'
-  ## left
   'ctrl-k': 'core:move-left'
   'ctrl-,': 'editor:move-to-beginning-of-word'
   'ctrl-a': 'editor:move-to-first-character-of-line'
-  # delete, copy, paste
+
+  ## delete, copy, paste
   'ctrl-d': 'editor:delete-to-end-of-line'
   'ctrl-shift-d': 'editor:delete-line'
   'ctrl-f': 'emacs-plus:kill-line'
@@ -283,33 +302,37 @@
   'ctrl-j': 'core:delete'
   'ctrl-shift-j': 'editor:delete-to-end-of-word'
   'alt-j': 'emacs-plus:kill-word'
-  # operations
+
+  ## operations
   'alt-y': 'window:toggle-right-dock'
   'alt-l': 'window:toggle-right-dock'
   'alt-b': 'window:toggle-bottom-dock'
-  # Unsets
-  'ctrl-right': 'unset!'
-  'ctrl-left': 'unset!'
-  # Grammer
+
+  ## Grammer
   'ctrl-x ctrl-m': 'grammar-selector:show'
-  # Tree view
+
+  ## Tree view
   'alt-t': 'tree-view:toggle'
   'ctrl-x ctrl-t': 'tree-view:toggle'
-  # Git
+
+  ## Git
   'alt-ctrl-g': 'github:view-unstaged-changes-for-current-file'
   'alt-shift-g': 'github:view-staged-changes-for-current-file'
   'alt-shift-t': 'git-time-machine:toggle'
   'ctrl-alt-p': 'git-diff:move-to-previous-diff'
   'ctrl-alt-n': 'git-diff:move-to-next-diff'
-  # Script -- should not be placed in .emacs-plus scope, because I write per-file run definition below
+
+  ## Script -- should not be placed in .emacs-plus scope, because I write per-file run definition below
   'ctrl-x r': 'script:run'
   'ctrl-x shift-r': 'script:run-options'
   'ctrl-x ctrl-r': 'script:run-with-profile'
 
 
-# Not-mini atom-text-editor space
+
+### Atom-text-editor space, not including mini(one-line) editor space ###
 'atom-workspace atom-text-editor.emacs-plus:not([mini])':
-  # operations - with core packages
+
+  ## operations
   'ctrl-;': 'editor:newline'
   'ctrl-x g': 'go-to-line:toggle'
   'ctrl-x t': 'emacs-plus:recenter-top-bottom'
@@ -320,51 +343,47 @@
   'ctrl-t': 'tree-view:toggle-focus'
   'ctrl-w': 'core:close'
   'ctrl-alt-c': 'color-picker:open'
-  # Window
+
+  ## window
   'alt-down': 'unset!'
   'alt-right': 'unset!'
   'alt-left': 'unset!'
-  # Indent-Detective
+
+  ## Atom-Beautify
+  'ctrl-c ctrl-f': 'atom-beautify:beautify-editor'
+
+  ## Indent-Detective
   'ctrl-x ctrl-i': 'indent-detective:choose-indent'
-  # Git
+
+  ## Git
   'alt-h': 'github:toggle-git-tab-focus'
   'alt-shift-h': 'github:toggle-github-tab-focus'
-  # Split-diff
+
+  ## Split-diff
   'alt-s': 'split-diff:toggle'
-  # Atom-IDE
-  ## Diagnostics
-  'alt-d': 'diagnostics:toggle-table'
-  'alt-p': 'diagnostics:go-to-previous-diagnostic'
-  'alt-end': 'diagnostics:go-to-first-diagnostic'
-  'alt-n': 'diagnostics:go-to-next-diagnostic'
-  'alt-home': 'diagnostics:go-to-last-diagnostic'
-  ## Code Format
-  'ctrl-c ctrl-f': 'atom-beautify:beautify-editor'
-  ## find reference
-  'alt-r': 'find-references:activate'
-  ## outline view
-  'ctrl-alt-o': 'outline-view:toggle'
 
 
-# Per-mode settings within atom-text-editor space
+
+### Per-mode & Per-filetype settings IN atom-editor-space ###
+
 ## Mark mode (i.e. after ctrl-space)
 'atom-workspace atom-text-editor.emacs-plus.mark-mode:not([mini])':
-  # movements
-  ## up
+  ## movements
+  # up
   'ctrl-o': 'core:select-up'
   'ctrl-u': 'editor:select-to-beginning-of-previous-paragraph'
   'ctrl-p': 'core:select-page-up'
   'ctrl-home': 'core:select-to-top'
-  ## right
+  # right
   'ctrl-l': 'core:select-right'
   'ctrl-.': 'editor:select-to-end-of-word'
   'ctrl-e': 'editor:select-to-end-of-line'
-  ## down
+  # down
   'ctrl-n': 'core:select-down'
   'ctrl-b': 'editor:select-to-beginning-of-next-paragraph'
   'ctrl-shift-p': 'core:select-page-down'
   'ctrl-end': 'core:select-to-bottom'
-  ## left
+  # left
   'ctrl-k': 'core:select-left'
   'ctrl-,': 'editor:select-to-beginning-of-word'
   'ctrl-a': 'editor:select-to-first-character-of-line'
@@ -378,29 +397,37 @@
   'alt-n': 'find-and-replace:find-next-selected'
   'ctrl-x a': 'find-and-replace:find-all'
   'alt-i': 'termination:insert-selected-text'
-## Find and Replace mode
+
+## Find and Replace
 '.platform-win32 atom-text-editor':
   'ctrl-s': 'find-and-replace:find-next'
   'ctrl-shift-s': 'find-and-replace:find-next'
   'ctrl-r': 'find-and-replace:find-previous'
   'ctrl-shift-r': 'find-and-replace:find-previous'
+
 ## Split-diff
 '.split-diff':
   'ctrl-alt-p': 'split-diff:prev-diff'
   'ctrl-alt-n': 'split-diff:next-diff'
+
 ## Autocomplete-plus
 'atom-workspace atom-text-editor:not(mini).emacs-plus.autocomplete-active':
   'ctrl-;': 'autocomplete-plus:confirm'
+
 ## Markdown-Preview-Enhanced
 "
 atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
 ":
   'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
+
 ## Hydrogen
 "
 atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
 ":
   'ctrl-c': 'unset!'
@@ -421,6 +448,7 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
 "
 atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not([mini])
 ":
   'ctrl-c': 'unset!'
@@ -434,18 +462,20 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not
   'alt-enter': 'hydrogen:run'
   'alt-shift-enter': 'hydrogen:run-and-move-down'
 
-
-# Per file-type settings within atom-text-editor space
 ## Markdown
-"atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])":
-  # Dqs-Shell-Commands: Process .pmd & .Rmd documents (Same as Script)
+"
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
+":
+  ## Dqs-Shell-Commands: Process .pmd & .Rmd documents (Same as Script)
   # The appropriate shell command to process either pweave document or R-markdown gonna be automatically detected
   #  from file-extension by shell scripts kept in scripts directory
   'ctrl-x r': 'dqs-shell-commands:process-md'
   'ctrl-x ctrl-r': 'dqs-shell-commands:process-md-remain'
-  # Document-Outline
+  ## Document-Outline
   'ctrl-alt-o': 'document-outline:toggle'
-  # Markdown-Writer
+  ## Markdown-Writer
   'enter': 'markdown-writer:insert-new-line'
   'ctrl-;': 'markdown-writer:insert-new-line'
   'tab': 'markdown-writer:indent-list-line'
@@ -498,21 +528,13 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not
   'ctrl-;': 'core:confirm'
   'escape': 'core:cancel'
   'ctrl-g': 'core:cancel'
-## HTML
-"atom-workspace atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
-  # Atom-HTML-Preview: ctrl-shift-m (same as Markdown-Preview-Enhanced:toggle)
-  'ctrl-shift-m': 'atom-html-preview:toggle'
-## CSS
-"atom-workspace atom-text-editor[data-grammar='source css less'].emacs-plus:not([mini])":
-  'ctrl-c ctrl-f': 'atom-beautify:beautify-language-css'
-"atom-workspace atom-text-editor[data-grammar='source css less'].emacs-plus.mark-mode:not([mini])":
-  'ctrl-c ctrl-f': 'atom-beautify:beautify-language-less'
-## Python
-"atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus:not([mini])":
-  'ctrl-c ctrl-f': 'code-format:format-code'
+
 ## Julia
-"atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini])":
-  # Meta
+"
+atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
+":
+  ## meta
   'alt-o': 'julia-client:open-console'
   'alt-i': 'julia-client:show-documentation'
   'alt-r': 'julia-client:goto-symbol'
@@ -526,7 +548,7 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not
   'alt-j w': 'julia-client:open-workspace'
   'alt-j p': 'julia-client:open-plot-pane'
   'alt-j ,': 'julia-client:settings'
-  # Run
+  ## Julia-Client
   'ctrl-c': 'unset!'
   'ctrl-c ctrl-c': 'julia-client:run-block'
   'ctrl-c ctrl-n': 'julia-client:run-and-move'
@@ -539,11 +561,14 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not
   'alt-enter': 'julia-client:run-cell'
   'alt-shift-enter': 'julia-client:run-cell-and-move'
   'ctrl-alt-shift-enter': 'julia-client:run-file'
-  # Ink-terminal
+  ## Ink-terminal
   'ctrl-:': 'julia-client:focus-last-terminal'
   'alt-b': 'julia-client:focus-last-terminal'
-"atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini])":
-  # Run
+"
+atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-mode:not([mini])
+":
+  ## Julia-Client
   'ctrl-c': 'unset!'
   'ctrl-c ctrl-c': 'julia-client:run-block'
   'ctrl-c ctrl-n': 'julia-client:run-and-move'
@@ -577,10 +602,44 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not
   'ctrl-r': 'ink-terminal:find-previous'
   'ctrl-s': 'ink-terminal:find-next'
   'ctrl-g': 'ink-terminal:close-search'
+"atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])":
+  ## Markdown-Writer: cancel `markdown-writer:insert-newline` for ctrl-;
+  'ctrl-;': 'editor:newline'
+
+## Python
+"atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus:not([mini])":
+  ## Atom-IDE: IDE-Python
+  # Code format
+  'ctrl-c ctrl-f': 'code-format:format-code'
+  # Diagnostics
+  'alt-d': 'diagnostics:toggle-table'
+  'alt-p': 'diagnostics:go-to-previous-diagnostic'
+  'alt-end': 'diagnostics:go-to-first-diagnostic'
+  'alt-n': 'diagnostics:go-to-next-diagnostic'
+  'alt-home': 'diagnostics:go-to-last-diagnostic'
+  # Find reference
+  'alt-r': 'find-references:activate'
+  # Outline view
+  'ctrl-alt-o': 'outline-view:toggle'
+
+## HTML
+"atom-workspace atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
+  ## Atom-HTML-Preview: ctrl-shift-m (same as Markdown-Preview-Enhanced:toggle)
+  'ctrl-shift-m': 'atom-html-preview:toggle'
+
+## CSS
+## Switch Atom-Beautify with selection
+"atom-workspace atom-text-editor[data-grammar='source css less'].emacs-plus:not([mini])":
+  'ctrl-c ctrl-f': 'atom-beautify:beautify-language-css'
+"atom-workspace atom-text-editor[data-grammar='source css less'].emacs-plus.mark-mode:not([mini])":
+  'ctrl-c ctrl-f': 'atom-beautify:beautify-language-less'
 
 
-# make ctrl-k prefix-keybinding unavailable
+
+
+### Unsets ###
 'atom-text-editor':
+  ## make ctrl-k prefix-keybinding unavailable
   'ctrl-k t down': 'unset!'
   'ctrl-k t left': 'unset!'
   'ctrl-k ctrl-0': 'unset!'
