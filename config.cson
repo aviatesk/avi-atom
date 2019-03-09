@@ -29,6 +29,10 @@
       newline_between_rules: false
     markdown:
       disabled: true
+    sql:
+      identifiers: "lower"
+      indent_size: 2
+      reindent: false
   "atom-clock":
     dateFormat: "YYYY/MM/DD/HH:mm"
   "atom-html-preview":
@@ -294,3 +298,7 @@
     tabType: "soft"
   "wrap-guide":
     enabled: true
+".source.sql":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
