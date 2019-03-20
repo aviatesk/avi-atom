@@ -150,7 +150,7 @@
     enableCriticMarkupSyntax: true
     enableExtendedTableSyntax: true
     enableScriptExecution: true
-    fileExtension: ".md, .MD, .pmd, .Pmd, .jmd, Jmd, .rmd, .Rmd"
+    fileExtension: ".md, .MD, .jmd, Jmd, .pmd, .Pmd, .rmd, .Rmd"
     openPreviewPaneAutomatically: false
     printBackground: true
     singlePreview: false
