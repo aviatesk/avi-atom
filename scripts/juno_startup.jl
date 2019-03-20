@@ -46,6 +46,3 @@ end # module
 
 setmyjuno.settheme()
 
-# ### Set color theme for PlotlyJS ###
-# import PlotlyJS
-# PlotlyJS.use_style!(:tomorrow_night_eighties)
