@@ -91,6 +91,16 @@
           $1
       end
       '''
+    'description': 'Inserts quote block'
+  'Julia: Comment block':
+    'prefix': 'cb'
+    'body':
+      '''
+      #=
+      $1
+      =#
+      '''
+    'description': 'Inserts comment block'
 
   ## Base
   'Base: print':
@@ -103,12 +113,22 @@
     'description': 'Inserts println snippet'
   'Base: |> (Pipe)':
     'prefix': 'pi'
-    'body': '|>\n$1'
+    'body': '|> $1'
     'description': 'Inserts pipe snippet'
   'Base: => (Pair)':
     'prefix': 'pa'
     'body': '$1 => $2'
     'description': 'Inserts pair snippet'
+
+  # DataFrames
+  'DataFramesMeta: @linq':
+    'prefix': 'li'
+    'body':
+      '''
+      @linq ${1:df} |>
+          $2
+      '''
+    'description': 'Inserts @linq pipe line'
 
   ## Julia-Client
   'Julia-Client: Code cell':
