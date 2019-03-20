@@ -73,6 +73,7 @@ end  # module SetMyJuno
 Enters module main below
 =#
 
+using Weave
 
 
 MyJuno.setomrtheme()

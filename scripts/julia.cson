@@ -62,7 +62,7 @@ All values for the other Per-project configs are set as default
       enableMenu: true
       enableToolBar: true
   "latex-completions":
-    selector: ".source.julia"
+    selector: ".source.julia, .source.weave.md"
   "tool-bar":
     iconSize: "24px"
     position: "Left"
@@ -99,6 +99,12 @@ All values for the other Per-project configs are set as default
     preferredLineLength: 80
   "wrap-guide":
     enabled: true
+".md.source.weave":
+  editor:
+    softWrap: true
+  whitespace:
+    ensureSingleTrailingNewline: false
+    removeTrailingWhitespace: false
 ".md.text":
   editor:
     showLineNumbers: true # Set `false` not to show line numbers with markdown files

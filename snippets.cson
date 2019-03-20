@@ -594,7 +594,48 @@
 ### Weave.jl ###
 '.source.weave.md':
 
-  ## code blocks
+  ## Meta
+  'Weave.jl: Meta settings for weave to markdown':
+    'prefix': 'meta-jmd2md'
+    'body':
+      '''
+      ---
+      ### MPE
+      html:
+          embed_local_images: true
+          toc: true
+      toc:
+          depth_from: 2
+          depth_to: 4
+          ordered: true
+      export_on_save:
+          # html: true
+
+      ### Weave
+      options:
+          ## output settings
+          doctype: github
+          # out_path:
+          fig_path: figs
+          ## default code chunk options
+          # echo: true
+          # results: "markup"
+          # display: false
+          hold: true
+          wrap: false
+          # include: true
+          fig_width: 8
+          fig_height: 5
+          fig_ext: ".svg"
+      ---
+      '''
+    'description':
+      '''
+      Inserts Weave.jl meta settings for generating markdown document,
+      which is supposed to be rendered as HTML with Markdown-Preview-Enhanced after weaving
+      '''
+
+  ## Code blocks
   'Weave.jl: Julia code block':
     'prefix': 'jb'
     'body':
