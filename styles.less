@@ -170,3 +170,44 @@ atom-text-editor.editor {
 .list-tree .selected::before {
   height: 1.5rem;
 }
+
+
+/**
+ * File-Icon style customize
+ */
+@import "packages/file-icons/styles/colours";
+// directories
+.icon[data-name$="data"]:before {
+	font-family: "Octicons Regular";
+	content: "\f043";
+}
+.icon[data-name$="assets"]:before, .icon[data-name$="figs"]:before, .icon[data-name$="figures"]:before {
+	font-family: "Octicons Regular";
+	content: "\f012";
+}
+.icon[data-name$="src"]:before, .icon[data-name$="scripts"]:before, .icon[data-name$="code"]:before {
+	font-family: "Octicons Regular";
+	content: "\f05f";
+}
+.directory > .header > .icon{
+	&[data-path$=".atom/packages"]:before{
+		font-family: "Octicons Regular";
+		content: "\f0c4";
+	}
+}
+// markdowns
+.icon[data-name$=".jmd"]:before {
+	font-family: "Octicons Regular";
+	content: "\f0c9";
+	color: @purple;
+	top: 1px;
+}
+.icon[data-name$=".pmd"]:before {
+	color: @dark-blue;
+}
+.icon[data-name$=".Rmd"]:before {
+	color: @blue;
+}
+.icon[data-name$="Workspace"]:before {
+	color: @purple;
+}
