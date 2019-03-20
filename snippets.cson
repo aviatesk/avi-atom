@@ -406,7 +406,7 @@
       '''
     'description': 'Inserts snippet to ignore TOC and/or preview numberings'
   'MPE: Slide cell':
-    'prefix': 'sl'
+    'prefix': 'sc'
     'body':
       '''
       <!-- slide -->
