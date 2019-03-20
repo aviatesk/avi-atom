@@ -59,7 +59,7 @@
     font-style: normal;
     font-weight: 300;
     src: local('Raleway Light'),
-    local('Raleway-Light'), url(http://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+      local('Raleway-Light'), url(http://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
   }
   @font-face {
     font-family: 'Raleway';
@@ -98,11 +98,31 @@
     background-color: #f6f8fa;
   }
 
+  /** Presentation style */
+  .reveal .slides {
+    p, li, h1, h2, h3, h4, h5, h6 {
+      text-transform: none;
+      text-align: left;
+    }
+    ol, dl, ul {
+      display: block;
+      text-align: left;
+    }
+  }
+  .slides>section:nth-child(1) {
+    h1, h2 {
+      text-align: center;
+    }
+    p {
+      text-align: right;
+    }
+  }
+
 }
 
 /** Sidebar TOC */
 .md-sidebar-toc {
-  font-family: Raleway, 'Yu Gothic', YuGothic, sans-serif;;
+  font-family: Raleway, 'Yu Gothic', YuGothic, sans-serif;
 }
 #sidebar-toc-btn {
   bottom: unset;
