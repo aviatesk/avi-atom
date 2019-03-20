@@ -1,48 +1,79 @@
-###
-# Juno startup code
-###
+#=
+Juno startup code
+=#
 
-### Set Juno-tuned color theme for Plots ###
-module setmyjuno
+module MyJuno
 
 using Juno
-import Plots
-import PlotThemes
-import Statistics
+using OhMyREPL, Crayons
+using OhMyREPL: Passes.SyntaxHighlighter
+using Plots: Colorant, hex, HSV, gr, theme
+using PlotThemes: PlotTheme, expand_palette, add_theme
+using Statistics: mean
 
-function settheme()
+
+function setomrtheme()
+    cs = SyntaxHighlighter.ColorScheme()
     colors = Juno.syntaxcolors()
-    colors = Dict(k => parse(Plots.Colorant, "#"*Plots.hex(colors[k], 6, false)) for (k, v) in colors)
+
+    SyntaxHighlighter.symbol!(cs, Crayon(foreground = colors["symbol"]))
+    SyntaxHighlighter.comment!(cs, Crayon(foreground = colors["comment"]))
+    SyntaxHighlighter.string!(cs, Crayon(foreground = colors["string"]))
+    SyntaxHighlighter.call!(cs, Crayon(foreground = colors["funccall"]))
+    SyntaxHighlighter.op!(cs, Crayon(foreground = colors["operator"]))
+    SyntaxHighlighter.keyword!(cs, Crayon(foreground = colors["keyword"]))
+    SyntaxHighlighter.text!(cs, Crayon(foreground = colors["variable"]))
+    SyntaxHighlighter.macro!(cs, Crayon(foreground = colors["macro"]))
+    SyntaxHighlighter.function_def!(cs, Crayon(foreground = colors["funcdef"]))
+    SyntaxHighlighter.argdef!(cs, Crayon(foreground = colors["type"]))
+    SyntaxHighlighter.number!(cs, Crayon(foreground = colors["number"]))
+
+    SyntaxHighlighter.add!("Atom", cs)
+    OhMyREPL.colorscheme!("Atom")
+end  # function setomrtheme
+
+
+function setplottheme()
+    colors = Juno.syntaxcolors()
+    colors = Dict(k => parse(Colorant, "#"*hex(colors[k], 6, false)) for (k, v) in colors)
     # add my customizes
-    colors["orange"] = parse(Plots.Colorant, "#e9a285")
-    colors["yellow"] = parse(Plots.Colorant, "#f0fb1c")
-    colors["lime"] = parse(Plots.Colorant, "#92ec42")
+    colors["orange"] = parse(Colorant, "#e9a285")
+    colors["yellow"] = parse(Colorant, "#f0fb1c")
+    colors["lime"] = parse(Colorant, "#92ec42")
     juno_palette = unique([color for (k, color) in colors if k ∉ ["background", "variable", "operator"]])
 
-    colvec = sort(Plots.HSV.(juno_palette), lt=(a,b) -> a.h < b.h)
-    filter!(c -> c.s > 0.5 * Statistics.mean(c -> c.s, colvec), colvec)
+    colvec = sort(HSV.(juno_palette), lt=(a,b) -> a.h < b.h)
+    filter!(c -> c.s > 0.5 * mean(c -> c.s, colvec), colvec)
     grad = Vector{eltype(colvec)}(undef, 0)
     for i = 1:length(colvec)-1
         append!(grad, range(colvec[i], stop=colvec[i+1]))
     end
 
-    myjuno = PlotThemes.PlotTheme(
+    myjuno = PlotTheme(
         bg = colors["background"],
         bginside = colors["background"],
         fg = colors["variable"],
         fgtext = colors["variable"],
         fgguide = colors["variable"],
         fglegend = colors["variable"],
-        palette = PlotThemes.expand_palette(colors["background"], juno_palette; lchoices = [57], cchoices = [100]),
+        palette = expand_palette(colors["background"], juno_palette; lchoices = [57], cchoices = [100]),
         gradient = grad)
 
-    PlotThemes.add_theme(:myjuno, myjuno)
-    Plots.gr()
-    Plots.theme(:myjuno)
+    add_theme(:myjuno, myjuno)
+    gr()
+    theme(:myjuno)
 
-end # settheme
+end  # function setplottheme
 
-end # module
+end  # module SetMyJuno
 
-setmyjuno.settheme()
 
+
+#=
+Enters module main below
+=#
+
+
+
+MyJuno.setomrtheme()
+MyJuno.setplottheme()
