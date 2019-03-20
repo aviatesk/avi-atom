@@ -448,7 +448,7 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
 "
 atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
 atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not([mini])
 ":
   'ctrl-c': 'unset!'
