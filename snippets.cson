@@ -1,5 +1,5 @@
 ### Global ###
-'.source':
+'*':
 
   'Global: Backslash \\':
     'prefix': 'bs'
@@ -425,6 +425,15 @@
       ${1:{${2:ignore=True}${3: .ignorenumbering}\\}}$4
       '''
     'description': 'Inserts snippet to ignore TOC and/or preview numberings'
+  'MPE: Comment block':
+    'prefix': 'cmb'
+    'body':
+      '''
+      <!--
+      $1
+      -->
+      '''
+    'description': 'Inserts MPE-style comment block'
   'MPE: Slide cell':
     'prefix': 'sc'
     'body':
@@ -469,7 +478,7 @@
 ### Markdown & RMarkdown ###
 '.text.md':
 
-  # README.md
+  ## README.md - Meta
   'README: Meta settings for README':
     'prefix': 'meta-README'
     'body':
@@ -511,8 +520,7 @@
       '''
     'description': 'Inserts conclusion sections for README'
 
-  # RMarkdown
-  # RMarkdown - meta
+  ## RMarkdown - Meta
   'R-markdown: Meta settings for R-markdown':
     'prefix': 'meta-R-markdown'
     'body':
@@ -544,7 +552,8 @@
       '''
       Inserts meta settings for R-markdown rendering: YAML and knitr settings
       '''
-  # RMarkdown - code blocks
+
+  ## RMarkdown - Code blocks
   'R-markdown: R code block':
     'prefix': 'rb'
     'body':
@@ -663,7 +672,7 @@
 ### pweave ###
 '.source.pweave.md':
 
-  # meta
+  # Meta
   'pweave: Meta settings for pweave (-f markdown)':
     'prefix': 'meta-pweave-markdown'
     'body':
@@ -688,7 +697,7 @@
     'description':
       '''
       Inserts pweave meta settings for generating markdown document,
-      which is supposed to be rendered as HTML with Markdown-Preview-Enhanced
+      which is supposed to be rendered as HTML with Markdown-Preview-Enhanced after weaving
       '''
   'pweave: Meta settings for pweave (-f md2html)':
     'prefix': 'meta-pweave-md2html'
@@ -700,6 +709,8 @@
       $4
       '''
     'description': 'Inserts pweave meta settings for directly weaving pweave document as HTML file (deprecated)'
+
+  ## General
   'pweave: Utilities set-up':
     'prefix': 'pweave-utils'
     'body':
@@ -735,7 +746,7 @@
       - defines function to render pandas.DataFrame beautifully
       '''
 
-  # code blocks
+  ## Code blocks
   'pweave: Python code block':
     'prefix': 'pb'
     'body':
