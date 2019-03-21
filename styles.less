@@ -176,7 +176,7 @@ atom-text-editor.editor {
  * File-Icon style customize
  */
 @import "packages/file-icons/styles/colours";
-// directories
+// Directories
 .icon[data-name$="data"]:before {
 	font-family: "Octicons Regular";
 	content: "\f043";
@@ -195,17 +195,21 @@ atom-text-editor.editor {
 		content: "\f0c4";
 	}
 }
-// markdowns
-.icon[data-name$=".jmd"]:before {
+// Markdowns
+.icon[data-name$="README.md"]:before { // README.md
+	font-family: "Octicons Regular";
+	content: "\f00a";
+}
+.icon[data-name$=".jmd"]:before { // Weave.jl
 	font-family: "Octicons Regular";
 	content: "\f0c9";
 	color: @purple;
-	top: 1px;
+	font-size: 16px;
 }
-.icon[data-name$=".pmd"]:before {
+.icon[data-name$=".pmd"]:before { // pweave document
 	color: @dark-blue;
 }
-.icon[data-name$=".Rmd"]:before {
+.icon[data-name$=".Rmd"]:before { // RMarkdown
 	color: @blue;
 }
 // Cson

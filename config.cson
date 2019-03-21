@@ -51,13 +51,16 @@
     audioBeep: false
     autoHideMenuBar: true
     customFileTypes:
+      "source.gfm": [
+        "README.md"
+      ]
       "text.md": [
+        "md"
         "Rmd"
         "rmd"
       ]
     disabledPackages: [
       "markdown-preview"
-      "language-gfm"
       "spell-check"
       "julia-client"
       "latex-completions"
@@ -143,6 +146,8 @@
       yapf:
         enabled: true
     python: "C:\\Users\\aviat\\Anaconda3\\envs\\ml\\python.exe"
+  "language-markdown":
+    disableLanguageGfm: false
   "language-weave":
     showPreview: false
   "markdown-preview-enhanced":

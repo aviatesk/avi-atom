@@ -10,7 +10,6 @@ All values for the other Per-project configs are set as default
   core:
     disabledPackages: [
       "markdown-preview"
-      "language-gfm"
       "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
       # Enable Julia packages ! #
       # "julia-client"

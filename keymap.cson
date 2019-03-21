@@ -418,8 +418,9 @@
 "
 atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
 ":
   'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
 
@@ -464,9 +465,10 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not
 
 ## Markdown
 "
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
 ":
   ## Dqs-Shell-Commands: Process .pmd & .Rmd documents (Same as Script)
   # The appropriate shell command to process either pweave document or R-markdown gonna be automatically detected
@@ -519,6 +521,7 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
   'ctrl-m r': 'markdown-writer:jump-to-reference-definition'
   'alt-r': 'markdown-writer:jump-to-reference-definition'
   'ctrl-m ctrl-m': 'markdown-writer:jump-to-next-table-cell'
+  'ctrl-m ctrl-l': 'markdown-writer:open-link-in-browser'
   'alt-m': 'markdown-writer:jump-to-next-table-cell'
   'ctrl-v': 'markdown-writer:insert-image-clipboard'
   'ctrl-shift-b': 'markdown-writer:open-link-in-browser'
