@@ -253,6 +253,8 @@
       runInsertedText: false
   "tree-view":
     squashDirectoryNames: true
+  "tree-view-autoresize":
+    padding: 10
   "tree-view-git-status":
     gitFlow: {}
   "uber-juno":
