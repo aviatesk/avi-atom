@@ -24,6 +24,15 @@
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-shift-tab': 'pane:show-previous-item'
 
+  ## macOS specific fix
+  # mimic Windows keybindings
+  'ctrl-z': 'core:undo'
+  'ctrl-shift-z': 'core:redo'
+  'ctrl-shift-n': 'application:new-window'
+  'ctrl-shift-t': 'pane:reopen-closed-item'
+  # use cmd as alt
+  'cmd-w': 'emacs-plus:copy'
+
 
 
 ### All the atom-workspace ###
@@ -36,7 +45,6 @@
   'alt-,': 'key-binding-resolver:toggle'
   'alt-b': 'window:toggle-bottom-dock'
   'f5': 'window:reload'
-  'f11': 'window:toggle-full-screen'
   'ctrl-x ctrl-c': 'window:close'
 
   ## file, project
@@ -141,6 +149,38 @@
   ## Zen
   'alt-z': 'zen:toggle'
 
+  ## macOS specific fix
+  # mimic Windows keybindings
+  'f12': 'window:toggle-full-screen'
+  'ctrl-backspace': 'editor:delete-to-beginning-of-word'
+  # use cmd as alt
+  'cmd-x': 'command-palette:toggle'
+  'cmd-,': 'key-binding-resolver:toggle'
+  'cmd-b': 'window:toggle-bottom-dock'
+  'cmd-t': 'tree-view:toggle'
+  'ctrl-cmd-u': 'window:move-active-item-to-pane-above'
+  'ctrl-cmd-l': 'window:move-active-item-to-pane-on-right'
+  'ctrl-cmd-b': 'window:move-active-item-to-pane-below'
+  'ctrl-cmd-k': 'window:move-active-item-to-pane-on-left'
+  'cmd-y': 'window:toggle-right-dock'
+  'cmd-l': 'window:toggle-right-dock'
+  'cmd-b': 'window:toggle-bottom-dock'
+  'cmd-down': 'window:toggle-bottom-dock'
+  'cmd-right': 'window:toggle-right-dock'
+  'cmd-left': 'window:toggle-left-dock'
+  'cmd-q': 'dqs-shell-commands-config:toggle'
+  'cmd-h': 'github:toggle-git-tab'
+  'cmd-shift-h': 'github:toggle-github-tab'
+  'cmd-r': 'window:toggle-bottom-dock'
+  'cmd-d': 'window:toggle-bottom-dock'
+  'cmd-o': 'window:focus-pane-on-left'
+  'cmd-k': 'window:toggle-bottom-dock'
+  'ctrl-cmd-o': 'window:focus-pane-on-left'
+  'cmd-:': 'termination:toggle'
+  'cmd-z': 'zen:toggle'
+
+
+
 ### Per-mode settings -- NOT IN atom-editor-space ###
 
 ## Tree-View
@@ -206,8 +246,23 @@
   # unsets
   'i': 'unset!'
 
+  ## macOS specific fix
+  # use cmd as alt
+  'cmd-t': 'tree-view:toggle'
+  'cmd-w': 'tree-view:copy'
+  'cmd-c': 'tree-view:copy-project-path'
+  'ctrl-cmd-c': 'tree-view:copy-full-path'
 
 ## Git ##
+'.workspace':
+  ## Git commands
+  'alt-g c': 'git-plus:checkout'
+  'alt-g s': 'git-plus:stash-save'
+  'alt-g shift-s': 'git-plus:stash-pop'
+  ## macOS specific fix
+  'cmd-g c': 'git-plus:checkout'
+  'cmd-g s': 'git-plus:stash-save'
+  'cmd-g shift-s': 'git-plus:stash-pop'
 '.github-StagingView':
   ## movements
   'o': 'core:move-up'
@@ -224,10 +279,17 @@
   'ctrl-;': 'core:move-left'
   'enter': 'github:jump-to-file'
   'ctrl-enter': 'github:jump-to-file'
+  ## macOS specific fix
+  'ctrl-backspace': 'github:discard-changes-in-selected-files'
 '.github-StagingView.unstaged-changes-focused':
   ## operations
   'ctrl-m': 'core:confirm'
   'ctrl-alt-m': 'github:stage-all-changes'
+  ## macOS specific fix
+  # mimic Windows keybindings
+  'ctrl-backspace': 'github:discard-changes-in-selected-files'
+  # use cmd as alt
+  'ctrl-cmd-m': 'github:stage-all-changes'
 '.github-FilePatchView atom-text-editor:not([mini])':
   ## movements
   'o': 'core:move-up'
@@ -248,6 +310,11 @@
   'n': 'github:select-next-hunk'
   'ctrl-o': 'github:select-previous-hunk'
   'ctrl-n': 'github:select-next-hunk'
+## macOS-specific fix
+# mimic Windows keybindings
+'.github-CommitView-editor atom-text-editor:not([mini])':
+  'ctrl-enter': 'github:commit'
+
 ## Termination
 ".termination .terminal":
   'alt-backspace': 'editor:delete-to-beginning-of-word'
@@ -264,6 +331,22 @@
   'alt-x': 'command-palette:toggle'
   'alt-t': 'tree-view:toggle-focus'
   'alt-h': 'github:toggle-git-tab-focus'
+  ## macOS specific fix
+  # use cmd as alt
+  'cmd-backspace': 'editor:delete-to-beginning-of-word'
+  'cmd-1': 'termination:insert-custom-text-1' # Renew ~/.atom/my-packages.txt from bash
+  'cmd-2': 'termination:insert-custom-text-2' # Process .pmd or .Rmd file from bash
+  'cmd-"': 'termination:insert-custom-text-3' # Process .pmd or .Rmd file from command prompt
+  'cmd-v': 'termination:paste'
+  'cmd-i': 'termination:insert-text'
+  'cmd-n': 'termination:new'
+  'cmd-k': 'termination:prev'
+  'cmd-l': 'termination:next'
+  'cmd-w': 'termination:close'
+  'cmd-r': 'termination:rename'
+  'cmd-x': 'command-palette:toggle'
+  'cmd-t': 'tree-view:toggle-focus'
+  'cmd-h': 'github:toggle-git-tab-focus'
 
 ## Advanced-open-file
 '.advanced-open-file atom-text-editor':
@@ -275,6 +358,7 @@
   'ctrl-:': 'advanced-open-file:autocomplete'
   'ctrl-d': 'advanced-open-file:delete-path-component'
   'ctrl-z': 'advanced-open-file:undo'
+
 
 
 ### All the atom-text-editor space, including mini(one-line) editor space ###
@@ -327,6 +411,32 @@
   'ctrl-x shift-r': 'script:run-options'
   'ctrl-x ctrl-r': 'script:run-with-profile'
 
+  ## macOS specific
+  # doesn't work
+  # 'ctrl-right': 'pane:show-next-item'
+  # 'ctrl-left': 'pane:show-previous-item'
+  # mimic Windows keybindings
+  'ctrl-shift-a': 'unset!'
+  'ctrl-alt-right': 'pane:move-item-right'
+  'ctrl-alt-left': 'pane:move-item-left'
+  'ctrl-[': 'editor:outdent-selected-rows'
+  'ctrl-]': 'editor:indent-selected-rows'
+  'ctrl-/': 'editor:toggle-line-comments'
+  'ctrl-backspace': 'editor:delete-to-beginning-of-word'
+  # use cmd as alt
+  'cmd-j': 'emacs-plus:kill-word'
+  'cmd-y': 'window:toggle-right-dock'
+  'cmd-l': 'window:toggle-right-dock'
+  'cmd-b': 'window:toggle-bottom-dock'
+  'cmd-t': 'tree-view:toggle'
+  'cmd-ctrl-g': 'github:view-unstaged-changes-for-current-file'
+  'cmd-shift-g': 'github:view-staged-changes-for-current-file'
+  'cmd-shift-t': 'git-time-machine:toggle'
+  'ctrl-cmd-p': 'git-diff:move-to-previous-diff'
+  'ctrl-cmd-n': 'git-diff:move-to-next-diff'
+  'ctrl-cmd-right': 'pane:move-item-right'
+  'ctrl-cmd-left': 'pane:move-item-left'
+
 
 
 ### Atom-text-editor space, not including mini(one-line) editor space ###
@@ -361,6 +471,16 @@
 
   ## Split-diff
   'alt-s': 'split-diff:toggle'
+
+  ## macOS specific fix
+  # use cmd as alt
+  'ctrl-cmd-c': 'color-picker:open'
+  'cmd-down': 'unset!'
+  'cmd-right': 'unset!'
+  'cmd-left': 'unset!'
+  'cmd-h': 'github:toggle-git-tab-focus'
+  'cmd-shift-h': 'github:toggle-github-tab-focus'
+  'cmd-s': 'split-diff:toggle'
 
 
 
@@ -397,6 +517,14 @@
   'alt-n': 'find-and-replace:find-next-selected'
   'ctrl-x a': 'find-and-replace:find-all'
   'alt-i': 'termination:insert-selected-text'
+  ## macOS specific fix
+  # use cmd as alt
+  'ctrl-cmd-[': 'editor:fold-selection'
+  'ctrl-cmd-]': 'editor:unfold-current-row'
+  'cmd-a': 'emacs-plus:append-next-kill'
+  'cmd-o': 'find-and-replace:find-previous-selected'
+  'cmd-n': 'find-and-replace:find-next-selected'
+  'cmd-i': 'termination:insert-selected-text'
 
 ## Find and Replace
 '.platform-win32 atom-text-editor':
@@ -409,6 +537,10 @@
 '.split-diff':
   'ctrl-alt-p': 'split-diff:prev-diff'
   'ctrl-alt-n': 'split-diff:next-diff'
+  ## macOS specific fix
+  # use cmd as alt
+  'ctrl-cmd-p': 'split-diff:prev-diff'
+  'ctrl-cmd-n': 'split-diff:next-diff'
 
 ## Autocomplete-plus
 'atom-workspace atom-text-editor:not(mini).emacs-plus.autocomplete-active':
@@ -445,6 +577,14 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
   'alt-i': 'hydrogen:toggle-inspector'
   'alt-o': 'hydrogen:toggle-output-area'
   'alt-k': 'hydrogen:toggle-kernel-monitor'
+  ## macOS specific fix
+  # use cmd as alt
+  'cmd-enter': 'hydrogen:run-cell'
+  'cmd-shift-enter': 'hydrogen:run-cell-and-move-down'
+  'ctrl-cmd-shift-enter': 'hydrogen:run-all'
+  'cmd-i': 'hydrogen:toggle-inspector'
+  'cmd-o': 'hydrogen:toggle-output-area'
+  'cmd-k': 'hydrogen:toggle-kernel-monitor'
 "
 atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini]),
@@ -461,6 +601,10 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not
   'ctrl-shift-enter': 'hydrogen:run-and-move-down'
   'alt-enter': 'hydrogen:run'
   'alt-shift-enter': 'hydrogen:run-and-move-down'
+  ## macOS specific fix
+  # use cmd as alt
+  'cmd-enter': 'hydrogen:run'
+  'cmd-shift-enter': 'hydrogen:run-and-move-down'
 
 ## Markdown
 "
@@ -522,6 +666,13 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
   'alt-m': 'markdown-writer:jump-to-next-table-cell'
   'ctrl-v': 'markdown-writer:insert-image-clipboard'
   'ctrl-shift-b': 'markdown-writer:open-link-in-browser'
+  ## macOS specific fix
+  # use cmd as alt
+  'ctrl-cmd-o': 'document-outline:toggle'
+  'cmd-p': 'markdown-writer:jump-to-previous-heading'
+  'cmd-n': 'markdown-writer:jump-to-next-heading'
+  'cmd-r': 'markdown-writer:jump-to-reference-definition'
+  'cmd-m': 'markdown-writer:jump-to-next-table-cell'
 '.markdown-writer atom-text-editor[mini]':
   'enter': 'core:confirm'
   'ctrl-m': 'core:confirm'
@@ -564,6 +715,26 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   ## Ink-terminal
   'ctrl-:': 'julia-client:focus-last-terminal'
   'alt-b': 'julia-client:focus-last-terminal'
+  ## macOS specific fix
+  # use cmd as alt
+  'cmd-o': 'julia-client:open-console'
+  'cmd-i': 'julia-client:show-documentation'
+  'cmd-r': 'julia-client:goto-symbol'
+  'cmd-p': 'julia-client:prev-cell'
+  'cmd-n': 'julia-client:next-cell'
+  'cmd-j': 'unset!'
+  'cmd-j ctrl-s': 'julia-client:start-julia'
+  'cmd-j ctrl-c': 'julia-client:interrupt-julia'
+  'cmd-j ctrl-k': 'julia-client:kill-julia'
+  'cmd-j l': 'julia-client:clear-console'
+  'cmd-j w': 'julia-client:open-workspace'
+  'cmd-j p': 'julia-client:open-plot-pane'
+  'cmd-j ,': 'julia-client:settings'
+  'ctrl-shift-enter': 'julia-client:run-and-move'
+  'cmd-enter': 'julia-client:run-cell'
+  'cmd-shift-enter': 'julia-client:run-cell-and-move'
+  'ctrl-cmd-shift-enter': 'julia-client:run-file'
+  'cmd-b': 'julia-client:focus-last-terminal'
 "
 atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-mode:not([mini])
@@ -581,6 +752,11 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'alt-enter': 'julia-client:run-block'
   'alt-shift-enter': 'julia-client:run-and-move'
   'ctrl-alt-shift-enter': 'julia-client:run-file'
+  ## macOS specific fix
+  # use cmd as alt
+  'cmd-enter': 'julia-client:run-block'
+  'cmd-shift-enter': 'julia-client:run-and-move'
+  'ctrl-cmd-shift-enter': 'julia-client:run-file'
 "ink-terminal":
   'ctrl-:': 'julia-client:focus-last-editor'
   'alt-b': 'julia-client:focus-last-editor'
@@ -598,6 +774,13 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'alt-:': 'termination:toggle'
   'ctrl-@': 'termination:focus'
   'alt-h': 'github:toggle-git-tab'
+  ## macOS specific fix:
+  # use cmd as alt
+  'cmd-b': 'julia-client:focus-last-editor'
+  'cmd-w': 'ink-terminal:copy'
+  'cmd-t': 'tree-view:toggle'
+  'cmd-:': 'termination:toggle'
+  'cmd-h': 'github:toggle-git-tab'
 "ink-terminal .search .searchinput atom-text-editor":
   'ctrl-r': 'ink-terminal:find-previous'
   'ctrl-s': 'ink-terminal:find-next'
@@ -621,6 +804,15 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'alt-r': 'find-references:activate'
   # Outline view
   'ctrl-alt-o': 'outline-view:toggle'
+  ## macOS specific fix
+  # use cmd as alt
+  'cmd-d': 'diagnostics:toggle-table'
+  'cmd-p': 'diagnostics:go-to-previous-diagnostic'
+  'cmd-end': 'diagnostics:go-to-first-diagnostic'
+  'cmd-n': 'diagnostics:go-to-next-diagnostic'
+  'cmd-home': 'diagnostics:go-to-last-diagnostic'
+  'cmd-r': 'find-references:activate'
+  'ctrl-cmd-o': 'outline-view:toggle'
 
 ## HTML
 "atom-workspace atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
@@ -633,7 +825,6 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'ctrl-c ctrl-f': 'atom-beautify:beautify-language-css'
 "atom-workspace atom-text-editor[data-grammar='source css less'].emacs-plus.mark-mode:not([mini])":
   'ctrl-c ctrl-f': 'atom-beautify:beautify-language-less'
-
 
 
 
@@ -677,3 +868,5 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'ctrl-x ctrl-u': 'unset!'
   'ctrl-x ctrl-l': 'unset!'
   'alt-q': 'unset!'
+  ## macOS specific fix
+  'cmd-q': 'unset!'
