@@ -1,15 +1,92 @@
 /**
+ * Set "Folding Screen of Flower and Birds of the Four Seasons", Sesshu as background image
+ */
+@background-image: url("/Users/aviat/.atom/assets/shikikacho-zubyobu-v1.jpg") no-repeat fixed;
+// @background-image: url("C:/Users/aviat/.atom/assets/shikikacho-zubyobu-v1.jpg") no-repeat fixed right bottom;
+@background-color-editor: rgba(45, 45, 45, 0.9);
+@background-color-frame: rgba(25, 25, 25, 0.9);
+@background-color-gutter: rgba(35, 35, 35, 0.9);
+atom-workspace {
+  background: @background-image;
+  atom-pane {
+    background-color: transparent;
+    atom-text-editor {
+      background-color: @background-color-editor  !important;
+    }
+  }
+  .pane {
+    opacity: 0.85;
+  }
+  .pane.active {
+    opacity: 0.95;
+  }
+  .tool-panel {
+    background: @background-image;
+    background-color: @background-color-frame;
+    border-bottom: 2px solid @background-color-frame;
+  }
+  .tab-bar {
+    .tab {
+      background-color: @background-color-frame  !important;
+    }
+    .tab.active {
+      background-color: @background-color-gutter  !important;
+    }
+    .tab.active[data-type="TreeView"] {
+      background-color: @background-color-frame  !important;
+    }
+  }
+  .termination {
+    .xterm {
+      background: @background-image;
+      background-color: @background-color-gutter;
+      padding: 0 !important;
+    }
+    .input-block {
+      padding: 0 !important;
+    }
+    .btn-toolbar {
+      // display: none !important;
+      background-color: @background-color-frame  !important;
+    }
+  }
+  .git-time-machine {
+    background-color: @background-color-gutter  !important;
+    .stats {
+      margin-bottom: 0 !important;
+    }
+  }
+  .find-and-replace,
+  .gutter,
+  .key-binding-resolver,
+  .panel-body,
+  .split-diff-ui {
+    background-color: @background-color-gutter  !important;
+  }
+  .datatip-marked-container,
+  .datatip-pin-button,
+  .panel-heading,
+  .status-bar,
+  .tab-bar,
+  .tree-view {
+    background-color: @background-color-frame  !important;
+  }
+}
+
+
+/**
  * Fine-tune Ariake-Dark-Syntax
  */
-@selected: rgba(63, 17, 175, 0.25);
-@selected-focused: rgba(63, 17, 175, 0.5);
+@selected: rgba(63, 17, 175, 0.15);
+@selected-focused: rgba(63, 17, 175, 0.30);
 @current: rgba(24, 17, 168, 0.25);
 @current-focused: rgba(24, 17, 168, 0.5);
 @cursor: rgba(255, 255, 255, 0.85);
-@matched: rgb(63, 17, 175);
-@pane-frame: rgba(63, 17, 175, 0.75);
+@matched: rgba(63, 17, 175, 0.75);
+@pane-frame: rgba(63, 17, 175, 0.50);
+@minimap-current: rgba(255, 255, 255, 0.75);
 @minimap-scroll-indicator: rgba(255, 255, 255, 0.75);
-@hydrogen-cell: rgb(35, 38, 46);
+@hydrogen-cell: rgba(35, 35, 35, 0.9);
 atom-text-editor.editor {
   // Highlight-Selection style
   .highlights {
@@ -75,7 +152,7 @@ atom-text-editor.editor.is-focused {
     background: @selected;
   }
   .cursor-line {
-    background: @current-focused;
+    background: @minimap-current;
   }
 }
 atom-text-editor atom-text-editor-minimap {
@@ -211,4 +288,9 @@ atom-text-editor.editor {
 }
 .icon[data-name$=".Rmd"]:before { // RMarkdown
 	color: @blue;
+}
+// Cson
+.icon[data-name$=".cson"]:before {
+	font-family: file-icons;
+	content: "\eabe";
 }
