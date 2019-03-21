@@ -10,20 +10,20 @@ commands: [
       "styles.less"
     ]
     options:
-      cwd: "C:\\Users\\aviat\\.atom\\"
+      cwd: "/Users/aviat/.atom"
       closeWhenFinished: true
       keymap: 'ctrl-x z'
   }
   {
     name: "shiki-style"
-    command: "git"
+    command: "/usr/local/bin/git"
     arguments: [
       "checkout"
       "shiki-style"
       "styles.less"
     ]
     options:
-      cwd: "C:\\Users\\aviat\\.atom\\"
+      cwd: "/Users/aviat/.atom"
       closeWhenFinished: true
       keymap: 'ctrl-x ctrl-z'
   }
@@ -31,10 +31,10 @@ commands: [
   # Create per-project configs
   {
     name: "create-project-config"
-    command: "python"
+    command: "python3"
     arguments: [
-      "C:\\Users\\aviat\\.atom\\scripts\\create-config.py"
-      "C:\\Users\\aviat\\.atom\\scripts\\general.cson"
+      "/Users/aviat/.atom/scripts/create-config.py"
+      "/Users/aviat/.atom/scripts/general.cson"
     ]
     options:
       cwd: "{ProjectDir}"
@@ -44,10 +44,10 @@ commands: [
   # Create Julia-project configs
   {
     name: "create-julia-project-config"
-    command: "python"
+    command: "python3"
     arguments: [
-      "C:\\Users\\aviat\\.atom\\scripts\\create-config.py"
-      "C:\\Users\\aviat\\.atom\\scripts\\julia.cson"
+      "/Users/aviat/.atom/scripts/create-config.py"
+      "/Users/aviat/.atom/scripts/julia.cson"
     ]
     options:
       cwd: "{ProjectDir}"
@@ -55,11 +55,11 @@ commands: [
   }
 
   # Process pweave document or R-markdown
-  # The specified .bat file will automatically detect the file type,
+  # The specified .bat/.sh file will automatically detect the file type,
   #  and then run processing command accordingly.
   {
     name: "process-md"
-    command: "C:\\Users\\aviat\\.atom\\scripts\\process-md.bat"
+    command: "/Users/aviat/.atom/scripts/process-md.sh"
     arguments: [
       "{FileName}"
     ]
@@ -69,7 +69,7 @@ commands: [
   }
   {
     name: "process-md-remain"
-    command: "C:\\Users\\aviat\\.atom\\scripts\\process-md.bat"
+    command: "/Users/aviat/.atom/scripts/process-md.sh"
     arguments: [
       "{FileName}"
     ]

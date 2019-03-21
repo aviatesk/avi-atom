@@ -57,7 +57,7 @@ All values for the other Per-project configs are set as default
     firstBoot: false
     juliaOptions:
       optimisationLevel: 2 # Increasing to 3 produces slower completions but faster code, and decreasing to 1 vice versa
-    juliaPath: "C:\\Users\\aviat\\AppData\\Local\\Julia-1.0.3\\bin\\julia.exe"
+    juliaPath: "julia"
     uiOptions:
       enableMenu: true
       enableToolBar: true
