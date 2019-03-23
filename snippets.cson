@@ -101,6 +101,16 @@
       =#
       '''
     'description': 'Inserts comment block'
+  'Julia: Document':
+    'prefix': 'doc'
+    'body':
+      '''
+      """
+          $1
+
+      ${2:doc}
+      """
+      '''
 
   ## Base
   'Base: print':
@@ -128,7 +138,7 @@
       @linq ${1:df} |>
           $2
       '''
-    'description': 'Inserts @linq pipe line'
+    'description': 'Inserts @linq pipe line block'
 
   ## Julia-Client
   'Julia-Client: Code cell':
@@ -272,10 +282,58 @@
     'description': 'Inserts Hydrogen code cell'
 
 
-### Markdowns (Markdown, Weave.jl, pweave, RMarkdown) ###
-'.source.pweave.md, .source.weave.md, .text.md':
+### Markdown families: GFM, Markdown (including RMarkdown), Weave.jl, pweave ###
+'.source.gfm, .text.md, .source.weave.md, .source.pweave.md':
 
-  ## Insertions
+  'Markdown: Header':
+    'prefix': 'h'
+    'body':
+      '''
+      ${1:#} ${2:HEADER}
+      '''
+    'description': 'Inserts general header'
+  'Markdown: H1':
+    'prefix': 'h1'
+    'body':
+      '''
+      # ${1:H1}
+      '''
+    'description': 'Inserts H1 header'
+  'Markdown: H2':
+    'prefix': 'h2'
+    'body':
+      '''
+      ## ${1:H2}
+      '''
+    'description': 'Inserts H2 header'
+  'Markdown: H3':
+    'prefix': 'h3'
+    'body':
+      '''
+      ### ${1:H3}
+      '''
+    'description': 'Inserts H3 header'
+  'Markdown: H4':
+    'prefix': 'h4'
+    'body':
+      '''
+      #### ${1:H4}
+      '''
+    'description': 'Inserts H4 header'
+  'Markdown: H5':
+    'prefix': 'h5'
+    'body':
+      '''
+      ##### ${1:H5}
+      '''
+    'description': 'Inserts H5 header'
+  'Markdown: H6':
+    'prefix': 'h6'
+    'body':
+      '''
+      ###### ${1:H6}
+      '''
+    'description': 'Inserts H6 header'
   'Markdown: Code block':
     'prefix': 'cb'
     'body':
@@ -289,6 +347,15 @@
     'prefix': 'ci'
     'body': '`$1`'
     'description': 'Inserts general inline code block'
+  'Markdown: Comment block':
+    'prefix': 'cmb'
+    'body':
+      '''
+      <!--
+      $1
+      -->
+      '''
+    'description': 'Inserts comment block'
   'Markdown: Image file':
     'prefix': 'img'
     'body':
@@ -301,7 +368,11 @@
     'body': "<br>$1"
     'description': 'Inserts break line'
 
-  ## Markdown-Preview-Enhanced
+
+### MPE: HTML rendering, Styling, Enhancements & MathJax support ###
+'.text.md, .source.weave.md, .source.pweave.md':
+
+  ## HTML rendering
   'MPE: Meta settings for HTML rendering':
     'prefix': 'meta-md2html'
     'body':
@@ -319,12 +390,14 @@
       ---$7
       '''
     'description': 'Inserts YAML for rendering HTML from Markdown with MPE'
+
+  ## Styling
   'MPE: Numbering sections from H1':
     'prefix': 'numbering-from-h1'
     'body':
       '''
       <!-- Importing styles for numbering sections from H1 -->
-      <!-- @import "/Users/aviat/.atom/mpe-styles/numbering-from-h1.less" -->
+      <!-- @import "C:/Users/aviat/.atom/mpe-styles/numbering-from-h1.less" -->
       '''
     'description':
       '''
@@ -337,7 +410,7 @@
     'body':
       '''
       <!-- Importing styles for numbering sections from H2 -->
-      <!-- @import "/Users/aviat/.atom/mpe-styles/numbering-from-h2.less" -->
+      <!-- @import "C:/Users/aviat/.atom/mpe-styles/numbering-from-h2.less" -->
       '''
     'description':
       '''
@@ -345,18 +418,32 @@
       # H1 gonna be ignored from numbering, assuming it is used as a title.
       E.g.) README.md
       '''
-  'MPE: Fancy One-Dark Theme':
-    'prefix': 'one-dark-fancy'
+  'MPE: Fancy github-light Theme':
+    'prefix': 'fancy-github-light'
     'body':
       '''
-      <!-- Importing fancy One-Dark theme -->
-      <!-- @import "/Users/aviat/.atom/mpe-styles/fancy-one-dark.less" -->
+      <!-- Importing fancy github-light theme -->
+      <!-- @import "C:/Users/aviat/.atom/mpe-styles/fancy-github-light.less" -->
       '''
     'description':
       '''
-      Imports .less sheet of fancier One-Dark preview theme.
+      Imports .less sheet of fancier github-light preview theme.
+      Colors headers fancily according to github-light theme.
+      '''
+  'MPE: Fancy one-dark Theme':
+    'prefix': 'fancy-one-dark'
+    'body':
+      '''
+      <!-- Importing fancy one-dark theme -->
+      <!-- @import "C:/Users/aviat/.atom/mpe-styles/fancy-one-dark.less" -->
+      '''
+    'description':
+      '''
+      Imports .less sheet of fancier one-dark preview theme.
       Colors headers fancily and modifies table coloring to match One-Dark theme.
       '''
+
+  ## Enhancements
   'MPE: Table of Contents':
     'prefix': 'toc'
     'body':
@@ -376,48 +463,6 @@
       ${1:#} ${2:HEADER}${3: {${4:ignore=True}${5: .ignorenumbering}\\}}$6
       '''
     'description': 'Inserts general header'
-  'MPE: H1':
-    'prefix': 'h1'
-    'body':
-      '''
-      # ${1:H1}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H1 header'
-  'MPE: H2':
-    'prefix': 'h2'
-    'body':
-      '''
-      ## ${1:H2}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H2 header'
-  'MPE: H3':
-    'prefix': 'h3'
-    'body':
-      '''
-      ### ${1:H3}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H3 header'
-  'MPE: H4':
-    'prefix': 'h4'
-    'body':
-      '''
-      #### ${1:H4}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H4 header'
-  'MPE: H5':
-    'prefix': 'h5'
-    'body':
-      '''
-      ##### ${1:H5}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H5 header'
-  'MPE: H6':
-    'prefix': 'h6'
-    'body':
-      '''
-      ###### ${1:H6}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H6 header'
   'MPE: Ignore Numberings':
     'prefix': 'ignores'
     'body':
@@ -425,15 +470,6 @@
       ${1:{${2:ignore=True}${3: .ignorenumbering}\\}}$4
       '''
     'description': 'Inserts snippet to ignore TOC and/or preview numberings'
-  'MPE: Comment block':
-    'prefix': 'cmb'
-    'body':
-      '''
-      <!--
-      $1
-      -->
-      '''
-    'description': 'Inserts MPE-style comment block'
   'MPE: Slide cell':
     'prefix': 'sc'
     'body':
@@ -443,7 +479,7 @@
       '''
     'description': 'Inserts slide cell with MPE-previewing'
 
-  ## MathJax rendering
+  ## MathJax support
   'MathJax: Inline MathJax block':
     'prefix': 'mi'
     'body': "\$${1:expr}\$"
@@ -475,25 +511,24 @@
     'description': 'Inserts \\rm (italic-cancelled) section'
 
 
-### Markdown & RMarkdown ###
-'.text.md':
+### GFM ###
+'.source.gfm':
 
-  ## README.md - Meta
-  'README: Meta settings for README':
-    'prefix': 'meta-README'
+  ## GFM
+  'GFM: Table of Contents':
+    'prefix': 'toc'
     'body':
       '''
-      ---
-      markdown:
-        image_dir: /assets
-        path: ${1:README.md}
-        ignore_from_front_matter: true
-        absolute_image_path: false
-      export_on_save:
-          markdown: true
-      ---
+      <h2> TOC </h2>
+
+      <!-- @import "[TOC]" {cmd="toc" depthFrom=${1:2} depthTo=${2:3} orderedList=${3:false}} -->
       '''
-    'description': 'Inserts meta settings for writting README'
+    'description':
+      '''
+      Creates code chunk for auto-generating TOC via MPE-previewing (tuned for GFM rendering)
+      '''
+
+  ## README.md
   'README: Conclusion':
     'prefix': 'conclusion-README'
     'body':
@@ -511,93 +546,9 @@
       ## Author
 
       - **KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk]
-
-
-
-      <!-- ## links -->
-
       [aviatesk]: https://github.com/aviatesk
       '''
     'description': 'Inserts conclusion sections for README'
-
-  ## RMarkdown - Meta
-  'R-markdown: Meta settings for R-markdown':
-    'prefix': 'meta-R-markdown'
-    'body':
-      '''
-      ---
-      title: ${1:Title}
-      subtitle: ${2:# Subtitle}
-      author: ${3:KADOWAKI, Shuhei}
-      date: ${4:Date}
-      output:
-        html_document:
-          toc: true
-          toc_float: true
-          number_sections: true
-          theme: cosmo
-          code_folding: show
-          df_print: paged
-      ---
-      ```{r echo=FALSE}
-      ### Setting the global code chunk options ###
-      # Args
-      #   comment='': won't append any string to the start of each line of results
-      #   fig.align='center': align figures to the center of document
-      knitr::opts_chunk$set(comment="", fig.align="center")
-      ```
-      $5
-      '''
-    'description':
-      '''
-      Inserts meta settings for R-markdown rendering: YAML and knitr settings
-      '''
-
-  ## RMarkdown - Code blocks
-  'R-markdown: R code block':
-    'prefix': 'rb'
-    'body':
-      '''
-      ```{r}
-      $1
-      ```
-      '''
-    'description': 'Inserts R code block'
-  'R-markdown: R inline code block':
-    'prefix': 'ri'
-    'body':
-      '''
-      `r $1`
-      '''
-    'description': 'Inserts R inline code block'
-  'R-markdown: R code block (multiple plots)':
-    'prefix': 'rbmp'
-    'body':
-      '''
-      ```{r fig.show="hold", out.width="50%", out.height="100%", fig.align="default"}
-      ${1:# This options puts 2 plots horizontally}
-      ```
-      '''
-    'description': 'Inserts R code block for rendering multiple plots in one figure'
-  'R-markdown: R code block (data.frame)':
-    'prefix': 'rbd'
-    'body':
-      '''
-      ```{r rows.print=5, max.print=25}
-      ${1:# only the first 25 rows gonna be rendered (5 rows per page)}
-      ${2:data.frame}
-      ```
-      '''
-    'description': 'Inserts R code block for rendering data.frame object with df_print set'
-  'R-markdown: R code block (full default options)':
-    'prefix': 'rbfull'
-    'body':
-      '''
-      ```{r echo=TRUE, eval=TRUE, results="markup", fig.show="asis", fig.cap=NULL, fig.align="default", out.width=NULL, out.height=NULL, include=TRUE, warning=FALSE, comment=""}
-      $1
-      ```
-      '''
-    'description': 'Inserts R code block with full options set to default values'
 
 
 ### Weave.jl ###
@@ -644,7 +595,7 @@
       which is supposed to be rendered as HTML with Markdown-Preview-Enhanced after weaving
       '''
 
-  ## Code blocks
+  ## Code block
   'Weave.jl: Julia code block':
     'prefix': 'jb'
     'body':
@@ -746,7 +697,7 @@
       - defines function to render pandas.DataFrame beautifully
       '''
 
-  ## Code blocks
+  ## Code block
   'pweave: Python code block':
     'prefix': 'pb'
     'body':
@@ -795,6 +746,89 @@
       ```
       '''
     'description': 'Inserts Python code block with full options set to default values'
+
+
+### RMarkdown ###
+'.text.md':
+
+  ## Meta
+  'R-markdown: Meta settings for R-markdown':
+    'prefix': 'meta-R-markdown'
+    'body':
+      '''
+      ---
+      title: ${1:Title}
+      subtitle: ${2:# Subtitle}
+      author: ${3:KADOWAKI, Shuhei}
+      date: ${4:Date}
+      output:
+        html_document:
+          toc: true
+          toc_float: true
+          number_sections: true
+          theme: cosmo
+          code_folding: show
+          df_print: paged
+      ---
+      ```{r echo=FALSE}
+      ### Setting the global code chunk options ###
+      # Args
+      #   comment='': won't append any string to the start of each line of results
+      #   fig.align='center': align figures to the center of document
+      knitr::opts_chunk$set(comment="", fig.align="center")
+      ```
+      $5
+      '''
+    'description':
+      '''
+      Inserts meta settings for R-markdown rendering: YAML and knitr settings
+      '''
+
+  ## Code block
+  'R-markdown: R code block':
+    'prefix': 'rb'
+    'body':
+      '''
+      ```{r}
+      $1
+      ```
+      '''
+    'description': 'Inserts R code block'
+  'R-markdown: R inline code block':
+    'prefix': 'ri'
+    'body':
+      '''
+      `r $1`
+      '''
+    'description': 'Inserts R inline code block'
+  'R-markdown: R code block (multiple plots)':
+    'prefix': 'rbmp'
+    'body':
+      '''
+      ```{r fig.show="hold", out.width="50%", out.height="100%", fig.align="default"}
+      ${1:# This options puts 2 plots horizontally}
+      ```
+      '''
+    'description': 'Inserts R code block for rendering multiple plots in one figure'
+  'R-markdown: R code block (data.frame)':
+    'prefix': 'rbd'
+    'body':
+      '''
+      ```{r rows.print=5, max.print=25}
+      ${1:# only the first 25 rows gonna be rendered (5 rows per page)}
+      ${2:data.frame}
+      ```
+      '''
+    'description': 'Inserts R code block for rendering data.frame object with df_print set'
+  'R-markdown: R code block (full default options)':
+    'prefix': 'rbfull'
+    'body':
+      '''
+      ```{r echo=TRUE, eval=TRUE, results="markup", fig.show="asis", fig.cap=NULL, fig.align="default", out.width=NULL, out.height=NULL, include=TRUE, warning=FALSE, comment=""}
+      $1
+      ```
+      '''
+    'description': 'Inserts R code block with full options set to default values'
 
 
 ### Java ###

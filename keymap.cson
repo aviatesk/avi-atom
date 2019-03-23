@@ -128,10 +128,23 @@
   'alt-shift-h': 'github:toggle-github-tab'
 
   ## Atom-IDE
-  # Find references
-  'alt-r': 'window:toggle-bottom-dock'
+  # Debugger: General
+  'ctrl-x space': 'debugger:toggle-breakpoint'
+  'ctrl-x ctrl-space': 'debugger:edit-breakpoint'
+  'ctrl-x d': 'debugger:show-launch-dialog'
+  'ctrl-x ctrl-d': 'debugger:show-launch-dialog'
+  'f8': 'debugger:continue-debugging'
+  'f9': 'debugger:step-into'
+  'f10': 'debugger:step-over'
+  'ctrl-f10': 'debugger:step-out'
+  # Debugger: Python
+  'alt-p d': 'debugger:toggle'
+  'alt-p alt-p': 'debugger:toggle'
+  'alt-p enter': 'window:focus-pane-above'
   # Diagnostics
   'alt-d': 'window:toggle-bottom-dock'
+  # Find references
+  'alt-r': 'window:toggle-bottom-dock'
 
   ## Open in Browser
   'ctrl-shift-b': 'open-in-browser:open'
@@ -140,6 +153,11 @@
   'alt-o': 'window:focus-pane-on-left'
   'alt-k': 'window:toggle-bottom-dock'
   'ctrl-alt-o': 'window:focus-pane-on-left'
+
+  ## Julia-client
+  'alt-j d': 'julia-debug:open-debug-pane'
+  'alt-j alt-d': 'window:toggle-right-dock'
+  'alt-j enter': 'julia-client:focus-last-editor'
 
   ## Termination
   'alt-:': 'termination:toggle'
@@ -171,11 +189,17 @@
   'cmd-q': 'dqs-shell-commands-config:toggle'
   'cmd-h': 'github:toggle-git-tab'
   'cmd-shift-h': 'github:toggle-github-tab'
-  'cmd-r': 'window:toggle-bottom-dock'
+  'cmd-p d': 'debugger:toggle'
+  'cmd-p cmd-p': 'debugger:toggle'
+  'cmd-p enter': 'window:focus-pane-above'
   'cmd-d': 'window:toggle-bottom-dock'
+  'cmd-r': 'window:toggle-bottom-dock'
   'cmd-o': 'window:focus-pane-on-left'
   'cmd-k': 'window:toggle-bottom-dock'
   'ctrl-cmd-o': 'window:focus-pane-on-left'
+  'cmd-j d': 'julia-debug:open-debug-pane'
+  'cmd-j alt-d': 'window:toggle-right-dock'
+  'cmd-j enter': 'julia-client:focus-last-editor'
   'cmd-:': 'termination:toggle'
   'cmd-z': 'zen:toggle'
 
@@ -256,13 +280,23 @@
 ## Git ##
 '.workspace':
   ## Git commands
-  'alt-g c': 'git-plus:checkout'
+  'alt-g o': 'git-plus:checkout'
   'alt-g s': 'git-plus:stash-save'
   'alt-g shift-s': 'git-plus:stash-pop'
+  'alt-g c': 'git-plus:commit'
+  'alt-g ctrl-c': 'git-plus:commit-amend'
+  'alt-g r': 'git-plus:rebase-interactive'
+  'alt-g ctrl-r': 'git-plus:rebase-continue'
+  'alt-g shift-r': 'git-plus:rebase-abort'
   ## macOS specific fix
   'cmd-g c': 'git-plus:checkout'
   'cmd-g s': 'git-plus:stash-save'
   'cmd-g shift-s': 'git-plus:stash-pop'
+  'cmd-g m': 'git-plus:commit'
+  'cmd-g ctrl-m': 'git-plus:commit-amend'
+  'cmd-g r': 'git-plus:rebase-interactive'
+  'cmd-g ctrl-r': 'git-plus:rebase-continue'
+  'cmd-g shift-r': 'git-plus:rebase-abort'
 '.github-StagingView':
   ## movements
   'o': 'core:move-up'
@@ -550,8 +584,9 @@
 "
 atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
 ":
   'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
 
@@ -608,9 +643,10 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not
 
 ## Markdown
 "
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
 ":
   ## Dqs-Shell-Commands: Process .pmd & .Rmd documents (Same as Script)
   # The appropriate shell command to process either pweave document or R-markdown gonna be automatically detected
@@ -663,6 +699,7 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
   'ctrl-m r': 'markdown-writer:jump-to-reference-definition'
   'alt-r': 'markdown-writer:jump-to-reference-definition'
   'ctrl-m ctrl-m': 'markdown-writer:jump-to-next-table-cell'
+  'ctrl-m ctrl-l': 'markdown-writer:open-link-in-browser'
   'alt-m': 'markdown-writer:jump-to-next-table-cell'
   'ctrl-v': 'markdown-writer:insert-image-clipboard'
   'ctrl-shift-b': 'markdown-writer:open-link-in-browser'
@@ -698,6 +735,8 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   'alt-j l': 'julia-client:clear-console'
   'alt-j w': 'julia-client:open-workspace'
   'alt-j p': 'julia-client:open-plot-pane'
+  'alt-j d': 'julia-debug:open-debugger-pane'
+  'alt-j alt-d': 'window:toggle-right-dock'
   'alt-j ,': 'julia-client:settings'
   ## Julia-Client
   'ctrl-c': 'unset!'
@@ -715,6 +754,10 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   ## Ink-terminal
   'ctrl-:': 'julia-client:focus-last-terminal'
   'alt-b': 'julia-client:focus-last-terminal'
+  ## Julia-Debug
+  'f8': 'julia-debug:continue'
+  'f9': 'julia-debug:step-to-next-line'
+  'f10': 'julia-debug:finish-function'
   ## macOS specific fix
   # use cmd as alt
   'cmd-o': 'julia-client:open-console'
@@ -729,6 +772,8 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   'cmd-j l': 'julia-client:clear-console'
   'cmd-j w': 'julia-client:open-workspace'
   'cmd-j p': 'julia-client:open-plot-pane'
+  'cmd-j d': 'julia-debug:open-debugger-pane'
+  'cmd-j cmd-d': 'window:toggle-right-dock'
   'cmd-j ,': 'julia-client:settings'
   'ctrl-shift-enter': 'julia-client:run-and-move'
   'cmd-enter': 'julia-client:run-cell'
@@ -794,6 +839,9 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   ## Atom-IDE: IDE-Python
   # Code format
   'ctrl-c ctrl-f': 'code-format:format-code'
+  # Debugger
+  'alt-p d': 'debugger:toggle'
+  'alt-p alt-d': 'debugger:toggle'
   # Diagnostics
   'alt-d': 'diagnostics:toggle-table'
   'alt-p': 'diagnostics:go-to-previous-diagnostic'
@@ -806,6 +854,8 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'ctrl-alt-o': 'outline-view:toggle'
   ## macOS specific fix
   # use cmd as alt
+  'cmd-p d': 'debugger:toggle'
+  'cmd-p cmd-d': 'debugger:toggle'
   'cmd-d': 'diagnostics:toggle-table'
   'cmd-p': 'diagnostics:go-to-previous-diagnostic'
   'cmd-end': 'diagnostics:go-to-first-diagnostic'

@@ -10,7 +10,6 @@ All values for the other Per-project configs are set as default
   core:
     disabledPackages: [
       "markdown-preview"
-      "language-gfm"
       "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
       # Enable Julia packages ! #
       # "julia-client"
@@ -73,6 +72,10 @@ All values for the other Per-project configs are set as default
     width: 80 # Set Zen width
   "document-outline":
     maxHeadingDepth: 4 # Limit outlined depth
+  "ide-python":
+    # Another python with Python-Language-Server installed can be specified.
+    # E.g.: "/Users/aviat/anaconda3/envs/py36/python3"
+    python: "/Users/aviat/anaconda3/bin/python3"
   "markdown-preview-enhanced":
     automaticallyShowPreviewOfMarkdownBeingEdited: true # Set `false` when editting Weave documents
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred

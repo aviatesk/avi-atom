@@ -38,6 +38,8 @@
   "atom-html-preview":
     enableMathJax: true
   "atom-ide-ui":
+    "atom-ide-debugger":
+      showDebuggerOnBpSet: false
     "atom-ide-diagnostics-ui": {}
     "atom-ide-outline-view": {}
     "atom-ide-signature-help": {}
@@ -51,13 +53,16 @@
     audioBeep: false
     autoHideMenuBar: true
     customFileTypes:
+      "source.gfm": [
+        "README.md"
+      ]
       "text.md": [
+        "md"
         "Rmd"
         "rmd"
       ]
     disabledPackages: [
       "markdown-preview"
-      "language-gfm"
       "spell-check"
       "julia-client"
       "latex-completions"
@@ -117,8 +122,12 @@
     diffs:
       useSplitDiff: true
       wordDiff: true
+    experimental:
+      customCommands: true
+      diffBranches: true
     general:
       enableStatusBarIcon: false
+      showBranchInTreeView: false
   "highlight-line":
     hideHighlightOnSelect: true
   "highlight-selected":
@@ -142,7 +151,9 @@
         ]
       yapf:
         enabled: true
-    python: "/Users/aviat/anaconda3/bin/ipython3"
+    python: "/Users/aviat/anaconda3/bin/python3"
+  "language-markdown":
+    disableLanguageGfm: false
   "language-weave":
     showPreview: false
   "markdown-preview-enhanced":

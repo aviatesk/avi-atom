@@ -13,12 +13,15 @@ All values are set as default.
   core:
     disabledPackages: [
       "markdown-preview"
-      "language-gfm"
       "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
       "julia-client"
       "latex-completions"
       "tool-bar"
     ]
+  "ide-python":
+    # Another python with Python-Language-Server installed can be specified.
+    # E.g.: "/Users/aviat/anaconda3/envs/py36/python3"
+    python: "/Users/aviat/anaconda3/bin/python3"
   "markdown-preview-enhanced":
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
     previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred
