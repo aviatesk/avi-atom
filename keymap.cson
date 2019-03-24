@@ -120,10 +120,23 @@
   'alt-shift-h': 'github:toggle-github-tab'
 
   ## Atom-IDE
-  # Find references
-  'alt-r': 'window:toggle-bottom-dock'
+  # Debugger: General
+  'ctrl-x space': 'debugger:toggle-breakpoint'
+  'ctrl-x ctrl-space': 'debugger:edit-breakpoint'
+  'ctrl-x d': 'debugger:show-launch-dialog'
+  'ctrl-x ctrl-d': 'debugger:show-launch-dialog'
+  'f8': 'debugger:continue-debugging'
+  'f9': 'debugger:step-into'
+  'f10': 'debugger:step-over'
+  'ctrl-f10': 'debugger:step-out'
+  # Debugger: Python
+  'alt-p d': 'debugger:toggle'
+  'alt-p alt-p': 'debugger:toggle'
+  'alt-p enter': 'window:focus-pane-above'
   # Diagnostics
   'alt-d': 'window:toggle-bottom-dock'
+  # Find references
+  'alt-r': 'window:toggle-bottom-dock'
 
   ## Open in Browser
   'ctrl-shift-b': 'open-in-browser:open'
@@ -132,6 +145,11 @@
   'alt-o': 'window:focus-pane-on-left'
   'alt-k': 'window:toggle-bottom-dock'
   'ctrl-alt-o': 'window:focus-pane-on-left'
+
+  ## Julia-client
+  'alt-j d': 'julia-debug:open-debug-pane'
+  'alt-j alt-d': 'window:toggle-right-dock'
+  'alt-j enter': 'julia-client:focus-last-editor'
 
   ## Termination
   'alt-:': 'termination:toggle'
@@ -563,6 +581,8 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   'alt-j l': 'julia-client:clear-console'
   'alt-j w': 'julia-client:open-workspace'
   'alt-j p': 'julia-client:open-plot-pane'
+  'alt-j d': 'julia-debug:open-debugger-pane'
+  'alt-j alt-d': 'window:toggle-right-dock'
   'alt-j ,': 'julia-client:settings'
   ## Julia-Client
   'ctrl-c': 'unset!'
@@ -580,6 +600,10 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   ## Ink-terminal
   'ctrl-:': 'julia-client:focus-last-terminal'
   'alt-b': 'julia-client:focus-last-terminal'
+  ## Julia-Debug
+  'f8': 'julia-debug:continue'
+  'f9': 'julia-debug:step-to-next-line'
+  'f10': 'julia-debug:finish-function'
 "
 atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-mode:not([mini])
@@ -627,6 +651,9 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   ## Atom-IDE: IDE-Python
   # Code format
   'ctrl-c ctrl-f': 'code-format:format-code'
+  # Debugger
+  'alt-p d': 'debugger:toggle'
+  'alt-p alt-d': 'debugger:toggle'
   # Diagnostics
   'alt-d': 'diagnostics:toggle-table'
   'alt-p': 'diagnostics:go-to-previous-diagnostic'

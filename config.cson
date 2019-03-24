@@ -38,6 +38,8 @@
   "atom-html-preview":
     enableMathJax: true
   "atom-ide-ui":
+    "atom-ide-debugger":
+      showDebuggerOnBpSet: false
     "atom-ide-diagnostics-ui": {}
     "atom-ide-outline-view": {}
     "atom-ide-signature-help": {}
