@@ -141,6 +141,8 @@
   ## Zen
   'alt-z': 'zen:toggle'
 
+
+
 ### Per-mode settings -- NOT IN atom-editor-space ###
 
 ## Tree-View
@@ -206,8 +208,17 @@
   # unsets
   'i': 'unset!'
 
-
 ## Git ##
+'.workspace':
+  ## Git commands
+  'alt-g o': 'git-plus:checkout'
+  'alt-g s': 'git-plus:stash-save'
+  'alt-g shift-s': 'git-plus:stash-pop'
+  'alt-g c': 'git-plus:commit'
+  'alt-g ctrl-c': 'git-plus:commit-amend'
+  'alt-g r': 'git-plus:rebase-interactive'
+  'alt-g ctrl-r': 'git-plus:rebase-continue'
+  'alt-g shift-r': 'git-plus:rebase-abort'
 '.github-StagingView':
   ## movements
   'o': 'core:move-up'
@@ -248,6 +259,7 @@
   'n': 'github:select-next-hunk'
   'ctrl-o': 'github:select-previous-hunk'
   'ctrl-n': 'github:select-next-hunk'
+
 ## Termination
 ".termination .terminal":
   'alt-backspace': 'editor:delete-to-beginning-of-word'
@@ -275,6 +287,7 @@
   'ctrl-:': 'advanced-open-file:autocomplete'
   'ctrl-d': 'advanced-open-file:delete-path-component'
   'ctrl-z': 'advanced-open-file:undo'
+
 
 
 ### All the atom-text-editor space, including mini(one-line) editor space ###
@@ -636,7 +649,6 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'ctrl-c ctrl-f': 'atom-beautify:beautify-language-css'
 "atom-workspace atom-text-editor[data-grammar='source css less'].emacs-plus.mark-mode:not([mini])":
   'ctrl-c ctrl-f': 'atom-beautify:beautify-language-less'
-
 
 
 

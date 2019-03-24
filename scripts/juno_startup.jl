@@ -7,11 +7,16 @@ module MyJuno
 using Juno
 using OhMyREPL, Crayons
 using OhMyREPL: Passes.SyntaxHighlighter
-using Plots: Colorant, hex, HSV, gr, theme
+using Plots: Colorant, hex, HSV, gr, theme, default
 using PlotThemes: PlotTheme, expand_palette, add_theme
 using Statistics: mean
 
 
+"""
+    setomrtheme()
+
+Uses Juno's syntax highlights within OhMyREPL.
+"""
 function setomrtheme()
     cs = SyntaxHighlighter.ColorScheme()
     colors = Juno.syntaxcolors()
@@ -28,11 +33,18 @@ function setomrtheme()
     SyntaxHighlighter.argdef!(cs, Crayon(foreground = colors["type"]))
     SyntaxHighlighter.number!(cs, Crayon(foreground = colors["number"]))
 
-    SyntaxHighlighter.add!("Atom", cs)
-    OhMyREPL.colorscheme!("Atom")
+    SyntaxHighlighter.add!("Juno", cs)
+    OhMyREPL.colorscheme!("Juno")
 end  # function setomrtheme
 
 
+"""
+    setplottheme()
+
+Creates a PlotTheme.jl's theme that matches UI of
+[Ariake Dark Syntax](https://atom.io/themes/ariake-dark-syntax) and sets it to
+Plots.jl's color theme.
+"""
 function setplottheme()
     colors = Juno.syntaxcolors()
     colors = Dict(k => parse(Colorant, "#"*hex(colors[k], 6, false)) for (k, v) in colors)
@@ -62,8 +74,18 @@ function setplottheme()
     add_theme(:myjuno, myjuno)
     gr()
     theme(:myjuno)
-
 end  # function setplottheme
+
+
+"""
+    setplotdefault()
+
+Sets Plots.jl's default options.
+"""
+function setplotdefault()
+    default(:fmt, :svg)
+    default(:size, (800, 500))
+end  # function setplotdefault
 
 end  # module SetMyJuno
 
@@ -73,8 +95,10 @@ end  # module SetMyJuno
 Enters module main below
 =#
 
+using Juno
 using Weave
 
 
-MyJuno.setomrtheme()
+# MyJuno.setomrtheme()
 MyJuno.setplottheme()
+MyJuno.setplotdefault()

@@ -18,6 +18,10 @@ All values are set as default.
       "latex-completions"
       "tool-bar"
     ]
+  "ide-python":
+    # Another python with Python-Language-Server installed can be specified.
+    # E.g.: "C:\\Users\\aviat\\Anaconda3\\envs\\py36\\python.exe"
+    python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
   "markdown-preview-enhanced":
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
     previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred

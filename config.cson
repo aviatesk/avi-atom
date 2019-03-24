@@ -120,8 +120,12 @@
     diffs:
       useSplitDiff: true
       wordDiff: true
+    experimental:
+      customCommands: true
+      diffBranches: true
     general:
       enableStatusBarIcon: false
+      showBranchInTreeView: false
   "highlight-line":
     hideHighlightOnSelect: true
   "highlight-selected":
@@ -145,7 +149,7 @@
         ]
       yapf:
         enabled: true
-    python: "C:\\Users\\aviat\\Anaconda3\\envs\\ml\\python.exe"
+    python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
   "language-markdown":
     disableLanguageGfm: false
   "language-weave":

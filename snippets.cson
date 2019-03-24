@@ -101,6 +101,16 @@
       =#
       '''
     'description': 'Inserts comment block'
+  'Julia: Document':
+    'prefix': 'doc'
+    'body':
+      '''
+      """
+          $1
+
+      ${2:doc}
+      """
+      '''
 
   ## Base
   'Base: print':
@@ -408,16 +418,28 @@
       # H1 gonna be ignored from numbering, assuming it is used as a title.
       E.g.) README.md
       '''
-  'MPE: Fancy One-Dark Theme':
-    'prefix': 'one-dark-fancy'
+  'MPE: Fancy github-light Theme':
+    'prefix': 'fancy-github-light'
     'body':
       '''
-      <!-- Importing fancy One-Dark theme -->
+      <!-- Importing fancy github-light theme -->
+      <!-- @import "C:/Users/aviat/.atom/mpe-styles/fancy-github-light.less" -->
+      '''
+    'description':
+      '''
+      Imports .less sheet of fancier github-light preview theme.
+      Colors headers fancily according to github-light theme.
+      '''
+  'MPE: Fancy one-dark Theme':
+    'prefix': 'fancy-one-dark'
+    'body':
+      '''
+      <!-- Importing fancy one-dark theme -->
       <!-- @import "C:/Users/aviat/.atom/mpe-styles/fancy-one-dark.less" -->
       '''
     'description':
       '''
-      Imports .less sheet of fancier One-Dark preview theme.
+      Imports .less sheet of fancier one-dark preview theme.
       Colors headers fancily and modifies table coloring to match One-Dark theme.
       '''
 
@@ -441,48 +463,6 @@
       ${1:#} ${2:HEADER}${3: {${4:ignore=True}${5: .ignorenumbering}\\}}$6
       '''
     'description': 'Inserts general header'
-  'MPE: H1':
-    'prefix': 'h1'
-    'body':
-      '''
-      # ${1:H1}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H1 header'
-  'MPE: H2':
-    'prefix': 'h2'
-    'body':
-      '''
-      ## ${1:H2}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H2 header'
-  'MPE: H3':
-    'prefix': 'h3'
-    'body':
-      '''
-      ### ${1:H3}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H3 header'
-  'MPE: H4':
-    'prefix': 'h4'
-    'body':
-      '''
-      #### ${1:H4}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H4 header'
-  'MPE: H5':
-    'prefix': 'h5'
-    'body':
-      '''
-      ##### ${1:H5}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H5 header'
-  'MPE: H6':
-    'prefix': 'h6'
-    'body':
-      '''
-      ###### ${1:H6}${2: {${3:ignore=True}${4: .ignorenumbering}\\}}$5
-      '''
-    'description': 'Inserts H6 header'
   'MPE: Ignore Numberings':
     'prefix': 'ignores'
     'body':

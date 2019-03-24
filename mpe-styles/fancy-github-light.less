@@ -1,0 +1,40 @@
+/**
+ * This .less sheet fine-tune github-light.css preview theme, which
+ * comes along with Markdown-Preview-Enhanced package.
+ * Colors headers fancily according to github-light theme.
+ * Note that this file location is specified in .atom/snippets.cson
+ * with "fancy-github-light" prefix for easy usage.
+ */
+
+.markdown-preview.markdown-preview {
+
+  /** Coloring headers  */
+  @h1-color: #101e8e;
+  @h2-color: #1416d2;
+  @h3-color: #7d28d7;
+  @h4-color: #a51ec2;
+  @h5-color: #d25d10;
+  @h6-color: #268e10;
+  h1 {
+    color: @h1-color;
+    border-bottom: 4px solid @h1-color;
+  }
+  h2 {
+    color: @h2-color;
+    border-bottom: 2px solid @h2-color;
+  }
+  h3 {
+    color: @h3-color;
+    text-decoration: underline;
+  }
+  h4 {
+    color: @h4-color;
+  }
+  h5 {
+    color: @h5-color;
+  }
+  h6 {
+    color: @h6-color;
+  }
+
+}
