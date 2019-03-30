@@ -610,9 +610,9 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   'alt-enter': 'julia-client:run-cell'
   'alt-shift-enter': 'julia-client:run-cell-and-move'
   'ctrl-alt-shift-enter': 'julia-client:run-file'
+  'ctrl-x space': 'julia-debug:toggle-breakpoint'
   ## Ink-terminal
   'ctrl-:': 'julia-client:focus-last-terminal'
-  'alt-b': 'julia-client:focus-last-terminal'
   ## Julia-Debug
   'f8': 'julia-debug:continue'
   'f9': 'julia-debug:step-to-next-line'
@@ -636,7 +636,6 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'ctrl-alt-shift-enter': 'julia-client:run-file'
 "ink-terminal":
   'ctrl-:': 'julia-client:focus-last-editor'
-  'alt-b': 'julia-client:focus-last-editor'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-w': 'pane:close'
