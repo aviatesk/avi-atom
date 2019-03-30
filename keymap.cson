@@ -231,7 +231,10 @@
   ## Git commands
   'alt-g o': 'git-plus:checkout'
   'alt-g s': 'git-plus:stash-save'
+  'alt-g ctrl-s': 'git-plus:stash-save-message'
   'alt-g shift-s': 'git-plus:stash-pop'
+  'alt-g ctrl-shift-s': 'git-plus:stash-apply'
+  'alt-g ctrl-shift-alt-s': 'git-plus:manage-stashes'
   'alt-g c': 'git-plus:commit'
   'alt-g ctrl-c': 'git-plus:commit-amend'
   'alt-g r': 'git-plus:rebase-interactive'
