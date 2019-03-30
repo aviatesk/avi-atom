@@ -455,6 +455,14 @@ atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not(
 ":
   'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
 
+## PDF-View
+'.pdf-view':
+  'ctrl-l': 'core:move-right'
+  'ctrl-x g': 'pdf-view:go-to-page'
+  'ctlr-p': 'pdf-view:go-to-previous-page'
+  'ctlr-shift-p': 'pdf-view:go-to-next-page'
+  'ctrl-x ctrl-f': 'advanced-open-file:toggle'
+
 ## Hydrogen
 "
 atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
