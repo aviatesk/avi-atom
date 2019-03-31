@@ -282,18 +282,24 @@
   ## Git commands
   'alt-g o': 'git-plus:checkout'
   'alt-g s': 'git-plus:stash-save'
+  'alt-g ctrl-s': 'git-plus:stash-save-message'
   'alt-g shift-s': 'git-plus:stash-pop'
+  'alt-g ctrl-shift-s': 'git-plus:stash-apply'
+  'alt-g ctrl-shift-alt-s': 'git-plus:manage-stashes'
   'alt-g c': 'git-plus:commit'
   'alt-g ctrl-c': 'git-plus:commit-amend'
   'alt-g r': 'git-plus:rebase-interactive'
   'alt-g ctrl-r': 'git-plus:rebase-continue'
   'alt-g shift-r': 'git-plus:rebase-abort'
   ## macOS specific fix
-  'cmd-g c': 'git-plus:checkout'
+  'cmd-g o': 'git-plus:checkout'
   'cmd-g s': 'git-plus:stash-save'
+  'cmd-g ctrl-s': 'git-plus:stash-save-message'
   'cmd-g shift-s': 'git-plus:stash-pop'
-  'cmd-g m': 'git-plus:commit'
-  'cmd-g ctrl-m': 'git-plus:commit-amend'
+  'cmd-g ctrl-shift-s': 'git-plus:stash-apply'
+  'cmd-g ctrl-shift-cmd-s': 'git-plus:manage-stashes'
+  'cmd-g c': 'git-plus:commit'
+  'cmd-g ctrl-c': 'git-plus:commit-amend'
   'cmd-g r': 'git-plus:rebase-interactive'
   'cmd-g ctrl-r': 'git-plus:rebase-continue'
   'cmd-g shift-r': 'git-plus:rebase-abort'
@@ -517,7 +523,6 @@
   'cmd-s': 'split-diff:toggle'
 
 
-
 ### Per-mode & Per-filetype settings IN atom-editor-space ###
 
 ## Mark mode (i.e. after ctrl-space)
@@ -589,6 +594,14 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
 atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
 ":
   'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
+
+## PDF-View
+'.pdf-view':
+  'ctrl-l': 'core:move-right'
+  'ctrl-x g': 'pdf-view:go-to-page'
+  'ctlr-p': 'pdf-view:go-to-previous-page'
+  'ctlr-shift-p': 'pdf-view:go-to-next-page'
+  'ctrl-x ctrl-f': 'advanced-open-file:toggle'
 
 ## Hydrogen
 "
@@ -666,24 +679,29 @@ atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not(
   'ctrl-m b': 'markdown-writer:toggle-bold-text'
   'ctrl-m i': 'markdown-writer:toggle-italic-text'
   'ctrl-m c': 'markdown-writer:toggle-code-text'
-  'ctrl-m ctrl-c': 'markdown-writer:toggle-code-block'
+  'ctrl-m ctrl-c': 'markdown-writer:toggle-codeblock-text'
+  'ctrl-m m': 'markdown-writer:toggle-math-text'
+  'ctrl-m shift-m': 'markdown-writer:toggle-mathblock-text'
   'ctrl-m k': 'markdown-writer:toggle-keystroke-text'
   'ctrl-m q': 'markdown-writer:toggle-blockquote'
   'ctrl-m s': 'markdown-writer:toggle-strikethrough-text'
   'ctrl-m u': 'markdown-writer:toggle-ul'
-  'ctrl-m l': 'markdown-writer:toggle-ul'
   'ctrl-m o': 'markdown-writer:toggle-ol'
+  'ctrl-m l': 'markdown-writer:insert-link'
   'ctrl-m t': 'markdown-writer:toggle-task'
+  'ctrl-m shift-t': 'markdown-writer:toggle-taskdone'
   'ctrl-m f': 'markdown-writer:format-table'
-  'ctrl-m ctrl-o': 'markdown-writer:correct-order-list-numbers'
-  'ctrl-m ctrl-t': 'markdown-writer:insert-table'
-  'ctrl-m d': 'markdown-writer:toggle-taskdone'
   'ctrl-m 1': 'markdown-writer:toggle-h1'
   'ctrl-m 2': 'markdown-writer:toggle-h2'
   'ctrl-m 3': 'markdown-writer:toggle-h3'
   'ctrl-m 4': 'markdown-writer:toggle-h4'
   'ctrl-m 5': 'markdown-writer:toggle-h5'
-  'ctrl-m v': 'markdown-writer:insert-image'
+  'ctrl-m ctrl-i': 'markdown-writer:insert-image-clipboard'
+  'ctrl-v': 'markdown-writer:insert-image-clipboard'
+  'ctrl-m ctrl-o': 'markdown-writer:correct-order-list-numbers'
+  'ctrl-m ctrl-l': 'markdown-writer:open-link-in-browser'
+  'ctrl-shift-b': 'markdown-writer:open-link-in-browser'
+  'ctrl-m ctrl-t': 'markdown-writer:insert-table'
   'ctrl-m ctrl-^': 'markdown-writer:insert-footnote'
   'ctrl-m ctrl-f': 'markdown-writer:insert-footnote'
   'ctrl-m ctrl-s': 'markdown-writer:toggle-substitution-text'
@@ -699,10 +717,7 @@ atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not(
   'ctrl-m r': 'markdown-writer:jump-to-reference-definition'
   'alt-r': 'markdown-writer:jump-to-reference-definition'
   'ctrl-m ctrl-m': 'markdown-writer:jump-to-next-table-cell'
-  'ctrl-m ctrl-l': 'markdown-writer:open-link-in-browser'
   'alt-m': 'markdown-writer:jump-to-next-table-cell'
-  'ctrl-v': 'markdown-writer:insert-image-clipboard'
-  'ctrl-shift-b': 'markdown-writer:open-link-in-browser'
   ## macOS specific fix
   # use cmd as alt
   'ctrl-cmd-o': 'document-outline:toggle'
@@ -751,9 +766,9 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   'alt-enter': 'julia-client:run-cell'
   'alt-shift-enter': 'julia-client:run-cell-and-move'
   'ctrl-alt-shift-enter': 'julia-client:run-file'
+  'ctrl-x space': 'julia-debug:toggle-breakpoint'
   ## Ink-terminal
   'ctrl-:': 'julia-client:focus-last-terminal'
-  'alt-b': 'julia-client:focus-last-terminal'
   ## Julia-Debug
   'f8': 'julia-debug:continue'
   'f9': 'julia-debug:step-to-next-line'
@@ -779,7 +794,6 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   'cmd-enter': 'julia-client:run-cell'
   'cmd-shift-enter': 'julia-client:run-cell-and-move'
   'ctrl-cmd-shift-enter': 'julia-client:run-file'
-  'cmd-b': 'julia-client:focus-last-terminal'
 "
 atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-mode:not([mini])
@@ -804,7 +818,6 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'ctrl-cmd-shift-enter': 'julia-client:run-file'
 "ink-terminal":
   'ctrl-:': 'julia-client:focus-last-editor'
-  'alt-b': 'julia-client:focus-last-editor'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-w': 'pane:close'
@@ -821,7 +834,6 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'alt-h': 'github:toggle-git-tab'
   ## macOS specific fix:
   # use cmd as alt
-  'cmd-b': 'julia-client:focus-last-editor'
   'cmd-w': 'ink-terminal:copy'
   'cmd-t': 'tree-view:toggle'
   'cmd-:': 'termination:toggle'

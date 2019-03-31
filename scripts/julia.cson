@@ -36,7 +36,6 @@ All values for the other Per-project configs are set as default
     consoleOptions:
       whitelistedKeybindingsREPL: [
         "Ctrl-:"
-        "Alt-B"
         "Ctrl-Tab"
         "Ctrl-Shift-Tab"
         "Ctrl-W"
