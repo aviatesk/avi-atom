@@ -188,9 +188,9 @@
       ulBullet4: "*"
       ulBullet5: "+"
     textStyles:
-      italic:
-        after: "*"
-        before: "*"
+      math:
+        after: "$"
+        before: "$"
   minimap:
     plugins:
       "find-and-replace": true

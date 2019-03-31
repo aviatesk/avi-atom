@@ -493,22 +493,6 @@
       \$\$
       '''
     'description': 'Inserts MathJax block'
-  'MathJax: \\beta':
-    'prefix': 'beta'
-    'body': '\\\\beta_{$1}'
-    'description': 'Inserts \beta expression'
-  'MathJax: \\infty':
-    'pefix': 'inf'
-    'body': '\\\\infty$1'
-    'description': 'Inserts \infty expression'
-  'MathJax: \\hat section':
-    'prefix': 'hat'
-    'body': '{\\\\hat $1}'
-    'description': 'Inserts \\hat section'
-  'MathJax: \\rm section':
-    'prefix': 'rm'
-    'body': '{\\\\rm $1}'
-    'description': 'Inserts \\rm (italic-cancelled) section'
 
 
 ### GFM ###
@@ -536,16 +520,19 @@
       <!-- ## License -->
 
 
-
       <!-- ## Acknowledgements -->
 
-      <!-- ### References -->
 
+      <!-- ## References -->
 
 
       ## Author
 
       - **KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk]
+
+
+      <!-- Links -->
+
       [aviatesk]: https://github.com/aviatesk
       '''
     'description': 'Inserts conclusion sections for README'
