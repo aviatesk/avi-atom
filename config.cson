@@ -38,6 +38,8 @@
   "atom-html-preview":
     enableMathJax: true
   "atom-ide-ui":
+    "atom-ide-debugger":
+      showDebuggerOnBpSet: false
     "atom-ide-diagnostics-ui": {}
     "atom-ide-outline-view": {}
     "atom-ide-signature-help": {}
@@ -120,8 +122,12 @@
     diffs:
       useSplitDiff: true
       wordDiff: true
+    experimental:
+      customCommands: true
+      diffBranches: true
     general:
       enableStatusBarIcon: false
+      showBranchInTreeView: false
   "highlight-line":
     hideHighlightOnSelect: true
   "highlight-selected":
@@ -145,7 +151,9 @@
         ]
       yapf:
         enabled: true
-    python: "C:\\Users\\aviat\\Anaconda3\\envs\\ml\\python.exe"
+    python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
+  "language-markdown":
+    disableLanguageGfm: false
   "language-weave":
     showPreview: false
   "markdown-preview-enhanced":
@@ -180,9 +188,9 @@
       ulBullet4: "*"
       ulBullet5: "+"
     textStyles:
-      italic:
-        after: "*"
-        before: "*"
+      math:
+        after: "$"
+        before: "$"
   minimap:
     plugins:
       "find-and-replace": true
@@ -202,6 +210,7 @@
   "minimap-selection":
     highlightCursorsLines: true
     outlineSelection: true
+  "pdf-view": {}
   script:
     cwdBehavior: "Directory of the script"
   "spell-check":
