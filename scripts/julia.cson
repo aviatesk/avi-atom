@@ -16,6 +16,18 @@ All values for the other Per-project configs are set as default
       # "latex-completions"
       # "tool-bar"
     ]
+    excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder
+    ignoredNames: [
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "node_modules"
+      # Autocomplete-Paths: Additional ignored names come below
+      # ".git"
+    ]
     packagesWithKeymapsDisabled: [
       "Hydrogen"
       "Zen"
@@ -69,6 +81,8 @@ All values for the other Per-project configs are set as default
   ### General Per-project configs ###
   Zen:
     width: 80 # Set Zen width
+  "autocomplete-paths":
+    maxFileCount: 2000
   "document-outline":
     maxHeadingDepth: 4 # Limit outlined depth
   "ide-python":

@@ -8,15 +8,29 @@ All values are set as default.
 "*":
   Zen:
     width: 80 # Set Zen width
+  "autocomplete-paths":
+    maxFileCount: 2000
   "document-outline":
     maxHeadingDepth: 4 # Limit outlined depth
   core:
     disabledPackages: [
       "markdown-preview"
-      "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
+      "spell-check" # Comment-out this line to enable Spell-Checker (Note it will work correctly only with American-English)
       "julia-client"
       "latex-completions"
       "tool-bar"
+    ]
+    excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder
+    ignoredNames: [
+      "._*"
+      ".hg"
+      ".svn"
+      "Thumbs.db"
+      ".DS_Store"
+      "desktop.ini"
+      "node_modules"
+      # Autocomplete-Paths: Additional ignored names come below
+      # ".git"
     ]
   "ide-python":
     # Another python with Python-Language-Server installed can be specified.

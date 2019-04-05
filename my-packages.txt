@@ -7,6 +7,7 @@ atom-ide-debugger-python@0.7.3
 atom-ide-ui@0.13.0
 atom-language-r@1.4.8
 atomic-management@0.3.1
+autocomplete-paths@2.12.2
 color-picker@2.3.0
 document-outline@2.1.2
 dqs-shell-commands@2.2.4
@@ -19,7 +20,7 @@ highlight-selected@0.16.0
 Hydrogen@2.8.0
 ide-python@1.4.1
 indent-detective@0.3.2
-ink@0.10.2
+ink@0.10.3
 julia-client@0.8.2
 language-julia@0.18.0
 language-markdown@0.29.0

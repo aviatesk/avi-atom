@@ -46,6 +46,7 @@
     "debugger-exceptionBreakpointsCollapsed": true
     use:
       "atom-ide-terminal": "never"
+  "autocomplete-paths": {}
   "autocomplete-plus":
     minimumWordLength: 2
   "bracket-matcher": {}
@@ -68,12 +69,13 @@
       "latex-completions"
       "tool-bar"
     ]
+    excludeVcsIgnoredPaths: true
     ignoredNames: [
+      "._*"
       ".hg"
       ".svn"
-      ".DS_Store"
-      "._*"
       "Thumbs.db"
+      ".DS_Store"
       "desktop.ini"
       "node_modules"
     ]
