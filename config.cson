@@ -99,7 +99,7 @@
       "ariake-dark-syntax"
     ]
     uriHandlerRegistration: "always"
-    useTreeSitterParsers: false
+    warnOnLargeFileLimit: 10
   "document-outline":
     showByDefault: false
   "dqs-shell-commands": {}
