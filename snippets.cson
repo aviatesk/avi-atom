@@ -360,7 +360,7 @@
     'prefix': 'img'
     'body':
       '''
-      <img src="$1"${2: width="$3px"}${4: height="$5px"}${6: title="$7"}>$8
+      <img src=$1 ${2:width=$3px} ${4:height=$5px} ${6:title='$7'}>$8
       '''
     'description': 'Inserts link to an image file'
   'Markdown: Break line':
@@ -463,7 +463,7 @@
       ${1:#} ${2:HEADER}${3: {${4:ignore=True}${5: .ignorenumbering}\\}}$6
       '''
     'description': 'Inserts general header'
-  'MPE: Ignore Numberings':
+  'MPE: Ignore numberings':
     'prefix': 'ignores'
     'body':
       '''

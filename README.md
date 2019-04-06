@@ -13,7 +13,7 @@ Let me show off my Atom customs a bit and explain how to restore them.
 
 - Fine-tuned UI design based on [Ariake Dark Syntax](https://atom.io/themes/ariake-dark-syntax), with the inspiration by [四季花鳥図屏風](https://artsandculture.google.com/asset/%E5%9B%9B%E5%AD%A3%E8%8A%B1%E9%B3%A5%E5%9B%B3%E5%B1%8F%E9%A2%A8/1gHXp2NQApzNHg?hl=en), 雪舟
 - (*Atomically*-naturally) Powerful Git support environments !
-- Fancy Emacs-like keybindings (based on [emacs-plus](https://atom.io/packages/emacs-plus), but a lot more tuned according to my preferences)
+- Fancy Emacs-like key bindings (based on [emacs-plus](https://atom.io/packages/emacs-plus), but a lot more tuned according to my preferences)
 - Interactive and integrated coding environment for Python & Julia powered by [Juno](http://junolab.org/), [IDE-Python](https://atom.io/packages/ide-python) and [Hydrogen](https://atom.io/packages/hydrogen)
 - Strong support for writing markdown documents with [Markdown-Writer](https://atom.io/packages/markdown-writer) and [Markdown-Preview-Enhanced](https://atom.io/packages/markdown-preview-enhanced)
 - Combining the two of the above, even support for writing [Weave.jl document](http://weavejl.mpastell.com/stable/) & [pweave-document](http://mpastell.com/pweave/)
@@ -31,9 +31,10 @@ Let me show off my Atom customs a bit and explain how to restore them.
 2. [Re-install packages](#re-install-packages)
 3. [Modify paths](#modify-paths)
 4. [Make Git globally ignore .atom/config.cson files](#make-git-globally-ignore-atomconfigcson-files)
-5. [Set global MPE style](#set-global-mpe-style)
-6. [Enable Juno startup config](#enable-juno-startup-config)
-7. [Fix a bug within Atom-IDE-Debugger-Python](#fix-a-bug-within-atom-ide-debugger-python)
+5. [Change default scopes of Autocomplete-Paths](#change-default-scopes-of-autocomplete-paths)
+6. [Set global MPE style](#set-global-mpe-style)
+7. [Enable Juno startup config](#enable-juno-startup-config)
+8. [Fix a bug within Atom-IDE-Debugger-Python](#fix-a-bug-within-atom-ide-debugger-python)
 
 <!-- /code_chunk_output -->
 
@@ -105,6 +106,17 @@ We can make Git ignore .atom/config.cson files globally except ~/.atom/config.cs
 ```
 
 
+### Change default scopes of Autocomplete-Paths
+
+Additional scope configurations of Autocomplete-Paths don't work...
+Thus I modified the original [default-scopes.js](scripts/default-scopes.js).
+
+```bash
+$ rm packages/autocomplete-paths/lib/config/default-scopes.js
+$ link scripts/default-scopes.js packages/autocomplete-paths/lib/config/default-scopes.js
+```
+
+
 ### Set global MPE style
 
 I tuned [mpe-styles/style.less](mpe-styles/style.less) sheet so that within Markdown-Preview-Enhanced, we can do:
@@ -123,7 +135,7 @@ $ link ~/.atom/mpe-styles/style.less ~/.mume/style.less
 
 <!-- ### Set-up Juno
 
-#### Install Juno pacakge
+#### Install Juno package
 
 > Julia REPL
 
@@ -162,7 +174,6 @@ $ cp ~/.atom/assets/Main.js ~/.atom/packages/atom-ide-debugger-python/node_modul
 - **KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk]
 
 [aviatesk]: https://github.com/aviatesk
-
 
 
 <!-- ## Acknowledgements -->

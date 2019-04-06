@@ -48,6 +48,7 @@
   'ctrl-x ctrl-c': 'window:close'
 
   ## file, project
+  'ctrl-x f': 'fuzzy-finder:toggle-file-finder'
   'ctrl-x ctrl-f': 'advanced-open-file:toggle'
   'ctrl-x ctrl-p': 'project-manager:list-projects'
   'ctrl-t': 'tree-view:toggle-focus'
@@ -127,6 +128,10 @@
   'alt-h': 'github:toggle-git-tab'
   'alt-shift-h': 'github:toggle-github-tab'
 
+  ## Project-Find
+  'ctrl-alt-s': 'project-find:toggle'
+  'ctrl-alt-r': 'project-find:toggle'
+
   ## Atom-IDE
   # Debugger: General
   'ctrl-x space': 'debugger:toggle-breakpoint'
@@ -144,7 +149,9 @@
   # Diagnostics
   'alt-d': 'window:toggle-bottom-dock'
   # Find references
-  'alt-r': 'window:toggle-bottom-dock'
+  'alt-f': 'window:toggle-bottom-dock'
+  # Outline-View
+  'ctrl-alt-o': 'window:focus-pane-on-left'
 
   ## Open in Browser
   'ctrl-shift-b': 'open-in-browser:open'
@@ -152,7 +159,6 @@
   ## Hydrogen
   'alt-o': 'window:focus-pane-on-left'
   'alt-k': 'window:toggle-bottom-dock'
-  'ctrl-alt-o': 'window:focus-pane-on-left'
 
   ## Julia-client
   'alt-j d': 'julia-debug:open-debug-pane'
@@ -189,14 +195,16 @@
   'cmd-q': 'dqs-shell-commands-config:toggle'
   'cmd-h': 'github:toggle-git-tab'
   'cmd-shift-h': 'github:toggle-github-tab'
+  'ctrl-cmd-s': 'project-find:toggle'
+  'ctrl-cmd-r': 'project-find:toggle'
   'cmd-p d': 'debugger:toggle'
   'cmd-p cmd-p': 'debugger:toggle'
   'cmd-p enter': 'window:focus-pane-above'
   'cmd-d': 'window:toggle-bottom-dock'
-  'cmd-r': 'window:toggle-bottom-dock'
+  'cmd-f': 'window:toggle-bottom-dock'
+  'ctrl-cmd-o': 'window:focus-pane-on-left'
   'cmd-o': 'window:focus-pane-on-left'
   'cmd-k': 'window:toggle-bottom-dock'
-  'ctrl-cmd-o': 'window:focus-pane-on-left'
   'cmd-j d': 'julia-debug:open-debug-pane'
   'cmd-j alt-d': 'window:toggle-right-dock'
   'cmd-j enter': 'julia-client:focus-last-editor'
@@ -276,6 +284,28 @@
   'cmd-w': 'tree-view:copy'
   'cmd-c': 'tree-view:copy-project-path'
   'ctrl-cmd-c': 'tree-view:copy-full-path'
+
+## Advanced-open-file
+'.advanced-open-file atom-text-editor':
+  'ctrl-o': 'advanced-open-file:move-cursor-up'
+  'ctrl-n': 'advanced-open-file:move-cursor-down'
+  'ctrl-m': 'core:confirm'
+  'ctrl-;': 'core:confirm'
+  'ctrl-i': 'advanced-open-file:autocomplete'
+  'ctrl-:': 'advanced-open-file:autocomplete'
+  'ctrl-d': 'advanced-open-file:delete-path-component'
+  'ctrl-z': 'advanced-open-file:undo'
+
+## Project-Find
+'.project-find':
+  'ctrl-f r': 'project-find:toggle-regex-option'
+  'ctrl-f c': 'project-find:toggle-case-option'
+  'ctrl-f w': 'project-find:toggle-whole-word-option'
+  'ctrl-enter': 'project-find:find-all'
+  'ctrl-shift-alt-enter': 'project-find:replace-all'
+  ## macOS specific fix
+  # use cmd as alt
+  'ctrl-shift-cmd-enter': 'project-find:replace-all'
 
 ## Git ##
 '.workspace':
@@ -388,16 +418,23 @@
   'cmd-t': 'tree-view:toggle-focus'
   'cmd-h': 'github:toggle-git-tab-focus'
 
-## Advanced-open-file
-'.advanced-open-file atom-text-editor':
-  'ctrl-o': 'advanced-open-file:move-cursor-up'
-  'ctrl-n': 'advanced-open-file:move-cursor-down'
-  'ctrl-m': 'core:confirm'
-  'ctrl-;': 'core:confirm'
-  'ctrl-i': 'advanced-open-file:autocomplete'
-  'ctrl-:': 'advanced-open-file:autocomplete'
-  'ctrl-d': 'advanced-open-file:delete-path-component'
-  'ctrl-z': 'advanced-open-file:undo'
+## PDF-View
+'.pdf-view':
+  'o': 'core:move-up'
+  'l': 'core:move-right'
+  'n': 'core:move-down'
+  'k': 'core:move-left'
+  'p': 'pdf-view:go-to-previous-page'
+  'shift-p': 'pdf-view:go-to-next-page'
+  'ctrl-o': 'core:move-up'
+  'ctrl-l': 'core:move-right'
+  'ctrl-n': 'core:move-down'
+  'ctrl-k': 'core:move-left'
+  'ctlr-p': 'pdf-view:go-to-previous-page'
+  'ctlr-shift-p': 'pdf-view:go-to-next-page'
+  'g': 'pdf-view:go-to-page'
+  'ctrl-x g': 'pdf-view:go-to-page'
+  'ctrl-x ctrl-f': 'advanced-open-file:toggle'
 
 
 
@@ -445,6 +482,12 @@
   'alt-shift-t': 'git-time-machine:toggle'
   'ctrl-alt-p': 'git-diff:move-to-previous-diff'
   'ctrl-alt-n': 'git-diff:move-to-next-diff'
+
+  ## Find-and-Replace
+  'ctrl-s': 'find-and-replace:find-next'
+  'ctrl-shift-s': 'find-and-replace:find-next'
+  'ctrl-r': 'find-and-replace:find-previous'
+  'ctrl-shift-r': 'find-and-replace:find-previous'
 
   ## Script -- should not be placed in .emacs-plus scope, because I write per-file run definition below
   'ctrl-x r': 'script:run'
@@ -502,6 +545,9 @@
   ## Atom-Beautify
   'ctrl-c ctrl-f': 'atom-beautify:beautify-editor'
 
+  ## Encoding-Selector
+  'ctrl-x ctrl-e': 'encoding-selector:show'
+
   ## Indent-Detective
   'ctrl-x ctrl-i': 'indent-detective:choose-indent'
 
@@ -512,15 +558,6 @@
   ## Split-diff
   'alt-s': 'split-diff:toggle'
 
-  ## macOS specific fix
-  # use cmd as alt
-  'ctrl-cmd-c': 'color-picker:open'
-  'cmd-down': 'unset!'
-  'cmd-right': 'unset!'
-  'cmd-left': 'unset!'
-  'cmd-h': 'github:toggle-git-tab-focus'
-  'cmd-shift-h': 'github:toggle-github-tab-focus'
-  'cmd-s': 'split-diff:toggle'
 
 
 ### Per-mode & Per-filetype settings IN atom-editor-space ###
@@ -565,23 +602,35 @@
   'cmd-n': 'find-and-replace:find-next-selected'
   'cmd-i': 'termination:insert-selected-text'
 
-## Find and Replace
-'.platform-win32 atom-text-editor':
-  'ctrl-s': 'find-and-replace:find-next'
-  'ctrl-shift-s': 'find-and-replace:find-next'
-  'ctrl-r': 'find-and-replace:find-previous'
-  'ctrl-shift-r': 'find-and-replace:find-previous'
+## Find-and-Replace
+'.find-and-replace':
+  'ctrl-f r': 'find-and-replace:toggle-regex-option'
+  'ctrl-f c': 'find-and-replace:toggle-case-option'
+  'ctrl-f s': 'find-and-replace:toggle-selection-option'
+  'ctrl-f w': 'find-and-replace:toggle-whole-word-option'
+  'ctrl-enter': 'find-and-replace:find-all'
+  'shift-enter': 'find-and-replace:replace-next'
+  'alt-enter': 'find-and-replace:replace-previous'
+  'ctrl-shift-alt-enter': 'find-and-replace:replace-all'
+  ## macOS specific fix
+  # use cmd as alt
+  'cmd-enter': 'find-and-replace:replace-previous'
+  'ctrl-shift-cmd-enter': 'find-and-replace:replace-all'
 
 ## Split-diff
 '.split-diff':
   'ctrl-alt-p': 'split-diff:prev-diff'
+  'ctrl-alt-l': 'split-diff:copy-to-right'
   'ctrl-alt-n': 'split-diff:next-diff'
+  'ctrl-alt-k': 'split-diff:copy-to-left'
   ## macOS specific fix
   # use cmd as alt
   'ctrl-cmd-p': 'split-diff:prev-diff'
+  'ctrl-cmd-l': 'split-diff:copy-to-right'
   'ctrl-cmd-n': 'split-diff:next-diff'
+  'ctrl-cmd-k': 'split-diff:copy-to-left'
 
-## Autocomplete-plus
+## Autocomplete-Plus
 'atom-workspace atom-text-editor:not(mini).emacs-plus.autocomplete-active':
   'ctrl-;': 'autocomplete-plus:confirm'
 
@@ -594,14 +643,6 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
 atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
 ":
   'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
-
-## PDF-View
-'.pdf-view':
-  'ctrl-l': 'core:move-right'
-  'ctrl-x g': 'pdf-view:go-to-page'
-  'ctlr-p': 'pdf-view:go-to-previous-page'
-  'ctlr-shift-p': 'pdf-view:go-to-next-page'
-  'ctrl-x ctrl-f': 'advanced-open-file:toggle'
 
 ## Hydrogen
 "
@@ -860,9 +901,11 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'alt-end': 'diagnostics:go-to-first-diagnostic'
   'alt-n': 'diagnostics:go-to-next-diagnostic'
   'alt-home': 'diagnostics:go-to-last-diagnostic'
-  # Find reference
-  'alt-r': 'find-references:activate'
-  # Outline view
+  # Find-Reference
+  'alt-f': 'find-references:activate'
+  # Hyperclick
+  'alt-r': 'hyperclick:confirm-cursor'
+  # Outline-View
   'ctrl-alt-o': 'outline-view:toggle'
   ## macOS specific fix
   # use cmd as alt
@@ -873,7 +916,8 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-
   'cmd-end': 'diagnostics:go-to-first-diagnostic'
   'cmd-n': 'diagnostics:go-to-next-diagnostic'
   'cmd-home': 'diagnostics:go-to-last-diagnostic'
-  'cmd-r': 'find-references:activate'
+  'cmd-f': 'find-references:activate'
+  'cmd-r': 'hyperclick:confirm-cursor'
   'ctrl-cmd-o': 'outline-view:toggle'
 
 ## HTML
