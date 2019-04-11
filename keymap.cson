@@ -335,8 +335,8 @@
   'ctrl-l': 'core:move-right'
   'ctrl-n': 'core:move-down'
   'ctrl-k': 'core:move-left'
-  'ctlr-p': 'pdf-view:go-to-previous-page'
-  'ctlr-shift-p': 'pdf-view:go-to-next-page'
+  'ctrl-p': 'pdf-view:go-to-previous-page'
+  'ctrl-shift-p': 'pdf-view:go-to-next-page'
   'g': 'pdf-view:go-to-page'
   'ctrl-x g': 'pdf-view:go-to-page'
   'ctrl-x ctrl-f': 'advanced-open-file:toggle'
@@ -658,7 +658,7 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   'f10': 'julia-debug:finish-function'
 "
 atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:mark-mode:not([mini])
+atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini])
 ":
   ## Julia-Client
   'ctrl-c': 'unset!'
