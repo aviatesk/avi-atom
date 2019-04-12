@@ -44,6 +44,8 @@
     "atom-ide-outline-view": {}
     "atom-ide-signature-help": {}
     "debugger-exceptionBreakpointsCollapsed": true
+    hyperclick:
+      darwinTriggerKeys: "ctrlKey"
     use:
       "atom-ide-terminal": "never"
   "autocomplete-paths": {}
