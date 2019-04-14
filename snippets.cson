@@ -258,6 +258,40 @@
     'description': 'Inserts Hydrogen markdown cell'
 
 
+### Javascript ###
+'.source.js':
+  'Comment block':
+    'prefix': 'cb'
+    'body':
+      '''
+      /**
+       * ${1:Comment}
+       */
+      '''
+    'description': 'Insert multi-line comment block'
+  'Line comment':
+    'prefix': 'ci'
+    'body': '/* ${1:Comment} */'
+    'description': 'Insert line comment block'
+
+
+### CSS ###
+'.source.css':
+  'Comment block':
+    'prefix': 'cb'
+    'body':
+      '''
+      /**
+       * ${1:Comment}
+       */
+      '''
+    'description': 'Insert multi-line comment block'
+  'Line comment':
+    'prefix': 'ci'
+    'body': '/* ${1:Comment} */'
+    'description': 'Insert line comment block'
+
+
 ### R ###
 '.source.r':
 
@@ -827,7 +861,7 @@
     'body':
       '''
       /**
-          Description for this class
+       * Description for this class
        */
       public class ${1:NAME} ${2:extends ${3:PARENT}} ${4:implements ${5:INTERFACE}} {
 
@@ -910,23 +944,6 @@
     'prefix': 'pl'
     'body': 'System.out.println($1);'
     'description': 'Inserts println snippet'
-  'Comment block':
-    'prefix': 'cb'
-    'body':
-      '''
-      /**
-       * ${1:Comment}
-       */
-      '''
-  'Line comment':
-    'prefix': 'ci'
-    'body': '/** ${1:Comment} */'
-    'description': 'Insert line comment block'
-
-
-
-### CSS ###
-'.source.css':
   'Comment block':
     'prefix': 'cb'
     'body':

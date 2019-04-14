@@ -175,49 +175,53 @@ atom-text-editor.editor {
 /**
  * File-Icon style customize
  */
+/* Directories */
 @import "packages/file-icons/styles/colours";
-// Directories
 .icon[data-name$="data"]:before {
-	font-family: "Octicons Regular";
-	content: "\f043";
+  font-family: "Octicons Regular";
+  content: "\f043";
 }
 .icon[data-name$="assets"]:before, .icon[data-name$="figs"]:before, .icon[data-name$="figures"]:before {
-	font-family: "Octicons Regular";
-	content: "\f012";
+  font-family: "Octicons Regular";
+  content: "\f012";
 }
 .icon[data-name$="src"]:before, .icon[data-name$="scripts"]:before, .icon[data-name$="code"]:before {
-	font-family: "Octicons Regular";
-	content: "\f05f";
+  font-family: "Octicons Regular";
+  content: "\f05f";
 }
 .icon[data-name$="notes"]:before {
-	font-family: "Octicons Regular";
-	content: "\f007";
+  font-family: "Octicons Regular";
+  content: "\f007";
 }
-.directory > .header > .icon{
-	&[data-path$=".atom\\packages"]:before {
-		font-family: "Octicons Regular";
-		content: "\f0c4";
-	}
+.directory>.header>.icon {
+  &[data-path$=".atom\\packages"]:before {
+    font-family: "Octicons Regular";
+    content: "\f0c4";
+  }
 }
-// Markdowns
-.icon[data-name$="README.md"]:before { // README.md
-	font-family: "Octicons Regular";
-	content: "\f00a";
+/* Markdowns */
+// README.md
+.icon[data-name$="README.md"]:before {
+  font-family: "Octicons Regular";
+  content: "\f00a";
 }
-.icon[data-name$=".jmd"]:before { // Weave.jl
-	font-family: "Octicons Regular";
-	content: "\f0c9";
-	color: @purple;
-	font-size: 16px;
+// Weave.jl
+.icon[data-name$=".jmd"]:before {
+  font-family: "Octicons Regular";
+  content: "\f0c9";
+  color: @purple;
+  font-size: 16px;
 }
-.icon[data-name$=".pmd"]:before { // pweave document
-	color: @dark-blue;
+// pweave document
+.icon[data-name$=".pmd"]:before {
+  color: @dark-blue;
 }
-.icon[data-name$=".Rmd"]:before { // RMarkdown
-	color: @blue;
+// RMarkdown
+.icon[data-name$=".Rmd"]:before {
+  color: @blue;
 }
-// Cson
+/* Cson */
 .icon[data-name$=".cson"]:before {
-	font-family: file-icons;
-	content: "\eabe";
+  font-family: file-icons;
+  content: "\eabe";
 }

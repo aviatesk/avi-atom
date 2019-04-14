@@ -19,6 +19,9 @@
     html:
       end_with_newline: true
       indent_size: 2
+    js:
+      brace_style: "collapse-preserve-inline"
+      end_with_newline: true
     json:
       end_with_newline: true
       indent_size: 2
@@ -46,6 +49,13 @@
     "debugger-exceptionBreakpointsCollapsed": true
     use:
       "atom-ide-terminal": "never"
+  "atom-package-deps":
+    ignored: [
+      "flow-ide"
+      "linter-eslint"
+    ]
+  "atom-ternjs":
+    inlineFnCompletionDocumentation: true
   "autocomplete-paths": {}
   "autocomplete-plus":
     minimumWordLength: 2
@@ -119,6 +129,7 @@
   "file-icons": {}
   "find-and-replace":
     closeFindPanelAfterSearch: true
+  "flow-ide": {}
   "git-diff": {}
   "git-plus":
     diffs:
@@ -154,10 +165,21 @@
       yapf:
         enabled: true
     python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
+  "ide-typescript":
+    javascriptSupport: false
+    returnTypeInAutocomplete: "right"
+  "language-babel":
+    allowLocalOverride: true
+    emmetCSSAutocomplete: true
   "language-markdown":
     disableLanguageGfm: false
   "language-weave":
     showPreview: false
+  "linter-eslint":
+    disabling:
+      disableWhenNoEslintConfig: false
+    global:
+      useGlobalEslint: true
   "markdown-preview-enhanced":
     codeBlockTheme: "github.css"
     enableCriticMarkupSyntax: true
@@ -292,6 +314,10 @@
   editor:
     softWrapHangingIndent: 1
     tabLength: 2
+".css.source.styled":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
 ".gfm.rmd.source":
   editor:
     tabType: "soft"
@@ -303,6 +329,14 @@
     tabType: "soft"
   "wrap-guide":
     enabled: true
+".js.jsx.source":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
+".js.source":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
 ".julia.source":
   "wrap-guide":
     enabled: true
