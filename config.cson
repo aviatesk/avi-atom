@@ -63,6 +63,7 @@
   core:
     audioBeep: false
     autoHideMenuBar: true
+    automaticallyUpdate: false
     customFileTypes:
       "source.gfm": [
         "README.md"
@@ -94,6 +95,7 @@
       "Zen"
       "atom-beautify"
       "atom-html-preview"
+      "atom-ternjs"
       "git-diff"
       "git-time-machine"
       "language-weave"
@@ -234,6 +236,8 @@
   "minimap-selection":
     highlightCursorsLines: true
     outlineSelection: true
+  "package-generator":
+    createInDevMode: true
   "pdf-view": {}
   script:
     cwdBehavior: "Directory of the script"
@@ -277,9 +281,8 @@
   termination:
     core:
       shell: "C:\\Program Files\\Git\\bin\\bash.exe"
-      workingDirectory: "Active File"
     customTexts:
-      customText1: "apm list --installed --bare > ~/.atom/my-packages.txt"
+      customText1: "apm list --installed --dev false --bare > ~/.atom/my-packages.txt"
       customText2: "bash ~/.atom/scripts/process-md.sh $F"
       customText3: "C:\\Users\\aviat\\.atom\\scripts\\process-md.bat $F"
     style:

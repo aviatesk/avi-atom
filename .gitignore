@@ -1,6 +1,5 @@
 .apm
 .node-gyp
-.npm
 blob-store
 compile-cache
 dev
@@ -9,5 +8,5 @@ packages
 recovery
 split-diff
 storage
+.tern-project
 projects.cson
-README_draft.md
