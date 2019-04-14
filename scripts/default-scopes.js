@@ -2,7 +2,7 @@
 
 export default [
   {
-    scopes: ['source.js', 'source.js.jsx', 'source.coffee', 'source.coffee.jsx', 'source.ts', 'source.tsx'],
+    scopes: ['source.js', 'source.js.jsx', 'source.flow', 'source.coffee', 'source.coffee.jsx', 'source.ts', 'source.tsx'],
     prefixes: [
       'import\\s+.*?from\\s+[\'"]', // import foo from './foo'
       'import\\s+[\'"]', // import './foo'

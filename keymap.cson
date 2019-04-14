@@ -469,14 +469,13 @@
   'alt-l': 'window:toggle-right-dock'
   'alt-b': 'window:toggle-bottom-dock'
 
-  ## Grammer
-  'ctrl-x ctrl-m': 'grammar-selector:show'
-
   ## Tree view
   'alt-t': 'tree-view:toggle'
   'ctrl-x ctrl-t': 'tree-view:toggle'
 
   ## Git
+  'alt-h': 'github:toggle-git-tab-focus'
+  'alt-shift-h': 'github:toggle-github-tab-focus'
   'alt-ctrl-g': 'github:view-unstaged-changes-for-current-file'
   'alt-shift-g': 'github:view-staged-changes-for-current-file'
   'alt-shift-t': 'git-time-machine:toggle'
@@ -512,6 +511,8 @@
   'cmd-l': 'window:toggle-right-dock'
   'cmd-b': 'window:toggle-bottom-dock'
   'cmd-t': 'tree-view:toggle'
+  'cmd-h': 'github:toggle-git-tab-focus'
+  'cmd-shift-h': 'github:toggle-github-tab-focus'
   'cmd-ctrl-g': 'github:view-unstaged-changes-for-current-file'
   'cmd-shift-g': 'github:view-staged-changes-for-current-file'
   'cmd-shift-t': 'git-time-machine:toggle'
@@ -545,18 +546,51 @@
   ## Atom-Beautify
   'ctrl-c ctrl-f': 'atom-beautify:beautify-editor'
 
+  ## Atom-IDE
+  # Diagnostics
+  'alt-d': 'diagnostics:toggle-table'
+  'alt-p': 'diagnostics:go-to-previous-diagnostic'
+  'alt-end': 'diagnostics:go-to-first-diagnostic'
+  'alt-n': 'diagnostics:go-to-next-diagnostic'
+  'alt-home': 'diagnostics:go-to-last-diagnostic'
+  # Find-Reference
+  'alt-f': 'find-references:activate'
+  # Outline-View
+  'ctrl-alt-o': 'outline-view:toggle'
+
+  ## Autocomplete-Plus
+  'shift-space': 'autocomplete-plus:activate'
+
   ## Encoding-Selector
   'ctrl-x ctrl-e': 'encoding-selector:show'
+
+  ## Grammer
+  'ctrl-x ctrl-m': 'grammar-selector:show'
 
   ## Indent-Detective
   'ctrl-x ctrl-i': 'indent-detective:choose-indent'
 
-  ## Git
-  'alt-h': 'github:toggle-git-tab-focus'
-  'alt-shift-h': 'github:toggle-github-tab-focus'
+  ## Hyperclick
+  'alt-r': 'hyperclick:confirm-cursor'
 
   ## Split-diff
   'alt-s': 'split-diff:toggle'
+
+  ## macOS specific
+  # use cmd as alt
+  'ctrl-cmd-c': 'color-picker:open'
+  'cmd-down': 'unset!'
+  'cmd-right': 'unset!'
+  'cmd-left': 'unset!'
+  'cmd-d': 'diagnostics:toggle-table'
+  'cmd-p': 'diagnostics:go-to-previous-diagnostic'
+  'cmd-end': 'diagnostics:go-to-first-diagnostic'
+  'cmd-n': 'diagnostics:go-to-next-diagnostic'
+  'cmd-home': 'diagnostics:go-to-last-diagnostic'
+  'cmd-f': 'find-references:activate'
+  'ctrl-cmd-o': 'outline-view:toggle'
+  'cmd-r': 'hyperclick:confirm-cursor'
+  'cmd-s': 'split-diff:toggle'
 
 
 
@@ -634,22 +668,11 @@
 'atom-workspace atom-text-editor:not(mini).emacs-plus.autocomplete-active':
   'ctrl-;': 'autocomplete-plus:confirm'
 
-## Markdown-Preview-Enhanced
-"
-atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
-":
-  'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
-
 ## Hydrogen
 "
 atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus:not([mini])
 ":
   'ctrl-c': 'unset!'
   'ctrl-c ctrl-c': 'hydrogen:run'
@@ -676,9 +699,8 @@ atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini])
   'cmd-k': 'hydrogen:toggle-kernel-monitor'
 "
 atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
-atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus.mark-mode:not([mini])
+atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini])
 ":
   'ctrl-c': 'unset!'
   'ctrl-c ctrl-c': 'hydrogen:run'
@@ -772,6 +794,25 @@ atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not(
   'ctrl-;': 'core:confirm'
   'escape': 'core:cancel'
   'ctrl-g': 'core:cancel'
+
+## Markdown-Preview-Enhanced
+"
+atom-workspace atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
+":
+  'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
+"
+atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini])
+":
+  'ctrl-enter': 'markdown-preview-enhanced:run-code-chunk'
+  'ctrl-alt-shift-enter': 'markdown-preview-enhanced:run-all-code-chunks'
+  ## macOS specific fix
+  # use cmd as alt
+  'ctrl-cmd-shift-enter': 'markdown-preview-enhanced:run-all-code-chunks'
 
 ## Julia
 "
@@ -889,41 +930,35 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-
 
 ## Python
 "atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus:not([mini])":
-  ## Atom-IDE: IDE-Python
+  ## IDE-Python
   # Code format
   'ctrl-c ctrl-f': 'code-format:format-code'
   # Debugger
   'alt-p d': 'debugger:toggle'
   'alt-p alt-d': 'debugger:toggle'
-  # Diagnostics
-  'alt-d': 'diagnostics:toggle-table'
-  'alt-p': 'diagnostics:go-to-previous-diagnostic'
-  'alt-end': 'diagnostics:go-to-first-diagnostic'
-  'alt-n': 'diagnostics:go-to-next-diagnostic'
-  'alt-home': 'diagnostics:go-to-last-diagnostic'
-  # Find-Reference
-  'alt-f': 'find-references:activate'
-  # Hyperclick
-  'alt-r': 'hyperclick:confirm-cursor'
-  # Outline-View
-  'ctrl-alt-o': 'outline-view:toggle'
-  ## macOS specific fix
-  # use cmd as alt
-  'cmd-p d': 'debugger:toggle'
-  'cmd-p cmd-d': 'debugger:toggle'
-  'cmd-d': 'diagnostics:toggle-table'
-  'cmd-p': 'diagnostics:go-to-previous-diagnostic'
-  'cmd-end': 'diagnostics:go-to-first-diagnostic'
-  'cmd-n': 'diagnostics:go-to-next-diagnostic'
-  'cmd-home': 'diagnostics:go-to-last-diagnostic'
-  'cmd-f': 'find-references:activate'
-  'cmd-r': 'hyperclick:confirm-cursor'
-  'ctrl-cmd-o': 'outline-view:toggle'
 
 ## HTML
 "atom-workspace atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
   ## Atom-HTML-Preview: ctrl-shift-m (same as Markdown-Preview-Enhanced:toggle)
   'ctrl-shift-m': 'atom-html-preview:toggle'
+
+## Javascript
+"
+atom-workspace atom-text-editor[data-grammar~='js'].emacs-plus:not([mini])
+":
+  ## Atom-Ternjs
+  'alt-i': 'atom-ternjs:documentation'
+  'alt-r': 'atom-ternjs:definition'
+  'alt-f': 'atom-ternjs:references'
+  'alt-left': 'atom-ternjs:navigateBack'
+  'alt-right': 'atom-ternjs:navigateForward'
+  ## macOS specific fix:
+  # use cmd as alt
+  'cmd-i': 'atom-ternjs:documentation'
+  'cmd-r': 'atom-ternjs:definition'
+  'cmd-f': 'atom-ternjs:references'
+  'cmd-left': 'atom-ternjs:navigateBack'
+  'cmd-right': 'atom-ternjs:navigateForward'
 
 ## CSS
 ## Switch Atom-Beautify with selection

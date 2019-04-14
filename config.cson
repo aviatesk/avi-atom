@@ -19,6 +19,9 @@
     html:
       end_with_newline: true
       indent_size: 2
+    js:
+      brace_style: "collapse-preserve-inline"
+      end_with_newline: true
     json:
       end_with_newline: true
       indent_size: 2
@@ -46,6 +49,13 @@
     "debugger-exceptionBreakpointsCollapsed": true
     use:
       "atom-ide-terminal": "never"
+  "atom-package-deps":
+    ignored: [
+      "flow-ide"
+      "linter-eslint"
+    ]
+  "atom-ternjs":
+    inlineFnCompletionDocumentation: true
   "autocomplete-paths": {}
   "autocomplete-plus":
     minimumWordLength: 2
@@ -53,6 +63,7 @@
   core:
     audioBeep: false
     autoHideMenuBar: true
+    automaticallyUpdate: false
     customFileTypes:
       "source.gfm": [
         "README.md"
@@ -84,6 +95,7 @@
       "Zen"
       "atom-beautify"
       "atom-html-preview"
+      "atom-ternjs"
       "git-diff"
       "git-time-machine"
       "language-weave"
@@ -119,6 +131,7 @@
   "file-icons": {}
   "find-and-replace":
     closeFindPanelAfterSearch: true
+  "flow-ide": {}
   "git-diff": {}
   "git-plus":
     diffs:
@@ -135,6 +148,12 @@
   "highlight-selected":
     onlyHighlightWholeWords: false
   "ide-python":
+    "ide-typescript":
+      javascriptSupport: false
+      returnTypeInAutocomplete: "right"
+    "language-babel":
+      allowLocalOverride: true
+      emmetCSSAutocomplete: true
     pylsPlugins:
       autopep8:
         enabled: false
@@ -158,6 +177,11 @@
     disableLanguageGfm: false
   "language-weave":
     showPreview: false
+  "linter-eslint":
+    disabling:
+      disableWhenNoEslintConfig: false
+    global:
+      useGlobalEslint: true
   "markdown-preview-enhanced":
     codeBlockTheme: "github.css"
     enableCriticMarkupSyntax: true
@@ -212,6 +236,8 @@
   "minimap-selection":
     highlightCursorsLines: true
     outlineSelection: true
+  "package-generator":
+    createInDevMode: true
   "pdf-view": {}
   script:
     cwdBehavior: "Directory of the script"
@@ -256,7 +282,7 @@
     core:
       shell: "/bin/bash"
     customTexts:
-      customText1: "apm list --installed --bare > ~/.atom/my-packages.txt"
+      customText1: "apm list --installed --dev false --bare > ~/.atom/my-packages.txt"
       customText2: "bash ~/.atom/scripts/process-md.sh $F"
     style:
       fontFamily: "Myrica M"
@@ -292,6 +318,10 @@
   editor:
     softWrapHangingIndent: 1
     tabLength: 2
+".css.source.styled":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
 ".gfm.rmd.source":
   editor:
     tabType: "soft"
@@ -303,6 +333,14 @@
     tabType: "soft"
   "wrap-guide":
     enabled: true
+".js.jsx.source":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
+".js.source":
+  editor:
+    softWrapHangingIndent: 1
+    tabLength: 2
 ".julia.source":
   "wrap-guide":
     enabled: true
