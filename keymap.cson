@@ -515,7 +515,8 @@
 "
 atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":
   'ctrl-c': 'unset!'
   'ctrl-c ctrl-c': 'hydrogen:run'
@@ -535,7 +536,8 @@ atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus:not([mini])
 "
 atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini])
+atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":
   'ctrl-c': 'unset!'
   'ctrl-c ctrl-c': 'hydrogen:run'
@@ -553,7 +555,8 @@ atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:no
 atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":
   ## Dqs-Shell-Commands: Process .pmd & .Rmd documents (Same as Script)
   # The appropriate shell command to process either pweave document or R-markdown gonna be automatically detected
@@ -625,7 +628,8 @@ atom-workspace atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini]
 atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
 atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":
   'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
 "

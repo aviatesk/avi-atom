@@ -1,6 +1,7 @@
 "*":
   Hydrogen:
     gateways: "[{ \"name\": \"Local notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthToken\" } }]"
+    languageMappings: "{ \"r\": \"r markdown\" }"
     outputAreaDock: true
     outputAreaFontSize: 13
     startDir: "dirOfFile"
@@ -68,10 +69,12 @@
       "source.gfm": [
         "README.md"
       ]
-      "text.md": [
-        "md"
+      "source.gfm.rmd": [
         "Rmd"
         "rmd"
+      ]
+      "text.md": [
+        "md"
       ]
     disabledPackages: [
       "markdown-preview"
@@ -194,6 +197,7 @@
   "markdown-writer":
     grammars: [
       "source.gfm"
+      "source.gfm.rmd"
       "source.gfm.nvatom"
       "source.litcoffee"
       "source.pweave.md"
@@ -325,7 +329,10 @@
   editor:
     tabType: "soft"
   whitespace:
-    removeTrailingWhitespace: false
+    ensureSingleTrailingNewline: false
+".gfm.source":
+  editor:
+    tabType: "soft"
 ".java.source":
   editor:
     preferredLineLength: 100

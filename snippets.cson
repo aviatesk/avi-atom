@@ -316,8 +316,8 @@
     'description': 'Inserts Hydrogen code cell'
 
 
-### Markdown families: GFM, Markdown (including RMarkdown), Weave.jl, pweave ###
-'.source.gfm, .text.md, .source.weave.md, .source.pweave.md':
+### Markdown families: GFM, Markdown, Weave.jl, pweave, RMarkdown ###
+'.source.gfm, .text.md, .source.weave.md, .source.pweave.md, .source.gfm.rmd':
 
   'Markdown: Header':
     'prefix': 'h'
@@ -403,7 +403,7 @@
     'description': 'Inserts break line'
 
 
-### MPE: HTML rendering, Styling, Enhancements & MathJax support ###
+### MPE: HTML rendering, Styling, Enhancements ###
 '.text.md, .source.weave.md, .source.pweave.md':
 
   ## HTML rendering
@@ -513,7 +513,10 @@
       '''
     'description': 'Inserts slide cell with MPE-previewing'
 
-  ## MathJax support
+
+### MathJax Support ###
+'.text.md, .source.weave.md, .source.pweave.md, .source.gfm.rmd':
+
   'MathJax: Inline MathJax block':
     'prefix': 'mi'
     'body': "\$${1:expr}\$"
@@ -770,7 +773,7 @@
 
 
 ### RMarkdown ###
-'.text.md':
+'.source.gfm.rmd':
 
   ## Meta
   'R-markdown: Meta settings for R-markdown':
