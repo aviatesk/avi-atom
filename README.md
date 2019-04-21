@@ -113,7 +113,7 @@ We can make Git ignore .atom/config.cson files globally except ~/.atom/config.cs
 For easy writing of Javascripts, make a .eslintrc file to home directory:
 
 ```bash
-npm install -g eslint eslint-config-airbnb-base eslint-plugin-import
+npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
 link ~/.atom/scripts/.eslintrc.json ~/.eslintrc.json
 ```
 

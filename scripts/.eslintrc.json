@@ -4,17 +4,17 @@
     "es6": true,
     "node": true
   },
-  "extends": "airbnb",
+  "extends": "eslint:recommended",
   "globals": {
-    "atom": false
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
   },
+  "parser": "babel-eslint",
   "rules": {
+    "indent": 0,
     "linebreak-style": 0,
-    "indent": ["error", 2]
+    "no-console": 1,
+    "no-underscore-dangle": 0,
   },
-  "settings": {
-    "import/core-modules": [
-      "atom"
-    ]
-  }
+  "settings": {}
 }

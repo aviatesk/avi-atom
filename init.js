@@ -1,4 +1,6 @@
-const { TextEditor } = require('atom');
+'use babel';
+
+import { TextEditor } from 'atom';
 
 class InputView {
   constructor(placeholderText, messageText) {
@@ -26,6 +28,9 @@ class InputView {
     });
   }
 
+  /**
+   * Opens the input prompt in a mini text editor view.
+   */
   open() {
     if (this.panel.isVisible()) return;
     this.storeFocusedElement();
@@ -33,6 +38,9 @@ class InputView {
     this.miniEditor.element.focus();
   }
 
+  /**
+   * CLoses the opened mini text editor view and restores the original view.
+   */
   close() {
     if (!this.panel.isVisible()) return;
     this.miniEditor.setText('');
@@ -42,8 +50,12 @@ class InputView {
     }
   }
 
+  /**
+   * Confirms the input prompt.
+   *
+   * @usage A subclass will overwrite this method to achieve its own task.
+   */
   confirm() {
-    /* The subclass will overwrite this method to achieve the expected action */
     this.close();
   }
 
@@ -73,6 +85,10 @@ class RebaseInputView extends InputView {
         .then((repo) => {
           this.gp.run(repo, 'rebase -i HEAD~'.concat(text));
         });
+    } else {
+      atom.notifications.addInfo('Git interactive rebasing info', {
+        detail: 'Enter an interger !',
+      });
     }
     this.close();
   }

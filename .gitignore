@@ -4,9 +4,11 @@ blob-store
 compile-cache
 dev
 git-time-machine
+node_modules
 packages
 recovery
 split-diff
 storage
+.eslintrc.json
 .tern-project
 projects.cson
