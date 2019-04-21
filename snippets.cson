@@ -258,8 +258,25 @@
     'description': 'Inserts Hydrogen markdown cell'
 
 
-### Javascript ###
+### JavaScript ###
 '.source.js':
+  'Comment block':
+    'prefix': 'cb'
+    'body':
+      '''
+      /**
+       * ${1:Comment}
+       */
+      '''
+    'description': 'Insert multi-line comment block'
+  'Line comment':
+    'prefix': 'ci'
+    'body': '/* ${1:Comment} */'
+    'description': 'Insert line comment block'
+
+
+### TypeScript ###
+'.source.ts':
   'Comment block':
     'prefix': 'cb'
     'body':

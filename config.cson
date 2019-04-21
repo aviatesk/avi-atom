@@ -37,6 +37,8 @@
       identifiers: "lower"
       indent_size: 2
       reindent: false
+    typescript:
+      indent_size: 2
   "atom-clock":
     dateFormat: "YYYY/MM/DD/HH:mm"
   "atom-hot-package-loader":
@@ -190,6 +192,8 @@
       disableWhenNoEslintConfig: false
     global:
       useGlobalEslint: true
+  "linter-tslint":
+    useGlobalTslint: true
   "markdown-preview-enhanced":
     codeBlockTheme: "github.css"
     enableCriticMarkupSyntax: true
@@ -352,8 +356,11 @@
     tabLength: 2
 ".js.source":
   editor:
+    preferredLineLength: 100
     softWrapHangingIndent: 1
     tabLength: 2
+  "wrap-guide":
+    enabled: true
 ".julia.source":
   "wrap-guide":
     enabled: true
@@ -385,3 +392,10 @@
   editor:
     softWrapHangingIndent: 1
     tabLength: 2
+".source.ts":
+  editor:
+    preferredLineLength: 120
+    softWrapHangingIndent: 1
+    tabLength: 2
+  "wrap-guide":
+    enabled: true
