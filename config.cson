@@ -67,6 +67,8 @@
     automaticallyUpdate: false
     customFileTypes:
       "source.gfm": [
+        "CHANGELOG.md"
+        "LICENSE.md"
         "README.md"
       ]
       "source.gfm.rmd": [
