@@ -134,19 +134,12 @@
   'f9': 'debugger:step-into'
   'f10': 'debugger:step-over'
   'ctrl-f10': 'debugger:step-out'
-  # Debugger: Python
-  'alt-p d': 'debugger:toggle'
-  'alt-p alt-p': 'debugger:toggle'
-  'alt-p enter': 'window:focus-pane-above'
   # Diagnostics
   'alt-d': 'window:toggle-bottom-dock'
   # Find references
   'alt-f': 'window:toggle-bottom-dock'
   # Outline-View
   'ctrl-alt-o': 'window:focus-pane-on-left'
-
-  ## Open in Browser
-  'ctrl-shift-b': 'open-in-browser:open'
 
   ## Hydrogen
   'alt-o': 'window:focus-pane-on-left'

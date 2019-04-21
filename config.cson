@@ -39,6 +39,8 @@
       reindent: false
   "atom-clock":
     dateFormat: "YYYY/MM/DD/HH:mm"
+  "atom-hot-package-loader":
+    detectTargetOnStart: true
   "atom-html-preview":
     enableMathJax: true
   "atom-ide-ui":
@@ -95,6 +97,7 @@
       "desktop.ini"
       "node_modules"
     ]
+    openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "Hydrogen"
       "Zen"
@@ -106,12 +109,12 @@
       "language-weave"
       "markdown-preview-enhanced"
       "markdown-writer"
-      "open-in-browser"
       "script"
       "split-diff"
       "termination"
       "tool-bar"
     ]
+    projectHome: "C:\\Users\\aviat\\GitHub"
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
@@ -242,6 +245,8 @@
   "minimap-selection":
     highlightCursorsLines: true
     outlineSelection: true
+  "open-in-app":
+    defaultApplication: "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
   "package-generator":
     createInDevMode: true
   "pdf-view": {}
