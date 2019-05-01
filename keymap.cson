@@ -723,12 +723,7 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-
   'alt-p d': 'debugger:toggle'
   'alt-p alt-d': 'debugger:toggle'
 
-## HTML
-"atom-workspace atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
-  ## Atom-HTML-Preview: ctrl-shift-m (same as Markdown-Preview-Enhanced:toggle)
-  'ctrl-shift-m': 'atom-html-preview:toggle'
-
-## Javascript
+## JavaScript
 "
 atom-workspace atom-text-editor[data-grammar~='js'].emacs-plus:not([mini])
 ":
@@ -738,6 +733,24 @@ atom-workspace atom-text-editor[data-grammar~='js'].emacs-plus:not([mini])
   'alt-f': 'atom-ternjs:references'
   'alt-left': 'atom-ternjs:navigateBack'
   'alt-right': 'atom-ternjs:navigateForward'
+
+## TypeScript
+"
+atom-workspace atom-text-editor[data-grammar~='ts'].emacs-plus:not([mini])
+":
+  ## Atom-TypeScript
+  'ctrl-alt-o': 'typescript:toggle-semantic-view'
+  'alt-i': 'typescript:show-tooltip'
+  'ctrl-alt-f': 'typescript:find-references'
+  'alt-left': 'typescript:return-from-declaration'
+  'alt-shift-left': 'typescript:show-editor-position-history'
+  # Retain `ctrl-alt-l` key
+  'ctrl-alt-l': 'window:move-active-item-to-pane-on-right'
+
+## HTML
+"atom-workspace atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
+  ## Atom-HTML-Preview: ctrl-shift-m (same as Markdown-Preview-Enhanced:toggle)
+  'ctrl-shift-m': 'atom-html-preview:toggle'
 
 ## CSS
 ## Switch Atom-Beautify with selection

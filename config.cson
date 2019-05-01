@@ -23,9 +23,20 @@
     js:
       brace_style: "collapse-preserve-inline"
       end_with_newline: true
+      keep_array_indentation: true
+      object_curly_spacing: true
+      space_after_anon_function: true
     json:
       end_with_newline: true
       indent_size: 2
+    jsx:
+      brace_style: "collapse-preserve-inline"
+      default_beautifier: "JS Beautify"
+      end_with_newline: true
+      indent_size: 2
+      keep_array_indentation: true
+      object_curly_spacing: true
+      space_after_anon_function: true
     less:
       align_assignments: true
       indent_comments: false
@@ -56,7 +67,7 @@
       "atom-ide-terminal": "never"
   "atom-package-deps":
     ignored: [
-      "flow-ide"
+      "atom-ternjs"
       "linter-eslint"
     ]
   "atom-ternjs":
@@ -141,7 +152,6 @@
   "file-icons": {}
   "find-and-replace":
     closeFindPanelAfterSearch: true
-  "flow-ide": {}
   "git-diff": {}
   "git-plus":
     diffs:
@@ -352,6 +362,7 @@
     enabled: true
 ".js.jsx.source":
   editor:
+    preferredLineLength: 100
     softWrapHangingIndent: 1
     tabLength: 2
 ".js.source":

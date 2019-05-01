@@ -259,7 +259,7 @@
 
 
 ### JavaScript ###
-'.source.js':
+'.source.js, .source.jsx, .source.flow':
   'Comment block':
     'prefix': 'cb'
     'body':
