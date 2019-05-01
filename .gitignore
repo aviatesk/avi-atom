@@ -9,6 +9,7 @@ packages
 recovery
 split-diff
 storage
+.atom-socket-secret-*
 .eslintrc.json
 .tern-project
 projects.cson

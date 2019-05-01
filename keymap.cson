@@ -36,6 +36,7 @@
   'alt-,': 'key-binding-resolver:toggle'
   'alt-b': 'window:toggle-bottom-dock'
   'f5': 'window:reload'
+  'ctrl-f5': 'atom-hot-package-loader:reload'
   'f11': 'window:toggle-full-screen'
   'ctrl-x ctrl-c': 'window:close'
 
@@ -119,6 +120,7 @@
   'ctrl-x ctrl-g': 'git-plus:menu'
   'alt-h': 'github:toggle-git-tab'
   'alt-shift-h': 'github:toggle-github-tab'
+  'ctrl-alt-h': 'git-plus:toggle-output-view'
 
   ## Project-Find
   'ctrl-alt-s': 'project-find:toggle'
@@ -372,9 +374,7 @@
   'ctrl-x ctrl-t': 'tree-view:toggle'
 
   ## Git
-  'alt-h': 'github:toggle-git-tab-focus'
-  'alt-shift-h': 'github:toggle-github-tab-focus'
-  'alt-ctrl-g': 'github:view-unstaged-changes-for-current-file'
+  'ctrl-alt-g': 'github:view-unstaged-changes-for-current-file'
   'alt-shift-g': 'github:view-staged-changes-for-current-file'
   'alt-shift-t': 'git-time-machine:toggle'
   'ctrl-alt-p': 'git-diff:move-to-previous-diff'
@@ -439,6 +439,9 @@
 
   ## Indent-Detective
   'ctrl-x ctrl-i': 'indent-detective:choose-indent'
+
+  ## Line-Ending-Selector
+  'ctrl-x e': 'line-ending-selector:show'
 
   ## Hyperclick
   'alt-r': 'hyperclick:confirm-cursor'
