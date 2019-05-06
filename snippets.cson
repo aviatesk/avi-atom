@@ -276,7 +276,7 @@
 
 
 ### TypeScript ###
-'.source.ts':
+'.source.ts, .source.tsx':
   'Comment block':
     'prefix': 'cb'
     'body':

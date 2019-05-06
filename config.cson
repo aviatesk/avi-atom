@@ -48,6 +48,8 @@
       identifiers: "lower"
       indent_size: 2
       reindent: false
+    tsx:
+      indent_size: 2
     typescript:
       indent_size: 2
   "atom-clock":
@@ -69,10 +71,12 @@
     ignored: [
       "atom-ternjs"
       "linter-eslint"
+      "linter-tslint"
     ]
   "atom-ternjs":
     inlineFnCompletionDocumentation: true
-  "atom-typescript": {}
+  "atom-typescript":
+    tsserverInstancePerTsconfig: true
   "autocomplete-paths": {}
   "autocomplete-plus":
     minimumWordLength: 2
@@ -91,6 +95,9 @@
       "source.gfm.rmd": [
         "Rmd"
         "rmd"
+      ]
+      "source.tsx": [
+        "tsx"
       ]
       "text.md": [
         "md"
@@ -119,6 +126,7 @@
       "atom-beautify"
       "atom-html-preview"
       "atom-ternjs"
+      "atom-typescript"
       "git-diff"
       "git-time-machine"
       "language-weave"
@@ -200,11 +208,15 @@
   "language-weave":
     showPreview: false
   "linter-eslint":
-    disabling:
-      disableWhenNoEslintConfig: false
+    autofix:
+      fixOnSave: true
+      ignoreFixableRulesWhileTyping: true
+    disabling: {}
     global:
       useGlobalEslint: true
   "linter-tslint":
+    fixOnSave: true
+    ignoreTypings: true
     useGlobalTslint: true
   "markdown-preview-enhanced":
     codeBlockTheme: "github.css"
@@ -410,6 +422,13 @@
     softWrapHangingIndent: 1
     tabLength: 2
 ".source.ts":
+  editor:
+    preferredLineLength: 120
+    softWrapHangingIndent: 1
+    tabLength: 2
+  "wrap-guide":
+    enabled: true
+".source.tsx":
   editor:
     preferredLineLength: 120
     softWrapHangingIndent: 1

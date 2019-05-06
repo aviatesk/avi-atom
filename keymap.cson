@@ -739,16 +739,16 @@ atom-workspace atom-text-editor[data-grammar~='js'].emacs-plus:not([mini])
 
 ## TypeScript
 "
-atom-workspace atom-text-editor[data-grammar~='ts'].emacs-plus:not([mini])
+atom-workspace atom-text-editor[data-grammar='source ts'].emacs-plus:not([mini]),
+atom-workspace atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
 ":
   ## Atom-TypeScript
   'ctrl-alt-o': 'typescript:toggle-semantic-view'
   'alt-i': 'typescript:show-tooltip'
   'ctrl-alt-f': 'typescript:find-references'
-  'alt-left': 'typescript:return-from-declaration'
-  'alt-shift-left': 'typescript:show-editor-position-history'
-  # Retain `ctrl-alt-l` key
-  'ctrl-alt-l': 'window:move-active-item-to-pane-on-right'
+  'ctrl-alt-r': 'typescript:rename-refactor'
+  'ctrl-alt-d': 'typescript:return-from-declaration'
+  'ctrl-alt-shift-d': 'typescript:show-editor-position-history'
 
 ## HTML
 "atom-workspace atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
