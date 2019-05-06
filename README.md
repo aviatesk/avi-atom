@@ -31,7 +31,7 @@ Let me show off my Atom customs a bit and explain how to restore them.
 2. [Re-install packages](#re-install-packages)
 3. [Modify paths](#modify-paths)
 4. [Globally ignore .atom/config.cson files by Git](#globally-ignore-atomconfigcson-files-by-git)
-5. [Make global .eslintrc](#make-global-eslintrc)
+5. [Set up global node_modules](#set-up-global-node_modules)
 6. [Make symbolic links](#make-symbolic-links)
 
 <!-- /code_chunk_output -->
@@ -108,16 +108,13 @@ We can make Git ignore .atom/config.cson files globally except ~/.atom/config.cs
 ```
 
 
-### Make global .eslintrc
+### Set up global node_modules
 
-For easy writing of Javascripts, make a .eslintrc file to home directory:
+Set-up global node_modules where [linter-eslint](https://github.com/AtomLinter/linter-eslint) and [linter-tslint](https://github.com/AtomLinter/linter-tslint) falls back where there is no installation of eslint, TypeScript & tslint.
 
 ```bash
-npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
-link ~/.atom/scripts/.eslintrc.json ~/.eslintrc.json
+npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y typescript tslint
 ```
-
-Then [linter-eslint](https://github.com/AtomLinter/linter-eslint) will automatically recognize it and start linting when there is not .eslintrc file in project root.
 
 
 ### Make symbolic links

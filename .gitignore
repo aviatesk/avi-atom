@@ -12,4 +12,6 @@ storage
 .atom-socket-secret-*
 .eslintrc.json
 .tern-project
+package-lock.json
+package.json
 projects.cson
