@@ -5,6 +5,9 @@
     outputAreaDock: true
     outputAreaFontSize: 13
     startDir: "dirOfFile"
+    startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
+  "Hydrogen-Studio":
+    plotPaneSplit: "right"
   Zen:
     fullscreen: false
   "atom-beautify":
