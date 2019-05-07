@@ -6,8 +6,8 @@ All values for the other Per-project configs are set as default
 
 "*":
 
-  ### Julia-specific configs ###
   core:
+    ### Julia-specific configs ###
     disabledPackages: [
       "markdown-preview"
       "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
@@ -18,65 +18,16 @@ All values for the other Per-project configs are set as default
     ]
     excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder
     ignoredNames: [
+      "._*"
       ".hg"
       ".svn"
       ".DS_Store"
-      "._*"
       "Thumbs.db"
       "desktop.ini"
       "node_modules"
       # Autocomplete-Paths: Additional ignored names come below
       # ".git"
     ]
-    packagesWithKeymapsDisabled: [
-      "Hydrogen"
-      "Zen"
-      "atom-beautify"
-      "atom-html-preview"
-      "git-diff"
-      "git-time-machine"
-      "language-weave"
-      "markdown-preview-enhanced"
-      "markdown-writer"
-      "open-in-browser"
-      "script"
-      "split-diff"
-      "termination"
-      "julia-client" # Disable Julia-Client's keybindings (which are defined in .atom/kaymap.cson instead)
-    ]
-  "julia-client":
-    consoleOptions:
-      whitelistedKeybindingsREPL: [
-        "Ctrl-:"
-        "Ctrl-Tab"
-        "Ctrl-Shift-Tab"
-        "Ctrl-W"
-        "Alt-W"
-        "Ctrl-Y"
-        "Ctrl-C"
-        "Ctrl-H"
-        "Alt-X"
-        "Alt-T"
-        "Ctrl-T"
-        "Alt-:"
-        "Ctrl-:"
-        "Alt-H"
-        "Ctrl-M"
-        "Ctrl-L"
-      ]
-    firstBoot: false
-    juliaOptions:
-      optimisationLevel: 2 # Increasing to 3 produces slower completions but faster code, and decreasing to 1 vice versa
-    juliaPath: "julia"
-    uiOptions:
-      enableMenu: true
-      enableToolBar: true
-  "latex-completions":
-    selector: ".source.julia, .source.weave.md"
-  "tool-bar":
-    iconSize: "24px"
-    position: "Left"
-    visible: true
 
   ### General Per-project configs ###
   Zen:

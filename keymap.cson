@@ -154,8 +154,7 @@
 
   ## Termination
   'alt-:': 'termination:toggle'
-  'ctrl-:': 'termination:focus' # would be ignored if spell-check isn't unabled, but still you can use 'ctrl-@' instead
-  'ctrl-@': 'termination:focus'
+  'ctrl-:': 'termination:focus'
 
   ## Zen
   'alt-z': 'zen:toggle'
@@ -336,6 +335,10 @@
   'ctrl-x g': 'pdf-view:go-to-page'
   'ctrl-x ctrl-f': 'advanced-open-file:toggle'
 
+## Spell-Check
+'.corrections':
+  'tab': 'core:confirm'
+  'ctrl-;': 'core:confirm'
 
 
 ### All the atom-text-editor space, including mini(one-line) editor space ###
@@ -390,6 +393,9 @@
   'ctrl-x r': 'script:run'
   'ctrl-x shift-r': 'script:run-options'
   'ctrl-x ctrl-r': 'script:run-with-profile'
+
+  ## Spell-Check
+  'alt-;': 'spell-check:correct-misspelling'
 
 
 
@@ -671,7 +677,7 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   'ctrl-alt-shift-enter': 'julia-client:run-file'
   'ctrl-x space': 'julia-debug:toggle-breakpoint'
   ## Ink-terminal
-  'ctrl-:': 'julia-client:focus-last-terminal'
+  'ctrl-@': 'julia-client:focus-last-terminal'
   ## Julia-Debug
   'f8': 'julia-debug:continue'
   'f9': 'julia-debug:step-to-next-line'
@@ -694,20 +700,22 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-
   'alt-shift-enter': 'julia-client:run-and-move'
   'ctrl-alt-shift-enter': 'julia-client:run-file'
 "ink-terminal":
-  'ctrl-:': 'julia-client:focus-last-editor'
-  'ctrl-tab': 'pane:show-next-item'
-  'ctrl-shift-tab': 'pane:show-previous-item'
-  'ctrl-w': 'pane:close'
-  'ctrl-l': 'julia-client:clear-console'
-  'ctrl-c': 'julia-client:interrupt-julia'
   'alt-w': 'ink-terminal:copy'
   'ctrl-y': 'ink-terminal:paste'
   'ctrl-shift-r': 'ink-terminal:show-search'
   'ctrl-shift-s': 'ink-terminal:show-search'
+  'ctrl-@': 'julia-client:focus-last-editor'
+  'ctrl-c': 'julia-client:interrupt-julia'
+  'ctrl-l': 'julia-client:clear-console'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab': 'pane:show-previous-item'
+  'ctrl-w': 'pane:close'
+  'alt-b': 'window:toggle-bottom-dock'
+  'alt-l': 'window:toggle-left-dock'
   'alt-t': 'tree-view:toggle'
   'ctrl-t': 'tree-view:toggle-focus'
   'alt-:': 'termination:toggle'
-  'ctrl-@': 'termination:focus'
+  'ctrl-:': 'termination:focus'
   'alt-h': 'github:toggle-git-tab'
 "ink-terminal .search .searchinput atom-text-editor":
   'ctrl-r': 'ink-terminal:find-previous'

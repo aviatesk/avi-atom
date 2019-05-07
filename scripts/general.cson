@@ -25,8 +25,8 @@ All values are set as default.
       "._*"
       ".hg"
       ".svn"
-      "Thumbs.db"
       ".DS_Store"
+      "Thumbs.db"
       "desktop.ini"
       "node_modules"
       # Autocomplete-Paths: Additional ignored names come below

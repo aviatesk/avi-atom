@@ -117,8 +117,8 @@
       "._*"
       ".hg"
       ".svn"
-      "Thumbs.db"
       ".DS_Store"
+      "Thumbs.db"
       "desktop.ini"
       "node_modules"
     ]
@@ -132,6 +132,7 @@
       "atom-typescript"
       "git-diff"
       "git-time-machine"
+      "julia-client"
       "language-weave"
       "markdown-preview-enhanced"
       "markdown-writer"
@@ -139,6 +140,7 @@
       "split-diff"
       "termination"
       "tool-bar"
+      "spell-check"
     ]
     projectHome: "C:\\Users\\aviat\\GitHub"
     telemetryConsent: "limited"
@@ -203,6 +205,38 @@
   "ide-typescript":
     javascriptSupport: false
     returnTypeInAutocomplete: "right"
+  "julia-client":
+    consoleOptions:
+      whitelistedKeybindingsREPL: [
+        "Alt-W"
+        "Ctrl-Y"
+        "Ctrl-Shift-R"
+        "Ctrl-Shift-S"
+        "Ctrl-@"
+        "Ctrl-C"
+        "Ctrl-L"
+        "Ctrl-Tab"
+        "Ctrl-Shift-Tab"
+        "Ctrl-W"
+        "Alt-B"
+        "Alt-L"
+        "Alt-T"
+        "Ctrl-T"
+        "Alt-:"
+        "Ctrl-:"
+        "Alt-H"
+        "Ctrl-M"
+        "Ctrl-H"
+        "Alt-X"
+        "Alt-,"
+      ]
+    firstBoot: false
+    juliaOptions:
+      optimisationLevel: 2
+    juliaPath: "julia"
+    uiOptions:
+      enableMenu: true
+      enableToolBar: true
   "language-babel":
     allowLocalOverride: true
     emmetCSSAutocomplete: true
@@ -210,6 +244,8 @@
     disableLanguageGfm: false
   "language-weave":
     showPreview: false
+  "latex-completions":
+    selector: ".source.julia, .source.weave.md"
   "linter-eslint":
     autofix:
       fixOnSave: true
@@ -289,25 +325,27 @@
   "spell-check":
     addKnownWords: true
     excludedScopes: [
-      "front-matter.yaml.source.md"
-      "special-attributes.raw.markup.md"
-      "meta.tag"
       "code.raw.markup.md"
-      "fenced.code.md"
-      "math.markup.md"
-      "quote.markup.md"
-      "destination.link.md"
       "comment.md"
       "comment.critic.markup.md"
+      "destination.link.md"
+      "fenced.code.md"
+      "front-matter.yaml.source.md"
+      "math.markup.md"
+      "meta.tag"
+      "quote.markup.md"
+      "source.embedded"
+      "special-attributes.raw.markup.md"
     ]
     grammars: [
       "source.asciidoc"
       "source.gfm"
-      "text.git-commit"
-      "text.plain"
       "source.rst"
-      "text.restructuredtext"
+      "source.weave.md"
+      "text.git-commit"
       "text.md"
+      "text.plain"
+      "text.restructuredtext"
     ]
     knownWords: [
       "aviatesk"
@@ -337,6 +375,10 @@
     toggles:
       cursorBlink: false
       runInsertedText: false
+  "tool-bar":
+    iconSize: "24px"
+    position: "Left"
+    visible: true
   "tree-view":
     squashDirectoryNames: true
   "tree-view-autoresize": {}
