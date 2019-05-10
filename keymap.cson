@@ -117,10 +117,19 @@
   'ctrl-g': 'dqs-shell-commands-config:hide'
 
   ## Git
-  'ctrl-x ctrl-g': 'git-plus:menu'
   'alt-h': 'github:toggle-git-tab'
   'alt-shift-h': 'github:toggle-github-tab'
   'ctrl-alt-h': 'git-plus:toggle-output-view'
+  'ctrl-x ctrl-g': 'git-plus:menu'
+  'alt-g o': 'git-plus:checkout'
+  'alt-g s': 'git-plus:stash-save-message'
+  'alt-g ctrl-s': 'git-plus:manage-stashes'
+  'alt-g shift-s': 'git-plus:stash-apply'
+  'alt-g c': 'git-plus:commit'
+  'alt-g ctrl-c': 'git-plus:commit-amend'
+  'alt-g r': 'git-plus:rebase-interactive'
+  'alt-g ctrl-r': 'git-plus:rebase-continue'
+  'alt-g shift-r': 'git-plus:rebase-abort'
 
   ## Project-Find
   'ctrl-alt-s': 'project-find:toggle'
@@ -246,19 +255,6 @@
   'ctrl-shift-alt-enter': 'project-find:replace-all'
 
 ## Git ##
-'.workspace':
-  ## Git commands
-  'alt-g o': 'git-plus:checkout'
-  'alt-g s': 'git-plus:stash-save'
-  'alt-g ctrl-s': 'git-plus:stash-save-message'
-  'alt-g shift-s': 'git-plus:stash-pop'
-  'alt-g ctrl-shift-s': 'git-plus:stash-apply'
-  'alt-g ctrl-shift-alt-s': 'git-plus:manage-stashes'
-  'alt-g c': 'git-plus:commit'
-  'alt-g ctrl-c': 'git-plus:commit-amend'
-  'alt-g r': 'git-plus:rebase-interactive'
-  'alt-g ctrl-r': 'git-plus:rebase-continue'
-  'alt-g shift-r': 'git-plus:rebase-abort'
 '.github-StagingView':
   ## movements
   'o': 'core:move-up'
@@ -306,12 +302,12 @@
   'alt-1': 'termination:insert-custom-text-1' # Renew ~/.atom/my-packages.txt from bash
   'alt-2': 'termination:insert-custom-text-2' # Process .pmd or .Rmd file from bash
   'alt-"': 'termination:insert-custom-text-3' # Process .pmd or .Rmd file from command prompt
+  'alt-w': 'termination:copy'
   'alt-v': 'termination:paste'
   'alt-i': 'termination:insert-text'
   'alt-n': 'termination:new'
   'alt-k': 'termination:prev'
   'alt-l': 'termination:next'
-  'alt-w': 'termination:close'
   'alt-r': 'termination:rename'
   'alt-x': 'command-palette:toggle'
   'alt-t': 'tree-view:toggle-focus'
@@ -342,7 +338,7 @@
 
 
 ### All the atom-text-editor space, including mini(one-line) editor space ###
-'atom-workspace atom-text-editor':
+'atom-text-editor':
 
   ## movements
   'ctrl-o': 'core:move-up'
@@ -397,10 +393,49 @@
   ## Spell-Check
   'alt-;': 'spell-check:correct-misspelling'
 
+  ## Unsets
+  # make ctrl-k prefix-keybinding unavailable
+  'ctrl-k t down': 'unset!'
+  'ctrl-k t left': 'unset!'
+  'ctrl-k ctrl-0': 'unset!'
+  'ctrl-k ctrl-1': 'unset!'
+  'ctrl-k ctrl-2': 'unset!'
+  'ctrl-k ctrl-3': 'unset!'
+  'ctrl-k ctrl-4': 'unset!'
+  'ctrl-k ctrl-5': 'unset!'
+  'ctrl-k ctrl-6': 'unset!'
+  'ctrl-k ctrl-7': 'unset!'
+  'ctrl-k ctrl-8': 'unset!'
+  'ctrl-k ctrl-9': 'unset!'
+  'ctrl-k ctrl-alt-w': 'unset!'
+  'ctrl-k ctrl-b': 'unset!'
+  'ctrl-k ctrl-d': 'unset!'
+  'ctrl-k ctrl-down': 'unset!'
+  'ctrl-k ctrl-k': 'unset!'
+  'ctrl-k ctrl-l': 'unset!'
+  'ctrl-k ctrl-left': 'unset!'
+  'ctrl-k ctrl-n': 'unset!'
+  'ctrl-k ctrl-p': 'unset!'
+  'ctrl-k ctrl-right': 'unset!'
+  'ctrl-k ctrl-u': 'unset!'
+  'ctrl-k ctrl-up': 'unset!'
+  'ctrl-k ctrl-w': 'unset!'
+  'ctrl-k down': 'unset!'
+  'ctrl-k h': 'unset!'
+  'ctrl-k k': 'unset!'
+  'ctrl-k l': 'unset!'
+  'ctrl-k left': 'unset!'
+  'ctrl-k right': 'unset!'
+  'ctrl-k j': 'unset!'
+  'ctrl-k up': 'unset!'
+  'ctrl-x u': 'unset!'
+  'ctrl-x ctrl-u': 'unset!'
+  'ctrl-x ctrl-l': 'unset!'
+  'alt-q': 'unset!'
 
 
 ### Atom-text-editor space, not including mini(one-line) editor space ###
-'atom-workspace atom-text-editor.emacs-plus:not([mini])':
+'atom-text-editor.emacs-plus:not([mini])':
 
   ## operations
   'ctrl-;': 'editor:newline'
@@ -460,7 +495,7 @@
 ### Per-mode & Per-filetype settings IN atom-editor-space ###
 
 ## Mark mode (i.e. after ctrl-space)
-'atom-workspace atom-text-editor.emacs-plus.mark-mode:not([mini])':
+'atom-text-editor.emacs-plus.mark-mode:not([mini])':
   ## movements
   # up
   'ctrl-o': 'core:select-up'
@@ -510,17 +545,16 @@
   'ctrl-alt-k': 'split-diff:copy-to-left'
 
 ## Autocomplete-Plus
-'atom-workspace atom-text-editor:not(mini).emacs-plus.autocomplete-active':
+'atom-text-editor:not(mini).emacs-plus.autocomplete-active':
   'ctrl-;': 'autocomplete-plus:confirm'
 
 ## Hydrogen
 "
-atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
+atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source r'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":
-  'ctrl-c': 'unset!'
   'ctrl-c ctrl-c': 'hydrogen:run'
   'ctrl-c ctrl-n': 'hydrogen:run-and-move-down'
   'ctrl-c ctrl-d': 'hydrogen:run-cell'
@@ -536,12 +570,11 @@ atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([m
   'alt-o': 'hydrogen:toggle-output-area'
   'alt-k': 'hydrogen:toggle-kernel-monitor'
 "
-atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
+atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
+atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
+atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini]),
+atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":
-  'ctrl-c': 'unset!'
   'ctrl-c ctrl-c': 'hydrogen:run'
   'ctrl-c ctrl-n': 'hydrogen:run-and-move-down'
   'ctrl-c ctrl-d': 'hydrogen:run'
@@ -554,11 +587,11 @@ atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([m
 
 ## Markdown
 "
-atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
+atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":
   ## Dqs-Shell-Commands: Process .pmd & .Rmd documents (Same as Script)
   # The appropriate shell command to process either pweave document or R-markdown gonna be automatically detected
@@ -626,17 +659,17 @@ atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([m
 
 ## Markdown-Preview-Enhanced
 "
-atom-workspace atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
+atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":
   'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
 "
-atom-workspace atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini])
+atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini])
 ":
   'ctrl-enter': 'markdown-preview-enhanced:run-code-chunk'
   'ctrl-alt-shift-enter': 'markdown-preview-enhanced:run-all-code-chunks'
@@ -721,12 +754,12 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-
   'ctrl-r': 'ink-terminal:find-previous'
   'ctrl-s': 'ink-terminal:find-next'
   'ctrl-g': 'ink-terminal:close-search'
-"atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])":
+"atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])":
   ## Markdown-Writer: cancel `markdown-writer:insert-newline` for ctrl-;
   'ctrl-;': 'editor:newline'
 
 ## Python
-"atom-workspace atom-text-editor[data-grammar='source python'].emacs-plus:not([mini])":
+"atom-text-editor[data-grammar='source python'].emacs-plus:not([mini])":
   ## IDE-Python
   # Code format
   'ctrl-c ctrl-f': 'code-format:format-code'
@@ -736,7 +769,7 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-
 
 ## JavaScript
 "
-atom-workspace atom-text-editor[data-grammar~='js'].emacs-plus:not([mini])
+atom-text-editor[data-grammar~='js'].emacs-plus:not([mini])
 ":
   ## Atom-Ternjs
   'alt-i': 'atom-ternjs:documentation'
@@ -747,8 +780,8 @@ atom-workspace atom-text-editor[data-grammar~='js'].emacs-plus:not([mini])
 
 ## TypeScript
 "
-atom-workspace atom-text-editor[data-grammar='source ts'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
+atom-text-editor[data-grammar='source ts'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
 ":
   ## Atom-TypeScript
   'ctrl-alt-o': 'typescript:toggle-semantic-view'
@@ -759,56 +792,13 @@ atom-workspace atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini]
   'ctrl-alt-shift-d': 'typescript:show-editor-position-history'
 
 ## HTML
-"atom-workspace atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
+"atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
   ## Atom-HTML-Preview: ctrl-shift-m (same as Markdown-Preview-Enhanced:toggle)
   'ctrl-shift-m': 'atom-html-preview:toggle'
 
 ## CSS
 ## Switch Atom-Beautify with selection
-"atom-workspace atom-text-editor[data-grammar='source css less'].emacs-plus:not([mini])":
+"atom-text-editor[data-grammar='source css less'].emacs-plus:not([mini])":
   'ctrl-c ctrl-f': 'atom-beautify:beautify-language-css'
-"atom-workspace atom-text-editor[data-grammar='source css less'].emacs-plus.mark-mode:not([mini])":
+"atom-text-editor[data-grammar='source css less'].emacs-plus.mark-mode:not([mini])":
   'ctrl-c ctrl-f': 'atom-beautify:beautify-language-less'
-
-
-
-### Unsets ###
-'atom-text-editor':
-  ## make ctrl-k prefix-keybinding unavailable
-  'ctrl-k t down': 'unset!'
-  'ctrl-k t left': 'unset!'
-  'ctrl-k ctrl-0': 'unset!'
-  'ctrl-k ctrl-1': 'unset!'
-  'ctrl-k ctrl-2': 'unset!'
-  'ctrl-k ctrl-3': 'unset!'
-  'ctrl-k ctrl-4': 'unset!'
-  'ctrl-k ctrl-5': 'unset!'
-  'ctrl-k ctrl-6': 'unset!'
-  'ctrl-k ctrl-7': 'unset!'
-  'ctrl-k ctrl-8': 'unset!'
-  'ctrl-k ctrl-9': 'unset!'
-  'ctrl-k ctrl-alt-w': 'unset!'
-  'ctrl-k ctrl-b': 'unset!'
-  'ctrl-k ctrl-d': 'unset!'
-  'ctrl-k ctrl-down': 'unset!'
-  'ctrl-k ctrl-k': 'unset!'
-  'ctrl-k ctrl-l': 'unset!'
-  'ctrl-k ctrl-left': 'unset!'
-  'ctrl-k ctrl-n': 'unset!'
-  'ctrl-k ctrl-p': 'unset!'
-  'ctrl-k ctrl-right': 'unset!'
-  'ctrl-k ctrl-u': 'unset!'
-  'ctrl-k ctrl-up': 'unset!'
-  'ctrl-k ctrl-w': 'unset!'
-  'ctrl-k down': 'unset!'
-  'ctrl-k h': 'unset!'
-  'ctrl-k k': 'unset!'
-  'ctrl-k l': 'unset!'
-  'ctrl-k left': 'unset!'
-  'ctrl-k right': 'unset!'
-  'ctrl-k j': 'unset!'
-  'ctrl-k up': 'unset!'
-  'ctrl-x u': 'unset!'
-  'ctrl-x ctrl-u': 'unset!'
-  'ctrl-x ctrl-l': 'unset!'
-  'alt-q': 'unset!'

@@ -202,9 +202,6 @@
       yapf:
         enabled: true
     python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
-  "ide-typescript":
-    javascriptSupport: false
-    returnTypeInAutocomplete: "right"
   "julia-client":
     consoleOptions:
       whitelistedKeybindingsREPL: [
