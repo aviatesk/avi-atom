@@ -5,7 +5,7 @@
     outputAreaDock: true
     outputAreaFontSize: 13
     startDir: "dirOfFile"
-    startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
+    startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Julia 1.0.3\": \"using Plots\\ndefault(:fmt, :svg)\\ntheme(:juno)\"}"
   "Hydrogen-Studio":
     plotPaneSplit: "right"
   Zen:
@@ -117,8 +117,8 @@
       "._*"
       ".hg"
       ".svn"
-      ".DS_Store"
       "Thumbs.db"
+      ".DS_Store"
       "desktop.ini"
       "node_modules"
     ]
@@ -207,6 +207,7 @@
       whitelistedKeybindingsREPL: [
         "Alt-W"
         "Ctrl-Y"
+        "Ctrl-V"
         "Ctrl-Shift-R"
         "Ctrl-Shift-S"
         "Ctrl-@"
@@ -323,13 +324,14 @@
     addKnownWords: true
     excludedScopes: [
       "code.raw.markup.md"
-      "comment.md"
+      "comment"
       "comment.critic.markup.md"
-      "destination.link.md"
       "fenced.code.md"
-      "front-matter.yaml.source.md"
+      "front-matter.yaml"
+      "link"
       "math.markup.md"
       "meta.tag"
+      "markup.raw.gfm"
       "quote.markup.md"
       "source.embedded"
       "special-attributes.raw.markup.md"

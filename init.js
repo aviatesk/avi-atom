@@ -94,11 +94,8 @@ class RebaseInputView extends InputView {
   }
 }
 
+// Add custom commands to Git-Plus
 atom.packages.onDidActivateInitialPackages(() => {
-  /**
-   * Git-Plus custom commands
-   * For rebasing commits
-   */
   const gitPlus = atom.packages.getActivePackage('git-plus');
   if (gitPlus) {
     const gp = gitPlus.mainModule.provideService();
@@ -122,4 +119,114 @@ atom.packages.onDidActivateInitialPackages(() => {
         });
     });
   }
+});
+
+const hydrogenCommands = {
+  'ctrl-c ctrl-c': 'hydrogen:run',
+  'ctrl-c ctrl-n': 'hydrogen:run-and-move-down',
+  'ctrl-c ctrl-d': 'hydrogen:run-cell',
+  'ctrl-c ctrl-b': 'hydrogen:run-cell-and-move-down',
+  'ctrl-c ctrl-r': 'hydrogen:run-all',
+  'ctrl-enter': 'hydrogen:run',
+  'shift-enter': 'hydrogen:run-and-move-down',
+  'ctrl-shift-enter': 'hydrogen:run-and-move-down',
+  'alt-enter': 'hydrogen:run-cell',
+  'alt-shift-enter': 'hydrogen:run-cell-and-move-down',
+  'ctrl-alt-shift-enter': 'hydrogen:run-all',
+  'alt-i': 'hydrogen:toggle-inspector',
+  'alt-o': 'hydrogen:toggle-output-area',
+  'alt-k': 'hydrogen:toggle-kernel-monitor',
+};
+const hydrogenMarkCommands = {
+  'ctrl-c ctrl-c': 'hydrogen:run',
+  'ctrl-c ctrl-n': 'hydrogen:run-and-move-down',
+  'ctrl-c ctrl-d': 'hydrogen:run',
+  'ctrl-c ctrl-b': 'hydrogen:run-and-move-down',
+  'ctrl-enter': 'hydrogen:run',
+  'shift-enter': 'hydrogen:run-and-move-down',
+  'ctrl-shift-enter': 'hydrogen:run-and-move-down',
+  'alt-enter': 'hydrogen:run',
+  'alt-shift-enter': 'hydrogen:run-and-move-down',
+};
+
+// Mimic Hydrogen's keybindings
+const juliaClientCommands = {
+  'ctrl-c ctrl-c': 'julia-client:run-block',
+  'ctrl-c ctrl-n': 'julia-client:run-and-move',
+  'ctrl-c ctrl-d': 'julia-client:run-cell',
+  'ctrl-c ctrl-b': 'julia-client:run-cell-and-move',
+  'ctrl-c ctrl-r': 'julia-client:run-file',
+  'ctrl-enter': 'julia-client:run-block',
+  'shift-enter': 'julia-client:run-and-move',
+  'ctrl-shift-enter': 'julia-client:run-and-move',
+  'alt-enter': 'julia-client:run-cell',
+  'alt-shift-enter': 'julia-client:run-cell-and-move',
+  'ctrl-alt-shift-enter': 'julia-client:run-file',
+  'alt-o': 'julia-client:open-console',
+  'alt-i': 'julia-client:show-documentation',
+};
+const juliaClientMarkCommands = {
+  'ctrl-c ctrl-c': 'julia-client:run-block',
+  'ctrl-c ctrl-n': 'julia-client:run-and-move',
+  'ctrl-c ctrl-d': 'julia-client:run-block',
+  'ctrl-c ctrl-b': 'julia-client:run-and-move',
+  'ctrl-c ctrl-r': 'hydrogen:run-file',
+  'ctrl-enter': 'julia-client:run-block',
+  'shift-enter': 'julia-client:run-and-move',
+  'ctrl-shift-enter': 'julia-client:run-and-move',
+  'alt-enter': 'julia-client:run-block',
+  'alt-shift-enter': 'julia-client:run-and-move',
+  'ctrl-alt-shift-enter': 'julia-client:run-file',
+};
+
+// Attach Julia-Client's commands to Julia files when it's loaded, use Hydrogen instead if not
+atom.packages.onDidActivateInitialPackages(() => {
+  if (atom.packages.isPackageLoaded('julia-client')) {
+    console.log('Julia: Use Julia-Client');
+    atom.keymaps.add(
+      'init.js', {
+        'atom-text-editor[data-grammar=\'source julia\'].emacs-plus:not([mini])': juliaClientCommands,
+        'atom-text-editor[data-grammar=\'source weave md\'].emacs-plus:not([mini])': juliaClientCommands,
+        'atom-text-editor[data-grammar=\'source julia\'].emacs-plus.mark-mode:not([mini])': juliaClientMarkCommands,
+        'atom-text-editor[data-grammar=\'source weave md\'].emacs-plus.mark-mode:not([mini])': juliaClientMarkCommands,
+      },
+      1,
+    );
+  } else {
+    console.log('Julia: Use Hydrogen');
+    atom.keymaps.add(
+      'init.js', {
+        'atom-text-editor[data-grammar=\'source julia\'].emacs-plus:not([mini])': hydrogenCommands,
+        'atom-text-editor[data-grammar=\'source weave md\'].emacs-plus:not([mini])': hydrogenCommands,
+        'atom-text-editor[data-grammar=\'source julia\'].emacs-plus.mark-mode:not([mini])': hydrogenMarkCommands,
+        'atom-text-editor[data-grammar=\'source weave md\'].emacs-plus.mark-mode:not([mini])': hydrogenMarkCommands,
+      },
+      1,
+    );
+  }
+});
+
+/**
+ * Attaches Hydrogen commands to the current editor's scope
+ */
+function attachHydrogenCommands() {
+  const editor = atom.workspace.getActiveTextEditor();
+  const cursor = editor.getLastCursor();
+  const { scopes } = cursor.getScopeDescriptor();
+  const scope = scopes[0];
+  if (scope) { // Should be like `source.js
+    // Attach Hydrogen's commands to the scope
+    atom.keymaps.add('init.js', {
+      [`atom-text-editor[data-grammar='${scope.replace('.', ' ')}'].emacs-plus:not([mini])`]: hydrogenCommands,
+      [`atom-text-editor[data-grammar='${scope.replace('.', ' ')}'].emacs-plus.mark-mode:not([mini])`]: hydrogenMarkCommands,
+    });
+  } else {
+    atom.notifications.add('Hydrogen', {
+      descrition: 'Can\'t find any scope',
+    });
+  }
+}
+
+atom.commands.add('atom-text-editor', 'hydrogen:attach-commands-to-current-scope', () => {
+  attachHydrogenCommands();
 });

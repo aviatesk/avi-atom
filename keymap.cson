@@ -157,9 +157,18 @@
   'alt-k': 'window:toggle-bottom-dock'
 
   ## Julia-client
-  'alt-j d': 'julia-debug:open-debug-pane'
-  'alt-j alt-d': 'window:toggle-right-dock'
-  'alt-j enter': 'julia-client:focus-last-editor'
+  'ctrl-@': 'julia-client:focus-last-editor'
+  'alt-j': 'unset!'
+  'alt-j o': 'julia-client:open-console'
+  'alt-j d': 'julia-debug:open-debugger-pane'
+  'alt-j i': 'julia-client:open-documentation-browser'
+  'alt-j p': 'julia-client:open-plot-pane'
+  'alt-j w': 'julia-client:open-workspace'
+  'alt-j ,': 'julia-client:settings'
+  'alt-j ctrl-s': 'julia-client:start-julia'
+  'alt-j ctrl-c': 'julia-client:interrupt-julia'
+  'alt-j ctrl-k': 'julia-client:kill-julia'
+  'alt-j ctrl-l': 'julia-client:clear-console'
 
   ## Termination
   'alt-:': 'termination:toggle'
@@ -676,38 +685,10 @@ atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini])
 
 ## Julia
 "
-atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
+atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
 ":
-  ## meta
-  'alt-o': 'julia-client:open-console'
-  'alt-i': 'julia-client:show-documentation'
-  'alt-r': 'julia-client:goto-symbol'
-  'alt-p': 'julia-client:prev-cell'
-  'alt-n': 'julia-client:next-cell'
-  'alt-j': 'unset!'
-  'alt-j ctrl-s': 'julia-client:start-julia'
-  'alt-j ctrl-c': 'julia-client:interrupt-julia'
-  'alt-j ctrl-k': 'julia-client:kill-julia'
-  'alt-j l': 'julia-client:clear-console'
-  'alt-j w': 'julia-client:open-workspace'
-  'alt-j p': 'julia-client:open-plot-pane'
-  'alt-j d': 'julia-debug:open-debugger-pane'
-  'alt-j alt-d': 'window:toggle-right-dock'
-  'alt-j ,': 'julia-client:settings'
-  ## Julia-Client
-  'ctrl-c': 'unset!'
-  'ctrl-c ctrl-c': 'julia-client:run-block'
-  'ctrl-c ctrl-n': 'julia-client:run-and-move'
-  'ctrl-c ctrl-d': 'julia-client:run-cell'
-  'ctrl-c ctrl-b': 'julia-client:run-cell-and-move'
-  'ctrl-c ctrl-r': 'julia-client:run-file'
-  'ctrl-enter': 'julia-client:run-block'
-  'shift-enter': 'julia-client:run-and-move'
-  'ctrl-shift-enter': 'julia-client:run-and-move'
-  'alt-enter': 'julia-client:run-cell'
-  'alt-shift-enter': 'julia-client:run-cell-and-move'
-  'ctrl-alt-shift-enter': 'julia-client:run-file'
+  ### Code execution commands are not listed here. It would be automatically attached in init.js ###
   'ctrl-x space': 'julia-debug:toggle-breakpoint'
   ## Ink-terminal
   'ctrl-@': 'julia-client:focus-last-terminal'
@@ -715,26 +696,10 @@ atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus:not([
   'f8': 'julia-debug:continue'
   'f9': 'julia-debug:step-to-next-line'
   'f10': 'julia-debug:finish-function'
-"
-atom-workspace atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
-atom-workspace atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini])
-":
-  ## Julia-Client
-  'ctrl-c': 'unset!'
-  'ctrl-c ctrl-c': 'julia-client:run-block'
-  'ctrl-c ctrl-n': 'julia-client:run-and-move'
-  'ctrl-c ctrl-d': 'julia-client:run-block'
-  'ctrl-c ctrl-b': 'julia-client:run-and-move'
-  'ctrl-c ctrl-r': 'hydrogen:run-file'
-  'ctrl-enter': 'julia-client:run-block'
-  'shift-enter': 'julia-client:run-and-move'
-  'ctrl-shift-enter': 'julia-client:run-and-move'
-  'alt-enter': 'julia-client:run-block'
-  'alt-shift-enter': 'julia-client:run-and-move'
-  'ctrl-alt-shift-enter': 'julia-client:run-file'
 "ink-terminal":
   'alt-w': 'ink-terminal:copy'
   'ctrl-y': 'ink-terminal:paste'
+  'ctrl-v': 'ink-terminal:paste'
   'ctrl-shift-r': 'ink-terminal:show-search'
   'ctrl-shift-s': 'ink-terminal:show-search'
   'ctrl-@': 'julia-client:focus-last-editor'

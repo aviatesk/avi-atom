@@ -19,26 +19,26 @@
 '.source.julia':
 
   ## General
-  'Julia: Struct':
-    'prefix': 'struct'
+  'struct with end struct indication':
+    'prefix': 'struct#'
     'body':
       '''
       struct ${1:Structname}
           ${2:fields}
       end  # struct ${1:Structname}
       '''
-    'description': 'Inserts struct (composite types) blocks'
-  'Julia: Function':
-    'prefix': 'function'
+    'description': 'Inserts struct (composite types) blocks with end struct indication'
+  'function with end function indication':
+    'prefix': 'function#'
     'body':
       '''
       function ${1:funcname}(${2:args})
           ${3:body}
       end  # function ${1:funcname}
       '''
-    'description': 'Inserts function block'
-  'Julia: Documented function':
-    'prefix': 'functiond'
+    'description': 'Inserts function block with end function indication'
+  'Documented function function with end function indication':
+    'prefix': 'functiond#'
     'body':
       '''
       """
@@ -50,18 +50,32 @@
           ${3:body}
       end  # function ${1:funcname}
       '''
-    'description': 'Inserts function block'
-  'Julia: Macro':
-    'prefix': 'macro'
+    'description': 'Inserts documented function block with end function indication'
+  'macro with macro ending indication':
+    'prefix': 'macro#'
     'body':
       '''
       macro ${1:macroname}(${2:args})
           ${3:body}
       end  # macro ${1:macroname}
       '''
-    'description': 'Inserts macro block'
-  'Julia: Documented macro':
+    'description': 'Inserts macro block with end macro indication'
+  'Documented macro':
     'prefix': 'macrod'
+    'body':
+      '''
+      """
+          @${1:macroname}(${2:args})
+
+      ${4:document}
+      """
+      macro ${1:macroname}(${2:args})
+          ${3:body}
+      end
+      '''
+    'description': 'Inserts documented macro block'
+  'Documented macro with macro ending indication':
+    'prefix': 'macrod#'
     'body':
       '''
       """
@@ -73,17 +87,19 @@
           ${3:body}
       end  # macro ${1:macroname}
       '''
-    'description': 'Inserts macro block'
-  'Julia: Module':
-    'prefix': 'module'
+    'description': 'Inserts documented macro block with end macro indication'
+  'Document':
+    'prefix': 'doc'
     'body':
       '''
-      module ${1:modulename}
-          $2
-      end  # module ${1:modulename}
+      @doc """
+          $1
+
+      ${2:doc}
+      """
       '''
-    'description': 'Inserts module block'
-  'Julia: Quote':
+    'descrition': 'Inserts document string block'
+  'quote':
     'prefix': 'quote'
     'body':
       '''
@@ -92,7 +108,7 @@
       end
       '''
     'description': 'Inserts quote block'
-  'Julia: Comment block':
+  'Comment block':
     'prefix': 'cb'
     'body':
       '''
@@ -101,16 +117,6 @@
       =#
       '''
     'description': 'Inserts comment block'
-  'Julia: Document':
-    'prefix': 'doc'
-    'body':
-      '''
-      """
-          $1
-
-      ${2:doc}
-      """
-      '''
 
   ## Base
   'Base: print':
@@ -620,11 +626,11 @@
           fig_path: figs
           ## default code chunk options
           # echo: true
+          # eval: true
           # results: "markup"
           # display: false
           hold: true
           wrap: false
-          # include: true
           fig_width: 8
           fig_height: 5
           fig_ext: ".svg"
