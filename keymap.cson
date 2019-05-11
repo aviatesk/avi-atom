@@ -732,17 +732,6 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'alt-p d': 'debugger:toggle'
   'alt-p alt-d': 'debugger:toggle'
 
-## JavaScript
-"
-atom-text-editor[data-grammar~='js'].emacs-plus:not([mini])
-":
-  ## Atom-Ternjs
-  'alt-i': 'atom-ternjs:documentation'
-  'alt-r': 'atom-ternjs:definition'
-  'alt-f': 'atom-ternjs:references'
-  'alt-left': 'atom-ternjs:navigateBack'
-  'alt-right': 'atom-ternjs:navigateForward'
-
 ## TypeScript
 "
 atom-text-editor[data-grammar='source ts'].emacs-plus:not([mini]),

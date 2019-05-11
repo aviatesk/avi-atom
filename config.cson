@@ -72,12 +72,9 @@
       "atom-ide-terminal": "never"
   "atom-package-deps":
     ignored: [
-      "atom-ternjs"
       "linter-eslint"
       "linter-tslint"
     ]
-  "atom-ternjs":
-    inlineFnCompletionDocumentation: true
   "atom-typescript":
     tsserverInstancePerTsconfig: true
   "autocomplete-paths": {}
@@ -128,7 +125,6 @@
       "Zen"
       "atom-beautify"
       "atom-html-preview"
-      "atom-ternjs"
       "atom-typescript"
       "git-diff"
       "git-time-machine"
@@ -182,6 +178,7 @@
     hideHighlightOnSelect: true
   "highlight-selected":
     onlyHighlightWholeWords: false
+  "ide-css": {}
   "ide-python":
     pylsPlugins:
       autopep8:
@@ -408,6 +405,13 @@
   editor:
     softWrapHangingIndent: 1
     tabLength: 2
+".flow.source":
+  editor:
+    preferredLineLength: 100
+    softWrapHangingIndent: 1
+    tabLength: 2
+  "wrap-guide":
+    enabled: true
 ".gfm.rmd.source":
   editor:
     tabType: "soft"

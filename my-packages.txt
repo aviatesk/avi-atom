@@ -6,7 +6,6 @@ atom-html-preview@0.2.6
 atom-ide-debugger-python@0.7.3
 atom-ide-ui@0.13.0
 atom-language-r@1.4.8
-atom-ternjs@0.19.1
 atom-typescript@13.2.1
 atomic-management@0.3.1
 autocomplete-paths@2.12.2
@@ -54,6 +53,6 @@ tool-bar@1.1.11
 tree-view-autoresize@2.3.0
 tree-view-git-status@1.5.2
 uber-juno@0.2.0
-wordcount@3.0.0
+wordcount@3.1.0
 Zen@0.18.0
 
