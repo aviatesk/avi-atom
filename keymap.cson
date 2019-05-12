@@ -17,7 +17,8 @@
   'ctrl-m': 'core:confirm'
   'ctrl-;': 'core:confirm'
   'ctrl-g': 'core:cancel'
-  'ctrl-w': 'core:close'
+  'ctrl-w': 'tabs:close-tab'
+  'ctrl-shift-w': 'tabs:close-all-tabs'
   'ctrl-shift-a': 'core:select-all'
   'ctrl-tab ^ctrl': 'unset!'
   'ctrl-tab': 'pane:show-next-item'
@@ -25,48 +26,22 @@
   'ctrl-shift-tab': 'pane:show-previous-item'
 
 
-
 ### All the atom-workspace ###
 'atom-workspace':
 
-  ## operations
-  'ctrl-shift-a': 'core:select-all'
+  ## Operations
   'ctrl-h': 'command-palette:toggle'
   'alt-x': 'command-palette:toggle'
   'alt-,': 'key-binding-resolver:toggle'
-  'alt-b': 'window:toggle-bottom-dock'
   'f5': 'window:reload'
   'ctrl-f5': 'atom-hot-package-loader:reload'
   'f11': 'window:toggle-full-screen'
   'ctrl-x ctrl-c': 'window:close'
-
-  ## file, project
   'ctrl-x f': 'fuzzy-finder:toggle-file-finder'
   'ctrl-x ctrl-f': 'advanced-open-file:toggle'
   'ctrl-x ctrl-p': 'project-manager:list-projects'
-  'ctrl-t': 'tree-view:toggle-focus'
-  'alt-t': 'tree-view:toggle'
-  'ctrl-x ctrl-t': 'tree-view:toggle'
-  'ctrl-x ctrl-j': 'tree-view:reveal-active-file'
 
-  ## tab
-  'ctrl-right': 'pane:show-next-item'
-  'ctrl-left': 'pane:show-previous-item'
-  'ctrl-alt-right': 'pane:move-item-right'
-  'ctrl-alt-left': 'pane:move-item-left'
-  'ctrl-1': 'pane:show-item-1'
-  'ctrl-2': 'pane:show-item-2'
-  'ctrl-3': 'pane:show-item-3'
-  'ctrl-4': 'pane:show-item-4'
-  'ctrl-5': 'pane:show-item-5'
-  'ctrl-6': 'pane:show-item-6'
-  'ctrl-7': 'pane:show-item-7'
-  'ctrl-8': 'pane:show-item-8'
-  'ctrl-9': 'pane:show-item-9'
-  'ctrl-w': 'core:close'
-  'ctrl-shift-w': 'tabs:close-all-tabs'
-
-  ## pane
+  ## Pane
   # next / previous
   'ctrl-x o': 'window:focus-next-pane'
   'ctrl-x n': 'window:focus-next-pane'
@@ -103,14 +78,33 @@
   'ctrl-x left': 'pane:split-left-and-copy-active-item'
   'ctrl-x ctrl-5': 'window:copy-active-item-to-pane-on-left'
   'ctrl-x ctrl-left': 'window:copy-active-item-to-pane-on-left'
+  # tab
+  'ctrl-right': 'pane:show-next-item'
+  'ctrl-left': 'pane:show-previous-item'
+  'ctrl-alt-right': 'pane:move-item-right'
+  'ctrl-alt-left': 'pane:move-item-left'
+  'ctrl-1': 'pane:show-item-1'
+  'ctrl-2': 'pane:show-item-2'
+  'ctrl-3': 'pane:show-item-3'
+  'ctrl-4': 'pane:show-item-4'
+  'ctrl-5': 'pane:show-item-5'
+  'ctrl-6': 'pane:show-item-6'
+  'ctrl-7': 'pane:show-item-7'
+  'ctrl-8': 'pane:show-item-8'
+  'ctrl-9': 'pane:show-item-9'
 
-  ## docks
-  'alt-y': 'window:toggle-right-dock'
+  ## Dock
   'alt-l': 'window:toggle-right-dock'
   'alt-b': 'window:toggle-bottom-dock'
   'alt-down': 'window:toggle-bottom-dock'
   'alt-right': 'window:toggle-right-dock'
   'alt-left': 'window:toggle-left-dock'
+
+  ## Tree-View
+  'ctrl-t': 'tree-view:toggle-focus'
+  'alt-t': 'tree-view:toggle'
+  'ctrl-x ctrl-t': 'tree-view:toggle'
+  'ctrl-x ctrl-j': 'tree-view:reveal-active-file'
 
   ## Dqs-Shell-Commands
   'alt-q': 'dqs-shell-commands-config:toggle'
@@ -153,8 +147,11 @@
   'ctrl-alt-o': 'window:focus-pane-on-left'
 
   ## Hydrogen
-  'alt-o': 'window:focus-pane-on-left'
-  'alt-k': 'window:toggle-bottom-dock'
+  'alt-k o': 'hydrogen:toggle-output-area'
+  'alt-k m': 'hydrogen:toggle-kernel-monitor'
+  'alt-k space': 'hydrogen:toggle-bubble'
+  'alt-k p': 'hydrogen-studio:open-plot-pane'
+  'alt-k i': 'hydrogen-studio:open-inspector-pane'
 
   ## Julia-client
   'ctrl-@': 'julia-client:focus-last-editor'
@@ -176,7 +173,6 @@
 
   ## Zen
   'alt-z': 'zen:toggle'
-
 
 
 ### Per-mode settings -- NOT IN atom-editor-space ###
@@ -372,8 +368,7 @@
   'ctrl-shift-j': 'editor:delete-to-end-of-word'
   'alt-j': 'emacs-plus:kill-word'
 
-  ## operations
-  'alt-y': 'window:toggle-right-dock'
+  ## Dock
   'alt-l': 'window:toggle-right-dock'
   'alt-b': 'window:toggle-bottom-dock'
 
@@ -455,7 +450,7 @@
   'ctrl-r': 'find-and-replace:show'
   'ctrl-shift-r': 'find-and-replace:find-previous'
   'ctrl-t': 'tree-view:toggle-focus'
-  'ctrl-w': 'core:close'
+  'ctrl-w': 'unset!'
   'ctrl-alt-c': 'color-picker:open'
 
   ## window
@@ -500,7 +495,6 @@
   'alt-s': 'split-diff:toggle'
 
 
-
 ### Per-mode & Per-filetype settings IN atom-editor-space ###
 
 ## Mark mode (i.e. after ctrl-space)
@@ -530,10 +524,8 @@
   'ctrl-w': 'emacs-plus:kill-region'
   'alt-a': 'emacs-plus:append-next-kill'
   'ctrl-shift-a': 'core:select-all'
-  'alt-o': 'find-and-replace:find-previous-selected'
+  'alt-p': 'find-and-replace:find-previous-selected'
   'alt-n': 'find-and-replace:find-next-selected'
-  'ctrl-x a': 'find-and-replace:find-all'
-  'alt-i': 'termination:insert-selected-text'
 
 ## Find-and-Replace
 '.find-and-replace':
@@ -576,8 +568,6 @@ atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
   'alt-shift-enter': 'hydrogen:run-cell-and-move-down'
   'ctrl-alt-shift-enter': 'hydrogen:run-all'
   'alt-i': 'hydrogen:toggle-inspector'
-  'alt-o': 'hydrogen:toggle-output-area'
-  'alt-k': 'hydrogen:toggle-kernel-monitor'
 "
 atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
@@ -707,7 +697,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'ctrl-l': 'julia-client:clear-console'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'
-  'ctrl-w': 'pane:close'
+  'ctrl-w': 'tabs:close-tab'
   'alt-b': 'window:toggle-bottom-dock'
   'alt-l': 'window:toggle-left-dock'
   'alt-t': 'tree-view:toggle'

@@ -134,8 +134,6 @@ const hydrogenCommands = {
   'alt-shift-enter': 'hydrogen:run-cell-and-move-down',
   'ctrl-alt-shift-enter': 'hydrogen:run-all',
   'alt-i': 'hydrogen:toggle-inspector',
-  'alt-o': 'hydrogen:toggle-output-area',
-  'alt-k': 'hydrogen:toggle-kernel-monitor',
 };
 const hydrogenMarkCommands = {
   'ctrl-c ctrl-c': 'hydrogen:run',
@@ -162,7 +160,6 @@ const juliaClientCommands = {
   'alt-enter': 'julia-client:run-cell',
   'alt-shift-enter': 'julia-client:run-cell-and-move',
   'ctrl-alt-shift-enter': 'julia-client:run-file',
-  'alt-o': 'julia-client:open-console',
   'alt-i': 'julia-client:show-documentation',
 };
 const juliaClientMarkCommands = {

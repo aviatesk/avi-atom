@@ -7,7 +7,8 @@
     startDir: "dirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Julia 1.0.3\": \"using Plots\\ndefault(:fmt, :svg)\\ntheme(:juno)\"}"
   "Hydrogen-Studio":
-    plotPaneSplit: "right"
+    inspectorPaneDefaultLocation: "right"
+    plotPaneDefaultLocation: "right"
   Zen:
     fullscreen: false
   "atom-beautify":
@@ -77,6 +78,7 @@
     ]
   "atom-typescript":
     tsserverInstancePerTsconfig: true
+  "atomic-management": {}
   "autocomplete-paths": {}
   "autocomplete-plus":
     minimumWordLength: 2
