@@ -109,7 +109,6 @@
       ]
     disabledPackages: [
       "markdown-preview"
-      "spell-check"
       "julia-client"
       "latex-completions"
       "tool-bar"

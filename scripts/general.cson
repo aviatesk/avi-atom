@@ -15,7 +15,7 @@ All values are set as default.
   core:
     disabledPackages: [
       "markdown-preview"
-      "spell-check" # Comment-out this line to enable Spell-Checker (Note it will work correctly only with American-English)
+      # "spell-check" # Comment-in this line to disable Spell-Checker (Note it will work only with American-English)
       "julia-client"
       "latex-completions"
       "tool-bar"

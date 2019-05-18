@@ -10,12 +10,13 @@ All values for the other Per-project configs are set as default
     ### Julia-specific configs ###
     disabledPackages: [
       "markdown-preview"
-      "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
-      "atom-ide-ui" # Better to disable in order to prevent Atom from getting so heavy
+      # "spell-check" # Comment-in this line to disable Spell-Checker (Note it will work only with American-English)
       # Enable Julia packages ! #
       # "julia-client"
       # "latex-completions"
       # "tool-bar"
+      # Disable Atom-IDE-UI ! #
+      "atom-ide-ui" # Better to disable in order to prevent Atom from getting so heavy
     ]
     excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder
     ignoredNames: [

@@ -171,7 +171,7 @@ Pkg.add("Juno")
 
 [scripts/juno_startup.jl](scripts/juno_startup.jl) contains Juno-specific Julia startup configs:
 - Use Atom syntax-highlight scheme within [OhMyREPL.jl](https://github.com/KristofferC/OhMyREPL.jl)
-- Make color theme that matchs [Ariake Dark Syntax](https://atom.io/themes/ariake-dark-syntax) for [PlotThemes.jl](https://github.com/JuliaPlots/PlotThemes.jl)
+- Make color theme that matches [Ariake Dark Syntax](https://atom.io/themes/ariake-dark-syntax) for [PlotThemes.jl](https://github.com/JuliaPlots/PlotThemes.jl)
 
 Enable it by making symbolic link of scripts/juno_startup.jl to ~/.julia/config/juno_startup.jl:
 
