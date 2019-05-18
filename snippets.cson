@@ -18,16 +18,27 @@
 ### Julia ###
 '.source.julia':
 
-  ## General
+  ## Base
+
+  # General - Block
+  'struct':
+    'prefix': 'struct'
+    'body':
+      '''
+      struct ${1:Name}
+          ${2:fields}
+      end
+      '''
+    'description': 'Inserts struct (composite types) block'
   'struct with end struct indication':
     'prefix': 'struct#'
     'body':
       '''
-      struct ${1:Structname}
+      struct ${1:Name}
           ${2:fields}
-      end  # struct ${1:Structname}
+      end  # struct ${1:Name}
       '''
-    'description': 'Inserts struct (composite types) blocks with end struct indication'
+    'description': 'Inserts struct (composite types) block with end struct indication'
   'function with end function indication':
     'prefix': 'function#'
     'body':
@@ -101,7 +112,7 @@
     'descrition': 'Inserts document string block'
   'where':
     'prefix': 'where'
-    'body': 'where \{$1\}'
+    'body': 'where $1'
     'description': 'Inserts where block'
   'quote':
     'prefix': 'quote'
@@ -122,25 +133,33 @@
       '''
     'description': 'Inserts comment block'
 
-  ## Base
-  'Base: print':
-    'prefix': 'p'
-    'body': "print(${1:expr})"
-    'description': 'Inserts print snippet'
-  'Base: println':
-    'prefix': 'pl'
-    'body': "println(${1:expr})"
-    'description': 'Inserts println snippet'
-  'Base: |> (Pipe)':
+  # General - Snippet
+  ':: (\'Type-of\')':
+    'prefix': 'to'
+    'body': '${1:Type1}::${2:Type2}'
+    'description': 'Inserts \'Type-of\' snippet'
+  '<: (\'Subtype-of\')':
+    'prefix': 'so'
+    'body': '${1:Subtype}<:${2:Supertype}'
+    'description': 'Inserts \'Subtype-of\' snippet'
+  'key => value (Pair)':
+    'prefix': 'pa'
+    'body': '${1:key} => ${2:value}'
+    'description': 'Inserts pair snippet'
+  '|> (Pipe)':
     'prefix': 'pi'
     'body': '|> $1'
     'description': 'Inserts pipe snippet'
-  'Base: => (Pair)':
-    'prefix': 'pa'
-    'body': '$1 => $2'
-    'description': 'Inserts pair snippet'
+  'print':
+    'prefix': 'p'
+    'body': "print(${1:expr})"
+    'description': 'Inserts print snippet'
+  'println':
+    'prefix': 'pl'
+    'body': "println(${1:expr})"
+    'description': 'Inserts println snippet'
 
-  # DataFrames
+  ## DataFrames
   'DataFramesMeta: @linq':
     'prefix': 'li'
     'body':
@@ -606,7 +625,7 @@
 '.source.weave.md':
 
   ## Meta
-  'Weave.jl: Meta settings for weave to markdown':
+  'Weave.jl: Meta settings for weaving to Markdown':
     'prefix': 'meta-jmd2md'
     'body':
       '''
@@ -629,11 +648,11 @@
           # out_path:
           fig_path: figs
           ## default code chunk options
-          # echo: true
-          # eval: true
-          # results: "markup"
-          # display: false
-          hold: true
+          echo: true
+          eval: true
+          results: "markup"
+          term: true
+          hold: false
           wrap: false
           fig_width: 8
           fig_height: 5
@@ -642,8 +661,37 @@
       '''
     'description':
       '''
-      Inserts Weave.jl meta settings for generating markdown document,
+      Inserts Weave.jl meta settings for weaving to Markdown,
       which is supposed to be rendered as HTML with Markdown-Preview-Enhanced after weaving
+      '''
+  'Weave.jl: Meta settings for weaving to HTML':
+    'prefix': 'meta-jmd2html'
+    'body':
+      '''
+      ---
+      ### Weave
+      title: ${1:Title}
+      author: KADOWAKI, Shuhei
+      date: 2019/${2:MM}/${3:DD}
+      options:
+          ## output settings
+          # out_path:
+          fig_path: figs
+          ## default code chunk options
+          echo: true
+          eval: true
+          results: "markup"
+          term: false
+          hold: false
+          wrap: false
+          fig_width: 8
+          fig_height: 5
+          fig_ext: ".svg"
+      ---
+      '''
+    'description':
+      '''
+      Inserts Weave.jl meta settings for weaving to HTML document
       '''
 
   ## Code block
@@ -891,7 +939,7 @@
     'body':
       '''
       /**
-       * Description for this class
+       * ${6:Description for this class}
        */
       public class ${1:NAME} ${2:extends ${3:PARENT}} ${4:implements ${5:INTERFACE}} {
 
