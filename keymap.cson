@@ -548,6 +548,7 @@
 ## Autocomplete-Plus
 'atom-text-editor:not(mini).emacs-plus.autocomplete-active':
   'ctrl-;': 'autocomplete-plus:confirm'
+  'ctrl-l': 'autocomplete-plus:cancel'
 
 ## Hydrogen
 "

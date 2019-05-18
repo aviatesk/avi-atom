@@ -6,7 +6,13 @@ Let me show off my Atom customs a bit and explain how to restore them.
 
 ## Overview
 
-![overview](./assets/overview.png)
+> Juno
+
+![](assets/juno.png)
+
+> IDE-Python & Hydrogen
+
+![](./assets/ide-python&hydrogen.png)
 
 
 ## Main features

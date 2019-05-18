@@ -99,6 +99,10 @@
       """
       '''
     'descrition': 'Inserts document string block'
+  'where':
+    'prefix': 'where'
+    'body': 'where \{$1\}'
+    'description': 'Inserts where block'
   'quote':
     'prefix': 'quote'
     'body':

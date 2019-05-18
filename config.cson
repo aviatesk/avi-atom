@@ -5,7 +5,7 @@
     outputAreaDock: true
     outputAreaFontSize: 13
     startDir: "dirOfFile"
-    startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Julia 1.0.3\": \"using Plots\\ndefault(:fmt, :svg)\\ntheme(:juno)\"}"
+    startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Julia 1.1.1\": \"using Plots\\ndefault(:fmt, :svg)\\ntheme(:juno)\"}"
   "Hydrogen-Studio":
     inspectorPaneDefaultLocation: "right"
     plotPaneDefaultLocation: "right"
@@ -75,6 +75,7 @@
     ignored: [
       "linter-eslint"
       "linter-tslint"
+      "minimap-linter"
     ]
   "atom-typescript":
     tsserverInstancePerTsconfig: true
@@ -235,7 +236,7 @@
     juliaPath: "julia"
     uiOptions:
       enableMenu: true
-      enableToolBar: true
+      enableToolBar: false
   "language-babel":
     allowLocalOverride: true
     emmetCSSAutocomplete: true
@@ -261,10 +262,10 @@
     enableCriticMarkupSyntax: true
     enableExtendedTableSyntax: true
     enableScriptExecution: true
+    enableTypographer: true
     fileExtension: ".md, .MD, .jmd, Jmd, .pmd, .Pmd, .rmd, .Rmd"
     openPreviewPaneAutomatically: false
     printBackground: true
-    singlePreview: false
   "markdown-writer":
     grammars: [
       "source.gfm"

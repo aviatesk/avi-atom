@@ -11,6 +11,7 @@ All values for the other Per-project configs are set as default
     disabledPackages: [
       "markdown-preview"
       "spell-check" # Comment-out to enable spell-checker (Note it will work correctly only with American-English)
+      "atom-ide-ui" # Better to disable in order to prevent Atom from getting so heavy
       # Enable Julia packages ! #
       # "julia-client"
       # "latex-completions"

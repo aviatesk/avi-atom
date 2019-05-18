@@ -57,17 +57,14 @@ atom-text-editor.editor.is-focused {
     background: @current-focused  !important;
   }
 }
-// pane border
+// Pane style
 .vertical {
+  // Tweak border style
   .panes .pane-column>*,
   .panes .pane-row>* {
     border-top: 1px solid @pane-frame;
     border-right: 1px solid @pane-frame;
   }
-}
-// off scroll bar
-::-webkit-scrollbar {
-  display: none;
 }
 // Minimap style
 .minimap-selection {
@@ -88,6 +85,10 @@ atom-text-editor atom-text-editor-minimap {
     width: 2px;
   }
 }
+// off scroll bar
+::-webkit-scrollbar {
+  display: none;
+}
 // Termination style
 .termination.status-bar {
   display: none;
@@ -105,7 +106,13 @@ atom-text-editor atom-text-editor-minimap {
     }
   }
 }
-
+// Tool-Bar style
+.tool-bar {
+  // Diable Atom-IDE-UI's default icons
+  .icon-nuclicon, .icon-nuclicon-console {
+    display: none;
+  }
+}
 
 /**
  * Customize code　cell style in .jmd, .pmd & .Rmd files
