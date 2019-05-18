@@ -1,7 +1,7 @@
 ### Core ###
 'body':
 
-  ## movements
+  ## Movements
   'ctrl-o': 'core:move-up'
   'ctrl-p': 'core:page-up'
   'ctrl-l': 'core:move-right'
@@ -9,11 +9,9 @@
   'ctrl-shift-p': 'core:page-down'
   'ctrl-k': 'core:move-left'
 
-  ## delete, copy, paste
+  ## Operations
   'alt-w': 'core:copy'
   'ctrl-v': 'core:paste'
-
-  ## operations
   'ctrl-m': 'core:confirm'
   'ctrl-;': 'core:confirm'
   'ctrl-g': 'core:cancel'
@@ -180,14 +178,14 @@
 ## Tree-View
 '.tree-view':
 
-  ## meta
+  ## Meta
   't': 'tree-view:toggle-focus'
   'ctrl-t': 'tree-view:toggle-focus'
   'ctrl-x o': 'tree-view:toggle-focus'
   'alt-t': 'tree-view:toggle'
   'ctrl-x ctrl-t': 'tree-view:toggle'
 
-  ## movements
+  ## Movements
   'n': 'core:move-down'
   'ctrl-n': 'core:move-down'
   'o': 'core:move-up'
@@ -197,7 +195,7 @@
   'e': 'core:move-to-bottom'
   'ctrl-e': 'core:move-to-bottom'
 
-  ## operations
+  ## Operations
   # select & view
   'm': 'tree-view:open-selected-entry'
   ';': 'tree-view:open-selected-entry'
@@ -227,10 +225,10 @@
   'ctrl-r': 'tree-view:rename'
   'd': 'tree-view:remove'
   'ctrl-d': 'tree-view:remove'
-  # path
+  # copy path
   'alt-c': 'tree-view:copy-project-path'
   'ctrl-alt-c': 'tree-view:copy-full-path'
-  # find
+  # finder
   'f': 'fuzzy-finder:toggle-file-finder'
   'ctrl-f': 'fuzzy-finder:toggle-file-finder'
   'b': 'fuzzy-finder:toggle-buffer-finder'
@@ -261,14 +259,14 @@
 
 ## Git ##
 '.github-StagingView':
-  ## movements
+  ## Movements
   'o': 'core:move-up'
   'n': 'core:move-down'
   'ctrl-o': 'core:move-up'
   'ctrl-n': 'core:move-down'
   'tab': 'core:focus-next'
   'shift-tab': 'core:focus-previous'
-  ## operations
+  ## Operations
   'm': 'core:confirm'
   'ctrl-m': 'core:confirm'
   'ctrl-alt-m': 'github:unstage-all-changes'
@@ -277,16 +275,16 @@
   'enter': 'github:jump-to-file'
   'ctrl-enter': 'github:jump-to-file'
 '.github-StagingView.unstaged-changes-focused':
-  ## operations
+  ## Operations
   'ctrl-m': 'core:confirm'
   'ctrl-alt-m': 'github:stage-all-changes'
 '.github-FilePatchView atom-text-editor:not([mini])':
-  ## movements
+  ## Movements
   'o': 'core:move-up'
   'n': 'core:move-down'
   'ctrl-o': 'core:move-up'
   'ctrl-n': 'core:move-down'
-  ## operations
+  ## Operations
   '/': 'github:toggle-patch-selection-mode'
   'ctrl-/': 'github:toggle-patch-selection-mode'
   'm': 'core:confirm'
@@ -345,7 +343,7 @@
 ### All the atom-text-editor space, including mini(one-line) editor space ###
 'atom-text-editor':
 
-  ## movements
+  ## Movements
   'ctrl-o': 'core:move-up'
   'ctrl-u': 'editor:move-to-beginning-of-previous-paragraph'
   'ctrl-p': 'core:page-up'
@@ -359,7 +357,7 @@
   'ctrl-,': 'editor:move-to-beginning-of-word'
   'ctrl-a': 'editor:move-to-first-character-of-line'
 
-  ## delete, copy, paste
+  # Operations
   'ctrl-d': 'editor:delete-to-end-of-line'
   'ctrl-shift-d': 'editor:delete-line'
   'ctrl-f': 'emacs-plus:kill-line'
@@ -367,6 +365,7 @@
   'ctrl-j': 'core:delete'
   'ctrl-shift-j': 'editor:delete-to-end-of-word'
   'alt-j': 'emacs-plus:kill-word'
+  'ctrl-alt-i': 'window:toggle-invisibles'
 
   ## Dock
   'alt-l': 'window:toggle-right-dock'
@@ -396,6 +395,7 @@
 
   ## Spell-Check
   'alt-;': 'spell-check:correct-misspelling'
+  'ctrl-alt-;': 'spell-check:toggle'
 
   ## Unsets
   # make ctrl-k prefix-keybinding unavailable
@@ -441,7 +441,7 @@
 ### Atom-text-editor space, not including mini(one-line) editor space ###
 'atom-text-editor.emacs-plus:not([mini])':
 
-  ## operations
+  ## Operations
   'ctrl-;': 'editor:newline'
   'ctrl-x g': 'go-to-line:toggle'
   'ctrl-x t': 'emacs-plus:recenter-top-bottom'
@@ -453,7 +453,7 @@
   'ctrl-w': 'unset!'
   'ctrl-alt-c': 'color-picker:open'
 
-  ## window
+  ## Unsets
   'alt-down': 'unset!'
   'alt-right': 'unset!'
   'alt-left': 'unset!'
@@ -499,7 +499,7 @@
 
 ## Mark mode (i.e. after ctrl-space)
 'atom-text-editor.emacs-plus.mark-mode:not([mini])':
-  ## movements
+  ## Movements
   # up
   'ctrl-o': 'core:select-up'
   'ctrl-u': 'editor:select-to-beginning-of-previous-paragraph'
@@ -518,7 +518,7 @@
   'ctrl-k': 'core:select-left'
   'ctrl-,': 'editor:select-to-beginning-of-word'
   'ctrl-a': 'editor:select-to-first-character-of-line'
-  # operations
+  # Operations
   'ctrl-alt-[': 'editor:fold-selection'
   'ctrl-alt-]': 'editor:unfold-current-row'
   'ctrl-w': 'emacs-plus:kill-region'

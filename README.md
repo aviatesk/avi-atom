@@ -97,8 +97,8 @@ Files below contain absolute paths (in Windows-format by default) to files that 
 
 ### Globally ignore .atom/config.cson files by Git
 
-[Atomic-Management](https://github.com/harmsk/atomic-management) enables us to use *per-project* config settings for Atom by creating .atom/config.cson files in each project's root directory. But usually we want such a kind of file to be ignored by Git.  
-We can make Git ignore .atom/config.cson files globally except ~/.atom/config.cson by following steps:
+[Atomic-Management](https://github.com/harmsk/atomic-management) enables us to use *per-project* config settings for Atom by creating .atom/config.cson file in each project's root directory. But usually we want such a kind of file to be ignored by Git.  
+We can make git globally ignore .atom/config.cson files by following steps:
 1. `$ git config --global core.excludesfile ~/.gitignore_global`
 2. Open or create [~/.gitignore_global](../.gitignore_global)
 3. Add the code snippet below
@@ -107,10 +107,8 @@ We can make Git ignore .atom/config.cson files globally except ~/.atom/config.cs
 
 ```git
 # Ignore Atom per-project config settings except the root config setting
-!~/.atom
-!~/.atom/*
-.atom/
-.atom/*
+**/.atom
+**/.atom/*
 ```
 
 
