@@ -91,6 +91,8 @@
       "source.gfm": [
         "_draft.md"
         "CHANGELOG.md"
+        "CODE_OF_CONDUCT.md"
+        "CONTRIBUTING.md"
         "LICENSE.md"
         "README.md"
       ]
