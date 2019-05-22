@@ -207,14 +207,18 @@
   "julia-client":
     consoleOptions:
       whitelistedKeybindingsREPL: [
-        "Alt-W"
+        "Alt-C"
         "Ctrl-Y"
-        "Ctrl-V"
         "Ctrl-Shift-R"
         "Ctrl-Shift-S"
         "Ctrl-@"
         "Ctrl-C"
         "Ctrl-L"
+        "Alt-D"
+        "Alt-I"
+        "Alt-P"
+        "Alt-W"
+        "Alt-,"
         "Ctrl-Tab"
         "Ctrl-Shift-Tab"
         "Ctrl-W"
@@ -228,7 +232,6 @@
         "Ctrl-M"
         "Ctrl-H"
         "Alt-X"
-        "Alt-,"
       ]
     firstBoot: false
     juliaOptions:

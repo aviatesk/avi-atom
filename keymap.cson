@@ -152,7 +152,7 @@
   'alt-k i': 'hydrogen-studio:open-inspector-pane'
 
   ## Julia-client
-  'ctrl-@': 'julia-client:focus-last-editor'
+  'ctrl-@': 'julia-client:focus-last-terminal'
   'alt-j': 'unset!'
   'alt-j o': 'julia-client:open-console'
   'alt-j d': 'julia-debug:open-debugger-pane'
@@ -683,22 +683,24 @@ atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
 ":
   ### Code execution commands are not listed here. It would be automatically attached in init.js ###
-  'ctrl-x space': 'julia-debug:toggle-breakpoint'
-  ## Ink-terminal
-  'ctrl-@': 'julia-client:focus-last-terminal'
   ## Julia-Debug
+  'ctrl-x space': 'julia-debug:toggle-breakpoint'
   'f8': 'julia-debug:continue'
   'f9': 'julia-debug:step-to-next-line'
   'f10': 'julia-debug:finish-function'
 "ink-terminal":
-  'alt-w': 'ink-terminal:copy'
+  'alt-c': 'ink-terminal:copy'
   'ctrl-y': 'ink-terminal:paste'
-  'ctrl-v': 'ink-terminal:paste'
   'ctrl-shift-r': 'ink-terminal:show-search'
   'ctrl-shift-s': 'ink-terminal:show-search'
   'ctrl-@': 'julia-client:focus-last-editor'
   'ctrl-c': 'julia-client:interrupt-julia'
   'ctrl-l': 'julia-client:clear-console'
+  'alt-d': 'julia-debug:open-debugger-pane'
+  'alt-i': 'julia-client:open-documentation-browser'
+  'alt-p': 'julia-client:open-plot-pane'
+  'alt-w': 'julia-client:open-workspace'
+  'alt-,': 'julia-client:settings'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-w': 'tabs:close-tab'
