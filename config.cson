@@ -139,6 +139,7 @@
       "script"
       "split-diff"
       "termination"
+      "todo-show"
       "tool-bar"
       "spell-check"
     ]
@@ -375,6 +376,17 @@
     toggles:
       cursorBlink: false
       runInsertedText: false
+  "todo-show":
+    exportAs: "Table"
+    showInTable: [
+      "Type"
+      "Text"
+      "Project"
+      "Path"
+      "Line"
+    ]
+    sortBy: "Path"
+    statusBarIndicator: true
   "tool-bar":
     iconSize: "24px"
     position: "Left"

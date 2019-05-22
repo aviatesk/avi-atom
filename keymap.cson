@@ -169,6 +169,9 @@
   'alt-:': 'termination:toggle'
   'ctrl-:': 'termination:focus'
 
+  ## Todo-Show
+  'ctrl-alt-t': 'todo-show:toggle'
+
   ## Zen
   'alt-z': 'zen:toggle'
 
