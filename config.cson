@@ -278,8 +278,8 @@
       "text.plain"
       "text.plain.null-grammar"
     ]
+    inlineNewLineContinuation: true
     relativeImagePath: true
-    siteDraftsDir: ".drafts/"
     siteImagesDir: "./assets/"
     tableExtraPipes: true
     templateVariables:

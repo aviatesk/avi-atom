@@ -47,9 +47,6 @@ All values for the other Per-project configs are set as default
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
     previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred
     scrollSync: true # Set `false` when editting Weave documents
-  # Markdown-Writer: Change the directory where copy & pasted images would be saved
-  "markdown-writer":
-    siteImagesDir: "./assets/" # Set `"./assets/{slug}"` in order to include its file name into saving directories
   "spell-check":
     knownWords: [
       "aviatesk"

@@ -651,7 +651,7 @@
           echo: true
           eval: true
           results: "markup"
-          term: true
+          term: false
           hold: false
           wrap: false
           fig_width: 8

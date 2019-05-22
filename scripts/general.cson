@@ -39,9 +39,6 @@ All values are set as default.
   "markdown-preview-enhanced":
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
     previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred
-  # Markdown-Writer: Change the directory where copy & pasted images would be saved
-  "markdown-writer":
-    siteImagesDir: "./assets/" # Set `"./assets/{slug}"` in order to include its file name into saving directories
   "spell-check":
     knownWords: [
       "aviatesk"
