@@ -35,6 +35,11 @@ All values are set as default.
     # Another python with Python-Language-Server installed can be specified.
     # E.g.: "C:\\Users\\aviat\\Anaconda3\\envs\\py36\\python.exe"
     python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
+  "linter-eslint":
+    autofix:
+      fixOnSave: false # Set `true` to activate auto fix
+  "linter-tslint":
+    fixOnSave: false # Set `true` to activate auto fix
   "markdown-preview-enhanced":
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
     previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred

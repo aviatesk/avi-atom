@@ -250,13 +250,13 @@
     selector: ".source.julia, .source.weave.md, .source.gfm, .text.md"
   "linter-eslint":
     autofix:
-      fixOnSave: true
+      fixOnSave: false
       ignoreFixableRulesWhileTyping: true
     disabling: {}
     global:
       useGlobalEslint: true
   "linter-tslint":
-    fixOnSave: true
+    fixOnSave: false
     ignoreTypings: true
     useGlobalTslint: true
   "markdown-preview-enhanced":
@@ -387,7 +387,7 @@
       "Path"
       "Line"
     ]
-    sortBy: "Path"
+    sortBy: "Line"
     statusBarIndicator: true
   "tool-bar":
     iconSize: "24px"
