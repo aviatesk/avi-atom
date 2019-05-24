@@ -689,7 +689,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'f9': 'julia-debug:step-to-next-line'
   'f10': 'julia-debug:finish-function'
 "ink-terminal":
-  'alt-c': 'ink-terminal:copy'
+  'alt-w': 'ink-terminal:copy'
   'ctrl-y': 'ink-terminal:paste'
   'ctrl-shift-r': 'ink-terminal:show-search'
   'ctrl-shift-s': 'ink-terminal:show-search'
@@ -699,7 +699,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'alt-d': 'julia-debug:open-debugger-pane'
   'alt-i': 'julia-client:open-documentation-browser'
   'alt-p': 'julia-client:open-plot-pane'
-  'alt-w': 'julia-client:open-workspace'
+  'alt-j': 'julia-client:open-workspace'
   'alt-,': 'julia-client:settings'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'

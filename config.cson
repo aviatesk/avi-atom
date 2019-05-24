@@ -110,7 +110,6 @@
     disabledPackages: [
       "markdown-preview"
       "julia-client"
-      "latex-completions"
       "tool-bar"
     ]
     excludeVcsIgnoredPaths: true
@@ -207,7 +206,7 @@
   "julia-client":
     consoleOptions:
       whitelistedKeybindingsREPL: [
-        "Alt-C"
+        "Alt-W"
         "Ctrl-Y"
         "Ctrl-Shift-R"
         "Ctrl-Shift-S"
@@ -217,7 +216,7 @@
         "Alt-D"
         "Alt-I"
         "Alt-P"
-        "Alt-W"
+        "Alt-J"
         "Alt-,"
         "Ctrl-Tab"
         "Ctrl-Shift-Tab"
@@ -248,7 +247,7 @@
   "language-weave":
     showPreview: false
   "latex-completions":
-    selector: ".source.julia, .source.weave.md"
+    selector: ".source.julia, .source.weave.md, .source.gfm, .text.md"
   "linter-eslint":
     autofix:
       fixOnSave: true
