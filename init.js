@@ -1,11 +1,28 @@
 'use babel';
 
+import { TextEditor } from 'atom';
+
+/*
+Easy access to my TODO-list
+*/
+atom.commands.add('atom-workspace', 'avi-atom:open-todo-list', async () => {
+  const todoEditor = await atom.workspace.open('C:\\Users\\aviat\\todo.md');
+  // Disable Spell-Check for this editor
+  await atom.commands.dispatch(todoEditor.getElement(), 'spell-check:toggle');
+  // Show the TODO-list with Todo-Show
+  await atom.commands.dispatch(todoEditor.getElement(), 'todo-show:find-in-active-file');
+  // Back to usual Todo-show space
+  todoEditor.onDidDestroy(() => {
+    atom.commands.dispatch(atom.workspace.getElement(), 'todo-show:find-in-workspace');
+  });
+});
+atom.keymaps.add(
+  'init.js', { 'atom-workspace': { 'ctrl-alt-shift-t': 'avi-atom:open-todo-list' } }, 1,
+);
 
 /*
 Tweak Git-Plus and register extended commands
 */
-
-import { TextEditor } from 'atom';
 
 class InputView {
   constructor(placeholderText, messageText) {
