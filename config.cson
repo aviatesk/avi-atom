@@ -251,7 +251,6 @@
   "linter-eslint":
     autofix:
       fixOnSave: false
-      ignoreFixableRulesWhileTyping: true
     disabling: {}
     global:
       useGlobalEslint: true
