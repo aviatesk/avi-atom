@@ -19,6 +19,7 @@ git-time-machine@2.1.0
 highlight-line@0.12.0
 highlight-selected@0.16.0
 Hydrogen@2.9.0
+hyperclick@0.1.5
 hyperlink-hyperclick@3.0.0
 ide-css@0.3.2
 ide-python@1.4.1
@@ -27,12 +28,12 @@ ink@0.10.5
 julia-client@0.8.3
 language-babel@2.85.0
 language-julia@0.18.1
-language-markdown@0.29.0
+language-markdown@0.37.0
 language-weave@0.6.2
 latex-completions@0.3.6
 linter-eslint@8.5.5
-linter-tslint@1.10.22
-markdown-preview-enhanced@0.15.10
+linter-tslint@1.10.23
+markdown-preview-enhanced@0.16.0
 markdown-writer@2.11.5
 minimap@4.29.9
 minimap-autohider@1.6.0
@@ -49,6 +50,7 @@ project-manager@3.3.7
 script@3.18.1
 split-diff@1.6.0
 termination@0.7.1
+todo-show@2.3.2
 tool-bar@1.1.11
 tree-view-autoresize@2.3.0
 tree-view-git-status@1.5.2
