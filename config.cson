@@ -108,9 +108,9 @@
         "md"
       ]
     disabledPackages: [
-      "markdown-preview"
       "julia-client"
       "tool-bar"
+      "markdown-preview"
     ]
     excludeVcsIgnoredPaths: true
     ignoredNames: [
