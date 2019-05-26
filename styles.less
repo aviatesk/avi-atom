@@ -1,6 +1,8 @@
 /**
  * Fine-tune Ariake-Dark-Syntax
  */
+
+/* Define colors */
 @selected: rgba(63, 17, 175, 0.25);
 @selected-focused: rgba(63, 17, 175, 0.5);
 @current: rgba(24, 17, 168, 0.25);
@@ -10,6 +12,8 @@
 @pane-frame: rgba(63, 17, 175, 0.75);
 @minimap-scroll-indicator: rgba(255, 255, 255, 0.75);
 @hydrogen-cell: rgb(35, 38, 46);
+
+/* Inside of editor */
 atom-text-editor.editor {
   // Highlight-Selection style
   .highlights {
@@ -22,7 +26,7 @@ atom-text-editor.editor {
   .line.highlight-line {
     background: @current  !important;
   }
-  // stop cursor from blinking
+  // Stop cursor from blinking
   .cursor {
     border-color: @cursor  !important;
   }
@@ -33,6 +37,10 @@ atom-text-editor.editor {
   .bracket-matcher .region {
     background: @matched;
     position: absolute;
+  }
+  // Turn-off scroll bar for text editors
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 atom-text-editor.editor.is-focused {
@@ -48,6 +56,21 @@ atom-text-editor.editor.is-focused {
     background: @current-focused  !important;
   }
 }
+
+/* Outside of editor */
+// Pane border style
+.vertical {
+  // Tweak border style
+  .panes .pane-column>*,
+  .panes .pane-row>* {
+    border-top: 1px solid @pane-frame;
+    border-right: 1px solid @pane-frame;
+  }
+}
+// Scrollbar style
+.scrollbars-visible-always ::-webkit-scrollbar-thumb {
+  background: @current-focused;
+}
 // Tree-view style
 .tree-view .selected:before {
   background: @current  !important;
@@ -55,15 +78,6 @@ atom-text-editor.editor.is-focused {
 .tree-view:focus {
   .selected:before {
     background: @current-focused  !important;
-  }
-}
-// Pane style
-.vertical {
-  // Tweak border style
-  .panes .pane-column>*,
-  .panes .pane-row>* {
-    border-top: 1px solid @pane-frame;
-    border-right: 1px solid @pane-frame;
   }
 }
 // Minimap style
@@ -85,18 +99,6 @@ atom-text-editor atom-text-editor-minimap {
     width: 2px;
   }
 }
-// off scroll bar
-::-webkit-scrollbar {
-  display: none;
-}
-// Termination style
-.termination.status-bar {
-  display: none;
-}
-// DQS-Shell-Commands style
-.dqs-shell-commands-console {
-  margin: -2px;
-}
 // Hydrogen style
 .hydrogen {
   .multiline-container {
@@ -106,42 +108,34 @@ atom-text-editor atom-text-editor-minimap {
     }
   }
 }
-// Tool-Bar style
+
+
+/**
+ * Per-package tweaks
+ */
+
+/* Atom-IDE-UI tweaks */
 .tool-bar {
   // Diable Atom-IDE-UI's default icons
   .icon-nuclicon, .icon-nuclicon-console {
     display: none;
   }
 }
-
-/**
- * Customize code　cell style in .jmd, .pmd & .Rmd files
- */
-atom-text-editor.editor {
-  .line {
-    position: relative;
-    .syntax--embedded {
-      &.syntax--julia::before,
-      &.syntax--python::before,
-      &.syntax--r::before {
-        background-color: @hydrogen-cell;
-        opacity: 0.75;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        content: '';
-        display: block;
-        z-index: -1;
-      }
-    }
+atom-text-editor:not([data-grammar$="source python"]) {
+  div[gutter-name="debugger-breakpoint"] {
+    display: none;
   }
 }
+// DQS-Shell-Commands tweak
+.dqs-shell-commands-console {
+  margin: -2px;
+}
+// Termination tweak
+.termination.status-bar {
+  display: none;
+}
 
-/**
- * Tree-View style customize
- */
+/* Tree-View tweaks */
 .tree-view {
   font-size: 1.0rem;
 }
@@ -178,10 +172,8 @@ atom-text-editor.editor {
 }
 
 
-/**
- * File-Icon style customize
- */
-/* Directories */
+/* File-Icon tweaks */
+// Directories
 @import "packages/file-icons/styles/colours";
 .icon[data-name$="data"]:before {
   font-family: "Octicons Regular";
@@ -205,15 +197,13 @@ atom-text-editor.editor {
     content: "\f0c4";
   }
 }
-/* Markdowns */
 // Github-Flavor-Markdowns
 .icon[data-name$="_draft.md"]:before,
 .icon[data-name$="CHANGELOG.md"]:before,
 .icon[data-name$="CODE_OF_CONDUCT.md"]:before,
 .icon[data-name$="CONTRIBUTING.md"]:before,
 .icon[data-name$="LICENSE.md"]:before,
-.icon[data-name$="README.md"]:before
-{
+.icon[data-name$="README.md"]:before {
   font-family: "Octicons Regular";
   content: "\f00a";
 }
@@ -236,4 +226,30 @@ atom-text-editor.editor {
 .icon[data-name$=".cson"]:before {
   font-family: file-icons;
   content: "\eabe";
+}
+
+
+/**
+ * Code　cell style in .jmd, .pmd & .Rmd files
+ */
+atom-text-editor.editor {
+  .line {
+    position: relative;
+    .syntax--embedded {
+      &.syntax--julia::before,
+      &.syntax--python::before,
+      &.syntax--r::before {
+        background-color: @hydrogen-cell;
+        opacity: 0.75;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        z-index: -1;
+      }
+    }
+  }
 }
