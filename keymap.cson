@@ -238,7 +238,8 @@
   'ctrl-b': 'fuzzy-finder:toggle-buffer-finder'
   'g': 'fuzzy-finder:toggle-git-status-finder'
   'ctrl-g': 'fuzzy-finder:toggle-git-status-finder'
-  # unsets
+
+  ## Unsets
   'i': 'unset!'
 
 ## Advanced-open-file
@@ -521,7 +522,7 @@
   'ctrl-k': 'core:select-left'
   'ctrl-,': 'editor:select-to-beginning-of-word'
   'ctrl-a': 'editor:select-to-first-character-of-line'
-  # Operations
+  ## Operations
   'ctrl-alt-[': 'editor:fold-selection'
   'ctrl-alt-]': 'editor:unfold-current-row'
   'ctrl-w': 'emacs-plus:kill-region'
@@ -682,12 +683,13 @@ atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini])
 atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
 ":
-  ### Code execution commands are not listed here. It would be automatically attached in init.js ###
+  ## Code execution commands are not listed here. It would be automatically attached in init.js ##
   ## Julia-Debug
   'ctrl-x space': 'julia-debug:toggle-breakpoint'
   'f8': 'julia-debug:continue'
   'f9': 'julia-debug:step-to-next-line'
   'f10': 'julia-debug:finish-function'
+## Ink
 "ink-terminal":
   'alt-w': 'ink-terminal:copy'
   'ctrl-y': 'ink-terminal:paste'
@@ -715,6 +717,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'ctrl-r': 'ink-terminal:find-previous'
   'ctrl-s': 'ink-terminal:find-next'
   'ctrl-g': 'ink-terminal:close-search'
+## Language-Weave
 "atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])":
   ## Markdown-Writer: cancel `markdown-writer:insert-newline` for ctrl-;
   'ctrl-;': 'editor:newline'
@@ -725,8 +728,8 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   # Code format
   'ctrl-c ctrl-f': 'code-format:format-code'
   # Debugger
-  'alt-p d': 'debugger:toggle'
-  'alt-p alt-d': 'debugger:toggle'
+  'alt-y d': 'debugger:toggle'
+  'alt-y alt-d': 'debugger:toggle'
 
 ## TypeScript
 "
@@ -747,7 +750,7 @@ atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
   'ctrl-shift-m': 'atom-html-preview:toggle'
 
 ## CSS
-## Switch Atom-Beautify with selection
+## Atom-Beautify: Switch beautifier according to selection
 "atom-text-editor[data-grammar='source css less'].emacs-plus:not([mini])":
   'ctrl-c ctrl-f': 'atom-beautify:beautify-language-css'
 "atom-text-editor[data-grammar='source css less'].emacs-plus.mark-mode:not([mini])":

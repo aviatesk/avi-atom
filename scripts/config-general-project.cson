@@ -28,7 +28,7 @@ All values are set as default.
       ".DS_Store"
       "desktop.ini"
       "node_modules"
-      # Autocomplete-Paths: Additional ignored names come below
+      # # Autocomplete-Paths: Additional ignored names would come below
       # ".git"
     ]
   "ide-python":
@@ -49,7 +49,7 @@ All values are set as default.
       "aviat"
       "th"
       "s"
-      # Additional known (ignored) words come here
+      # # Additional known (ignored) words would come here
     ]
   termination:
     core:

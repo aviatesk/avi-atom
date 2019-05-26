@@ -2,147 +2,42 @@
 
 import { TextEditor } from 'atom';
 
-/*
-Easy access to my TODO-list
-*/
-atom.commands.add('atom-workspace', 'avi-atom:open-todo-list', async () => {
-  const todoEditor = await atom.workspace.open('C:\\Users\\aviat\\todo.md');
-  // Disable Spell-Check for this editor
-  await atom.commands.dispatch(todoEditor.getElement(), 'spell-check:toggle');
-  // Show the TODO-list with Todo-Show
-  await atom.commands.dispatch(todoEditor.getElement(), 'todo-show:find-in-active-file');
-  // Back to usual Todo-show space
-  todoEditor.onDidDestroy(() => {
-    atom.commands.dispatch(atom.workspace.getElement(), 'todo-show:find-in-workspace');
-  });
-});
-atom.keymaps.add(
-  'init.js', { 'atom-workspace': { 'ctrl-alt-shift-t': 'avi-atom:open-todo-list' } }, 1,
-);
 
 /*
-Tweak Git-Plus and register extended commands
+Create an easy access to my TODO-list
 */
 
-class InputView {
-  constructor(placeholderText, messageText) {
-    this.element = document.createElement('div');
-
-    this.miniEditor = new TextEditor({ mini: true });
-    this.miniEditor.element.addEventListener('blur', this.close.bind(this));
-    this.miniEditor.setPlaceholderText(placeholderText);
-
-    this.message = document.createElement('div');
-    this.message.textContent = messageText;
-    this.element.appendChild(this.miniEditor.element);
-    this.element.appendChild(this.message);
-
-    this.panel = atom.workspace.addModalPanel({
-      item: this,
-      visible: false,
-    });
-
-    atom.commands.add(this.miniEditor.element, 'core:confirm', () => {
-      this.confirm();
-    });
-    atom.commands.add(this.miniEditor.element, 'core:cancel', () => {
-      this.close();
-    });
-  }
-
-  /**
-   * Opens the input prompt in a mini text editor view.
-   */
-  open() {
-    if (this.panel.isVisible()) return;
-    this.storeFocusedElement();
-    this.panel.show();
-    this.miniEditor.element.focus();
-  }
-
-  /**
-   * CLoses the opened mini text editor view and restores the original view.
-   */
-  close() {
-    if (!this.panel.isVisible()) return;
-    this.miniEditor.setText('');
-    this.panel.hide();
-    if (this.miniEditor.element.hasFocus()) {
-      this.restoreFocus();
-    }
-  }
-
-  /**
-   * Confirms the input prompt.
-   *
-   * @usage A subclass will overwrite this method to achieve its own task.
-   */
-  confirm() {
-    this.close();
-  }
-
-  storeFocusedElement() {
-    this.previouslyFocusedElement = document.activeElement;
-    return this.previouslyFocusedElement;
-  }
-
-  restoreFocus() {
-    if (this.previouslyFocusedElement && this.previouslyFocusedElement.parentElement) {
-      return this.previouslyFocusedElement.focus();
-    }
-    return atom.views.getView(atom.workspace).focus();
-  }
-}
-
-class RebaseInputView extends InputView {
-  constructor(placeholderText, messageText, gp) {
-    super(placeholderText, messageText);
-    this.gp = gp;
-  }
-
-  confirm() {
-    const text = this.miniEditor.getText();
-    if (parseInt(text, 10)) {
-      this.gp.getRepo()
-        .then((repo) => {
-          this.gp.run(repo, 'rebase -i HEAD~'.concat(text));
-        });
-    } else {
-      atom.notifications.addInfo('Git interactive rebasing info', {
-        detail: 'Enter an interger !',
+const TODO_LIST_PATH = 'C:\\Users\\aviat\\todo.md';
+atom.packages.onDidActivateInitialPackages(() => {
+  const isSpellCheckActivated = atom.packages.isPackageActive('spell-check');
+  let subscription = null;
+  let disableSpellCheck = !!isSpellCheckActivated;
+  atom.workspace.observeActiveTextEditor(async (editor) => {
+    if (editor && editor.getPath() === TODO_LIST_PATH) {
+      // Disable Spell-Check for this TODO-list
+      if (disableSpellCheck) {
+        await atom.commands.dispatch(editor.getElement(), 'spell-check:toggle');
+        disableSpellCheck = false;
+      }
+      // Show the TODO-list only within this file
+      await atom.commands.dispatch(editor.getElement(), 'todo-show:find-in-active-file');
+      // Back to usual TODO-Show state
+      subscription = atom.workspace.onDidChangeActiveTextEditor((_item) => {
+        atom.commands.dispatch(atom.workspace.getElement(), 'todo-show:find-in-workspace');
+        subscription.dispose(); // Dispose this subscription
+      });
+      // Turn `disableSpellCheck` back to `true` when the TODO-list is destroyed
+      editor.onDidDestroy(() => {
+        disableSpellCheck = !!isSpellCheckActivated;
       });
     }
-    this.close();
-  }
-}
-
-/**
- * Add custom commands to Git-Plus
- */
-atom.packages.onDidActivateInitialPackages(() => {
-  const gitPlus = atom.packages.getActivePackage('git-plus');
-  if (gitPlus) {
-    const gp = gitPlus.mainModule.provideService();
-    const rebaseInputView = new RebaseInputView('E.g.: 3', 'Enter the number of commits to be rebased', gp);
-
-    gp.registerCommand('atom-workspace', 'git-plus:rebase-interactive', () => {
-      rebaseInputView.open();
-    });
-
-    gp.registerCommand('atom-workspace', 'git-plus:rebase-continue', () => {
-      gp.getRepo()
-        .then((repo) => {
-          gp.run(repo, 'rebase --continue');
-        });
-    });
-
-    gp.registerCommand('atom-workspace', 'git-plus:rebase-abort', () => {
-      gp.getRepo()
-        .then((repo) => {
-          gp.run(repo, 'rebase --abort');
-        });
-    });
-  }
+  });
+  atom.commands.add('atom-workspace', 'avi-atom:open-todo-list', async () => {
+    await atom.workspace.open(TODO_LIST_PATH);
+  });
+  atom.keymaps.add(
+    'init.js', { 'atom-workspace': { 'ctrl-alt-shift-t': 'avi-atom:open-todo-list' } }, 1,
+  );
 });
 
 
@@ -203,7 +98,7 @@ atom.commands.add('atom-text-editor', 'hydrogen:attach-commands-to-current-scope
 
 
 /*
-Tweak Tool-Bar for Julia-Client
+Tweak Julia-Client & Tool-Bar
 */
 
 atom.packages.onDidActivateInitialPackages(() => {
@@ -386,5 +281,131 @@ atom.packages.onDidActivateInitialPackages(() => {
         tooltip: 'Open Settings',
       });
     }
+  }
+});
+
+
+/*
+Register extended commands for Git-Plus
+*/
+
+class InputView {
+  constructor(placeholderText, messageText) {
+    this.element = document.createElement('div');
+
+    this.miniEditor = new TextEditor({ mini: true });
+    this.miniEditor.element.addEventListener('blur', this.close.bind(this));
+    this.miniEditor.setPlaceholderText(placeholderText);
+
+    this.message = document.createElement('div');
+    this.message.textContent = messageText;
+    this.element.appendChild(this.miniEditor.element);
+    this.element.appendChild(this.message);
+
+    this.panel = atom.workspace.addModalPanel({
+      item: this,
+      visible: false,
+    });
+
+    atom.commands.add(this.miniEditor.element, 'core:confirm', () => {
+      this.confirm();
+    });
+    atom.commands.add(this.miniEditor.element, 'core:cancel', () => {
+      this.close();
+    });
+  }
+
+  /**
+   * Opens the input prompt in a mini text editor view.
+   */
+  open() {
+    if (this.panel.isVisible()) return;
+    this.storeFocusedElement();
+    this.panel.show();
+    this.miniEditor.element.focus();
+  }
+
+  /**
+   * CLoses the opened mini text editor view and restores the original view.
+   */
+  close() {
+    if (!this.panel.isVisible()) return;
+    this.miniEditor.setText('');
+    this.panel.hide();
+    if (this.miniEditor.element.hasFocus()) {
+      this.restoreFocus();
+    }
+  }
+
+  /**
+   * Confirms the input prompt.
+   *
+   * @usage A subclass will overwrite this method to achieve its own task.
+   */
+  confirm() {
+    this.close();
+  }
+
+  storeFocusedElement() {
+    this.previouslyFocusedElement = document.activeElement;
+    return this.previouslyFocusedElement;
+  }
+
+  restoreFocus() {
+    if (this.previouslyFocusedElement && this.previouslyFocusedElement.parentElement) {
+      return this.previouslyFocusedElement.focus();
+    }
+    return atom.views.getView(atom.workspace).focus();
+  }
+}
+
+class RebaseInputView extends InputView {
+  constructor(placeholderText, messageText, gp) {
+    super(placeholderText, messageText);
+    this.gp = gp;
+  }
+
+  confirm() {
+    const text = this.miniEditor.getText();
+    if (parseInt(text, 10)) {
+      this.gp.getRepo()
+        .then((repo) => {
+          this.gp.run(repo, 'rebase -i HEAD~'.concat(text));
+        });
+    } else {
+      atom.notifications.addInfo('Git interactive rebasing info', {
+        detail: 'Enter an interger !',
+      });
+    }
+    this.close();
+  }
+}
+
+/**
+ * Add custom commands to Git-Plus
+ */
+atom.packages.onDidActivateInitialPackages(() => {
+  const gitPlus = atom.packages.getActivePackage('git-plus');
+  if (gitPlus) {
+    const gp = gitPlus.mainModule.provideService();
+    const rebaseInputView = new RebaseInputView('E.g.: 3', 'Enter the number of commits to be rebased', gp);
+
+    gp.registerCommand('atom-workspace', 'git-plus:rebase-interactive', () => {
+      rebaseInputView.open();
+    });
+
+    gp.registerCommand('atom-workspace', 'git-plus:rebase-continue', () => {
+      gp.getRepo()
+        .then((repo) => {
+          gp.run(repo, 'rebase --continue');
+        });
+    });
+
+    gp.registerCommand('atom-workspace', 'git-plus:rebase-abort', () => {
+      gp.getRepo()
+        .then((repo) => {
+          gp.run(repo, 'rebase --abort');
+        });
+    });
   }
 });
