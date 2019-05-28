@@ -102,7 +102,6 @@
   'ctrl-t': 'tree-view:toggle-focus'
   'alt-t': 'tree-view:toggle'
   'ctrl-x ctrl-t': 'tree-view:toggle'
-  'ctrl-x ctrl-j': 'tree-view:reveal-active-file'
 
   ## Dqs-Shell-Commands
   'alt-q': 'dqs-shell-commands-config:toggle'
@@ -187,6 +186,7 @@
   'ctrl-x o': 'tree-view:toggle-focus'
   'alt-t': 'tree-view:toggle'
   'ctrl-x ctrl-t': 'tree-view:toggle'
+  'ctrl-x ctrl-p': 'application:reopen-project'
 
   ## Movements
   'n': 'core:move-down'
@@ -201,19 +201,18 @@
   ## Operations
   # select & view
   'm': 'tree-view:open-selected-entry'
-  ';': 'tree-view:open-selected-entry'
   'ctrl-m': 'tree-view:open-selected-entry'
-  'ctrl-;': 'tree-view:open-selected-entry'
   'shift-m': 'tree-view:collapse-directory'
-  'shift-;': 'tree-view:collapse-directory'
   'ctrl-shift-m': 'tree-view:collapse-directory'
-  'ctrl-shift-;': 'tree-view:collapse-directory'
+  'alt-m': 'tree-view:expand-item'
+  'ctrl-alt-m': 'tree-view:recursive-expand-directory'
+  'alt-shift-m': 'tree-view:collapse-directory'
+  'ctrl-alt-shift-m': 'tree-view:recursive-collapse-directory'
   # manage folder
   'p': 'application:add-project-folder'
   'ctrl-p': 'application:add-project-folder'
   'shift-p': 'tree-view:remove-project-folder'
   'ctrl-shift-p': 'tree-view:remove-project-folder'
-  'ctrl-x ctrl-p': 'application:reopen-project'
   # manage file
   'c': 'tree-view:copy'
   'ctrl-c': 'tree-view:copy'
@@ -229,7 +228,9 @@
   'd': 'tree-view:remove'
   'ctrl-d': 'tree-view:remove'
   # copy path
-  'alt-c': 'tree-view:copy-project-path'
+  'shift-c': 'tree-view:copy-project-path'
+  'ctrl-shift-c': 'tree-view:copy-project-path'
+  'alt-c': 'tree-view:copy-full-path'
   'ctrl-alt-c': 'tree-view:copy-full-path'
   # finder
   'f': 'fuzzy-finder:toggle-file-finder'
@@ -240,7 +241,8 @@
   'ctrl-g': 'fuzzy-finder:toggle-git-status-finder'
 
   ## Unsets
-  'i': 'unset!'
+  'alt-left': 'unset!'
+  'alt-right': 'unset!'
 
 ## Advanced-open-file
 '.advanced-open-file atom-text-editor':
