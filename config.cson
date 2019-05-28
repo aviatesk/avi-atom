@@ -249,9 +249,6 @@
   "latex-completions":
     selector: ".source.julia, .source.weave.md, .source.gfm, .text.md"
   "linter-eslint":
-    autofix:
-      fixOnSave: false
-    disabling: {}
     global:
       useGlobalEslint: true
   "linter-tslint":

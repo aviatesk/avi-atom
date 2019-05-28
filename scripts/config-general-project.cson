@@ -14,10 +14,11 @@ All values are set as default.
     maxHeadingDepth: 4 # Limit outlined depth
   core:
     disabledPackages: [
-      "markdown-preview"
-      # "spell-check" # Comment-in this line to disable Spell-Checker (Note it will work only with American-English)
+      # # Comment-in the line below to disable Spell-Checker (Note it will work only with American-English)
+      # "spell-check"
       "julia-client"
       "tool-bar"
+      "markdown-preview"
     ]
     excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder
     ignoredNames: [
@@ -66,6 +67,8 @@ All values are set as default.
     toggles:
       cursorBlink: false
       runInsertedText: false
+  "todo-show":
+    sortBy: "Line" # Set to one of `"Type"`, `"Text"`, `"Project"`, `"Path"`, `"Line"`
   "tree-view-autoresize":
     minimumWidth: 0 # Set `300` for MPE previewing in Tree-View pane
 
