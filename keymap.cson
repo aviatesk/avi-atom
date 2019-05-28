@@ -558,6 +558,7 @@
 "
 atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source java'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source r'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":
@@ -576,6 +577,7 @@ atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 "
 atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
+atom-text-editor[data-grammar='source java'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source r'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
 ":

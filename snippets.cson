@@ -933,61 +933,14 @@
 ### Java ###
 '.source.java':
 
-  ## Templates
-  'meta':
-    'prefix': 'meta'
-    'body':
-      '''
-      /**
-       * ${6:Description for this class}
-       */
-      public class ${1:NAME} ${2:extends ${3:PARENT}} ${4:implements ${5:INTERFACE}} {
-
-          /** Class variables */
-          // Define instance or static variables
-
-          /** Constructors */
-          // Type "c" for snippet to call template constructor
-
-          /** Methods */
-          // Type "m" for snippet to call template method
-
-          /** Main Method */
-          public static void main(String[] args) {
-              // What to do in this class
-          }
-
-      }
-      '''
-    'description': "Creates a template for writing class with meta information"
+  ## Imports
+  'java.util.*':
+    'prefix': 'util'
+    'body': 'import java.util.*;'
+    'description': 'Imports java.util by random card'
 
   ## Insertions
-  'constructor':
-    'prefix': 'c'
-    'body':
-      '''
-      /**
-       * Description for this constructor
-       * @param PARAM: Description for this argment
-       */
-      public ${1:CLASSNAME}($2) {
-          ${3:// How to initialize an instance of this class}
-      }
-      '''
-    'description': "Inserts a template for writing constructor"
-  'method':
-    'prefix': 'm'
-    'body':
-      '''
-      /**
-       * ${5:Description for this method}
-       */
-      ${1:void} ${2:METHOD}($3) {
-          ${4:// What to do with this method}
-      }
-      '''
-    'description': "Inserts a template for writing method"
-  'method (main)':
+  'Main method':
     'prefix': 'main'
     'body':
       '''
@@ -996,24 +949,10 @@
       }
       '''
     'description': "Inserts main method"
-  'for loop':
-    'prefix': 'f'
-    'body':
-      '''
-      for (${1:INITIALIZATION}; ${2:TERMINATION}; ${3:INCREMENT}) {
-          ${4:// STATEMENT}
-      }
-      '''
-    'description': 'Inserts for loop snippet'
-  'for loop (enhanced)':
-    'prefix': 'fe'
-    'body':
-      '''
-      for (${1:TYPE} ${2:ELEMENT} : ${3:ARRAY}) {
-          ${4:// STATEMENT}
-      }
-      '''
-    'description': 'Inserts enhanced for loop snippet'
+  'Scanner':
+    'prefix': 'sc'
+    'body': 'Scanner sc = new Scanner(System.in);'
+    'description': 'Inserts Scanner snippet'
   'System.out.print':
     'prefix': 'p'
     'body': 'System.out.print($1);'
@@ -1034,3 +973,21 @@
     'prefix': 'ci'
     'body': '/** ${1:Comment} */'
     'description': 'Insert line comment block'
+
+  ## Hydrogen
+  'Hydrogen: Code cell':
+    'prefix': 'cc'
+    'body':
+      '''
+      // %%
+      $1
+      '''
+    'description': 'Inserts Hydrogen code cell'
+  'Hydrogen: Markdown cell':
+    'prefix': 'mc'
+    'body':
+      '''
+      // %% markdown
+      $1
+      '''
+    'description': 'Inserts Hydrogen markdown cell'
