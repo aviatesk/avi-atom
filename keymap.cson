@@ -77,8 +77,6 @@
   'ctrl-x ctrl-5': 'window:copy-active-item-to-pane-on-left'
   'ctrl-x ctrl-left': 'window:copy-active-item-to-pane-on-left'
   # tab
-  'ctrl-right': 'pane:show-next-item'
-  'ctrl-left': 'pane:show-previous-item'
   'ctrl-alt-right': 'pane:move-item-right'
   'ctrl-alt-left': 'pane:move-item-left'
   'ctrl-1': 'pane:show-item-1'
@@ -745,8 +743,8 @@ atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
   'alt-i': 'typescript:show-tooltip'
   'ctrl-alt-f': 'typescript:find-references'
   'ctrl-alt-r': 'typescript:rename-refactor'
-  'ctrl-alt-d': 'typescript:return-from-declaration'
-  'ctrl-alt-shift-d': 'typescript:show-editor-position-history'
+  'ctrl-left': 'typescript:return-from-declaration'
+  'ctrl-shift-left': 'typescript:show-editor-position-history'
 
 ## HTML
 "atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":

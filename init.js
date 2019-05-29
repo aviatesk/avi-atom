@@ -32,13 +32,26 @@ atom.packages.onDidActivateInitialPackages(() => {
       });
     }
   });
-  atom.commands.add('atom-workspace', 'avi-atom:open-todo-list', async () => {
+  atom.commands.add('atom-workspace', 'Avi-Atom:Open-TODO-List', async () => {
     await atom.workspace.open(TODO_LIST_PATH);
   });
   atom.keymaps.add(
-    'init.js', { 'atom-workspace': { 'ctrl-alt-shift-t': 'avi-atom:open-todo-list' } }, 1,
+    'init.js', { 'atom-workspace': { 'ctrl-alt-shift-t': 'Avi-Atom:Open-TODO-List' } }, 1,
   );
 });
+
+
+/*
+Create an easy access to my TODO-list
+*/
+
+const GITHUB_DRAFT_PATH = 'C:\\Users\\aviat\\_draft.md';
+atom.commands.add('atom-workspace', 'Avi-Atom:Open-GitHub-Draft', async () => {
+  await atom.workspace.open(GITHUB_DRAFT_PATH);
+});
+atom.keymaps.add(
+  'init.js', { 'atom-workspace': { 'ctrl-alt-shift-d': 'Avi-Atom:Open-GitHub-Draft' } }, 1,
+);
 
 
 /*
