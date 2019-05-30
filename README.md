@@ -193,7 +193,7 @@ link ~/.atom/scripts/Main.js ~/.atom/packages/atom-ide-debugger-python/node_modu
 
 ## Author
 
-- **KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk]
+- **KADOWAKI, Shuhei** - _Undergraduate@Kyoto Univ._ - [aviatesk]
 
 [aviatesk]: https://github.com/aviatesk
 

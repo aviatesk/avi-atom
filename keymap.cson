@@ -182,33 +182,33 @@
   'ctrl-x o': 'tree-view:toggle-focus'
 
   ## Movements
-  'n': 'core:move-down'
-  'o': 'core:move-up'
   'a': 'core:move-to-top'
+  'o': 'core:move-up'
+  'n': 'core:move-down'
   'e': 'core:move-to-bottom'
   'ctrl-a': 'core:move-to-top'
   'ctrl-e': 'core:move-to-bottom'
 
   ## Operations
   # select & view
+  'enter': 'tree-view:open-selected-entry'
   'm': 'tree-view:open-selected-entry'
   'ctrl-m': 'tree-view:expand-item'
   'ctrl-alt-m': 'tree-view:recursive-expand-directory'
   'shift-m': 'tree-view:collapse-directory'
   'alt-shift-m': 'tree-view:recursive-collapse-directory'
   # manage folder
-  'p': 'application:add-project-folder'
+  'ctrl-p': 'application:add-project-folder'
   'shift-p': 'tree-view:remove-project-folder'
   # manage file
-  'f': 'tree-view:add-file'
-  'ctrl-f': 'tree-view:add-folder'
-  'r': 'tree-view:rename'
-  'd': 'tree-view:remove'
-  'c': 'tree-view:copy'
+  'ctrl-f': 'tree-view:add-file'
+  'alt-f': 'tree-view:add-folder'
+  'ctrl-r': 'tree-view:rename'
+  'ctrl-d': 'tree-view:remove'
   'alt-w': 'tree-view:copy'
-  'w': 'tree-view:cut'
-  'v': 'tree-view:paste'
-  'y': 'tree-view:paste'
+  'ctrl-w': 'tree-view:cut'
+  'ctrl-v': 'tree-view:paste'
+  'ctrl-y': 'tree-view:paste'
   # copy path
   'ctrl-c': 'tree-view:copy-project-path'
   'alt-c': 'tree-view:copy-full-path'
