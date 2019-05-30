@@ -251,7 +251,7 @@
   "language-weave":
     showPreview: false
   "latex-completions":
-    selector: ".source.julia, .source.weave.md, .source.gfm, .text.md"
+    selector: ".source.julia, .source.weave.md, .source.gfm, .text"
   "linter-eslint":
     global:
       useGlobalEslint: true
