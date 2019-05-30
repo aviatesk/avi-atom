@@ -5,26 +5,45 @@
 /* Define colors */
 @selected: rgba(63, 17, 175, 0.25);
 @selected-focused: rgba(63, 17, 175, 0.5);
-@current: rgba(24, 17, 168, 0.25);
-@current-focused: rgba(24, 17, 168, 0.5);
+@current: rgba(24, 17, 168, 0.5);
+@current-focused: rgba(24, 17, 168, 0.75);
 @cursor: rgba(255, 255, 255, 0.85);
 @matched: rgb(63, 17, 175);
 @pane-frame: rgba(63, 17, 175, 0.75);
-@minimap-scroll-indicator: rgba(255, 255, 255, 0.75);
+@minimap-indicator: rgba(255, 255, 255, 0.75);
 @hydrogen-cell: rgb(35, 38, 46);
 
 /* Inside of editor */
 atom-text-editor.editor {
   // Highlight-Selection style
-  .highlights {
-    .highlight.selection .region {
-      background-color: @selected;
-    }
+  .highlights .highlight.selection .region {
+    background-color: @selected;
   }
   // Highlight-Line style
   .line.cursor-line,
   .line.highlight-line {
-    background: @current  !important;
+    background: linear-gradient(@syntax-background-color 10%, @current)  !important;
+  }
+  // Embedded code cell style for .jmd, .pmd & .Rmd files
+  // @TODO: Find good styles for the embedded code block
+  .line {
+    position: relative;
+    .syntax--embedded {
+      &.syntax--julia::before,
+      &.syntax--python::before,
+      &.syntax--r::before {
+        background-color: @hydrogen-cell;
+        opacity: 0.75;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        z-index: -1;
+      }
+    }
   }
   // Stop cursor from blinking
   .cursor {
@@ -45,15 +64,13 @@ atom-text-editor.editor {
 }
 atom-text-editor.editor.is-focused {
   // Highlight-Selection style
-  .highlights {
-    .highlight.selection .region {
-      background-color: @selected-focused;
-    }
+  .highlights .highlight.selection .region {
+    background-color: @selected-focused;
   }
   // Highlight-Line style
   .line.cursor-line,
   .line.highlight-line {
-    background: @current-focused  !important;
+    background: linear-gradient(@syntax-background-color 10%, @current-focused)  !important;
   }
 }
 
@@ -69,24 +86,22 @@ atom-text-editor.editor.is-focused {
 }
 // Scrollbar style
 .scrollbars-visible-always ::-webkit-scrollbar-thumb {
-  background: @current-focused;
+  background: @current;
 }
 // Tree-view style
 .tree-view .selected:before {
-  background: @current  !important;
+  background: linear-gradient(@tree-view-background-color, @current)  !important;
 }
-.tree-view:focus {
-  .selected:before {
-    background: @current-focused  !important;
-  }
+.tree-view:focus .selected:before {
+  background: linear-gradient(@tree-view-background-color, @current-focused)  !important;
 }
 // Minimap style
 .minimap-selection {
   .region {
-    background: @selected;
+    background: @selected-focused;
   }
   .cursor-line {
-    background: @current-focused;
+    background: @minimap-indicator;
   }
 }
 atom-text-editor atom-text-editor-minimap {
@@ -95,12 +110,15 @@ atom-text-editor atom-text-editor-minimap {
   }
   // emphasize scroll-indicator in minimap instead of scroll
   .minimap-scroll-indicator {
-    background-color: @minimap-scroll-indicator;
+    background-color: @minimap-indicator;
     width: 2px;
   }
 }
 // Hydrogen style
 .hydrogen {
+  .inline-container {
+    z-index: 1;
+  }
   .multiline-container {
     background-color: @hydrogen-cell;
     .toolbar .icon:hover {
@@ -117,7 +135,8 @@ atom-text-editor atom-text-editor-minimap {
 /* Atom-IDE-UI tweaks */
 .tool-bar {
   // Diable Atom-IDE-UI's default icons
-  .icon-nuclicon, .icon-nuclicon-console {
+  .icon-nuclicon,
+  .icon-nuclicon-console {
     display: none;
   }
 }
@@ -175,19 +194,23 @@ atom-text-editor:not([data-grammar$="source python"]) {
 /* File-Icon tweaks */
 // Directories
 @import "packages/file-icons/styles/colours";
-.icon[data-name$="data"]:before {
+.icon[data-name="data"]:before {
   font-family: "Octicons Regular";
   content: "\f043";
 }
-.icon[data-name$="assets"]:before, .icon[data-name$="figs"]:before, .icon[data-name$="figures"]:before {
+.icon[data-name="assets"]:before,
+.icon[data-name="figs"]:before,
+.icon[data-name="figures"]:before {
   font-family: "Octicons Regular";
   content: "\f012";
 }
-.icon[data-name$="src"]:before, .icon[data-name$="scripts"]:before, .icon[data-name$="code"]:before {
+.icon[data-name="src"]:before,
+.icon[data-name="scripts"]:before,
+.icon[data-name="code"]:before {
   font-family: "Octicons Regular";
   content: "\f05f";
 }
-.icon[data-name$="notes"]:before {
+.icon[data-name="notes"]:before {
   font-family: "Octicons Regular";
   content: "\f007";
 }
@@ -198,12 +221,12 @@ atom-text-editor:not([data-grammar$="source python"]) {
   }
 }
 // Github-Flavor-Markdowns
-.icon[data-name$="_draft.md"]:before,
-.icon[data-name$="CHANGELOG.md"]:before,
-.icon[data-name$="CODE_OF_CONDUCT.md"]:before,
-.icon[data-name$="CONTRIBUTING.md"]:before,
-.icon[data-name$="LICENSE.md"]:before,
-.icon[data-name$="README.md"]:before {
+.icon[data-name="_draft.md"]:before,
+.icon[data-name="CHANGELOG.md"]:before,
+.icon[data-name="CODE_OF_CONDUCT.md"]:before,
+.icon[data-name="CONTRIBUTING.md"]:before,
+.icon[data-name="LICENSE.md"]:before,
+.icon[data-name="README.md"]:before {
   font-family: "Octicons Regular";
   content: "\f00a";
 }
@@ -226,30 +249,4 @@ atom-text-editor:not([data-grammar$="source python"]) {
 .icon[data-name$=".cson"]:before {
   font-family: file-icons;
   content: "\eabe";
-}
-
-
-/**
- * Code　cell style in .jmd, .pmd & .Rmd files
- */
-atom-text-editor.editor {
-  .line {
-    position: relative;
-    .syntax--embedded {
-      &.syntax--julia::before,
-      &.syntax--python::before,
-      &.syntax--r::before {
-        background-color: @hydrogen-cell;
-        opacity: 0.75;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        content: '';
-        display: block;
-        z-index: -1;
-      }
-    }
-  }
 }
