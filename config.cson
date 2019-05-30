@@ -69,6 +69,8 @@
     "atom-ide-outline-view": {}
     "atom-ide-signature-help": {}
     "debugger-exceptionBreakpointsCollapsed": true
+    hyperclick:
+      darwinTriggerKeys: "ctrlKey"
     use:
       "atom-ide-terminal": "never"
   "atom-package-deps":
@@ -218,6 +220,8 @@
         "Alt-P"
         "Alt-J"
         "Alt-,"
+        "Alt-F"
+        "Alt-M"
         "Ctrl-Tab"
         "Ctrl-Shift-Tab"
         "Ctrl-W"
