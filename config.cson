@@ -145,7 +145,7 @@
       "spell-check"
       "tree-view"
     ]
-    projectHome: "C:\\Users\\aviat\\GitHub"
+    projectHome: "C:\\Users\\aviat\\github\\atom-pkgs"
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
