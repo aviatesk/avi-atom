@@ -6,8 +6,17 @@ All values for the other Per-project configs are set as default
 
 "*":
 
+  ### Julia-specific configs ###
+  "julia-client":
+    juliaOptions:
+      arguments: [
+        "JUNO_OHMYREPL"
+        # # Comment-in the line below to set-up Plots.jl for Juno
+        # "JUNO_PLOTS"
+      ]
+      optimisationLevel: 2
+
   core:
-    ### Julia-specific configs ###
     disabledPackages: [
       # # Comment-in the line below to disable Spell-Checker (Note it will work only with American-English)
       # "spell-check"

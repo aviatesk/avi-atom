@@ -239,6 +239,9 @@
       ]
     firstBoot: false
     juliaOptions:
+      arguments: [
+        "JUNO_OHMYREPL"
+      ]
       optimisationLevel: 2
     juliaPath: "julia"
     uiOptions:
