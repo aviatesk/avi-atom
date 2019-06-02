@@ -5,8 +5,8 @@
 /* Define colors */
 @selected: rgba(63, 17, 175, 0.25);
 @selected-focused: rgba(63, 17, 175, 0.5);
-@current: rgba(24, 17, 168, 0.5);
-@current-focused: rgba(24, 17, 168, 0.75);
+@current: rgba(24, 17, 168, 0.25);
+@current-focused: rgba(24, 17, 168, 0.5);
 @cursor: rgba(255, 255, 255, 0.85);
 @matched: rgb(63, 17, 175);
 @pane-frame: rgba(63, 17, 175, 0.75);
@@ -125,8 +125,11 @@ atom-text-editor atom-text-editor-minimap {
       background-color: @selected-focused;
     }
   }
+  blockquote {
+    // font-size: 13px;
+    font-size: @font-size;
+  }
 }
-
 
 /**
  * Per-package tweaks
