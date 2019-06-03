@@ -71,6 +71,10 @@ const hydrogenCommands = {
   'alt-shift-enter': 'hydrogen:run-cell-and-move-down',
   'ctrl-alt-shift-enter': 'hydrogen:run-all',
   'alt-i': 'hydrogen:toggle-inspector',
+  'alt-k ctrl-s': 'hydrogen:start-local-kernel',
+  'alt-k ctrl-c': 'hydrogen:interrupt-kernel',
+  'alt-k ctrl-k': 'hydrogen:shutdown-kernel',
+  'alt-k ctrl-r': 'hydrogen:restart-kernel',
 };
 const hydrogenMarkCommands = {
   'ctrl-c ctrl-d': 'hydrogen:run',
@@ -176,6 +180,7 @@ atom.packages.onDidActivateInitialPackages(() => {
     // Attach Julia-Client commands to .jl/.jmd files
     atom.keymaps.add(
       'init.js', {
+        'atom-workspace': { 'alt-j ctrl-r': 'julia-client:restart-julia' },
         'atom-text-editor[data-grammar=\'source julia\'].emacs-plus:not([mini])': juliaClientCommands,
         'atom-text-editor[data-grammar=\'source weave md\'].emacs-plus:not([mini])': juliaClientCommands,
         'atom-text-editor[data-grammar=\'source julia\'].emacs-plus.mark-mode:not([mini])': juliaClientMarkCommands,

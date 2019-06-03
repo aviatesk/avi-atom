@@ -547,6 +547,10 @@ atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
   'alt-shift-enter': 'hydrogen:run-cell-and-move-down'
   'ctrl-alt-shift-enter': 'hydrogen:run-all'
   'alt-i': 'hydrogen:toggle-inspector'
+  'alt-k ctrl-s': 'hydrogen:start-local-kernel'
+  'alt-k ctrl-c': 'hydrogen:interrupt-kernel'
+  'alt-k ctrl-k': 'hydrogen:shutdown-kernel'
+  'alt-k ctrl-r': 'hydrogen:restart-kernel'
 "
 atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
