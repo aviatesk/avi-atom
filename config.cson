@@ -103,6 +103,9 @@
         "Rmd"
         "rmd"
       ]
+      "source.java": [
+        "jsh"
+      ]
       "source.tsx": [
         "tsx"
       ]
