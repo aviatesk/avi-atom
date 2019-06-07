@@ -259,6 +259,8 @@
     showPreview: false
   "latex-completions":
     selector: ".source.julia, .source.weave.md, .source.gfm, .text"
+  "linter-coffeelint":
+    disableIfNoConfig: true
   "linter-eslint":
     global:
       useGlobalEslint: true
@@ -416,8 +418,11 @@
     enabled: false
 ".coffee.source":
   editor:
+    preferredLineLength: 80
     softWrapHangingIndent: 1
     tabLength: 2
+  "wrap-guide":
+    enabled: true
 ".css.less.source":
   editor:
     softWrapHangingIndent: 1
@@ -464,6 +469,8 @@
   "wrap-guide":
     enabled: true
 ".julia.source":
+  editor:
+    preferredLineLength: 80
   "wrap-guide":
     enabled: true
 ".md.pweave.source":
@@ -486,7 +493,7 @@
     removeTrailingWhitespace: false
 ".python.source":
   editor:
-    preferredLineLength: 79
+    preferredLineLength: 80
     tabType: "soft"
   "wrap-guide":
     enabled: true
