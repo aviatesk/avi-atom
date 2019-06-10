@@ -26,11 +26,13 @@ ide-python@1.4.1
 indent-detective@0.3.2
 ink@0.10.8
 julia-client@0.8.8
+js-hyperclick@1.18.0
 language-babel@2.85.0
 language-julia@0.18.1
 language-markdown@0.37.0
 language-weave@0.6.3
 latex-completions@0.3.6
+linter-coffeelint@2.0.14
 linter-eslint@8.5.5
 linter-tslint@1.10.24
 markdown-preview-enhanced@0.16.0

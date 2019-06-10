@@ -209,6 +209,13 @@
       yapf:
         enabled: true
     python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
+  "js-hyperclick":
+    extensions: [
+      ".js"
+      ".json"
+      ".node"
+      ".coffee"
+    ]
   "julia-client":
     consoleOptions:
       whitelistedKeybindingsREPL: [
