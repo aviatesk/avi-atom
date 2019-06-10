@@ -135,6 +135,7 @@
       "atom-html-preview"
       "atom-typescript"
       "git-diff"
+      "git-plus"
       "git-time-machine"
       "julia-client"
       "language-weave"
@@ -387,6 +388,7 @@
       customText1: "apm list --installed --dev false --bare > ~/.atom/my-packages.txt"
       customText2: "bash ~/.atom/scripts/process-md.sh $F"
       customText3: "C:\\Users\\aviat\\.atom\\scripts\\process-md.bat $F"
+      customText4: "git remote add -f -m upstream/master upstream ${urlText}"
     style:
       fontFamily: "Myrica M"
       fontSize: "14"

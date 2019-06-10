@@ -75,6 +75,8 @@ const hydrogenCommands = {
   'alt-k ctrl-c': 'hydrogen:interrupt-kernel',
   'alt-k ctrl-k': 'hydrogen:shutdown-kernel',
   'alt-k ctrl-r': 'hydrogen:restart-kernel',
+  'ctrl-c space': 'hydrogen:clear-result',
+  'ctrl-c ctrl-space': 'hydrogen:clear-results',
 };
 const hydrogenMarkCommands = {
   'ctrl-c ctrl-d': 'hydrogen:run',
@@ -170,6 +172,8 @@ atom.packages.onDidActivateInitialPackages(() => {
       'alt-shift-enter': 'julia-client:run-cell-and-move',
       'ctrl-alt-shift-enter': 'julia-client:run-all',
       'alt-i': 'julia-client:show-documentation',
+      'ctrl-c space': 'inline:clear-current',
+      'ctrl-c ctrl-space': 'inline-results:clear-all',
     };
     const juliaClientMarkCommands = {
       'ctrl-c ctrl-d': 'julia-client:run-block',
@@ -294,15 +298,13 @@ Register extended commands for Git-Plus
 */
 
 class InputView {
-  constructor(placeholderText, messageText) {
+  constructor() {
     this.element = document.createElement('div');
 
     this.miniEditor = new TextEditor({ mini: true });
     this.miniEditor.element.addEventListener('blur', this.close.bind(this));
-    this.miniEditor.setPlaceholderText(placeholderText);
 
     this.message = document.createElement('div');
-    this.message.textContent = messageText;
     this.element.appendChild(this.miniEditor.element);
     this.element.appendChild(this.message);
 
@@ -310,6 +312,14 @@ class InputView {
       item: this,
       visible: false,
     });
+
+    this.defaultCallbackOnConfirm = (_text) => {
+      atom.notifications.addWarning('Avi-Atom: init.js', {
+        details: '`InputView`\'s `open` method seems to be called without an argument',
+        description: 'No callback is set !',
+      });
+    };
+    this.callbackOnConfirm = this.defaultCallbackOnConfirm;
 
     atom.commands.add(this.miniEditor.element, 'core:confirm', () => {
       this.confirm();
@@ -319,40 +329,49 @@ class InputView {
     });
   }
 
-  /**
-   * Opens the input prompt in a mini text editor view.
-   */
-  open() {
-    if (this.panel.isVisible()) return;
-    this.storeFocusedElement();
-    this.panel.show();
-    this.miniEditor.element.focus();
+  setCallbackOnConfirm(callback) {
+    this.callbackOnConfirm = callback;
   }
 
-  /**
-   * CLoses the opened mini text editor view and restores the original view.
-   */
-  close() {
-    if (!this.panel.isVisible()) return;
-    this.miniEditor.setText('');
-    this.panel.hide();
-    if (this.miniEditor.element.hasFocus()) {
-      this.restoreFocus();
-    }
+  setPlaceholderText(placeholderText) {
+    this.miniEditor.setPlaceholderText(placeholderText);
   }
 
-  /**
-   * Confirms the input prompt.
-   *
-   * @usage A subclass will overwrite this method to achieve its own task.
-   */
-  confirm() {
-    this.close();
+  setMessageText(messageText) {
+    this.message.textContent = messageText;
   }
 
   storeFocusedElement() {
     this.previouslyFocusedElement = document.activeElement;
     return this.previouslyFocusedElement;
+  }
+
+  /**
+   * Sets `callbackOnConfirm` and then opens the input prompt
+   * input.
+   *
+   * @param callback        - The callback function that would be called on confirm taking the
+                              enterted input text.
+   * @param placeholderText - The placeholer text of input mini editor
+   * @param messageText     - The message text of input mini editor
+   * @param defaultText     - The default value of input text
+   */
+  open(
+    callback = this.defaultCallbackOnConfirm,
+    placeholderText = '',
+    messageText = '',
+    defaultText = null,
+  ) {
+    if (this.panel.isVisible()) return;
+
+    this.setCallbackOnConfirm(callback);
+    this.setPlaceholderText(placeholderText);
+    this.setMessageText(messageText);
+    if (defaultText) this.miniEditor.setText(defaultText);
+
+    this.storeFocusedElement();
+    this.panel.show();
+    this.miniEditor.element.focus();
   }
 
   restoreFocus() {
@@ -361,26 +380,22 @@ class InputView {
     }
     return atom.views.getView(atom.workspace).focus();
   }
-}
 
-class RebaseInputView extends InputView {
-  constructor(placeholderText, messageText, gp) {
-    super(placeholderText, messageText);
-    this.gp = gp;
+  close() {
+    if (!this.panel.isVisible()) return;
+    this.miniEditor.setText('');
+    this.setCallbackOnConfirm(this.defaultCallbackOnConfirm);
+    this.setPlaceholderText('');
+    this.setMessageText('');
+    this.panel.hide();
+    if (this.miniEditor.element.hasFocus()) {
+      this.restoreFocus();
+    }
   }
 
   confirm() {
     const text = this.miniEditor.getText();
-    if (parseInt(text, 10)) {
-      this.gp.getRepo()
-        .then((repo) => {
-          this.gp.run(repo, 'rebase -i HEAD~'.concat(text));
-        });
-    } else {
-      atom.notifications.addInfo('Git interactive rebasing info', {
-        detail: 'Enter an interger !',
-      });
-    }
+    this.callbackOnConfirm(text);
     this.close();
   }
 }
@@ -390,12 +405,80 @@ class RebaseInputView extends InputView {
  */
 atom.packages.onDidActivateInitialPackages(() => {
   const gitPlus = atom.packages.getActivePackage('git-plus');
+  const inputView = new InputView();
   if (gitPlus) {
     const gp = gitPlus.mainModule.provideService();
-    const rebaseInputView = new RebaseInputView('E.g.: 3', 'Enter the number of commits to be rebased', gp);
+
+    gp.registerCommand('atom-workspace', 'git-plus:set-upstream', () => {
+      gp.getRepo()
+        .then((repo) => {
+          inputView.open(
+            (urlText) => {
+              gp.run(repo, `remote add -f -m upstream/master upstream ${urlText}`)
+                .then(() => {
+                  atom.notifications.addInfo('Git-Plus:Set-Upstream', {
+                    descrition: `Set up 'upstream' branch tracking ${urlText}`,
+                  });
+                });
+            },
+            'E.g.: git@github.com:aviatesk/avi-atom.git',
+            'Enter the URL of the remote repository to be tracked as the upstream',
+          );
+        });
+    });
+
+    gp.registerCommand('atom-workspace', 'git-plus:set-branch-upstream', () => {
+      gp.getRepo()
+        .then((repo) => {
+          const branch = repo.branch.replace('refs/heads/', '');
+          inputView.open(
+            (branchNameText) => {
+              gp.run(repo, `branch --set-upstream-to upstream/${branchNameText}`)
+                .then(() => {
+                  atom.notifications.addInfo('Git-Plus:Set-Branch-Upstream', {
+                    description: `Local branch '${branch}' set up to track remote branch '${branchNameText}' from 'upstream'`,
+                  });
+                });
+            },
+            '',
+            `Enter the name of branch from 'upstream' to be tracked by local branch '${branch}'`,
+            'master',
+          );
+        });
+    });
+
+    gp.registerCommand('atom-workspace', 'git-plus:pull-rebase', () => {
+      gp.getRepo()
+        .then((repo) => {
+          gp.run(repo, 'pull --rebase');
+        });
+    });
+
+    gp.registerCommand('atom-workspace', 'git-plus:push-to-origin', () => {
+      gp.getRepo()
+        .then((repo) => {
+          const branch = repo.branch.replace('refs/heads/', '');
+          gp.run(repo, `push origin ${branch}`);
+        });
+    });
 
     gp.registerCommand('atom-workspace', 'git-plus:rebase-interactive', () => {
-      rebaseInputView.open();
+      gp.getRepo()
+        .then((repo) => {
+          inputView.open(
+            (numberText) => {
+              if (parseInt(numberText, 10)) {
+                gp.run(repo, 'rebase -i HEAD~'.concat(numberText));
+              } else {
+                atom.notifications.addInfo('Git-Plus:Rebase-Interactive', {
+                  description: 'Rebasing failed. Maybe enter an interger ?',
+                });
+              }
+            },
+            'E.g.: 3',
+            'Enter the number of commits to be rebased',
+          );
+        });
     });
 
     gp.registerCommand('atom-workspace', 'git-plus:rebase-continue', () => {

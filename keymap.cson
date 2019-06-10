@@ -114,12 +114,24 @@
   'alt-shift-h': 'github:toggle-github-tab'
   'ctrl-alt-h': 'git-plus:toggle-output-view'
   'ctrl-x ctrl-g': 'git-plus:menu'
-  'alt-g o': 'git-plus:checkout'
+  'alt-g u': 'git-plus:set-branch-upstream'
+  'alt-g ctrl-u': 'git-plus:set-upstream'
+  'alt-g f': 'github:fetch'
+  'alt-g ctrl-f': 'git-plus:fetch-prune'
+  'alt-g shift-p': 'github:pull'
+  'alt-g ctrl-shift-p': 'git-plus:pull-rebase'
+  'alt-g c': 'github:commit'
+  'alt-g ctrl-c': 'github:amend-last-commit'
+  'alt-g e': 'github:toggle-expanded-commit-message-editor'
+  'alt-g p': 'github:push'
+  'alt-g ctrl-p': 'github:force-push'
+  'alt-g b': 'git-plus:checkout'
+  'alt-g ctrl-b': 'git-plus:new-branch'
+  'alt-g shift-b': 'git-plus:delete-local-branch'
+  'alt-g ctrl-shift-b': 'git-plus:delete-remote-branch'
   'alt-g s': 'git-plus:stash-save-message'
   'alt-g ctrl-s': 'git-plus:manage-stashes'
   'alt-g shift-s': 'git-plus:stash-apply'
-  'alt-g c': 'git-plus:commit'
-  'alt-g ctrl-c': 'git-plus:commit-amend'
   'alt-g r': 'git-plus:rebase-interactive'
   'alt-g ctrl-r': 'git-plus:rebase-continue'
   'alt-g shift-r': 'git-plus:rebase-abort'
@@ -276,6 +288,8 @@
   'n': 'github:select-next-hunk'
   'ctrl-o': 'github:select-previous-hunk'
   'ctrl-n': 'github:select-next-hunk'
+'.github-CommitView-editor atom-text-editor:not([mini])':
+  'alt-;': 'github:toggle-expanded-commit-message-editor'
 
 ## Termination
 ".termination .terminal":
@@ -283,6 +297,7 @@
   'alt-1': 'termination:insert-custom-text-1' # Renew ~/.atom/my-packages.txt from bash
   'alt-2': 'termination:insert-custom-text-2' # Process .pmd or .Rmd file from bash
   'alt-"': 'termination:insert-custom-text-3' # Process .pmd or .Rmd file from command prompt
+  'alt-3': 'termination:insert-custom-text-4'
   'alt-w': 'termination:copy'
   'alt-v': 'termination:paste'
   'alt-i': 'termination:insert-text'
@@ -541,6 +556,8 @@ atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
   'ctrl-c ctrl-d': 'hydrogen:run-cell'
   'ctrl-c ctrl-b': 'hydrogen:run-cell-and-move-down'
   'ctrl-c ctrl-r': 'hydrogen:run-all'
+  'ctrl-c space': 'hydrogen:clear-result'
+  'ctrl-c ctrl-space': 'hydrogen:clear-results'
   'ctrl-enter': 'hydrogen:run'
   'shift-enter': 'hydrogen:run-and-move-down'
   'alt-ctrl-enter': 'hydrogen:run-cell'
@@ -662,6 +679,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'ctrl-left': 'julia-client:return-from-goto'
   # Julia-Debug
   'ctrl-x space': 'julia-debug:toggle-breakpoint'
+  'ctrl-x ctrl-space': 'julia-debug:toggle-conditional-breakpoint'
   'f8': 'julia-debug:continue'
   'f9': 'julia-debug:step-to-next-line'
   'f10': 'julia-debug:finish-function'
