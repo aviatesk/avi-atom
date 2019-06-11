@@ -77,8 +77,6 @@ All values for the other Per-project configs are set as default
     toggles:
       cursorBlink: false
       runInsertedText: false
-  "todo-show":
-    sortBy: "Line" # Set to one of `"Type"`, `"Text"`, `"Project"`, `"Path"`, `"Line"`
   "tree-view-autoresize":
     minimumWidth: 0 # Set `300` for MPE previewing in Tree-View pane
 

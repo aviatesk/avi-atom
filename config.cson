@@ -405,7 +405,7 @@
       "Path"
       "Line"
     ]
-    sortBy: "Line"
+    sortBy: "Project"
     statusBarIndicator: true
   "tool-bar":
     iconSize: "24px"
