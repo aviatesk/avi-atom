@@ -258,6 +258,19 @@
     uiOptions:
       enableMenu: true
       enableToolBar: false
+      layouts:
+        defaultPanes:
+          plotPane: false
+        documentation:
+          defaultLocation: "right"
+          split: "up"
+        openDefaultPanesOnStartUp: false
+        plotPane:
+          defaultLocation: "right"
+          split: "down"
+        workspace:
+          defaultLocation: "right"
+          split: "down"
   "language-babel":
     allowLocalOverride: true
     emmetCSSAutocomplete: true
