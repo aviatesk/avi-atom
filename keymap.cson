@@ -129,6 +129,7 @@
   'alt-g ctrl-b': 'git-plus:new-branch'
   'alt-g shift-b': 'git-plus:delete-local-branch'
   'alt-g ctrl-shift-b': 'git-plus:delete-remote-branch'
+  'alt-g alt-b': 'open-on-github:blame'
   'alt-g s': 'git-plus:stash-save-message'
   'alt-g ctrl-s': 'git-plus:manage-stashes'
   'alt-g shift-s': 'git-plus:stash-apply'
@@ -547,6 +548,7 @@
 "
 atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source js'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source java'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source r'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
@@ -597,7 +599,6 @@ atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
   'ctrl-alt-o': 'document-outline:toggle'
   ## Markdown-Writer
   'enter': 'markdown-writer:insert-new-line'
-  'ctrl-;': 'markdown-writer:insert-new-line'
   'tab': 'markdown-writer:indent-list-line'
   'ctrl-]': 'markdown-writer:indent-list-line'
   'shift-tab': 'markdown-writer:undent-list-line'
@@ -642,7 +643,6 @@ atom-text-editor[data-grammar='source gfm rmd'].emacs-plus:not([mini])
   'ctrl-m n': 'markdown-writer:jump-to-next-heading'
   'alt-n': 'markdown-writer:jump-to-next-heading'
   'ctrl-m enter': 'markdown-writer:jump-to-reference-definition'
-  'alt-enter': 'markdown-writer:jump-to-reference-definition'
   'ctrl-m ctrl-m': 'markdown-writer:jump-to-next-table-cell'
   'alt-m': 'markdown-writer:jump-to-next-table-cell'
 '.markdown-writer atom-text-editor[mini]':
@@ -713,10 +713,6 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'ctrl-r': 'ink-terminal:find-previous'
   'ctrl-s': 'ink-terminal:find-next'
   'ctrl-g': 'ink-terminal:close-search'
-## Language-Weave
-"atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])":
-  ## Markdown-Writer: cancel `markdown-writer:insert-newline` for ctrl-;
-  'ctrl-;': 'editor:newline'
 
 ## Python
 "atom-text-editor[data-grammar='source python'].emacs-plus:not([mini])":
