@@ -120,7 +120,6 @@
     excludeVcsIgnoredPaths: true
     ignoredNames: [
       "._*"
-      ".hg"
       ".svn"
       "Thumbs.db"
       ".DS_Store"
