@@ -251,12 +251,45 @@
         "Ctrl-H"
         "Alt-X"
       ]
+      whitelistedKeybindingsTerminal: [
+        "Alt-W"
+        "Ctrl-Y"
+        "Ctrl-Shift-R"
+        "Ctrl-Shift-S"
+        "Ctrl-@"
+        "Ctrl-C"
+        "Ctrl-L"
+        "Alt-D"
+        "Alt-I"
+        "Alt-P"
+        "Alt-J"
+        "Alt-,"
+        "Alt-F"
+        "Alt-M"
+        "Ctrl-Tab"
+        "Ctrl-Shift-Tab"
+        "Ctrl-W"
+        "Alt-B"
+        "Alt-L"
+        "Alt-T"
+        "Ctrl-T"
+        "Alt-:"
+        "Ctrl-:"
+        "Alt-H"
+        "Ctrl-M"
+        "Ctrl-H"
+        "Alt-X"
+      ]
     firstBoot: false
     juliaOptions:
       arguments: [
         "JUNO_OHMYREPL"
       ]
+      noAutoParenthesis: true
       optimisationLevel: 2
+      startupArguments: [
+        "--project"
+      ]
     juliaPath: "julia"
     uiOptions:
       enableMenu: true

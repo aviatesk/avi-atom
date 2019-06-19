@@ -14,9 +14,12 @@ All values for the other Per-project configs are set as default
         # # Comment-in the line below to set-up Plots.jl for Juno
         # "JUNO_PLOTS"
       ]
-      # optimisationLevel: 2
-      # persistWorkingDir: true
-      # workingDir: "C:\\Users\\aviat\\julia\\julia-pkgs"
+      optimisationLevel: 2
+      persistWorkingDir: false
+      startupArguments: [
+        "--project"
+      ]
+      workingDir: ""
 
   core:
     disabledPackages: [

@@ -200,7 +200,7 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
       console.warning('Julia-Client: Failed to customize Tool-Bar integration');
       return;
     }
-    const tb = toolBar.mainModule.provideToolBar()('avi-atom');
+    const tb = toolBar.mainModule.provideToolBar()('julia-client');
 
     // Process
     tb.addButton({
