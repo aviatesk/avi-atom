@@ -188,6 +188,7 @@
       enableStatusBarIcon: false
       showBranchInTreeView: false
   "highlight-line":
+    enableBackgroundColor: false
     hideHighlightOnSelect: true
   "highlight-selected":
     onlyHighlightWholeWords: false
