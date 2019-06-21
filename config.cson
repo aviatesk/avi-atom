@@ -187,6 +187,8 @@
     general:
       enableStatusBarIcon: false
       showBranchInTreeView: false
+    remoteInteractions:
+      promptForBranch: true
   "highlight-line":
     enableBackgroundColor: false
     hideHighlightOnSelect: true

@@ -352,21 +352,21 @@ class InputView {
    *
    * @param callback        - The callback function that would be called on confirm taking the
                               enterted input text.
-   * @param placeholderText - The placeholer text of input mini editor
    * @param messageText     - The message text of input mini editor
+   * @param placeholderText - The placeholer text of input mini editor
    * @param defaultText     - The default value of input text
    */
   open(
     callback = this.defaultCallbackOnConfirm,
-    placeholderText = '',
     messageText = '',
+    placeholderText = '',
     defaultText = null,
   ) {
     if (this.panel.isVisible()) return;
 
     this.setCallbackOnConfirm(callback);
-    this.setPlaceholderText(placeholderText);
     this.setMessageText(messageText);
+    this.setPlaceholderText(placeholderText);
     if (defaultText) this.miniEditor.setText(defaultText);
 
     this.storeFocusedElement();
@@ -385,8 +385,8 @@ class InputView {
     if (!this.panel.isVisible()) return;
     this.miniEditor.setText('');
     this.setCallbackOnConfirm(this.defaultCallbackOnConfirm);
-    this.setPlaceholderText('');
     this.setMessageText('');
+    this.setPlaceholderText('');
     this.panel.hide();
     if (this.miniEditor.element.hasFocus()) {
       this.restoreFocus();
@@ -417,12 +417,12 @@ atom.packages.onDidActivateInitialPackages(() => {
               gp.run(repo, `remote add -f -m upstream/master upstream ${urlText}`)
                 .then(() => {
                   atom.notifications.addInfo('Git-Plus:Set-Upstream', {
-                    descrition: `Set up 'upstream' branch tracking ${urlText}`,
+                    description: `Setting up 'upstream' branch tracking ${urlText} ...`,
                   });
                 });
             },
-            'E.g.: git@github.com:aviatesk/avi-atom.git',
             'Enter the URL of the remote repository to be tracked as the upstream',
+            'E.g.: https://github.com/aviatesk/avi-atom.git',
           );
         });
     });
@@ -436,21 +436,14 @@ atom.packages.onDidActivateInitialPackages(() => {
               gp.run(repo, `branch --set-upstream-to upstream/${branchNameText}`)
                 .then(() => {
                   atom.notifications.addInfo('Git-Plus:Set-Branch-Upstream', {
-                    description: `Local branch '${branch}' set up to track remote branch '${branchNameText}' from 'upstream'`,
+                    description: `Setting up local branch '${branch}' to track remeote branch 'upstream/${branchNameText}' ...`,
                   });
                 });
             },
-            '',
             `Enter the name of branch from 'upstream' to be tracked by local branch '${branch}'`,
+            'E.g.: master',
             'master',
           );
-        });
-    });
-
-    gp.registerCommand('atom-workspace', 'git-plus:pull-rebase', () => {
-      gp.getRepo()
-        .then((repo) => {
-          gp.run(repo, 'pull --rebase');
         });
     });
 
@@ -458,7 +451,25 @@ atom.packages.onDidActivateInitialPackages(() => {
       gp.getRepo()
         .then((repo) => {
           const branch = repo.branch.replace('refs/heads/', '');
-          gp.run(repo, `push origin ${branch}`);
+          gp.run(repo, `push origin ${branch}`)
+            .then(() => {
+              atom.notifications.addInfo('Git-Plus:Push-To-Origin', {
+                description: `Pushing to remote branch origin/'${branch}' ...`,
+              });
+            });
+        });
+    });
+
+    gp.registerCommand('atom-workspace', 'git-plus:force-push-to-origin', () => {
+      gp.getRepo()
+        .then((repo) => {
+          const branch = repo.branch.replace('refs/heads/', '');
+          gp.run(repo, `push --force origin ${branch}`)
+            .then(() => {
+              atom.notifications.addInfo('Git-Plus:Force-Push-To-Origin', {
+                description: `Force-pushing to remote branch origin/'${branch}' ...`,
+              });
+            });
         });
     });
 
@@ -467,16 +478,15 @@ atom.packages.onDidActivateInitialPackages(() => {
         .then((repo) => {
           inputView.open(
             (numberText) => {
-              if (parseInt(numberText, 10)) {
-                gp.run(repo, 'rebase -i HEAD~'.concat(numberText));
-              } else {
-                atom.notifications.addInfo('Git-Plus:Rebase-Interactive', {
-                  description: 'Rebasing failed. Maybe enter an interger ?',
+              gp.run(repo, `rebase -i HEAD~${numberText}`)
+                .then(() => {
+                  atom.notifications.addInfo('Git-Plus:Rebase-Interactive', {
+                    description: `Rebasing HEAD for previouse ${numberText} commits ...`,
+                  });
                 });
-              }
             },
-            'E.g.: 3',
             'Enter the number of commits to be rebased',
+            'E.g.: 3',
           );
         });
     });
