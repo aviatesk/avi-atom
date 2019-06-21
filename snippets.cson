@@ -5,14 +5,27 @@
     'prefix': 'bs'
     'body': '\\\\$1'
     'description': 'Inserts backslash \\'
-  'Global: Single quotations \'\'':
+  "Global: Single quotations ''":
     'prefix': 'sq'
     'body': "'$1'"
     'description': 'Inserts single quotations'
+  "Global: Triple single quotations ''''''":
+    'prefix': 'tsq'
+    'body': "'''$1'''"
+    'description': 'Inserts triple single quotations'
   'Global: Double quotations ""':
     'prefix': 'dq'
     'body': '"$1"'
     'description': 'Inserts double quotations'
+  'Global: Triple double quotations """"""':
+    'prefix': 'tdq'
+    'body': '"""$1"""'
+    'description': 'Inserts triple double quotations'
+  'Global: @TODO annotation':
+    'prefix': 'todo'
+    'body': '@TODO $1'
+    'description': 'Inserts @TODO annotation'
+
 
 
 ### Julia ###
