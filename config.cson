@@ -58,6 +58,7 @@
       indent_size: 2
   "atom-clock":
     dateFormat: "YYYY/MM/DD/HH:mm"
+    showTooltip: true
   "atom-hot-package-loader":
     detectTargetOnStart: true
   "atom-html-preview":
@@ -396,6 +397,16 @@
     dismissableReloadNotifications: false
     extendAutocompleteToColorValue: true
     extendAutocompleteToVariables: true
+    supportedFiletypes: [
+      ".css"
+      ".less"
+      ".css.less"
+      ".sass"
+      ".css.scss"
+      ".stylus"
+      ".json"
+      ".cson"
+    ]
   script:
     cwdBehavior: "Directory of the script"
   "spell-check":
