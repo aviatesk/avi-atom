@@ -143,20 +143,6 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
       await atom.commands.dispatch(element, 'julia-client:kill-julia');
       atom.commands.dispatch(element, 'julia-client:start-julia');
     },
-    /**
-     * Dispatch appropriate command to run an whole .jl or .jmd file
-     */
-    'julia-client:run-all': () => {
-      const editor = atom.workspace.getActiveTextEditor();
-      if (!editor) return;
-      const grammar = editor.getGrammar().scopeName;
-      const element = editor.getElement();
-      if (grammar === 'source.julia') {
-        atom.commands.dispatch(element, 'julia-client:run-file');
-      } else if (grammar === 'source.weave.md') {
-        atom.commands.dispatch(element, 'julia-client:run-weave-chunks');
-      }
-    },
   });
 
   // Mimic Hydrogen's keybindings

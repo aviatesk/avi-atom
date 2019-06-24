@@ -298,6 +298,8 @@
       enableMenu: true
       enableToolBar: false
       layouts:
+        debuggerPane:
+          split: "up"
         defaultPanes:
           plotPane: false
         documentation:
