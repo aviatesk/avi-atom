@@ -11,6 +11,9 @@
     plotPaneDefaultLocation: "right"
   Zen:
     fullscreen: false
+  "advanced-open-file":
+    fuzzyMatch: true
+    helmDirSwitch: true
   "atom-beautify":
     coffeescript:
       indent_size: 2
