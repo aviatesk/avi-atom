@@ -458,8 +458,12 @@
     'description': 'Inserts link to an image file'
   'Markdown: Break line':
     'prefix': 'br'
-    'body': "<br>$1"
+    'body': '<br>$1'
     'description': 'Inserts break line'
+  'Markdown: @TODO list':
+    'prefix': 'todo-list'
+    'body': '[ ] @TODO $1'
+    'description': 'Inserts @TODO list'
 
 
 ### MPE: HTML rendering, Styling, Enhancements ###

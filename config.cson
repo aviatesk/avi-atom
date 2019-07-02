@@ -474,7 +474,6 @@
     showInTable: [
       "Type"
       "Text"
-      "Project"
       "Path"
       "Line"
     ]
