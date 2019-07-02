@@ -33,12 +33,12 @@ Let me show off my Atom customs a bit and explain how to restore them.
 <!-- @import "[TOC]" {cmd="toc" depthFrom=3 depthTo=3 orderedList=true} -->
 <!-- code_chunk_output -->
 
-1. [Get requirements](#get-requirements)
-2. [Re-install packages](#re-install-packages)
-3. [Modify paths](#modify-paths)
-4. [Globally ignore .atom/config.cson files by Git](#globally-ignore-atomconfigcson-files-by-git)
-5. [Set up global node_modules](#set-up-global-node_modules)
-6. [Make symbolic links](#make-symbolic-links)
+1. [ Get requirements](#get-requirements)
+2. [ Re-install packages](#re-install-packages)
+3. [ Modify paths](#modify-paths)
+4. [ Globally ignore .atom/config.cson files by Git](#globally-ignore-atomconfigcson-files-by-git)
+5. [ Set up global node_modules](#set-up-global-node_modules)
+6. [ Make symbolic links](#make-symbolic-links)
 
 <!-- /code_chunk_output -->
 
