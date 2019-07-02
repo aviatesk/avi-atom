@@ -1,10 +1,11 @@
 /**
  * Override UI font
  */
- 
+
 atom-workspace {
   font-family: 'Segoe UI', 'Meiryo UI';
 }
+
 
 /**
  * Fine-tune Ariake-Dark-Syntax
@@ -81,6 +82,26 @@ atom-text-editor.editor.is-focused {
     background: linear-gradient(@syntax-background-color 10%, @current-focused)  !important;
   }
 }
+// Julia-specific tweaks
+atom-text-editor.editor[data-grammar$="source julia"],
+atom-text-editor.editor[data-grammar$="source weave md"],
+atom-text-editor.editor[data-grammar$="source weave latex"] {
+  .syntax--operator {
+    color: @hue-2;
+  }
+  .syntax--name.syntax--function {
+    color: @syntax-color-tag;
+  }
+  .syntax--type {
+    color: @syntax-color-class;
+  }
+  .syntax--symbol {
+    color: @hue-5-2;
+  }
+  .syntax--keyword.syntax--end {
+    opacity: 0.5;
+  }
+}
 
 /* Outside of editor */
 // Pane border style
@@ -137,6 +158,17 @@ atom-text-editor atom-text-editor-minimap {
     font-size: @font-size;
   }
 }
+// Juno style
+.ink.docpane,
+.ink-workspace {
+  .syntax--type {
+    color: @syntax-color-class;
+  }
+  .syntax--constant.syntax--symbol {
+    color: @hue-5-2;
+  }
+}
+
 
 /**
  * Per-package tweaks
@@ -199,7 +231,6 @@ atom-text-editor:not([data-grammar$="source python"]) {
 .list-tree .selected::before {
   height: 1.5rem;
 }
-
 
 /* File-Icon tweaks */
 // Directories
