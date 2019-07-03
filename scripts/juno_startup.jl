@@ -9,7 +9,7 @@ Sets up Juno environment **without polluting the `Main` namespace**.
 Each setting is *conditionally* activated by `ARGS`, which would be passed as the values of `"julia-client".juliaOptions.arguments` defined in [~/.atom/config.cson](~/.atom/config.cson).
 This setting can be set per-project with the Atom package [atomic-management](https://atom.io/packages/atomic-management).
 
-Possigle value of an argument in `ARGS`:
+Possible value of an argument in `ARGS`:
 - `"JUNO_OHMYREPL"`: Creates and sets up the new [OhMyREPL.jl](https://github.com/KristofferC/OhMyREPL.jl) style that matches Juno syntax highlights.
 - `"JUNO_PLOTS"`:
     * Create and sets up the [PlotThemes.jl](https://github.com/JuliaPlots/PlotThemes.jl) style that matches Atom UI and Juno syntax highlights.

@@ -6,6 +6,7 @@
     outputAreaFontSize: 13
     startDir: "dirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
+    wrapOutput: true
   "Hydrogen-Studio":
     inspectorPaneDefaultLocation: "right"
     plotPaneDefaultLocation: "right"
@@ -470,6 +471,7 @@
       cursorBlink: false
       runInsertedText: false
   "todo-show":
+    autoRefresh: false
     exportAs: "Table"
     showInTable: [
       "Type"

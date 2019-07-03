@@ -33,7 +33,6 @@ All values for the other Per-project configs are set as default
     excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder
     ignoredNames: [
       "._*"
-      ".hg"
       ".svn"
       "Thumbs.db"
       ".DS_Store"
