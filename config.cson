@@ -63,8 +63,6 @@
   "atom-clock":
     dateFormat: "YYYY/MM/DD/HH:mm"
     showTooltip: true
-  "atom-hot-package-loader":
-    detectTargetOnStart: true
   "atom-html-preview":
     enableMathJax: true
   "atom-ide-ui":

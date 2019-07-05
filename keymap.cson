@@ -33,7 +33,6 @@
   'alt-x': 'command-palette:toggle'
   'alt-,': 'key-binding-resolver:toggle'
   'f5': 'window:reload'
-  'ctrl-f5': 'atom-hot-package-loader:reload'
   'f11': 'window:toggle-full-screen'
   'ctrl-x ctrl-c': 'window:close'
   # Finder
