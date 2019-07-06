@@ -402,7 +402,7 @@ atom.packages.onDidActivateInitialPackages(() => {
             (urlText) => {
               gp.run(repo, `remote add -f -m upstream/master upstream ${urlText}`)
                 .then(() => {
-                  atom.notifications.addInfo('Git-Plus:Set-Upstream', {
+                  atom.notifications.addInfo('Git-Plus: Set-Upstream', {
                     description: `Setting up 'upstream' branch tracking ${urlText} ...`,
                   });
                 });
@@ -421,7 +421,7 @@ atom.packages.onDidActivateInitialPackages(() => {
             (branchNameText) => {
               gp.run(repo, `branch --set-upstream-to upstream/${branchNameText}`)
                 .then(() => {
-                  atom.notifications.addInfo('Git-Plus:Set-Branch-Upstream', {
+                  atom.notifications.addInfo('Git-Plus: Set-Branch-Upstream', {
                     description: `Setting up local branch '${branch}' to track remeote branch 'upstream/${branchNameText}' ...`,
                   });
                 });
@@ -439,7 +439,7 @@ atom.packages.onDidActivateInitialPackages(() => {
           const branch = repo.branch.replace('refs/heads/', '');
           gp.run(repo, `push origin ${branch}`)
             .then(() => {
-              atom.notifications.addInfo('Git-Plus:Push-To-Origin', {
+              atom.notifications.addInfo('Git-Plus: Push-To-Origin', {
                 description: `Pushing to remote branch origin/'${branch}' ...`,
               });
             });
@@ -452,7 +452,7 @@ atom.packages.onDidActivateInitialPackages(() => {
           const branch = repo.branch.replace('refs/heads/', '');
           gp.run(repo, `push --force origin ${branch}`)
             .then(() => {
-              atom.notifications.addInfo('Git-Plus:Force-Push-To-Origin', {
+              atom.notifications.addInfo('Git-Plus: Force-Push-To-Origin', {
                 description: `Force-pushing to remote branch origin/'${branch}' ...`,
               });
             });
@@ -466,7 +466,7 @@ atom.packages.onDidActivateInitialPackages(() => {
             (numberText) => {
               gp.run(repo, `rebase -i HEAD~${numberText}`)
                 .then(() => {
-                  atom.notifications.addInfo('Git-Plus:Rebase-Interactive', {
+                  atom.notifications.addInfo('Git-Plus: Rebase-Interactive', {
                     description: `Rebasing HEAD for previouse ${numberText} commits ...`,
                   });
                 });
