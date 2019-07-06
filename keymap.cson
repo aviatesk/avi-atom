@@ -374,8 +374,8 @@
   'ctrl-alt-g': 'github:view-unstaged-changes-for-current-file'
   'alt-shift-g': 'github:view-staged-changes-for-current-file'
   'alt-shift-t': 'git-time-machine:toggle'
-  'ctrl-alt-p': 'git-diff:move-to-previous-diff'
-  'ctrl-alt-n': 'git-diff:move-to-next-diff'
+  'ctrl-alt-p': 'git-diff-plus:move-to-previous-diff'
+  'ctrl-alt-n': 'git-diff-plus:move-to-next-diff'
 
   ## Find-and-Replace
   'ctrl-s': 'find-and-replace:find-next'

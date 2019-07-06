@@ -118,6 +118,7 @@
     disabledPackages: [
       "julia-client"
       "tool-bar"
+      "git-diff"
       "markdown-preview"
     ]
     excludeVcsIgnoredPaths: true
@@ -137,6 +138,7 @@
       "atom-html-preview"
       "atom-typescript"
       "git-diff"
+      "git-diff-plus"
       "git-plus"
       "git-time-machine"
       "julia-client"
@@ -179,7 +181,7 @@
   "fuzzy-finder":
     scoringSystem: "fast"
     useRipGrep: true
-  "git-diff": {}
+  "git-diff-plus": {}
   "git-plus":
     diffs:
       useSplitDiff: true
