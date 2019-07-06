@@ -47,6 +47,7 @@ All values are set as default.
     knownWords: [
       "aviatesk"
       "aviat"
+      "kbd"
       "th"
       "s"
       # # Additional known (ignored) words would come here
