@@ -316,6 +316,25 @@
     'body': '/* ${1:Comment} */'
     'description': 'Insert line comment block'
 
+'.source.js':
+  ## Hydrogen
+  'Hydrogen: Code cell':
+    'prefix': 'cc'
+    'body':
+      '''
+      // %%
+      $1
+      '''
+    'description': 'Inserts Hydrogen code cell'
+  'Hydrogen: Markdown cell':
+    'prefix': 'mc'
+    'body':
+      '''
+      // %% markdown
+      $1
+      '''
+    'description': 'Inserts Hydrogen markdown cell'
+
 
 ### TypeScript ###
 '.source.ts, .source.tsx':
