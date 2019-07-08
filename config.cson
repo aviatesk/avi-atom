@@ -470,7 +470,7 @@
     style:
       fontFamily: "Myrica M"
       fontSize: "14"
-      theme: "one-dark"
+      theme: "bliss"
     toggles:
       cursorBlink: false
       runInsertedText: false

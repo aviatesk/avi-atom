@@ -6,32 +6,26 @@ atom-workspace {
   font-family: 'Segoe UI', 'Meiryo UI';
 }
 
+// @import "@ui-variables";
+// @import "@syntax-theme-name";
+@import "ui-variables";
+@import "syntax-variables";
 
 /**
  * Fine-tune Ariake-Dark-Syntax
  */
 
 /* Define colors */
-@selected: rgba(63, 17, 175, 0.25);
-@selected-focused: rgba(63, 17, 175, 0.5);
-@current: rgba(24, 17, 168, 0.25);
-@current-focused: rgba(24, 17, 168, 0.5);
-@cursor: rgba(255, 255, 255, 0.85);
-@matched: rgb(63, 17, 175);
-@pane-frame: rgba(63, 17, 175, 0.75);
-@minimap-indicator: rgba(255, 255, 255, 0.75);
-@hydrogen-cell: rgb(35, 38, 46);
+@attention: @nord2;
+@attention-focused: @nord3;
 
 /* Inside of editor */
 atom-text-editor.editor {
-  // Highlight-Selection style
-  .highlights .highlight.selection .region {
-    background-color: @selected;
-  }
   // Highlight-Line style
   .line.cursor-line,
   .line.highlight-line {
-    background: linear-gradient(@syntax-background-color 10%, @current)  !important;
+    background: linear-gradient(@base-background-color 50%, @attention);
+    z-index: -2;
   }
   // Embedded code cell style for .jmd, .pmd & .Rmd files
   // @TODO: Find good styles for the embedded code block
@@ -41,8 +35,7 @@ atom-text-editor.editor {
       &.syntax--julia::before,
       &.syntax--python::before,
       &.syntax--r::before {
-        background-color: @hydrogen-cell;
-        opacity: 0.75;
+        background-color: @background-color-selected;
         position: absolute;
         top: 0;
         left: 0;
@@ -54,50 +47,36 @@ atom-text-editor.editor {
       }
     }
   }
-  // Stop cursor from blinking
-  .cursor {
-    border-color: @cursor  !important;
-  }
   .cursors.blink-off .cursor {
     opacity: 1;
   }
   // Bracket-Matcher style
   .bracket-matcher .region {
-    background: @matched;
+    background: @nord10;
     position: absolute;
   }
   // Turn-off scroll bar for text editors
   ::-webkit-scrollbar {
     display: none;
   }
+  // Comment treaks
+  .syntax--comment,
+  .syntax--punctuation.syntax--comment {
+    color: @text-color-ignored;
+  }
 }
 atom-text-editor.editor.is-focused {
-  // Highlight-Selection style
-  .highlights .highlight.selection .region {
-    background-color: @selected-focused;
-  }
   // Highlight-Line style
   .line.cursor-line,
   .line.highlight-line {
-    background: linear-gradient(@syntax-background-color 10%, @current-focused)  !important;
+    background: linear-gradient(@base-background-color 50%, @attention-focused);
+    z-index: -2;
   }
 }
 // Julia-specific tweaks
 atom-text-editor.editor[data-grammar$="source julia"],
 atom-text-editor.editor[data-grammar$="source weave md"],
 atom-text-editor.editor[data-grammar$="source weave latex"] {
-  .syntax--operator {
-    color: @hue-2;
-  }
-  .syntax--name.syntax--function {
-    color: @syntax-color-tag;
-  }
-  .syntax--type {
-    color: @syntax-color-class;
-  }
-  .syntax--symbol {
-    color: @hue-5-2;
-  }
   .syntax--keyword.syntax--end {
     opacity: 0.5;
   }
@@ -109,41 +88,39 @@ atom-text-editor.editor[data-grammar$="source weave latex"] {
   // Tweak border style
   .panes .pane-column>*,
   .panes .pane-row>* {
-    border-top: 1px solid @pane-frame;
-    border-right: 1px solid @pane-frame;
+    border-top: 1px solid @attention;
+    border-right: 1px solid @attention;
   }
 }
 // Scrollbar style
-.scrollbars-visible-always ::-webkit-scrollbar-thumb {
-  background: @current;
+.scrollbars-visible-always {
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: @attention;
+  }
 }
-// Tree-view style
+// Tree-View style
 .tree-view .selected:before {
-  background: linear-gradient(@tree-view-background-color, @current)  !important;
+  background: linear-gradient(@tree-view-background-color 50%, @attention)  !important;
 }
 .tree-view:focus .selected:before {
-  background: linear-gradient(@tree-view-background-color, @current-focused)  !important;
-}
-// Tooltip style
-.tooltip .tooltip-inner {
-  background-color: @pane-frame;
+  background: linear-gradient(@tree-view-background-color 50%, @attention-focused)  !important;
 }
 // Minimap style
 .minimap-selection {
-  .region {
-    background: @selected-focused;
-  }
   .cursor-line {
-    background: @minimap-indicator;
+    background: @text-color-selected;
   }
 }
 atom-text-editor atom-text-editor-minimap {
   .minimap-visible-area::after {
-    background-color: @current;
+    background-color: @text-color-subtle;
   }
   // emphasize scroll-indicator in minimap instead of scroll
   .minimap-scroll-indicator {
-    background-color: @minimap-indicator;
+    background-color: @text-color-highlight;
     width: 2px;
   }
 }
@@ -151,25 +128,16 @@ atom-text-editor atom-text-editor-minimap {
 .hydrogen {
   .inline-container {
     z-index: 1;
+    max-height: 1.5rem;
   }
   .multiline-container {
-    background-color: @hydrogen-cell;
+    background-color: @background-color-selected;
     .toolbar .icon:hover {
-      background-color: @selected-focused;
+      background-color: @button-background-color-hover;
     }
   }
-  blockquote {
-    font-size: @font-size;
-  }
-}
-// Juno style
-.ink.docpane,
-.ink-workspace {
-  .syntax--type {
-    color: @syntax-color-class;
-  }
-  .syntax--constant.syntax--symbol {
-    color: @hue-5-2;
+  backquote {
+    background-color: @background-color-highlight;
   }
 }
 
@@ -198,42 +166,6 @@ atom-text-editor:not([data-grammar$="source python"]) {
 // Termination tweak
 .termination.status-bar {
   display: none;
-}
-
-/* Tree-View tweaks */
-.tree-view {
-  font-size: 1.0rem;
-}
-.tree-view .full-menu {
-  padding-left: 4px;
-}
-.list-tree .list-nested-item>.list-group>li,
-.list-tree .list-nested-item>.list-tree>li {
-  padding-left: 16px;
-}
-.list-tree.has-collapsable-children .list-nested-item>.list-item::before {
-  margin-right: 4px;
-}
-.list-group .icon::before,
-.list-tree .icon::before {
-  margin-right: 8px;
-}
-.list-tree.has-collapsable-children li.list-item {
-  margin-left: 14px;
-}
-.list-tree.has-collapsable-children .list-nested-item>.list-group>li,
-.list-tree.has-collapsable-children .list-nested-item>.list-tree>li {
-  padding-left: 24px;
-}
-.list-group li.list-nested-item>.list-item,
-.list-group li:not(.list-nested-item),
-.list-tree li.list-nested-item>.list-item,
-.list-tree li:not(.list-nested-item) {
-  line-height: 1.5rem;
-}
-.list-group .selected::before,
-.list-tree .selected::before {
-  height: 1.5rem;
 }
 
 /* File-Icon tweaks */
