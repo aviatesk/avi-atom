@@ -4,11 +4,13 @@
     languageMappings: "{ \"python\": \"pweave markdown\", \"julia\": \"weave.jl markdown\", \"r\": \"r markdown\" }"
     outputAreaDock: true
     outputAreaFontSize: 13
+    showAutocompleteFirst: false
     startDir: "dirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
     wrapOutput: true
   "Hydrogen-Studio":
     inspectorPaneDefaultLocation: "right"
+    openPlotPaneOnExecution: false
     plotPaneDefaultLocation: "right"
   Zen:
     fullscreen: false
@@ -392,6 +394,7 @@
   "minimap-selection":
     highlightCursorsLines: true
     outlineSelection: true
+  "one-dark-ui": {}
   "open-in-app":
     defaultApplication: "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
   "package-generator":
@@ -474,6 +477,20 @@
   "todo-show":
     autoRefresh: false
     exportAs: "Table"
+    findTheseTodos: [
+      "TODO"
+      "FIXME"
+      "CHANGED"
+      "XXX"
+      "IDEA"
+      "HACK"
+      "REVIEW"
+      "NB"
+      "BUG"
+      "QUESTION"
+      "COMBAK"
+      "TEMP"
+    ]
     showInTable: [
       "Type"
       "Text"

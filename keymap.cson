@@ -447,6 +447,8 @@
   'ctrl-t': 'tree-view:toggle-focus'
   'ctrl-w': 'unset!'
   'ctrl-alt-c': 'color-picker:open'
+  'ctrl-alt-up': 'editor:select-larger-syntax-node'
+  'ctrl-alt-down': 'editor:select-smaller-syntax-node'
 
   ## Unsets
   'alt-down': 'unset!'
