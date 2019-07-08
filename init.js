@@ -191,28 +191,28 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
     // Process
     tb.addButton({
       icon: 'flame',
-      callback: 'julia-client:start-julia',
       tooltip: 'Start Julia Process',
+      callback: 'julia-client:start-julia',
     });
     tb.addButton({
       icon: 'globe',
-      callback: 'julia-client:start-remote-julia-process',
       tooltip: 'Start Remote Julia Process',
+      callback: 'julia-client:start-remote-julia-process',
     });
     tb.addButton({
       icon: 'zap',
-      callback: 'julia-client:interrupt-julia',
       tooltip: 'Interrupt Julia Process',
+      callback: 'julia-client:interrupt-julia',
     });
     tb.addButton({
       icon: 'sync',
-      callback: 'julia-client:restart-julia',
       tooltip: 'Restart Julia Process',
+      callback: 'julia-client:restart-julia',
     });
     tb.addButton({
       icon: 'trashcan',
-      callback: 'julia-client:kill-julia',
       tooltip: 'Kill Julia Process',
+      callback: 'julia-client:kill-julia',
     });
 
     tb.addSpacer();
@@ -220,19 +220,25 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
     // In Process
     tb.addButton({
       icon: 'play',
-      callback: 'julia-client:run-all',
-      tooltip: 'Run A Whole File',
       iconset: 'ion',
+      tooltip: 'Run A Whole File',
+      callback: 'julia-client:run-all',
+    });
+    tb.addButton({
+      icon: 'format-float-none',
+      iconset: 'mdi',
+      tooltip: 'Format Code',
+      callback: 'julia-client:run-all',
     });
     tb.addButton({
       icon: 'file-directory',
-      callback: 'julia-client:select-working-folder',
       tooltip: 'Set Working Directory',
+      callback: 'julia-client:select-working-folder',
     });
     tb.addButton({
       icon: 'package',
-      callback: 'julia-client:set-working-module',
       tooltip: 'Set Working Module',
+      callback: 'julia-client:set-working-module',
     });
 
     tb.addSpacer();
@@ -240,28 +246,28 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
     // Panes
     tb.addButton({
       icon: 'terminal',
-      callback: 'julia-client:open-console',
       tooltip: 'Open Console Pane',
+      callback: 'julia-client:open-console',
     });
     tb.addButton({
       icon: 'book',
-      callback: 'julia-client:open-workspace',
       tooltip: 'Open Workspace Pane',
+      callback: 'julia-client:open-workspace',
     });
     tb.addButton({
       icon: 'info',
-      callback: 'julia-client:open-documentation-browser',
       tooltip: 'Open Documentation Pane',
+      callback: 'julia-client:open-documentation-browser',
     });
     tb.addButton({
       icon: 'graph',
-      callback: 'julia-client:open-plot-pane',
       tooltip: 'Open Plot Pane',
+      callback: 'julia-client:open-plot-pane',
     });
     tb.addButton({
       icon: 'bug',
-      callback: 'julia-debug:open-debugger-pane',
       tooltip: 'Open Debugger Pane',
+      callback: 'julia-debug:open-debugger-pane',
     });
 
     tb.addSpacer();
@@ -269,8 +275,8 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
     // Meta
     tb.addButton({
       icon: 'gear',
-      callback: 'julia-client:settings',
       tooltip: 'Open Settings',
+      callback: 'julia-client:settings',
     });
   }
 

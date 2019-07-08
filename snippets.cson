@@ -468,6 +468,13 @@
       -->
       '''
     'description': 'Inserts comment block'
+  'Markdown: Inline comment block':
+    'prefix': 'cmi'
+    'body':
+      '''
+      <!-- $1 -->
+      '''
+    'description': 'Inserts inline comment block'
   'Markdown: Image file':
     'prefix': 'img'
     'body':
