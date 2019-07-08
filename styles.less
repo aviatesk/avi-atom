@@ -1,3 +1,7 @@
+@import "ui-variables";
+@import "syntax-variables";
+
+
 /**
  * Override UI font
  */
@@ -32,6 +36,7 @@ atom-text-editor.editor {
   .line.cursor-line,
   .line.highlight-line {
     background: linear-gradient(@syntax-background-color 10%, @current)  !important;
+    z-index: -2;
   }
   // Embedded code cell style for .jmd, .pmd & .Rmd files
   // @TODO: Find good styles for the embedded code block
@@ -80,6 +85,7 @@ atom-text-editor.editor.is-focused {
   .line.cursor-line,
   .line.highlight-line {
     background: linear-gradient(@syntax-background-color 10%, @current-focused)  !important;
+    z-index: -2;
   }
 }
 // Julia-specific tweaks
@@ -201,9 +207,6 @@ atom-text-editor:not([data-grammar$="source python"]) {
 }
 
 /* Tree-View tweaks */
-.tree-view {
-  font-size: 1.0rem;
-}
 .tree-view .full-menu {
   padding-left: 4px;
 }
