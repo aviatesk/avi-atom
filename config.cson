@@ -297,7 +297,7 @@
       noAutoParenthesis: true
       optimisationLevel: 2
       startupArguments: [
-        "--project"
+        "--project=@."
       ]
     juliaPath: "julia"
     uiOptions:
