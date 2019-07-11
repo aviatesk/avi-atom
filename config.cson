@@ -416,8 +416,6 @@
       ".json"
       ".cson"
     ]
-  script:
-    cwdBehavior: "Directory of the script"
   "spell-check":
     addKnownWords: true
     excludedScopes: [
@@ -497,7 +495,7 @@
       "Path"
       "Line"
     ]
-    sortBy: "Line"
+    sortBy: "Path"
     statusBarIndicator: true
   "tool-bar":
     iconSize: "24px"

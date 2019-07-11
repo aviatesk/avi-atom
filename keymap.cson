@@ -383,11 +383,6 @@
   'ctrl-r': 'find-and-replace:find-previous'
   'ctrl-shift-r': 'find-and-replace:find-previous'
 
-  ## Script -- should not be placed in .emacs-plus scope, because I write per-file run definition below
-  'ctrl-x r': 'script:run'
-  'ctrl-x shift-r': 'script:run-options'
-  'ctrl-x ctrl-r': 'script:run-with-profile'
-
   ## Spell-Check
   'alt-;': 'spell-check:correct-misspelling'
   'ctrl-alt-;': 'spell-check:toggle'
