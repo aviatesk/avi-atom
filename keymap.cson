@@ -143,6 +143,8 @@
   'ctrl-alt-r': 'project-find:toggle'
 
   ## Atom-IDE
+  # Datatip
+  'ctrl-alt-d': 'datatip:toggle'
   # Diagnostics
   'alt-d': 'window:toggle-bottom-dock'
   # Find references
