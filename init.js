@@ -1,4 +1,4 @@
-'use babel';
+/** @babel */
 
 import { TextEditor } from 'atom';
 
@@ -228,7 +228,7 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
       icon: 'format-float-none',
       iconset: 'mdi',
       tooltip: 'Format Code',
-      callback: 'julia-client:run-all',
+      callback: 'julia-client:format-code',
     });
     tb.addButton({
       icon: 'file-directory',
