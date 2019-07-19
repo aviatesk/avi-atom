@@ -20,7 +20,6 @@ git-time-machine@2.1.0
 highlight-line@0.12.0
 highlight-selected@0.16.0
 Hydrogen@2.10.3
-hyperclick@0.1.5
 hyperlink-hyperclick@3.0.0
 ide-css@0.3.2
 ide-python@1.4.1
@@ -52,12 +51,11 @@ open-in-app@0.2.0
 pdf-view@0.71.0
 pigments@0.40.2
 project-manager@3.3.7
-script@3.18.1
 split-diff@1.6.0
 status-bar-blame@2.0.3
 termination@0.7.1
 todo-show@2.3.2
-tool-bar@1.1.11
+tool-bar@1.1.12
 tree-view-autoresize@2.3.0
 tree-view-git-status@1.5.2
 uber-juno@0.2.0

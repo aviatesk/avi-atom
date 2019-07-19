@@ -18,6 +18,7 @@ All values are set as default.
       # "spell-check"
       "julia-client"
       "tool-bar"
+      "git-diff"
       "markdown-preview"
     ]
     excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder

@@ -28,6 +28,7 @@ All values for the other Per-project configs are set as default
       # # Enable Julia packages ! #
       # "julia-client"
       # "tool-bar"
+      "git-diff"
       "markdown-preview"
     ]
     excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder

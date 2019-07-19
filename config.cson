@@ -88,8 +88,6 @@
     tsserverInstancePerTsconfig: true
   "atomic-management": {}
   "autocomplete-paths": {}
-  "autocomplete-plus":
-    minimumWordLength: 2
   "bracket-matcher": {}
   core:
     audioBeep: false
@@ -294,6 +292,7 @@
       arguments: [
         "JUNO_OHMYREPL"
       ]
+      bootMode: "Cycler"
       noAutoParenthesis: true
       optimisationLevel: 2
       startupArguments: [
