@@ -22,7 +22,7 @@ highlight-selected@0.16.0
 Hydrogen@2.10.3
 hyperlink-hyperclick@3.0.0
 ide-css@0.3.2
-ide-python@1.4.1
+ide-python@1.4.2
 indent-detective@0.3.3
 ink@0.10.11
 js-hyperclick@1.18.0
@@ -32,11 +32,11 @@ language-julia@0.19.1
 language-markdown@0.37.0
 language-weave@0.6.4
 latex-completions@0.3.6
-linter-coffeelint@2.0.15
+linter-coffeelint@2.0.16
 linter-eslint@8.5.5
 linter-tslint@1.10.28
 markdown-preview-enhanced@0.16.3
-markdown-writer@2.11.6
+markdown-writer@2.11.7
 minimap@4.29.9
 minimap-autohider@1.6.0
 minimap-find-and-replace@4.5.2

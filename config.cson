@@ -178,9 +178,8 @@
   "file-icons": {}
   "find-and-replace":
     closeFindPanelAfterSearch: true
-  "fuzzy-finder":
-    scoringSystem: "fast"
-    useRipGrep: true
+    useRipgrep: true
+  "fuzzy-finder": {}
   "git-diff-plus": {}
   "git-plus":
     diffs:
