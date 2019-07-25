@@ -283,6 +283,39 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
   juliaClientWatcher.dispose();
 });
 
+/*
+Use Atom-TypeScript for JavaScript files even for non-TypeScript projects
+*/
+
+let atomtsKeyBindings;
+atom.packages.onDidActivateInitialPackages(() => {
+  const atomts = atom.packages.getLoadedPackage('atom-typescript');
+  if (!atomts) return;
+
+  atom.commands.add('atom-workspace', {
+    'typescript:activate-for-javascript': () => {
+      // Activate Atom-TypeScript in very hacky way:
+      // @NOTE: This change won't change the global config, that would provent Atom-TypeScript
+      //        spawing TSL for JavaScript files in the other projects
+      atomts.config.settings['atom-typescript'].allowJS = true;
+      atom.packages.triggerActivationHook(atomts.getActivationHooks()[0]);
+      atomtsKeyBindings = atom.keymaps.add(
+        'init.js', {
+          'atom-text-editor[data-grammar=\'source js\'].emacs-plus:not([mini])': {
+            'ctrl-alt-r': 'typescript:rename-refactor',
+            'ctrl-left': 'typescript:return-from-declaration',
+            'ctrl-shift-left': 'typescript:show-editor-position-history',
+          },
+        },
+        1,
+      );
+    },
+    'typescript:deactivate-for-javascript': () => {
+      atomts.config.settings['atom-typescript'].allowJS = false;
+      if (atomtsKeyBindings) atomtsKeyBindings.dispose();
+    },
+  });
+});
 
 /*
 Register extended commands for Git-Plus

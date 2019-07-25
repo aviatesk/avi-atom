@@ -25,7 +25,6 @@ ide-css@0.3.2
 ide-python@1.4.2
 indent-detective@0.3.3
 ink@0.10.11
-js-hyperclick@1.18.0
 julia-client@0.8.10
 language-babel@2.85.0
 language-julia@0.19.1

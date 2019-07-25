@@ -317,6 +317,31 @@
     'description': 'Insert line comment block'
 
 '.source.js':
+  ## ESLint
+  'ESLint: Disable block':
+    'prefix': 'eslint-disable-block'
+    'body':
+      '''
+      // eslint-disable ${1:disabled-rule}
+      ${2:// code body comes here}
+      // eslint-disable ${1:disabled-rule}
+      '''
+    'description': 'Insert eslint-disabled block'
+  'ESLint: Disable current line':
+    'prefix': 'eslint-disable-current-line'
+    'body':
+      '''
+      // eslint-disable-line ${1:disabled-rule}
+      '''
+    'description': 'Insert eslint-disable statement for current line'
+  'ESLint: Disable next line':
+    'prefix': 'eslint-disable-next-line'
+    'body':
+      '''
+      // eslint-disable-next-line ${1:disabled-rule}
+      '''
+    'description': 'Insert eslint-disable statement for next line'
+
   ## Hydrogen
   'Hydrogen: Code cell':
     'prefix': 'cc'
