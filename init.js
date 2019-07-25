@@ -134,9 +134,7 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
 
   // Create custom Julia-Client commands
   atom.commands.add('atom-workspace', {
-    /**
-     * Restart Julia Process
-     */
+    // Restart Julia Process
     'julia-client:restart-julia': async () => {
       const element = atom.workspace.getElement();
       if (!element) return;
@@ -183,6 +181,7 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
   if (atom.packages.isPackageLoaded('tool-bar')) {
     const toolBar = atom.packages.getLoadedPackage('tool-bar');
     if (!toolBar) {
+      // eslint-disable-next-line no-console
       console.warning('Julia-Client: Failed to customize Tool-Bar integration');
       return;
     }
@@ -339,14 +338,13 @@ class InputView {
   }
 
   /**
-   * Sets `callbackOnConfirm` and then opens the input prompt
-   * input.
+   * Sets `callbackOnConfirm` and then opens the input prompt input.
    *
-   * @param callback        - The callback function that would be called on confirm taking the
-                              enterted input text.
-   * @param messageText     - The message text of input mini editor
-   * @param placeholderText - The placeholer text of input mini editor
-   * @param defaultText     - The default value of input text
+   * @param callback {Function} - The callback function that would be called on confirm taking the
+   *                              enterted input text.
+   * @param messageText {String} - The message text of input mini editor
+   * @param placeholderText {String} - The placeholer text of input mini editor
+   * @param defaultText {String} - The default value of input text
    */
   open(
     callback = this.defaultCallbackOnConfirm,
