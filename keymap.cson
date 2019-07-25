@@ -3,9 +3,9 @@
 
   ## Movements
   'ctrl-o': 'core:move-up'
-  'ctrl-p': 'core:page-up'
   'ctrl-l': 'core:move-right'
   'ctrl-n': 'core:move-down'
+  'ctrl-p': 'core:page-up'
   'ctrl-shift-p': 'core:page-down'
   'ctrl-k': 'core:move-left'
 
@@ -15,6 +15,8 @@
   'ctrl-m': 'core:confirm'
   'ctrl-;': 'core:confirm'
   'ctrl-g': 'core:cancel'
+
+  ## Tabs
   'ctrl-w': 'tabs:close-tab'
   'ctrl-shift-w': 'tabs:close-all-tabs'
   'ctrl-shift-a': 'core:select-all'
@@ -23,18 +25,19 @@
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-shift-tab': 'pane:show-previous-item'
 
+  ## Commands
+  'ctrl-h': 'command-palette:toggle'
+  'alt-x': 'command-palette:toggle'
+  'alt-,': 'key-binding-resolver:toggle'
 
 ### All the atom-workspace ###
 'atom-workspace':
 
   ## Operations
   # General
-  'ctrl-h': 'command-palette:toggle'
-  'alt-x': 'command-palette:toggle'
-  'alt-,': 'key-binding-resolver:toggle'
-  'f5': 'window:reload'
-  'f11': 'window:toggle-full-screen'
   'ctrl-x ctrl-c': 'window:close'
+  'f11': 'window:toggle-full-screen'
+  'f5': 'window:reload'
   # Finder
   'ctrl-x f': 'fuzzy-finder:toggle-file-finder'
   'ctrl-x alt-b': 'fuzzy-finder:toggle-buffer-finder'
@@ -323,8 +326,8 @@
   'ctrl-l': 'core:move-right'
   'ctrl-n': 'core:move-down'
   'ctrl-k': 'core:move-left'
-  'ctrl-p': 'pdf-view:go-to-previous-page'
-  'ctrl-shift-p': 'pdf-view:go-to-next-page'
+  'ctrl-u': 'pdf-view:go-to-previous-page'
+  'ctrl-b': 'pdf-view:go-to-next-page'
   'g': 'pdf-view:go-to-page'
   'ctrl-x g': 'pdf-view:go-to-page'
   'ctrl-x ctrl-f': 'advanced-open-file:toggle'
@@ -341,13 +344,11 @@
   ## Movements
   'ctrl-o': 'core:move-up'
   'ctrl-u': 'editor:move-to-beginning-of-previous-paragraph'
-  'ctrl-p': 'core:page-up'
   'ctrl-l': 'core:move-right'
   'ctrl-.': 'editor:move-to-end-of-word'
   'ctrl-e': 'editor:move-to-end-of-screen-line'
   'ctrl-n': 'core:move-down'
   'ctrl-b': 'editor:move-to-beginning-of-next-paragraph'
-  'ctrl-shift-p': 'core:page-down'
   'ctrl-k': 'core:move-left'
   'ctrl-,': 'editor:move-to-beginning-of-word'
   'ctrl-a': 'editor:move-to-first-character-of-line'
@@ -361,6 +362,12 @@
   'ctrl-shift-j': 'editor:delete-to-end-of-word'
   'alt-j': 'emacs-plus:kill-word'
   'ctrl-alt-i': 'window:toggle-invisibles'
+
+  ## Cursor History
+  'ctrl-p': 'cursor-history:prev'
+  'ctrl-shift-p': 'cursor-history:next'
+  'ctrl-left': 'cursor-history:prev'
+  'ctrl-right': 'cursor-history:next'
 
   ## Dock
   'alt-l': 'window:toggle-right-dock'
@@ -497,7 +504,6 @@
   # up
   'ctrl-o': 'core:select-up'
   'ctrl-u': 'editor:select-to-beginning-of-previous-paragraph'
-  'ctrl-p': 'core:select-page-up'
   'ctrl-home': 'core:select-to-top'
   # right
   'ctrl-l': 'core:select-right'
@@ -506,7 +512,6 @@
   # down
   'ctrl-n': 'core:select-down'
   'ctrl-b': 'editor:select-to-beginning-of-next-paragraph'
-  'ctrl-shift-p': 'core:select-page-down'
   'ctrl-end': 'core:select-to-bottom'
   # left
   'ctrl-k': 'core:select-left'
@@ -677,7 +682,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   ## Julia-Client
   # Code execution commands are not listed here. It would be automatically attached in init.js ##
   'ctrl-c ctrl-f': 'julia-client:format-code'
-  'ctrl-left': 'julia-client:return-from-goto'
+  'ctrl-shift-left': 'julia-client:return-from-goto'
   # Julia-Debug
   'ctrl-x space': 'julia-debug:toggle-breakpoint'
   'ctrl-x ctrl-space': 'julia-debug:toggle-conditional-breakpoint'
@@ -741,8 +746,8 @@ atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
   'ctrl-alt-o': 'typescript:toggle-semantic-view'
   'ctrl-alt-f': 'typescript:find-references'
   'ctrl-alt-r': 'typescript:rename-refactor'
-  'ctrl-left': 'typescript:return-from-declaration'
-  'ctrl-shift-left': 'typescript:show-editor-position-history'
+  'ctrl-shift-left': 'typescript:return-from-declaration'
+  'ctrl-shift-right': 'typescript:show-editor-position-history'
 
 ## HTML
 "atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":

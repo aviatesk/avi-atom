@@ -134,6 +134,16 @@ atom-text-editor.editor[data-grammar$="source weave latex"] {
 .tooltip .tooltip-inner {
   background-color: @pane-frame;
 }
+// Cursor-History
+@current-flash: rgb(24, 17, 168);
+@keyframes cursor-history-flash {
+  from {
+    background-color: @current-flash;
+  }
+}
+atom-text-editor.editor .line.cursor-history-flash-line {
+  animation-duration: 1s;
+}
 // Minimap style
 .minimap-selection {
   .region {
@@ -166,6 +176,11 @@ atom-text-editor atom-text-editor-minimap {
   }
   blockquote {
     font-size: @font-size;
+  }
+  &.inspector, &.datatip {
+    code {
+      font-size: 11px;
+    }
   }
 }
 // Juno style

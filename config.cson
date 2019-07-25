@@ -162,6 +162,9 @@
     ]
     uriHandlerRegistration: "always"
     warnOnLargeFileLimit: 10
+  "cursor-history":
+    pendingOpen: true
+    rowDeltaToRemember: 3
   "document-outline":
     showByDefault: false
   "dqs-shell-commands": {}

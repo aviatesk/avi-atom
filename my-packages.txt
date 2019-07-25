@@ -10,6 +10,7 @@ atom-typescript@13.2.1
 atomic-management@0.3.1
 autocomplete-paths@2.12.2
 color-picker@2.3.0
+cursor-history@0.13.2
 document-outline@2.1.2
 dqs-shell-commands@2.2.4
 emacs-plus@0.12.0

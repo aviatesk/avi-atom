@@ -303,8 +303,8 @@ atom.packages.onDidActivateInitialPackages(() => {
         'init.js', {
           'atom-text-editor[data-grammar=\'source js\'].emacs-plus:not([mini])': {
             'ctrl-alt-r': 'typescript:rename-refactor',
-            'ctrl-left': 'typescript:return-from-declaration',
-            'ctrl-shift-left': 'typescript:show-editor-position-history',
+            'ctrl-shift-left': 'typescript:return-from-declaration',
+            'ctrl-shift-right': 'typescript:show-editor-position-history',
           },
         },
         1,
