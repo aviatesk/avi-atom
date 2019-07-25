@@ -143,10 +143,8 @@
   'ctrl-alt-r': 'project-find:toggle'
 
   ## Atom-IDE
-  # Datatip
-  'ctrl-alt-d': 'datatip:toggle'
   # Diagnostics
-  'alt-d': 'window:toggle-bottom-dock'
+  'ctrl-alt-d': 'window:toggle-bottom-dock'
   # Find references
   'alt-f': 'window:toggle-bottom-dock'
   # Outline-View
@@ -456,8 +454,10 @@
   'ctrl-c ctrl-f': 'atom-beautify:beautify-editor'
 
   ## Atom-IDE
+  # Datatip
+  'alt-d': 'datatip:toggle'
   # Diagnostics
-  'alt-d': 'diagnostics:toggle-table'
+  'ctrl-alt-d': 'diagnostics:toggle-table'
   'alt-p': 'diagnostics:go-to-previous-diagnostic'
   'alt-end': 'diagnostics:go-to-first-diagnostic'
   'alt-n': 'diagnostics:go-to-next-diagnostic'
@@ -736,8 +736,9 @@ atom-text-editor[data-grammar='source ts'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
 ":
   ## Atom-TypeScript
-  'ctrl-alt-o': 'typescript:toggle-semantic-view'
   'alt-i': 'typescript:show-tooltip'
+  'alt-enter': 'typescript:go-to-declaration'
+  'ctrl-alt-o': 'typescript:toggle-semantic-view'
   'ctrl-alt-f': 'typescript:find-references'
   'ctrl-alt-r': 'typescript:rename-refactor'
   'ctrl-left': 'typescript:return-from-declaration'
@@ -748,7 +749,7 @@ atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
   ## Atom-HTML-Preview: ctrl-shift-m (same as Markdown-Preview-Enhanced:toggle)
   'ctrl-shift-m': 'atom-html-preview:toggle'
 
-## CSS
+## LESS
 ## Atom-Beautify: Switch beautifier according to selection
 "atom-text-editor[data-grammar='source css less'].emacs-plus:not([mini])":
   'ctrl-c ctrl-f': 'atom-beautify:beautify-language-css'
