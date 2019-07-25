@@ -310,6 +310,9 @@
         documentation:
           defaultLocation: "right"
           split: "up"
+        linter:
+          defaultLocation: "right"
+          split: "down"
         openDefaultPanesOnStartUp: false
         plotPane:
           defaultLocation: "right"
