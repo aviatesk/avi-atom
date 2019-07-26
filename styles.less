@@ -272,7 +272,7 @@ atom-text-editor:not([data-grammar$="source python"]) {
   content: "\f012";
 }
 .icon[data-name="src"]:before,
-.icon[data-name="scripts"]:before,
+.icon[data-name^="script"]:before,
 .icon[data-name="code"]:before {
   font-family: "Octicons Regular";
   content: "\f05f";
@@ -281,11 +281,19 @@ atom-text-editor:not([data-grammar$="source python"]) {
   font-family: "Octicons Regular";
   content: "\f007";
 }
-.directory>.header>.icon {
-  &[data-path$=".atom\\packages"]:before {
-    font-family: "Octicons Regular";
-    content: "\f0c4";
-  }
+.icon[data-name$="packages"]:before,
+.icon[data-name$="modules"]:before {
+  font-family: "Octicons Regular";
+  content: "\f0c4";
+}
+.icon[data-name="node_modules"]:before {
+  font-family: Devicons;
+  content: "\e618";
+}
+.icon[data-name*="backup"]:before,
+.icon[data-name="recovery"]:before {
+  font-family: FontAwesome;
+  content: "\f1da";
 }
 // Github-Flavor-Markdowns
 .icon[data-name="_draft.md"]:before,
