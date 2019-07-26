@@ -165,6 +165,9 @@ atom-text-editor atom-text-editor-minimap {
 }
 // Hydrogen style
 .hydrogen {
+  blockquote {
+    font-size: @font-size;
+  }
   .inline-container {
     z-index: 1;
   }
@@ -174,8 +177,9 @@ atom-text-editor atom-text-editor-minimap {
       background-color: @selected-focused;
     }
   }
-  blockquote {
-    font-size: @font-size;
+  .output-area .multiline-container {
+    font-family: var(--editor-font-family);
+    font-size: var(--editor-font-size)  !important;
   }
   &.inspector, &.datatip {
     code {

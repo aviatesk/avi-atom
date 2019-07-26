@@ -3,7 +3,6 @@
     gateways: "[{ \"name\": \"Local notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthToken\" } }]"
     languageMappings: "{ \"python\": \"pweave markdown\", \"julia\": \"weave.jl markdown\", \"r\": \"r markdown\" }"
     outputAreaDock: true
-    outputAreaFontSize: 13
     showAutocompleteFirst: false
     startDir: "dirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
