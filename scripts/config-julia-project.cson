@@ -8,6 +8,8 @@ All values for the other Per-project configs are set as default
 
   ### Julia-specific configs ###
   "julia-client":
+    consoleOptions:
+      rendererType: true
     juliaOptions:
       arguments: [
         "JUNO_OHMYREPL"

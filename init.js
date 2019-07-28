@@ -294,10 +294,8 @@ atom.packages.onDidActivateInitialPackages(() => {
 
   atom.commands.add('atom-workspace', {
     'typescript:activate-for-javascript': () => {
-      // Activate Atom-TypeScript in very hacky way:
-      // @NOTE: This change won't change the global config, that would provent Atom-TypeScript
-      //        spawing TSL for JavaScript files in the other projects
-      atomts.config.settings['atom-typescript'].allowJS = true;
+      atom.config.set('atom-typescript.allowJS', true);
+      // Activate Atom-TypeScript
       atom.packages.triggerActivationHook(atomts.getActivationHooks()[0]);
       atomtsKeyBindings = atom.keymaps.add(
         'init.js', {
@@ -311,7 +309,7 @@ atom.packages.onDidActivateInitialPackages(() => {
       );
     },
     'typescript:deactivate-for-javascript': () => {
-      atomts.config.settings['atom-typescript'].allowJS = false;
+      atom.config.set('atom-typescript.allowJS', false);
       if (atomtsKeyBindings) atomtsKeyBindings.dispose();
     },
   });

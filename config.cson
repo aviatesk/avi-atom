@@ -162,7 +162,7 @@
     uriHandlerRegistration: "always"
     warnOnLargeFileLimit: 10
   "cursor-history":
-    pendingOpen: true
+    openInPendingState: true
     rowDeltaToRemember: 3
   "document-outline":
     showByDefault: false

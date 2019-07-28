@@ -316,7 +316,6 @@
     'body': '/* ${1:Comment} */'
     'description': 'Insert line comment block'
 
-'.source.js':
   ## ESLint
   'ESLint: Disable block':
     'prefix': 'eslint-disable-block'
@@ -342,6 +341,17 @@
       '''
     'description': 'Insert eslint-disable statement for next line'
 
+'.source.js, .source.jsx':
+  ## Babel
+  'Babel: Use Babel':
+    'prefix': 'babel'
+    'body':
+      '''
+      /** @babel */
+      $1
+      '''
+    'descrition': 'Insert @babel header'
+
   ## Hydrogen
   'Hydrogen: Code cell':
     'prefix': 'cc'
@@ -359,6 +369,16 @@
       $1
       '''
     'description': 'Inserts Hydrogen markdown cell'
+
+'.source.flow':
+  'Flow: Use Flow':
+    'prefix': 'babel'
+    'body':
+      '''
+      /** @flow */
+      $1
+      '''
+    'descrition': 'Insert @flow header'
 
 
 ### TypeScript ###
