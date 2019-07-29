@@ -139,6 +139,7 @@
       "git-diff-plus"
       "git-plus"
       "git-time-machine"
+      "hey-pane"
       "julia-client"
       "language-weave"
       "markdown-preview-enhanced"
@@ -194,6 +195,8 @@
       showBranchInTreeView: false
     remoteInteractions:
       promptForBranch: true
+  "hey-pane":
+    expandedWidth: 95
   "highlight-line":
     enableBackgroundColor: false
     hideHighlightOnSelect: true

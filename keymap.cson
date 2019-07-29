@@ -94,6 +94,9 @@
   'ctrl-7': 'pane:show-item-7'
   'ctrl-8': 'pane:show-item-8'
   'ctrl-9': 'pane:show-item-9'
+  # Hey-Pane
+  'alt-o': 'hey-pane:toggle-focus-of-active-pane'
+  'alt-shift-o': 'hey-pane:toggle-follow-mode'
 
   ## Dock
   'alt-l': 'window:toggle-right-dock'
