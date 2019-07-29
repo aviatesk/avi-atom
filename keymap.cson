@@ -750,11 +750,6 @@ atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
   'ctrl-shift-left': 'typescript:return-from-declaration'
   'ctrl-shift-right': 'typescript:show-editor-position-history'
 
-## HTML
-"atom-text-editor[data-grammar='text html basic'].emacs-plus:not([mini])":
-  ## Atom-HTML-Preview: ctrl-shift-m (same as Markdown-Preview-Enhanced:toggle)
-  'ctrl-shift-m': 'atom-html-preview:toggle'
-
 ## LESS
 ## Atom-Beautify: Switch beautifier according to selection
 "atom-text-editor[data-grammar='source css less'].emacs-plus:not([mini])":

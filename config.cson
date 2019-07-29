@@ -64,8 +64,6 @@
   "atom-clock":
     dateFormat: "YYYY/MM/DD/HH:mm"
     showTooltip: true
-  "atom-html-preview":
-    enableMathJax: true
   "atom-ide-ui":
     "atom-ide-debugger":
       showDebuggerOnBpSet: false
