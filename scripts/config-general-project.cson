@@ -8,14 +8,22 @@ All values are set as default.
 "*":
   Zen:
     width: 80 # Set Zen width
+  "atom-ide-ui":
+    use:
+      "atom-ide-console": "never" # Should be removed to enable atom-ide-debugger-python
+      "atom-ide-debugger": "never" # Should be removed to enable atom-ide-debugger-python
+      "atom-ide-refactor": "never"
+      "atom-ide-terminal": "never"
   "autocomplete-paths":
     maxFileCount: 2000
   "document-outline":
     maxHeadingDepth: 4 # Limit outlined depth
   core:
     disabledPackages: [
-      # # Comment-in the line below to disable Spell-Checker (Note it will work only with American-English)
+      # # Comment-IN the line below to disable Spell-Checker (Note it will work only with American-English)
       # "spell-check"
+      # Comment-OUT the line below to enable atom-ide-debugger-python
+      "atom-ide-debugger-python"
       "julia-client"
       "tool-bar"
       "git-diff"

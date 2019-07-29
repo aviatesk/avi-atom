@@ -67,13 +67,12 @@
   "atom-ide-ui":
     "atom-ide-debugger":
       showDebuggerOnBpSet: false
-    "atom-ide-diagnostics-ui": {}
-    "atom-ide-outline-view": {}
-    "atom-ide-signature-help": {}
-    "debugger-exceptionBreakpointsCollapsed": true
     hyperclick:
       darwinTriggerKeys: "ctrlKey"
     use:
+      "atom-ide-console": "never"
+      "atom-ide-debugger": "never"
+      "atom-ide-refactor": "never"
       "atom-ide-terminal": "never"
   "atom-package-deps":
     ignored: [
@@ -116,6 +115,7 @@
     disabledPackages: [
       "julia-client"
       "tool-bar"
+      "atom-ide-debugger-python"
       "git-diff"
       "markdown-preview"
     ]
