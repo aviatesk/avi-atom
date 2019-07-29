@@ -506,10 +506,7 @@
   "tree-view":
     squashDirectoryNames: true
   "tree-view-autoresize": {}
-  "tree-view-git-status":
-    gitFlow: {}
-  "uber-juno":
-    disable: true
+  "tree-view-git-status": {}
   welcome:
     showOnStartup: false
   wordcount:
