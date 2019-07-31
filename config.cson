@@ -158,8 +158,8 @@
     projectHome: "C:\\Users\\aviat\\github\\atom-pkgs"
     telemetryConsent: "limited"
     themes: [
-      "one-dark-ui"
-      "ariake-dark-syntax"
+      "nord-atom-ui"
+      "nord-atom-syntax"
     ]
     uriHandlerRegistration: "always"
     warnOnLargeFileLimit: 10

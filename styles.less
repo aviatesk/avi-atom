@@ -1,3 +1,7 @@
+@import "ui-variables";
+@import "syntax-variables";
+
+
 /**
  * Override UI font
  */
@@ -6,10 +10,6 @@ atom-workspace {
   font-family: 'Segoe UI', 'Meiryo UI';
 }
 
-// @import "@ui-variables";
-// @import "@syntax-theme-name";
-@import "ui-variables";
-@import "syntax-variables";
 
 /**
  * Fine-tune Ariake-Dark-Syntax
@@ -47,6 +47,7 @@ atom-text-editor.editor {
       }
     }
   }
+  // Stop cursor from blinking
   .cursors.blink-off .cursor {
     opacity: 1;
   }
@@ -126,6 +127,9 @@ atom-text-editor atom-text-editor-minimap {
 }
 // Hydrogen style
 .hydrogen {
+  backquote {
+    background-color: @background-color-highlight;
+  }
   .inline-container {
     z-index: 1;
     max-height: 1.5rem;
@@ -136,8 +140,14 @@ atom-text-editor atom-text-editor-minimap {
       background-color: @button-background-color-hover;
     }
   }
-  backquote {
-    background-color: @background-color-highlight;
+  .output-area .multiline-container {
+    font-family: var(--editor-font-family);
+    font-size: var(--editor-font-size)  !important;
+  }
+  &.inspector, &.datatip {
+    code {
+      font-size: 11px;
+    }
   }
 }
 
