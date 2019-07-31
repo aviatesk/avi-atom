@@ -76,6 +76,7 @@
       "atom-ide-terminal": "never"
   "atom-package-deps":
     ignored: [
+      "linter-coffeelint"
       "linter-eslint"
       "linter-tslint"
       "minimap-linter"
@@ -223,15 +224,9 @@
       yapf:
         enabled: true
     python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
-  "js-hyperclick":
-    extensions: [
-      ".js"
-      ".json"
-      ".node"
-      ".coffee"
-    ]
   "julia-client":
     consoleOptions:
+      rendererType: true
       whitelistedKeybindingsREPL: [
         "Alt-W"
         "Ctrl-Y"
@@ -298,9 +293,6 @@
       bootMode: "Cycler"
       noAutoParenthesis: true
       optimisationLevel: 2
-      startupArguments: [
-        "--project=@."
-      ]
     juliaPath: "julia"
     uiOptions:
       enableMenu: true

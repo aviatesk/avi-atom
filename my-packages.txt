@@ -32,7 +32,7 @@ language-julia@0.19.1
 language-markdown@0.37.0
 language-weave@0.6.4
 latex-completions@0.3.6
-linter-coffeelint@2.0.16
+linter-coffeelint@2.0.17
 linter-eslint@8.5.5
 linter-tslint@1.10.28
 markdown-preview-enhanced@0.16.3
@@ -45,8 +45,8 @@ minimap-highlight-selected@4.6.1
 minimap-linter@2.2.1
 minimap-selection@4.5.0
 minimap-split-diff@0.3.7
-nord-atom-syntax@0.9.1
-nord-atom-ui@0.11.0
+nord-atom-syntax@0.10.0
+nord-atom-ui@0.12.0
 open-in-app@0.2.0
 pdf-view@0.71.0
 pigments@0.40.2
