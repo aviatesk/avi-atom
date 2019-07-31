@@ -3,6 +3,7 @@
     gateways: "[{ \"name\": \"Local notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthToken\" } }]"
     languageMappings: "{ \"python\": \"pweave markdown\", \"julia\": \"weave.jl markdown\", \"r\": \"r markdown\" }"
     outputAreaDock: true
+    showAutocompleteFirst: false
     startDir: "dirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
     wrapOutput: true
@@ -66,7 +67,6 @@
   "atom-ide-ui":
     "atom-ide-debugger":
       showDebuggerOnBpSet: false
-    "debugger-exceptionBreakpointsCollapsed": true
     hyperclick:
       darwinTriggerKeys: "ctrlKey"
     use:
@@ -82,6 +82,7 @@
       "minimap-linter"
     ]
   "atom-typescript":
+    allowJS: false
     tsserverInstancePerTsconfig: true
   "atomic-management": {}
   "autocomplete-paths": {}
@@ -371,6 +372,9 @@
         after: "$"
         before: "$"
   minimap:
+    absoluteMode: true
+    independentMinimapScroll: true
+    moveCursorOnMinimapClick: true
     plugins:
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
@@ -378,6 +382,8 @@
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
+      "lens-mode": true
+      "lens-modeDecorationsZIndex": 0
       linter: true
       linterDecorationsZIndex: 0
       "minimap-autohider": true
@@ -386,8 +392,13 @@
       selectionDecorationsZIndex: 0
       "split-diff": true
       "split-diffDecorationsZIndex": 0
+    redrawDelay: 200
+    scrollAnimation: true
+    scrollAnimationDuration: 500
   "minimap-autohider": {}
   "minimap-git-diff": {}
+  "minimap-lens":
+    lensHeight: 250
   "minimap-linter": {}
   "minimap-selection":
     highlightCursorsLines: true
