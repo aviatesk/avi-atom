@@ -1,4 +1,4 @@
-'use babel';
+/** @babel */
 
 import { TextEditor } from 'atom';
 
@@ -33,7 +33,7 @@ atom.packages.onDidActivateInitialPackages(() => {
     }
   });
   atom.commands.add('atom-workspace', 'Avi-Atom:Open-TODO-List', async () => {
-    await atom.workspace.open(TODO_LIST_PATH);
+    atom.workspace.open(TODO_LIST_PATH);
   });
   atom.keymaps.add(
     'init.js', { 'atom-workspace': { 'ctrl-alt-shift-t': 'Avi-Atom:Open-TODO-List' } }, 1,
@@ -47,7 +47,7 @@ Create an easy access to my TODO-list
 
 const GITHUB_DRAFT_PATH = 'C:\\Users\\aviat\\_draft.md';
 atom.commands.add('atom-workspace', 'Avi-Atom:Open-GitHub-Draft', async () => {
-  await atom.workspace.open(GITHUB_DRAFT_PATH);
+  atom.workspace.open(GITHUB_DRAFT_PATH);
 });
 atom.keymaps.add(
   'init.js', { 'atom-workspace': { 'ctrl-alt-shift-d': 'Avi-Atom:Open-GitHub-Draft' } }, 1,
@@ -134,9 +134,7 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
 
   // Create custom Julia-Client commands
   atom.commands.add('atom-workspace', {
-    /**
-     * Restart Julia Process
-     */
+    // Restart Julia Process
     'julia-client:restart-julia': async () => {
       const element = atom.workspace.getElement();
       if (!element) return;
@@ -183,6 +181,7 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
   if (atom.packages.isPackageLoaded('tool-bar')) {
     const toolBar = atom.packages.getLoadedPackage('tool-bar');
     if (!toolBar) {
+      // eslint-disable-next-line no-console
       console.warning('Julia-Client: Failed to customize Tool-Bar integration');
       return;
     }
@@ -284,6 +283,37 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
   juliaClientWatcher.dispose();
 });
 
+/*
+Use Atom-TypeScript for JavaScript files even for non-TypeScript projects
+*/
+
+let atomtsKeyBindings;
+atom.packages.onDidActivateInitialPackages(() => {
+  const atomts = atom.packages.getLoadedPackage('atom-typescript');
+  if (!atomts) return;
+
+  atom.commands.add('atom-workspace', {
+    'typescript:activate-for-javascript': () => {
+      atom.config.set('atom-typescript.allowJS', true);
+      // Activate Atom-TypeScript
+      atom.packages.triggerActivationHook(atomts.getActivationHooks()[0]);
+      atomtsKeyBindings = atom.keymaps.add(
+        'init.js', {
+          'atom-text-editor[data-grammar=\'source js\'].emacs-plus:not([mini])': {
+            'ctrl-alt-r': 'typescript:rename-refactor',
+            'ctrl-shift-left': 'typescript:return-from-declaration',
+            'ctrl-shift-right': 'typescript:show-editor-position-history',
+          },
+        },
+        1,
+      );
+    },
+    'typescript:deactivate-for-javascript': () => {
+      atom.config.set('atom-typescript.allowJS', false);
+      if (atomtsKeyBindings) atomtsKeyBindings.dispose();
+    },
+  });
+});
 
 /*
 Register extended commands for Git-Plus
@@ -339,14 +369,13 @@ class InputView {
   }
 
   /**
-   * Sets `callbackOnConfirm` and then opens the input prompt
-   * input.
+   * Sets `callbackOnConfirm` and then opens the input prompt input.
    *
-   * @param callback        - The callback function that would be called on confirm taking the
-                              enterted input text.
-   * @param messageText     - The message text of input mini editor
-   * @param placeholderText - The placeholer text of input mini editor
-   * @param defaultText     - The default value of input text
+   * @param callback {Function} - The callback function that would be called on confirm taking the
+   *                              enterted input text.
+   * @param messageText {String} - The message text of input mini editor
+   * @param placeholderText {String} - The placeholer text of input mini editor
+   * @param defaultText {String} - The default value of input text
    */
   open(
     callback = this.defaultCallbackOnConfirm,
