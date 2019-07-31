@@ -3,8 +3,6 @@
     gateways: "[{ \"name\": \"Local notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthToken\" } }]"
     languageMappings: "{ \"python\": \"pweave markdown\", \"julia\": \"weave.jl markdown\", \"r\": \"r markdown\" }"
     outputAreaDock: true
-    outputAreaFontSize: 13
-    showAutocompleteFirst: false
     startDir: "dirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
     wrapOutput: true
@@ -65,21 +63,20 @@
   "atom-clock":
     dateFormat: "YYYY/MM/DD/HH:mm"
     showTooltip: true
-  "atom-html-preview":
-    enableMathJax: true
   "atom-ide-ui":
     "atom-ide-debugger":
       showDebuggerOnBpSet: false
-    "atom-ide-diagnostics-ui": {}
-    "atom-ide-outline-view": {}
-    "atom-ide-signature-help": {}
     "debugger-exceptionBreakpointsCollapsed": true
     hyperclick:
       darwinTriggerKeys: "ctrlKey"
     use:
+      "atom-ide-console": "never"
+      "atom-ide-debugger": "never"
+      "atom-ide-refactor": "never"
       "atom-ide-terminal": "never"
   "atom-package-deps":
     ignored: [
+      "linter-coffeelint"
       "linter-eslint"
       "linter-tslint"
       "minimap-linter"
@@ -88,8 +85,6 @@
     tsserverInstancePerTsconfig: true
   "atomic-management": {}
   "autocomplete-paths": {}
-  "autocomplete-plus":
-    minimumWordLength: 2
   "bracket-matcher": {}
   core:
     audioBeep: false
@@ -120,6 +115,7 @@
     disabledPackages: [
       "julia-client"
       "tool-bar"
+      "atom-ide-debugger-python"
       "git-diff"
       "markdown-preview"
     ]
@@ -143,6 +139,7 @@
       "git-diff-plus"
       "git-plus"
       "git-time-machine"
+      "hey-pane"
       "julia-client"
       "language-weave"
       "markdown-preview-enhanced"
@@ -163,6 +160,9 @@
     ]
     uriHandlerRegistration: "always"
     warnOnLargeFileLimit: 10
+  "cursor-history":
+    openInPendingState: true
+    rowDeltaToRemember: 3
   "document-outline":
     showByDefault: false
   "dqs-shell-commands": {}
@@ -180,9 +180,8 @@
   "file-icons": {}
   "find-and-replace":
     closeFindPanelAfterSearch: true
-  "fuzzy-finder":
-    scoringSystem: "fast"
-    useRipGrep: true
+    useRipgrep: true
+  "fuzzy-finder": {}
   "git-diff-plus": {}
   "git-plus":
     diffs:
@@ -196,6 +195,8 @@
       showBranchInTreeView: false
     remoteInteractions:
       promptForBranch: true
+  "hey-pane":
+    expandedWidth: 95
   "highlight-line":
     enableBackgroundColor: false
     hideHighlightOnSelect: true
@@ -222,15 +223,9 @@
       yapf:
         enabled: true
     python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
-  "js-hyperclick":
-    extensions: [
-      ".js"
-      ".json"
-      ".node"
-      ".coffee"
-    ]
   "julia-client":
     consoleOptions:
+      rendererType: true
       whitelistedKeybindingsREPL: [
         "Alt-W"
         "Ctrl-Y"
@@ -294,11 +289,10 @@
       arguments: [
         "JUNO_OHMYREPL"
       ]
+      autoCompletionSuggestionPriority: 1
+      bootMode: "Cycler"
       noAutoParenthesis: true
       optimisationLevel: 2
-      startupArguments: [
-        "--project"
-      ]
     juliaPath: "julia"
     uiOptions:
       enableMenu: true
@@ -311,6 +305,9 @@
         documentation:
           defaultLocation: "right"
           split: "up"
+        linter:
+          defaultLocation: "right"
+          split: "down"
         openDefaultPanesOnStartUp: false
         plotPane:
           defaultLocation: "right"
@@ -318,6 +315,7 @@
         workspace:
           defaultLocation: "right"
           split: "down"
+      pendingOpen: true
   "language-babel":
     allowLocalOverride: true
     emmetCSSAutocomplete: true
@@ -416,8 +414,6 @@
       ".json"
       ".cson"
     ]
-  script:
-    cwdBehavior: "Directory of the script"
   "spell-check":
     addKnownWords: true
     excludedScopes: [
@@ -497,7 +493,7 @@
       "Path"
       "Line"
     ]
-    sortBy: "Line"
+    sortBy: "Path"
     statusBarIndicator: true
   "tool-bar":
     iconSize: "24px"
@@ -506,10 +502,7 @@
   "tree-view":
     squashDirectoryNames: true
   "tree-view-autoresize": {}
-  "tree-view-git-status":
-    gitFlow: {}
-  "uber-juno":
-    disable: true
+  "tree-view-git-status": {}
   welcome:
     showOnStartup: false
   wordcount:
