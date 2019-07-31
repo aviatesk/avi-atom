@@ -370,6 +370,9 @@
         after: "$"
         before: "$"
   minimap:
+    absoluteMode: true
+    independentMinimapScroll: true
+    moveCursorOnMinimapClick: true
     plugins:
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
@@ -377,6 +380,8 @@
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
+      "lens-mode": true
+      "lens-modeDecorationsZIndex": 0
       linter: true
       linterDecorationsZIndex: 0
       "minimap-autohider": true
@@ -385,8 +390,13 @@
       selectionDecorationsZIndex: 0
       "split-diff": true
       "split-diffDecorationsZIndex": 0
+    redrawDelay: 200
+    scrollAnimation: true
+    scrollAnimationDuration: 500
   "minimap-autohider": {}
   "minimap-git-diff": {}
+  "minimap-lens":
+    lensHeight: 250
   "minimap-linter": {}
   "minimap-selection":
     highlightCursorsLines: true
