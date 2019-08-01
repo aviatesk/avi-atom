@@ -42,7 +42,7 @@ minimap-autohider@1.6.0
 minimap-find-and-replace@4.5.2
 minimap-git-diff@4.3.1
 minimap-highlight-selected@4.6.1
-minimap-lens@0.2.0
+minimap-lens@0.3.0
 minimap-linter@2.2.1
 minimap-selection@4.5.0
 minimap-split-diff@0.3.7

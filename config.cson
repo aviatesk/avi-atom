@@ -82,7 +82,6 @@
       "minimap-linter"
     ]
   "atom-typescript":
-    allowJS: false
     tsserverInstancePerTsconfig: true
   "atomic-management": {}
   "autocomplete-paths": {}
