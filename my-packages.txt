@@ -24,7 +24,7 @@ Hydrogen@2.10.3
 hyperlink-hyperclick@3.0.0
 ide-css@0.3.2
 ide-python@1.4.2
-indent-detective@0.3.3
+indent-detective@0.4.0
 ink@0.10.11
 julia-client@0.8.12-beta2
 language-babel@2.85.0
@@ -32,7 +32,7 @@ language-julia@0.19.1
 language-markdown@0.37.0
 language-weave@0.6.4
 latex-completions@0.3.6
-linter-coffeelint@2.0.17
+linter-coffeelint@2.0.18
 linter-eslint@8.5.5
 linter-tslint@1.10.28
 markdown-preview-enhanced@0.16.3
