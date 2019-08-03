@@ -235,6 +235,7 @@
     python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
   "julia-client":
     consoleOptions:
+      prompt: "juno>"
       rendererType: true
       whitelistedKeybindingsREPL: [
         "Alt-W"
