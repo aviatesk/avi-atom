@@ -86,7 +86,6 @@
       "linter-eslint"
       "linter-tslint"
       "minimap-linter"
-      "atom-ide-datatip"
     ]
   "atom-typescript":
     allowJS: true
@@ -418,22 +417,6 @@
   "package-generator":
     createInDevMode: true
   "pdf-view": {}
-  pigments:
-    autocompleteSuggestionsFromValue: true
-    delayBeforeScan: 1000
-    dismissableReloadNotifications: false
-    extendAutocompleteToColorValue: true
-    extendAutocompleteToVariables: true
-    supportedFiletypes: [
-      ".css"
-      ".less"
-      ".css.less"
-      ".sass"
-      ".css.scss"
-      ".stylus"
-      ".json"
-      ".cson"
-    ]
   "spell-check":
     addKnownWords: true
     excludedScopes: [

@@ -50,7 +50,6 @@ nord-atom-syntax@0.10.0
 nord-atom-ui@0.12.0
 open-in-app@0.2.0
 pdf-view@0.71.0
-pigments@0.40.2
 project-manager@3.3.7
 split-diff@1.6.0
 status-bar-blame@2.0.3
