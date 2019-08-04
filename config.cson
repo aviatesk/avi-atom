@@ -209,6 +209,10 @@
       promptForBranch: true
   "hey-pane":
     expandedWidth: 95
+    followLocations:
+      bottom: false
+      left: false
+      right: false
   "highlight-line":
     enableBackgroundColor: false
     hideHighlightOnSelect: true

@@ -17,7 +17,7 @@ file-icons@2.1.33
 git-diff-plus@0.4.0
 git-plus@8.7.1
 git-time-machine@2.1.0
-hey-pane@1.1.2
+hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.16.0
 Hydrogen@2.10.3

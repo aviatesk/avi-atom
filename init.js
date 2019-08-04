@@ -4,6 +4,42 @@ import { TextEditor } from 'atom';
 
 
 /*
+Focus utility
+*/
+
+const workspaceCenter = atom.workspace.getCenter();
+let lastCenterItem = workspaceCenter.getActivePaneItem();
+let lastDock = atom.workspace.getRightDock();
+let lastDockItem = lastDock.getActivePaneItem();
+atom.workspace.onDidStopChangingActivePaneItem((item) => {
+  const paneContainer = atom.workspace.paneContainerForItem(item);
+  if (!paneContainer) return;
+  const location = paneContainer.getLocation();
+  if (location === 'center') {
+    lastCenterItem = item;
+  } else {
+    lastDockItem = item;
+    lastDock = paneContainer;
+  }
+});
+
+atom.commands.add('atom-dock', 'avi-atom:focus-last-workspace-center-item', () => {
+  const pane = workspaceCenter.paneForItem(lastCenterItem);
+  if (pane) {
+    pane.activate();
+    pane.activateItem(lastCenterItem);
+  }
+});
+atom.commands.add('atom-workspace', 'avi-atom:focus-last-dock-item', () => {
+  const pane = lastDock.paneForItem(lastDockItem);
+  if (pane) {
+    pane.activate();
+    pane.activateItem(lastDockItem);
+  }
+});
+
+
+/*
 Create an easy access to my TODO-list
 */
 

@@ -190,8 +190,15 @@
   ## Zen
   'alt-z': 'zen:toggle'
 
+  ## Avi-Atom
+  'ctrl-@': 'avi-atom:focus-last-dock-item'
+
 
 ### Per-mode settings -- NOT IN atom-editor-space ###
+
+## Avi-Atom
+'atom-dock':
+  'ctrl-@': 'avi-atom:focus-last-workspace-center-item'
 
 ## Tree-View
 '.tree-view':
