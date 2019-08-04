@@ -29,17 +29,6 @@ All values are set as default.
       "git-diff"
       "markdown-preview"
     ]
-    excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder
-    ignoredNames: [
-      "._*"
-      ".svn"
-      "Thumbs.db"
-      ".DS_Store"
-      "desktop.ini"
-      "node_modules"
-      # # Autocomplete-Paths: Additional ignored names would come below
-      # ".git"
-    ]
   "ide-python":
     # Another python with Python-Language-Server installed can be specified.
     # E.g.: "C:\\Users\\aviat\\Anaconda3\\envs\\py36\\python.exe"

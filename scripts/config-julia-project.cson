@@ -35,17 +35,6 @@ All values for the other Per-project configs are set as default
       "git-diff"
       "markdown-preview"
     ]
-    excludeVcsIgnoredPaths: true # Set `false` in order to include Git ignored files in Autocomplete-Paths & Fazzy-Finder
-    ignoredNames: [
-      "._*"
-      ".svn"
-      "Thumbs.db"
-      ".DS_Store"
-      "desktop.ini"
-      "node_modules"
-      # # Autocomplete-Paths: Additional ignored names would come below
-      # ".git"
-    ]
 
   ### General Per-project configs ###
   Zen:

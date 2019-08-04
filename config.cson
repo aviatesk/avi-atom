@@ -132,9 +132,11 @@
     excludeVcsIgnoredPaths: true
     ignoredNames: [
       "._*"
+      ".hg"
+      ".git"
       ".svn"
+      ".DS_store"
       "Thumbs.db"
-      ".DS_Store"
       "desktop.ini"
       "node_modules"
     ]
