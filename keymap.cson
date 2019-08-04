@@ -163,7 +163,6 @@
   'alt-k i': 'hydrogen-studio:open-inspector-pane'
 
   ## Julia-client
-  'ctrl-@': 'julia-client:focus-last-terminal'
   'alt-j': 'unset!'
   'alt-j o': 'julia-client:open-console'
   'alt-j d': 'julia-debug:open-debugger-pane'
@@ -684,6 +683,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
 ":
   ## Julia-Client
   # Code execution commands are not listed here. It would be automatically attached in init.js ##
+  'ctrl-@': 'julia-client:focus-last-terminal'
   'ctrl-c ctrl-f': 'julia-client:format-code'
   'alt-enter': 'julia-client:goto-symbol'
   'ctrl-shift-left': 'julia-client:return-from-goto'

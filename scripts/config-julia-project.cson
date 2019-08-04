@@ -15,12 +15,14 @@ All values for the other Per-project configs are set as default
         "JUNO_OHMYREPL"
         # # Comment-in the line below to set-up Plots.jl for Juno
         # "JUNO_PLOTS"
+        # # Comment-in the line below to import Weave.jl on Juno startup
+        # "WEAVE"
       ]
       optimisationLevel: 2
       persistWorkingDir: false
-      startupArguments: [
-        "--project"
-      ]
+      # startupArguments: [
+      #   "--project=PATH_TO_PROJECT_DIRECTORY"
+      # ]
       workingDir: ""
 
   core:
