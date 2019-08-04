@@ -128,16 +128,6 @@ The commands below will make those scripts active by making symbolic links to an
 
 (***Note only for me***: The commands below can easily executed with <kbd>ctrl-alt-shift-enter</kbd>, which would invoke [script execution functionality of Markdown Preview Enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/#/code-chunk))
 
-#### Change default scopes of Autocomplete-Paths
-
-Additional scope configurations of Autocomplete-Paths don't work...
-Thus I modified the original [default-scopes.js](scripts/default-scopes.js).
-
-```bash {cmd}
-rm ~/.atom/packages/autocomplete-paths/lib/config/default-scopes.js
-link ~/.atom/scripts/default-scopes.js ~/.atom/packages/autocomplete-paths/lib/config/default-scopes.js
-```
-
 #### Set global MPE style
 
 I tuned [mpe-styles/style.less](mpe-styles/style.less) sheet so that within Markdown-Preview-Enhanced, we can do:
@@ -153,17 +143,6 @@ link ~/.atom/mpe-styles/style.less ~/.mume/style.less
 ```
 
 (Other .less style sheets in [mpe-styles directory](mpe-styles/) can be accessed via snippets, thus we don't need to link them to somewhere else.)
-
-<!-- ### Set-up Juno
-
-#### Install Juno package
-
-> Julia REPL
-
-```julia
-using Pkg
-Pkg.add("Juno")
-``` -->
 
 #### Enable Juno startup config
 

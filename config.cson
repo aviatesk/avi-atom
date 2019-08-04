@@ -87,11 +87,68 @@
       "linter-tslint"
       "minimap-linter"
     ]
+  "atom-path-intellisense":
+    "manual-suggest": true
+    "scope-descriptors": [
+      "string.quoted"
+    ]
   "atom-typescript":
     allowJS: true
     tsserverInstancePerTsconfig: true
   "atomic-management": {}
-  "autocomplete-paths": {}
+  "autocomplete-paths":
+    scopes: [
+      {
+        extensions: [
+          "jpg"
+          "jpeg"
+          "png"
+          "svg"
+        ]
+        includeCurrentDirectory: true
+        prefixes: [
+          "\\<img\\ssrc="
+          "\\!\\[.*\\]\\("
+        ]
+        relative: true
+        scopes: [
+          "source.gfm"
+          "source.weave.md"
+          "source.pweave.md"
+          "text.md"
+        ]
+      }
+      {
+        extensions: [
+          ".*"
+        ]
+        includeCurrentDirectory: true
+        prefixes: [
+          "\\[.*\\]\\("
+          "\\[.*\\]\\:\\s"
+        ]
+        relative: true
+        scopes: [
+          "source.gfm"
+          "source.weave.md"
+          "source.pweave.md"
+          "text.md"
+        ]
+      }
+      {
+        extensions: [
+          "jl"
+        ]
+        includeCurrentDirectory: false
+        prefixes: [
+          "include\\(\""
+        ]
+        relative: true
+        scopes: [
+          "source.julia"
+        ]
+      }
+    ]
   "autocomplete-plus":
     minimumWordLength: 2
   "bracket-matcher": {}
@@ -310,6 +367,9 @@
       bootMode: "Cycler"
       noAutoParenthesis: true
       optimisationLevel: 2
+      startupArguments: [
+        "--project=C:\\Users\\aviat\\julia\\JunoLab"
+      ]
     juliaPath: "julia"
     uiOptions:
       enableMenu: true
