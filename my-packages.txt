@@ -26,8 +26,8 @@ hyperlink-hyperclick@3.0.0
 ide-css@0.3.2
 ide-python@1.4.2
 indent-detective@0.4.0
-ink@0.10.11
-julia-client@0.8.12-beta2
+ink@0.10.12
+julia-client@0.9.4
 language-babel@2.85.0
 language-julia@0.19.1
 language-markdown@0.37.0
@@ -54,7 +54,7 @@ pdf-view@0.71.0
 project-manager@3.3.7
 split-diff@1.6.0
 status-bar-blame@2.0.3
-termination@0.7.1
+termination@0.7.4
 todo-show@2.3.2
 tool-bar@1.1.12
 tree-view-autoresize@2.3.0
