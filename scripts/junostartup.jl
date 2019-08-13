@@ -27,21 +27,25 @@ module AviJuno
 
 using Juno
 
-# These conditional activation will be triggered by the values of
-# `julia-client.juliaOptions.arguments`, defined in .atom/config.cson files
+
+@info "Juno: Given arguments: $(ARGS)"
 
 # # Doesn't work on Windows
 # if "JUNO_OHMYREPL" ∈ ARGS
-#     @time begin
+#     try
 #         @info "Juno: Setting up OhMyREPL.jl ..."
-#         include("juno_ohmyrepl.jl")
+#         include("junoohmyrepl")
+#     catch err
+#         @error err
 #     end
 # end
 
-if "JUNO_PLOTS" ∈ ARGS
-    @time begin
+if "JUNO_OHMYREPL" ∈ ARGS
+    try
         @info "Juno: Setting up Plots.jl ..."
-        include("juno_plots.jl")
+        include("junoplots.jl")
+    catch err
+        @error err
     end
 end
 
@@ -52,9 +56,20 @@ end  # module AviJuno
 Enters module main below
 =#
 
+if "JUNO_OHMYREPL" ∈ ARGS
+    try
+        @info "Importing Plots.jl ..."
+        @eval using Plots
+    catch err
+        @error err
+    end
+end
+
 if "WEAVE" ∈ ARGS
-    @time begin
+    try
         @info "Importing Weave.jl ..."
-        using Weave
+        @eval using Weave
+    catch err
+        @error err
     end
 end

@@ -1,7 +1,6 @@
-using Plots
-using PlotThemes
-import PlotThemes: expand_palette, PlotTheme
-using Statistics
+import Plots: Colorant, hex, theme, backend, default
+import PlotThemes: HSV, PlotTheme, expand_palette, add_theme
+import Statistics: mean
 
 
 @doc """

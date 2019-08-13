@@ -1,5 +1,5 @@
-using OhMyREPL, Crayons
-import OhMyREPL: Passes.SyntaxHighlighter
+import Crayons: Crayon
+import OhMyREPL: Passes.SyntaxHighlighter, colorscheme!
 
 
 """
@@ -8,9 +8,8 @@ import OhMyREPL: Passes.SyntaxHighlighter
 Uses Juno's syntax highlights within OhMyREPL.
 """
 function setohmyrepl()
-
     cs = SyntaxHighlighter.ColorScheme()
-    colors = Juno.syntaxcolors()
+    colors = syntaxcolors()
 
     SyntaxHighlighter.symbol!(cs, Crayon(foreground = colors["symbol"]))
     SyntaxHighlighter.comment!(cs, Crayon(foreground = colors["comment"]))
@@ -24,8 +23,8 @@ function setohmyrepl()
     SyntaxHighlighter.argdef!(cs, Crayon(foreground = colors["type"]))
     SyntaxHighlighter.number!(cs, Crayon(foreground = colors["number"]))
 
-    SyntaxHighlighter.add!("Juno", cs)
-    OhMyREPL.colorscheme!("Juno")
+    SyntaxHighlighter.add!("AviJuno", cs)
+    colorscheme!("AviJuno")
 end
 
 

@@ -146,7 +146,7 @@ link ~/.atom/mpe-styles/style.less ~/.mume/style.less
 
 #### Enable Juno startup config
 
-[scripts/juno_startup.jl](scripts/juno_startup.jl) contains Juno-specific Julia startup configs:
+[scripts/junostartup.jl](scripts/junostartup.jl) contains Juno-specific Julia startup configs:
 - Use Atom syntax-highlight scheme within [OhMyREPL.jl](https://github.com/KristofferC/OhMyREPL.jl)
 - Make color theme that matches [Ariake Dark Syntax](https://atom.io/themes/ariake-dark-syntax) for [PlotThemes.jl](https://github.com/JuliaPlots/PlotThemes.jl), and set backend and default attribution settings for [Plots.jl](https://github.com/JuliaPlots/Plots.jl).
 
@@ -155,10 +155,10 @@ Since importing Plots.jl takes long time, I made the settings above _loaded/acti
 Enable this by making symbolic links in scripts directory to ~/.julia/config:
 
 ```bash {cmd}
-rm ~/.julia/config/juno_startup.jl ~/.julia/config/juno_ohmyrepl.jl ~/.julia/config/juno_plots.jl
-link ~/.atom/scripts/juno_startup.jl ~/.julia/config/juno_startup.jl
-link ~/.atom/scripts/juno_ohmyrepl.jl ~/.julia/config/juno_ohmyrepl.jl
-link ~/.atom/scripts/juno_plots.jl ~/.julia/config/juno_plots.jl
+rm ~/.julia/config/junostartup.jl ~/.julia/config/junoohmyrepl.jl ~/.julia/config/junoplots.jl
+link ~/.atom/scripts/junostartup.jl ~/.julia/config/junostartup.jl
+link ~/.atom/scripts/junoohmyrepl.jl ~/.julia/config/junoohmyrepl.jl
+link ~/.atom/scripts/junoplots.jl ~/.julia/config/junoplots.jl
 ```
 
 #### Fix a bug within Atom-IDE-Debugger-Python
