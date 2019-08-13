@@ -25,24 +25,26 @@ Possible value of an argument in `ARGS`:
 """
 module AviJuno
 
-using Juno
+import Juno: syntaxcolors
 
 
-@info "Juno: Given arguments: $(ARGS)"
+# @XXX: Needs `@info` to initialize `ARGS` ...
+# @TODO: Fix Juno's code loading order
+@info "Juno: Start setups ..."
 
-# # Doesn't work on Windows
-# if "JUNO_OHMYREPL" ∈ ARGS
-#     try
-#         @info "Juno: Setting up OhMyREPL.jl ..."
-#         include("junoohmyrepl")
-#     catch err
-#         @error err
-#     end
-# end
-
-if "JUNO_OHMYREPL" ∈ ARGS
+# Doesn't work on Windows
+Sys.iswindows() || if  "JUNO_OHMYREPL" ∈ ARGS
     try
-        @info "Juno: Setting up Plots.jl ..."
+        @info "Juno: Setting up OhMyREPL ..."
+        include("junoohmyrepl.jl")
+    catch err
+        @error err
+    end
+end
+
+if "JUNO_PLOTS" ∈ ARGS
+    try
+        @info "Juno: Setting up Plots ..."
         include("junoplots.jl")
     catch err
         @error err
@@ -50,26 +52,3 @@ if "JUNO_OHMYREPL" ∈ ARGS
 end
 
 end  # module AviJuno
-
-
-#=
-Enters module main below
-=#
-
-if "JUNO_OHMYREPL" ∈ ARGS
-    try
-        @info "Importing Plots.jl ..."
-        @eval using Plots
-    catch err
-        @error err
-    end
-end
-
-if "WEAVE" ∈ ARGS
-    try
-        @info "Importing Weave.jl ..."
-        @eval using Weave
-    catch err
-        @error err
-    end
-end

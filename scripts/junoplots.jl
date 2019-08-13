@@ -10,7 +10,7 @@ Creates a PlotTheme.jl's theme that matches well with [Ariake Dark Syntax](https
 """
 function setplottheme()
     # Create Juno specific color theme
-    colors = Juno.syntaxcolors()
+    colors = syntaxcolors()
     colors = Dict(k => parse(Colorant, "#"*hex(colors[k], 6, false)) for (k, v) in colors)
     # add my customizes
     colors["orange"] = parse(Colorant, "#e9a285")
