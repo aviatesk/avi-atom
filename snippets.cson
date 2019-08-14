@@ -32,173 +32,79 @@
 '.source.julia':
 
   ## Base
-
-  # General - Block
-  'struct':
-    'prefix': 'struct'
-    'body':
-      '''
-      struct ${1:Name}
-          ${2:fields}
-      end
-      '''
-    'description': 'Inserts struct (composite types) block'
-  'struct with end struct indication':
-    'prefix': 'struct#'
-    'body':
-      '''
-      struct ${1:Name}
-          ${2:fields}
-      end  # struct ${1:Name}
-      '''
-    'description': 'Inserts struct (composite types) block with end struct indication'
-  'function with end function indication':
-    'prefix': 'function#'
-    'body':
-      '''
-      function ${1:funcname}(${2:args})
-          ${3:body}
-      end  # function ${1:funcname}
-      '''
-    'description': 'Inserts function block with end function indication'
-  'Documented function function with end function indication':
-    'prefix': 'functiond#'
-    'body':
-      '''
-      """
-          ${1:funcname}(${2:args})
-
-      ${4:document}
-      """
-      function ${1:funcname}(${2:args})
-          ${3:body}
-      end  # function ${1:funcname}
-      '''
-    'description': 'Inserts documented function block with end function indication'
-  'macro with macro ending indication':
-    'prefix': 'macro#'
-    'body':
-      '''
-      macro ${1:macroname}(${2:args})
-          ${3:body}
-      end  # macro ${1:macroname}
-      '''
-    'description': 'Inserts macro block with end macro indication'
-  'Documented macro':
-    'prefix': 'macrod'
-    'body':
-      '''
-      """
-          @${1:macroname}(${2:args})
-
-      ${4:document}
-      """
-      macro ${1:macroname}(${2:args})
-          ${3:body}
-      end
-      '''
-    'description': 'Inserts documented macro block'
-  'Documented macro with macro ending indication':
-    'prefix': 'macrod#'
-    'body':
-      '''
-      """
-          @${1:macroname}(${2:args})
-
-      ${4:document}
-      """
-      macro ${1:macroname}(${2:args})
-          ${3:body}
-      end  # macro ${1:macroname}
-      '''
-    'description': 'Inserts documented macro block with end macro indication'
-  'Document':
-    'prefix': 'doc'
-    'body':
-      '''
-      @doc """
-          $1
-
-      ${2:doc}
-      """
-      '''
-    'descrition': 'Inserts document string block'
-  'where':
-    'prefix': 'where'
-    'body': 'where $1'
-    'description': 'Inserts where block'
+  'function':
+    'prefix': 'function'
+    'body': 'function ${1:name}(${2:args})\n\t${3:body}\nend'
+    'rightLabelHTML': '<span>Base</span>'
+    'description': 'Inserts function block'
+  'function assignment':
+    'prefix': 'func'
+    'body': '${1:name}(${2:args}) = ${3:begin\n\t${4:body}\nend}'
+    'rightLabelHTML': '<span>Base</span>'
+    'description': 'Inserts function block in the assignment form'
+    'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/functions/#man-functions-1'
+  'for':
+    'prefix': 'for'
+    'body': 'for ${1:val} ∈ ${2:iterator}\n\t${3:body}\nend'
+    'rightLabelHTML': '<span>Base</span>'
+    'description': 'Inserts for loop block'
+  'begin':
+    'prefix': 'begin'
+    'body': 'begin\n\t$1\nend'
+    'rightLabelHTML': '<span>Base</span>'
+    'description': 'Inserts begin block'
+  'do':
+    'prefix': 'do'
+    'body': 'do\n\t$1\nend'
+    'rightLabelHTML': '<span>Base</span>'
+    'description': 'Inserts do block'
   'quote':
     'prefix': 'quote'
-    'body':
-      '''
-      quote
-          $1
-      end
-      '''
+    'body': 'quote\n\t$1\nend'
+    'rightLabelHTML': '<span>Base</span>'
     'description': 'Inserts quote block'
-  'Comment block':
+  'function chaining':
+    'prefix': 'pi'
+    'body': '|>$1'
+    'rightLabelHTML': '<span>Base</span>'
+    'description': 'Inserts |> operator'
+  'document':
+    'prefix': 'doc'
+    'body': '@doc """\n\t${1:something}\n\n${2:docstrings}\n"""'
+    'rightLabelHTML': '<span>Base</span>'
+    'description': 'Inserts document string block'
+  'comment block':
     'prefix': 'cb'
-    'body':
-      '''
-      #=
-      $1
-      =#
-      '''
+    'body': '#=\n$1\n=#'
+    'rightLabelHTML': '<span>Base</span>'
     'description': 'Inserts comment block'
 
-  # General - Snippet
-  ':: (\'Type-of\')':
-    'prefix': 'to'
-    'body': '${1:Type1}::${2:Type2}'
-    'description': 'Inserts \'Type-of\' snippet'
-  '<: (\'Subtype-of\')':
-    'prefix': 'so'
-    'body': '${1:Subtype}<:${2:Supertype}'
-    'description': 'Inserts \'Subtype-of\' snippet'
-  'key => value (Pair)':
-    'prefix': 'pa'
-    'body': '${1:key} => ${2:value}'
-    'description': 'Inserts pair snippet'
-  '|> (Pipe)':
-    'prefix': 'pi'
-    'body': '|> $1'
-    'description': 'Inserts pipe snippet'
-  'print':
-    'prefix': 'p'
-    'body': "print(${1:expr})"
-    'description': 'Inserts print snippet'
-  'println':
-    'prefix': 'pl'
-    'body': "println(${1:expr})"
-    'description': 'Inserts println snippet'
-
   ## DataFrames
-  'DataFramesMeta: @linq':
+  '@linq chaining':
     'prefix': 'li'
-    'body':
-      '''
-      @linq ${1:df} |>
-          $2
-      '''
+    'body': '@linq ${1:df} |>\n\t$2'
+    'rightLabelHTML': '<span>DataFramesMeta</span>'
     'description': 'Inserts @linq pipe line block'
 
   ## Julia-Client
-  'Julia-Client: Code cell':
+  'code cell':
     'prefix': 'cc'
-    'body':
-      '''
-      # %%
-      $1
-      '''
-    'description': 'Inserts Julia-Client code cell'
-  'Julia-Client: Markdown cell':
+    'body': '# %%\n$1'
+    'description': 'Inserts code cell comment'
+  'markdown cell':
     'prefix': 'mc'
-    'body':
-      '''
-      # %% markdown
-      $1
-      '''
-    'description': 'Inserts Julia-Client markdown cell'
+    'body': '# %% markdown\n$1'
+    'description': 'Inserts markdown cell comment'
+
+## Scope specific
+'.source.julia .meta.bracket.julia':
+  'for':
+    'prefix': 'for'
+    'body': '${1:val} for ${1:val} ∈ ${2:iterator}'
+    'rightLabelHTML': '<span>DataFramesMeta</span>'
+    'description': 'Inserts for loop comprehension'
+    'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1'
+
 
 
 ### Python ###

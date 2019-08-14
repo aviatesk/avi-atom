@@ -217,6 +217,9 @@
       "spell-check"
       "tree-view"
     ]
+    packagesWithSnippetsDisabled: [
+      "language-julia"
+    ]
     projectHome: "C:\\Users\\aviat\\github\\atom-pkgs"
     telemetryConsent: "limited"
     themes: [
