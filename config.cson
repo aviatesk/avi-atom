@@ -244,7 +244,9 @@
     userId: "9e026ba7-7268-13e9-0769-5cb4ad435f2f"
   "file-icons": {}
   "find-and-replace":
+    autocompleteSearches: true
     closeFindPanelAfterSearch: true
+    enablePCRE2: true
     useRipgrep: true
   "fuzzy-finder": {}
   "git-diff-plus": {}

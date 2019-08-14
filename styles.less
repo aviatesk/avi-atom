@@ -199,11 +199,13 @@ atom-text-editor atom-text-editor-minimap {
 }
 
 
-/**
- * Per-package tweaks
- */
+/* package-specific tweaks */
 
-/* Atom-IDE-UI tweaks */
+// find-and-replace
+autocomplete-suggestion-list {
+  font-size: var(--editor-font-size);
+}
+// atom-ide-ui
 .tool-bar {
   // Diable Atom-IDE-UI's default icons
   .icon-nuclicon,
@@ -216,16 +218,16 @@ atom-text-editor:not([data-grammar$="source python"]) {
     display: none;
   }
 }
-// DQS-Shell-Commands tweak
+// dqs-shell-commands
 .dqs-shell-commands-console {
   margin: -2px;
 }
-// Termination tweak
+// termination
 .termination.status-bar {
   display: none;
 }
 
-/* Tree-View tweaks */
+/* tree-view tweaks */
 .tree-view .full-menu {
   padding-left: 4px;
 }
