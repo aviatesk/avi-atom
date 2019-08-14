@@ -159,8 +159,6 @@
   ## Hydrogen
   'alt-k o': 'hydrogen:toggle-output-area'
   'alt-k m': 'hydrogen:toggle-kernel-monitor'
-  'alt-k p': 'hydrogen-studio:open-plot-pane'
-  'alt-k i': 'hydrogen-studio:open-inspector-pane'
 
   ## Julia-client
   'alt-j': 'unset!'

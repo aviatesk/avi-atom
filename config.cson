@@ -8,10 +8,6 @@
     startDir: "dirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
     wrapOutput: true
-  "Hydrogen-Studio":
-    inspectorPaneDefaultLocation: "right"
-    openPlotPaneOnExecution: false
-    plotPaneDefaultLocation: "right"
   Zen:
     fullscreen: false
   "advanced-open-file":
