@@ -14,7 +14,7 @@ cursor-history@0.13.2
 document-outline@2.1.2
 dqs-shell-commands@2.2.4
 emacs-plus@0.12.0
-file-icons@2.1.33
+file-icons@2.1.34
 git-diff-plus@0.4.0
 git-plus@8.7.1
 git-time-machine@2.1.0
@@ -23,7 +23,7 @@ highlight-line@0.12.0
 highlight-selected@0.16.0
 Hydrogen@2.10.3
 hyperlink-hyperclick@3.0.0
-ide-css@0.3.2
+ide-css@0.3.3
 ide-python@1.4.2
 indent-detective@0.4.0
 ink@0.10.12
@@ -33,7 +33,7 @@ language-julia@0.19.1
 language-markdown@0.37.0
 language-weave@0.6.4
 latex-completions@0.3.6
-linter-coffeelint@2.0.18
+linter-coffeelint@2.0.19
 linter-eslint@8.5.5
 linter-tslint@1.10.28
 markdown-preview-enhanced@0.16.3
