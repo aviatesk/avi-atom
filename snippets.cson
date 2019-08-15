@@ -27,6 +27,28 @@
     'description': 'Inserts @TODO annotation'
 
 
+### Code cells ###
+'.source.julia, .source.python, .source.r':
+
+  'code cell':
+    'prefix': 'cc'
+    'body': '# %%$1'
+    'description': 'Inserts code cell comment'
+  'markdown cell':
+    'prefix': 'mc'
+    'body': '# %% markdown$1'
+    'description': 'Inserts markdown cell comment'
+
+'.source.js, .source.java':
+  'code cell':
+    'prefix': 'cc'
+    'body': '// %%$1'
+    'description': 'Inserts Hydrogen code cell'
+  'markdown cell':
+    'prefix': 'mc'
+    'body': '// %% markdown$1'
+    'description': 'Inserts Hydrogen markdown cell'
+
 
 ### Julia ###
 '.source.julia':
@@ -85,16 +107,6 @@
     'body': '@linq ${1:df} |>\n\t$2'
     'rightLabelHTML': '<span>DataFramesMeta</span>'
     'description': 'Inserts @linq pipe line block'
-
-  ## Julia-Client
-  'code cell':
-    'prefix': 'cc'
-    'body': '# %%\n$1'
-    'description': 'Inserts code cell comment'
-  'markdown cell':
-    'prefix': 'mc'
-    'body': '# %% markdown\n$1'
-    'description': 'Inserts markdown cell comment'
 
 ## Scope specific
 '.source.julia .meta.bracket.julia':
@@ -187,23 +199,6 @@
     'body': ".set_title('$1')"
     'description': 'Sets title to plt.figure.add_subplot object'
 
-  ## Hydrogen
-  'Hydrogen: Code cell':
-    'prefix': 'cc'
-    'body':
-      '''
-      # %%
-      $1
-      '''
-    'description': 'Inserts Hydrogen code cell'
-  'Hydrogen: Markdown cell':
-    'prefix': 'mc'
-    'body':
-      '''
-      # %% markdown
-      $1
-      '''
-    'description': 'Inserts Hydrogen markdown cell'
 
 
 ### JavaScript ###
@@ -248,42 +243,17 @@
     'description': 'Insert eslint-disable statement for next line'
 
 '.source.js, .source.jsx':
-  ## Babel
-  'Babel: Use Babel':
+  ## bable
+  'babel':
     'prefix': 'babel'
-    'body':
-      '''
-      /** @babel */
-      $1
-      '''
+    'body': '/** @babel */\n$1'
     'descrition': 'Insert @babel header'
 
-  ## Hydrogen
-  'Hydrogen: Code cell':
-    'prefix': 'cc'
-    'body':
-      '''
-      // %%
-      $1
-      '''
-    'description': 'Inserts Hydrogen code cell'
-  'Hydrogen: Markdown cell':
-    'prefix': 'mc'
-    'body':
-      '''
-      // %% markdown
-      $1
-      '''
-    'description': 'Inserts Hydrogen markdown cell'
-
+## flow
 '.source.flow':
   'Flow: Use Flow':
     'prefix': 'babel'
-    'body':
-      '''
-      /** @flow */
-      $1
-      '''
+    'body': '/** @flow */\n$1'
     'descrition': 'Insert @flow header'
 
 
@@ -334,15 +304,52 @@
     'body': "cat(${1:expr})"
     'description': 'Inserts cat snippet'
 
-  ## Hydrogen
-  'Hydrogen: Code cell':
-    'prefix': 'cc'
+
+
+### Java ###
+'.source.java':
+
+  ## Imports
+  'java.util.*':
+    'prefix': 'util'
+    'body': 'import java.util.*;'
+    'description': 'Imports java.util by random card'
+
+  ## Insertions
+  'Main method':
+    'prefix': 'main'
     'body':
       '''
-      # %%
-      $1
+      public static void main(String[] args) {
+          ${1:// What to do in this class}
+      }
       '''
-    'description': 'Inserts Hydrogen code cell'
+    'description': "Inserts main method"
+  'Scanner':
+    'prefix': 'sc'
+    'body': 'Scanner sc = new Scanner(System.in);'
+    'description': 'Inserts Scanner snippet'
+  'System.out.print':
+    'prefix': 'p'
+    'body': 'System.out.print($1);'
+    'description': 'Inserts print snippet'
+  'System.out.println':
+    'prefix': 'pl'
+    'body': 'System.out.println($1);'
+    'description': 'Inserts println snippet'
+  'Comment block':
+    'prefix': 'cb'
+    'body':
+      '''
+      /**
+       * ${1:Comment}
+       */
+      '''
+  'Line comment':
+    'prefix': 'ci'
+    'body': '/** ${1:Comment} */'
+    'description': 'Insert line comment block'
+
 
 
 ### Markdown families: GFM, Markdown, Weave.jl, pweave, RMarkdown ###
@@ -922,66 +929,3 @@
       ```
       '''
     'description': 'Inserts R code block with full options set to default values'
-
-
-### Java ###
-'.source.java':
-
-  ## Imports
-  'java.util.*':
-    'prefix': 'util'
-    'body': 'import java.util.*;'
-    'description': 'Imports java.util by random card'
-
-  ## Insertions
-  'Main method':
-    'prefix': 'main'
-    'body':
-      '''
-      public static void main(String[] args) {
-          ${1:// What to do in this class}
-      }
-      '''
-    'description': "Inserts main method"
-  'Scanner':
-    'prefix': 'sc'
-    'body': 'Scanner sc = new Scanner(System.in);'
-    'description': 'Inserts Scanner snippet'
-  'System.out.print':
-    'prefix': 'p'
-    'body': 'System.out.print($1);'
-    'description': 'Inserts print snippet'
-  'System.out.println':
-    'prefix': 'pl'
-    'body': 'System.out.println($1);'
-    'description': 'Inserts println snippet'
-  'Comment block':
-    'prefix': 'cb'
-    'body':
-      '''
-      /**
-       * ${1:Comment}
-       */
-      '''
-  'Line comment':
-    'prefix': 'ci'
-    'body': '/** ${1:Comment} */'
-    'description': 'Insert line comment block'
-
-  ## Hydrogen
-  'Hydrogen: Code cell':
-    'prefix': 'cc'
-    'body':
-      '''
-      // %%
-      $1
-      '''
-    'description': 'Inserts Hydrogen code cell'
-  'Hydrogen: Markdown cell':
-    'prefix': 'mc'
-    'body':
-      '''
-      // %% markdown
-      $1
-      '''
-    'description': 'Inserts Hydrogen markdown cell'
