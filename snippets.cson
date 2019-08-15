@@ -1,30 +1,36 @@
 ### Global ###
 '*':
 
-  'Global: Backslash \\':
+  '\\':
     'prefix': 'bs'
     'body': '\\\\$1'
+    'rightLabelHTML': '<span>\\</span>'
     'description': 'Inserts backslash \\'
-  "Global: Single quotations ''":
+  "''":
     'prefix': 'sq'
     'body': "'$1'"
+    'rightLabelHTML': "<span>''</span>"
     'description': 'Inserts single quotations'
-  "Global: Triple single quotations ''''''":
+  "''''''":
     'prefix': 'tsq'
     'body': "'''$1'''"
+    'rightLabelHTML': "<span>''''''</span>"
     'description': 'Inserts triple single quotations'
-  'Global: Double quotations ""':
+  '""':
     'prefix': 'dq'
     'body': '"$1"'
+    'rightLabelHTML': '<span>""</span>'
     'description': 'Inserts double quotations'
-  'Global: Triple double quotations """"""':
+  '""""""':
     'prefix': 'tdq'
     'body': '"""$1"""'
+    'rightLabelHTML': '<span>""""""</span>'
     'description': 'Inserts triple double quotations'
-  'Global: @TODO annotation':
+  '@TODO':
     'prefix': 'todo'
-    'body': '@TODO $1'
-    'description': 'Inserts @TODO annotation'
+    'body': '@TODO: $1'
+    'rightLabelHTML': '<span>@TODO</span>'
+    'description': 'Inserts @TODO annotations'
 
 
 ### Code cells ###
@@ -43,11 +49,243 @@
   'code cell':
     'prefix': 'cc'
     'body': '// %%$1'
-    'description': 'Inserts Hydrogen code cell'
+    'description': 'Inserts code cell comment'
   'markdown cell':
     'prefix': 'mc'
     'body': '// %% markdown$1'
-    'description': 'Inserts Hydrogen markdown cell'
+    'description': 'Inserts markdown cell comment'
+
+
+
+### Markdown ###
+
+## general
+'.source.gfm, .text.md, .source.weave.md, .source.pweave.md':
+
+  'header':
+    'prefix': 'h'
+    'body': '${1:#} ${2:header}\n$2'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts general header'
+  'header 1':
+    'prefix': 'h1'
+    'body': '# ${1:header}\n$2'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts H1 header'
+  'header 2':
+    'prefix': 'h2'
+    'body': '## ${1:header}\n$2'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts H2 header'
+  'header 3':
+    'prefix': 'h3'
+    'body': '### ${1:header}\n$2'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts H3 header'
+  'header 4':
+    'prefix': 'h4'
+    'body': '#### ${1:header}\n$2'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts H4 header'
+  'header 5':
+    'prefix': 'h5'
+    'body': '##### ${1:header}\n$2'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts H5 header'
+  'hearder 6':
+    'prefix': 'h6'
+    'body': '###### ${1:header}\n$2'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts H6 header'
+  'code block':
+    'prefix': 'cc'
+    'body': '```${1:syntax}\n${1:code}\n```'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts code block'
+  'inline code block':
+    'prefix': 'ci'
+    'body': '`${1:code}`'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts inline code block'
+  'comment block':
+    'prefix': 'cmb'
+    'body': '<!--\n${1:comment}\n-->'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts comment block'
+  'inline comment block':
+    'prefix': 'cmi'
+    'body': '<!-- ${1:comment} -->'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts inline comment block'
+  'image':
+    'prefix': 'img'
+    'body': "<img src=$1 ${2:width=$3px} ${4:height=$5px} ${6:title='$7'}>$8"
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts link to an image file'
+  'break line':
+    'prefix': 'br'
+    'body': '<br>\n$1'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts break line'
+  '@TODO list':
+    'prefix': 'todo-list'
+    'body': '[ ] @TODO $1'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts @TODO list'
+
+## MPE
+'.text.md, .source.weave.md, .source.pweave.md':
+
+  # enhancements
+  'toc':
+    'prefix': 'toc'
+    'body':
+      '''
+      ## TOC {ignore=True .ignorenumbering}\n
+      <!-- @import "[TOC]" {cmd="toc" depthFrom=${1:1} depthTo=${2:3} orderedList=${3:false}} -->
+      $4
+      '''
+    'leftLabel': 'MPE'
+    'description': 'Inserts MPE code chunk for auto-generating TOC'
+    'descriptionMoreURL': 'https://shd101wyy.github.io/markdown-preview-enhanced/#/toc'
+  'header':
+    'prefix': 'h'
+    'body': '${1:#} ${2:header}${3: {${4:ignore=True}${5: .ignorenumbering}\\}}$6'
+    'leftLabel': 'MPE'
+    'description': 'Inserts MPE custom header'
+  'ignore numberings':
+    'prefix': 'ignores'
+    'body': '${1:{${2:ignore=True}${3: .ignorenumbering}\\}}$4'
+    'leftLabel': 'MPE'
+    'description': 'Inserts header setting to ignore MPE TOC and header numberings'
+  'slide cell':
+    'prefix': 'sc'
+    'body': '<!-- slide -->\n$1'
+    'leftLabel': 'MPE'
+    'description': 'Inserts MPE slide cell'
+    'descriptionMoreURL': 'https://shd101wyy.github.io/markdown-preview-enhanced/#/presentation'
+
+  # html generating
+  'header settings for HTML generating':
+    'prefix': 'mpe-md2html'
+    'body':
+      '''
+      ---
+      html:
+      \tembed_local_images: true
+      \t${1:# }toc: true
+      ${2:toc:
+      \tdepth_from: ${3:1}
+      \tdepth_to: ${4:3}
+      \tordered: ${5:false}}
+      export_on_save:
+      \t${6:# }html: true
+      ---$7
+      '''
+    'leftLabel': 'MPE'
+    'description': 'Inserts header settings for generating HTML from Markdown with MPE'
+    'descriptionMoreURL': 'https://shd101wyy.github.io/markdown-preview-enhanced/#/html'
+
+  # styling
+  'numbering sections from h1':
+    'prefix': 'mpe-numbering-from-h1'
+    'body':
+      '''
+      <!-- importing styles for numbering sections from h1 -->
+      <!-- @import "C:/Users/aviat/.atom/mpe-styles/numbering-from-h1.less" -->
+      $1
+      '''
+    'leftLabel': 'MPE'
+    'description':
+      '''
+      Imports stylesheet for numbering sections in MPE.
+      Numbering starts from H1, which may not be used as title.
+      e.g.) Weave.jl, pweave, R-markdown
+      '''
+  'numbering sections from h2':
+    'prefix': 'mpe-numbering-from-h2'
+    'body':
+      '''
+      <!-- importing styles for numbering sections from h2 -->
+      <!-- @import "C:/Users/aviat/.atom/mpe-styles/numbering-from-h2.less" -->
+      $1
+      '''
+    'leftLabel': 'MPE'
+    'description':
+      '''
+      Imports style sheet for numbering sections in MPE.
+      Numbering starts from H2 and H1 gonna be ignored from numbering, assuming it is used as a title.
+      e.g.) README.md
+      '''
+  'fancy github-light theme':
+    'prefix': 'mpe-fancy-github-light'
+    'body':
+      '''
+      <!-- importing fancy github-light theme -->
+      <!-- @import "C:/Users/aviat/.atom/mpe-styles/fancy-github-light.less" -->
+      $1
+      '''
+    'leftLabel': 'MPE'
+    'description': 'Imports style sheet of fancy github-light preview theme: colors headers fancily according to github-light theme'
+  'fancy one-dark theme':
+    'prefix': 'mpe-fancy-one-dark'
+    'body':
+      '''
+      <!-- importing fancy one-dark theme -->
+      <!-- @import "C:/Users/aviat/.atom/mpe-styles/fancy-one-dark.less" -->
+      $1
+      '''
+    'leftLabel': 'MPE'
+    'description':
+      '''
+      Imports style sheet of fancier one-dark preview theme:
+      - colors headers fancily
+      - modifies table coloring to match Atom's one-dark theme
+      '''
+
+  ## MathJax
+  'inline MathJax block':
+    'prefix': 'mi'
+    'body': "\$${1:expr}\$"
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts inline MathJax block'
+  'MathJax block':
+    'prefix': 'mb'
+    'body': '\$\$\n\t${1:expr}\n\$\$'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts MathJax block'
+
+### GFM ###
+'.source.gfm':
+
+  ## GFM
+  'toc':
+    'prefix': 'toc'
+    'body':
+      '''
+      <h2> TOC </h2>\n
+      <!-- @import "[TOC]" {cmd="toc" depthFrom=${1:2} depthTo=${2:3} orderedList=${3:false}} -->
+      '''
+    'leftLabel': 'GFM'
+    'description': 'Inserts MPE code chunk for auto-generating TOC: tuned for GFM rendering'
+    'descriptionMoreURL': 'https://shd101wyy.github.io/markdown-preview-enhanced/#/toc'
+
+  ## README.md
+  'conclusion':
+    'prefix': 'conclusion-README'
+    'body':
+      '''
+      <!-- ## License -->\n\n
+      <!-- ## Acknowledgements -->\n\n
+      <!-- ## References -->\n\n
+      ## Author\n
+      - **KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk]\n\n
+      <!-- Links -->\n
+      [aviatesk]: https://github.com/aviatesk
+      '''
+    'leftLabel': 'README'
+    'description': 'Inserts conclusion sections for README.md'
+
 
 
 ### Julia ###
@@ -117,19 +355,112 @@
     'description': 'Inserts for loop comprehension'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1'
 
+## Weave
+'.source.weave.md':
+
+  # general
+  'header settings for weaving to markdown':
+    'prefix': 'weave-jmd2md'
+    'body':
+      '''
+      ---
+      ### MPE
+      html:
+      \tembed_local_images: true
+      \ttoc: true
+      toc:
+      \tdepth_from: 2
+      \tdepth_to: 4
+      \tordered: true
+      export_on_save:
+      \t# html: true
+      ### Weave
+      options:
+      \t## output settings
+      \tdoctype: github
+      \t# out_path:
+      \tfig_path: figs
+      \t## default code chunk options
+      \techo: true
+      \teval: true
+      \tresults: "markup"
+      \tterm: false
+      \thold: false
+      \twrap: false
+      \tfig_width: 8
+      \tfig_height: 5
+      \tfig_ext: ".svg"
+      ---
+      '''
+    'rightLabelHTML': '<span>Weave</span>'
+    'description':
+      '''
+      Inserts Weave.jl header settings for weaving to Markdown,
+      which is supposed to be rendered as HTML with Markdown-Preview-Enhanced after weaving
+      '''
+    'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/usage/#Setting-document-options-in-header-1'
+  'header settings for weaving to html':
+    'prefix': 'weave-jmd2html'
+    'body':
+      '''
+      ---
+      ### Weave
+      title: ${1:Title}
+      author: KADOWAKI, Shuhei
+      date: 2019/${2:MM}/${3:DD}
+      options:
+      \t## output settings
+      \t# out_path:
+      \tfig_path: figs
+      \t## default code chunk options
+      \techo: true
+      \teval: true
+      \tresults: "markup"
+      \tterm: false
+      \thold: false
+      \twrap: false
+      \tfig_width: 8
+      \tfig_height: 5
+      \tfig_ext: ".svg"
+      ---
+      '''
+    'rightLabelHTML': '<span>Weave</span>'
+    'description': 'Inserts Weave.jl header settings for weaving to HTML document'
+    'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/usage/#Setting-document-options-in-header-1'
+
+  # code chunks
+  'code chunk':
+    'prefix': 'jcc'
+    'body': '```julia\n${1:code}\n```'
+    'rightLabelHTML': '<span>Weave</span>'
+    'description': 'Inserts Weave code chunk'
+    'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/chunk_options/'
+  'code chunk (hold)':
+    'prefix': 'jcch'
+    'body': '```julia hold = true\n${1:code}\n```'
+    'rightLabelHTML': '<span>Weave</span>'
+    'description': 'Inserts Weave code chunk whose outputs are holded until the end of the chunk'
+    'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/chunk_options/'
+  'code chunk (term)':
+    'prefix': 'jcct'
+    'body': '```julia term = true\n${1:code}\n```'
+    'rightLabelHTML': '<span>Weave</span>'
+    'description': 'Inserts Weave code chunk whose outputs emulate a REPL session'
+    'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/chunk_options/'
+  'inline chunk block':
+    'prefix': 'jci'
+    'body': '`j ${1:code}`'
+    'rightLabelHTML': '<span>Weave</span>'
+    'description': 'Inserts Weave inline code block'
+    'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/chunk_options/'
+
 
 
 ### Python ###
 '.source.python':
 
-  ## Insertions
-  'print':
-    'prefix': 'pr'
-    'body': "print(${1:expr})"
-    'description': 'Inserts print snippet'
-
-  ## Imports
-  'Utility libraries':
+  ## general
+  'basic utilities':
     'prefix': 'utils'
     'body':
       '''
@@ -139,7 +470,7 @@
       import pandas as pd
       import matplotlib.pyplot as plt$1
       '''
-    'description': 'Imports utility libraries'
+    'description': 'Imports basic utility libraries'
   'numpy':
     'prefix': 'np'
     'body':
@@ -199,6 +530,122 @@
     'body': ".set_title('$1')"
     'description': 'Sets title to plt.figure.add_subplot object'
 
+## pweave
+'.source.pweave.md':
+
+  ## general
+  'header settings for weaving to markdown':
+    'prefix': 'pweave-pmd2md'
+    'body':
+      """
+      ---
+      # This front-matter would only be used in generated markdown document via Markdown-Preview-Enhanced package,
+      # and thus no html file would be generated from this pweave document.
+      # To render the final html file, first execute "Dqs Shell Commands: Pmd2md" and then
+      # open a generated markdown file, do "Markdown Preview Enhanced: Toggle" and finally save it.
+      # This process should render html file with all fancy rendering facilities available.
+      ```python name='meta-setup', echo=False, results='asis'
+      print('''
+      html:
+      \tembed_local_images: true
+      \ttoc: true
+      export_on_save:
+      \thtml: true
+      ''')
+      ```
+      ---
+      """
+    'rightLabelHTML': '<span>pweave</span>'
+    'description':
+      '''
+      Inserts pweave header settings for generating markdown document,
+      which is supposed to be rendered as HTML with Markdown-Preview-Enhanced after weaving
+      '''
+  'header settings for weaving to html':
+    'prefix': 'pweave-pmd2html'
+    'body':
+      '''
+      % ${1:Title}
+      % ${2:KADOWAKI, Shuhei}
+      % ${3:Date}
+      $4
+      '''
+    'rightLabelHTML': '<span>pweave</span>'
+    'description': 'Inserts pweave header settings for directly weaving pweave document as HTML file'
+  'basic utilties':
+    'prefix': 'pweave-utils'
+    'body':
+      """
+      ```python name='utilities-setup', echo=${1:False}
+      import os
+      import sys
+      import numpy as np
+      import pandas as pd
+      import matplotlib.pyplot as plt
+      %matplotlib inline
+      \n
+      def print_df(df, stralign='center', showindex=True):
+      \t''
+      \tenders pandas.DataFrame object in markdown files.
+      \tSupposed to be used in .pmd file with code chunk `results='asis'`)
+      \tn
+      \t# Args
+      \t df: pd.DataFrame object (Note: Use `df.head` for large data !)
+      \t stralign: {'center', 'right', ...}
+      \t showindex: {True, False, 'always', 'never', iterator}
+      \t''
+      \tn
+      \trom tabulate import tabulate
+      \trint(tabulate(df, df.columns, tablefmt='pipe', stralign=stralign, showindex=showindex))
+      ```$2
+      """
+    'rightLabelHTML': '<span>pweave</span>'
+    'description':
+      '''
+      Inserts Python code block defining pweave utilities
+      - imports utility libraries
+      - sets matplotlib rendered inline
+      - defines function to render pandas.DataFrame beautifully
+      '''
+
+  ## code chunks
+  'code chunk':
+    'prefix': 'pcc'
+    'body': "```python\n${1:code}\n```"
+    'rightLabelHTML': '<span>pweave</span>'
+    'description': 'Inserts pweave code chunk'
+    'descriptionMoreURL': "http://mpastell.com/pweave/chunks.html#code-chunk-options"
+  'code chunk (asis)':
+    'prefix': 'pcca'
+    'body': "```python results='asis'\n${1:code}\n```"
+    'rightLabelHTML': '<span>pweave</span>'
+    'description': 'Inserts pweave code chunk whose outputs won\'t be reformatted'
+    'descriptionMoreURL': "http://mpastell.com/pweave/chunks.html#envvar-results='verbatim'"
+  'code chunk (hidden)':
+    'prefix': 'pcch'
+    'body': "```python results='hidden'\n${1:code}\n```"
+    'rightLabelHTML': '<span>pweave</span>'
+    'description': 'Inserts pweave code chunk whose outputs will be hidden'
+    'descriptionMoreURL': "http://mpastell.com/pweave/chunks.html#envvar-results='verbatim'"
+  'code chunk (wrapping)':
+    'prefix': 'pccw'
+    'body': "```python wrap=${1:False}\n${2:code}\n```"
+    'description': 'Inserts pweave code chunk with result-wrapping option'
+    'rightLabelHTML': '<span>pweave</span>'
+    'descriptionMoreURL': "http://mpastell.com/pweave/chunks.html#envvar-wrap=Trueor(False,"
+  'code chunk (full default options)':
+    'prefix': 'pccfull'
+    'body': "```python name=None, echo=True, evaluate=True, results='verbatim', term=False, include=True, caption='', complete=True, wrap=True\n${1:code}\n```"
+    'rightLabelHTML': '<span>pweave</span>'
+    'description': 'Inserts Python code block with full options set to default values'
+    'descriptionMoreURL': "http://mpastell.com/pweave/chunks.html#code-chunk-options"
+  'inline code chunk':
+    'prefix': 'pci'
+    'body': '<% $1 %>'
+    'rightLabelHTML': '<span>pweave</span>'
+    'description': 'Inserts Python inline code block'
+    'descriptionMoreURL': "http://mpastell.com/pweave/usage.html#inline-code"
+
 
 
 ### JavaScript ###
@@ -257,6 +704,7 @@
     'descrition': 'Insert @flow header'
 
 
+
 ### TypeScript ###
 '.source.ts, .source.tsx':
   'Comment block':
@@ -274,6 +722,7 @@
     'description': 'Insert line comment block'
 
 
+
 ### CSS ###
 '.source.css':
   'Comment block':
@@ -289,20 +738,6 @@
     'prefix': 'ci'
     'body': '/* ${1:Comment} */'
     'description': 'Insert line comment block'
-
-
-### R ###
-'.source.r':
-
-  ## Insertions
-  'print':
-    'prefix': 'pr'
-    'body': "print(${1:expr})"
-    'description': 'Inserts print snippet'
-  'cat':
-    'prefix': 'cat'
-    'body': "cat(${1:expr})"
-    'description': 'Inserts cat snippet'
 
 
 
@@ -349,583 +784,3 @@
     'prefix': 'ci'
     'body': '/** ${1:Comment} */'
     'description': 'Insert line comment block'
-
-
-
-### Markdown families: GFM, Markdown, Weave.jl, pweave, RMarkdown ###
-'.source.gfm, .text.md, .source.weave.md, .source.pweave.md, .source.gfm.rmd':
-
-  'Markdown: Header':
-    'prefix': 'h'
-    'body':
-      '''
-      ${1:#} ${2:HEADER}
-      '''
-    'description': 'Inserts general header'
-  'Markdown: H1':
-    'prefix': 'h1'
-    'body':
-      '''
-      # ${1:H1}
-      '''
-    'description': 'Inserts H1 header'
-  'Markdown: H2':
-    'prefix': 'h2'
-    'body':
-      '''
-      ## ${1:H2}
-      '''
-    'description': 'Inserts H2 header'
-  'Markdown: H3':
-    'prefix': 'h3'
-    'body':
-      '''
-      ### ${1:H3}
-      '''
-    'description': 'Inserts H3 header'
-  'Markdown: H4':
-    'prefix': 'h4'
-    'body':
-      '''
-      #### ${1:H4}
-      '''
-    'description': 'Inserts H4 header'
-  'Markdown: H5':
-    'prefix': 'h5'
-    'body':
-      '''
-      ##### ${1:H5}
-      '''
-    'description': 'Inserts H5 header'
-  'Markdown: H6':
-    'prefix': 'h6'
-    'body':
-      '''
-      ###### ${1:H6}
-      '''
-    'description': 'Inserts H6 header'
-  'Markdown: Code block':
-    'prefix': 'cb'
-    'body':
-      '''
-      ```${1:SYNTAX}
-      $2
-      ```
-      '''
-    'description': 'Inserts general code block'
-  'Markdown: Inline code block':
-    'prefix': 'ci'
-    'body': '`$1`'
-    'description': 'Inserts general inline code block'
-  'Markdown: Comment block':
-    'prefix': 'cmb'
-    'body':
-      '''
-      <!--
-      $1
-      -->
-      '''
-    'description': 'Inserts comment block'
-  'Markdown: Inline comment block':
-    'prefix': 'cmi'
-    'body':
-      '''
-      <!-- $1 -->
-      '''
-    'description': 'Inserts inline comment block'
-  'Markdown: Image file':
-    'prefix': 'img'
-    'body':
-      '''
-      <img src=$1 ${2:width=$3px} ${4:height=$5px} ${6:title='$7'}>$8
-      '''
-    'description': 'Inserts link to an image file'
-  'Markdown: Break line':
-    'prefix': 'br'
-    'body': '<br>$1'
-    'description': 'Inserts break line'
-  'Markdown: @TODO list':
-    'prefix': 'todo-list'
-    'body': '[ ] @TODO $1'
-    'description': 'Inserts @TODO list'
-
-
-### MPE: HTML rendering, Styling, Enhancements ###
-'.text.md, .source.weave.md, .source.pweave.md':
-
-  ## HTML rendering
-  'MPE: Meta settings for HTML rendering':
-    'prefix': 'meta-md2html'
-    'body':
-      '''
-      ---
-      html:
-          embed_local_images: true
-          ${1:# }toc: true
-      ${2:toc:
-          depth_from: ${3:1}
-          depth_to: ${4:3}
-          ordered: ${5:false}}
-      export_on_save:
-          ${6:# }html: true
-      ---$7
-      '''
-    'description': 'Inserts YAML for rendering HTML from Markdown with MPE'
-
-  ## Styling
-  'MPE: Numbering sections from H1':
-    'prefix': 'numbering-from-h1'
-    'body':
-      '''
-      <!-- Importing styles for numbering sections from H1 -->
-      <!-- @import "C:/Users/aviat/.atom/mpe-styles/numbering-from-h1.less" -->
-      '''
-    'description':
-      '''
-      Imports .less sheet for numbering sections in MPE-previewing.
-      Numbering starts from # H1, which may not be used as title.
-      E.g.) R-markdown, pweave document, or general markdown document to be rendered as html.
-      '''
-  'MPE: Numbering sections from H2':
-    'prefix': 'numbering-from-h2'
-    'body':
-      '''
-      <!-- Importing styles for numbering sections from H2 -->
-      <!-- @import "C:/Users/aviat/.atom/mpe-styles/numbering-from-h2.less" -->
-      '''
-    'description':
-      '''
-      Imports .less sheet for numbering sections in MPE-previewing.
-      # H1 gonna be ignored from numbering, assuming it is used as a title.
-      E.g.) README.md
-      '''
-  'MPE: Fancy github-light Theme':
-    'prefix': 'fancy-github-light'
-    'body':
-      '''
-      <!-- Importing fancy github-light theme -->
-      <!-- @import "C:/Users/aviat/.atom/mpe-styles/fancy-github-light.less" -->
-      '''
-    'description':
-      '''
-      Imports .less sheet of fancier github-light preview theme.
-      Colors headers fancily according to github-light theme.
-      '''
-  'MPE: Fancy one-dark Theme':
-    'prefix': 'fancy-one-dark'
-    'body':
-      '''
-      <!-- Importing fancy one-dark theme -->
-      <!-- @import "C:/Users/aviat/.atom/mpe-styles/fancy-one-dark.less" -->
-      '''
-    'description':
-      '''
-      Imports .less sheet of fancier one-dark preview theme.
-      Colors headers fancily and modifies table coloring to match One-Dark theme.
-      '''
-
-  ## Enhancements
-  'MPE: Table of Contents':
-    'prefix': 'toc'
-    'body':
-      '''
-      ## TOC {ignore=True .ignorenumbering}
-
-      <!-- @import "[TOC]" {cmd="toc" depthFrom=${1:1} depthTo=${2:3} orderedList=${3:false}} -->
-      '''
-    'description':
-      '''
-      Creates code chunk for auto-generating TOC with MPE-previewing.
-      '''
-  'MPE: Header':
-    'prefix': 'h'
-    'body':
-      '''
-      ${1:#} ${2:HEADER}${3: {${4:ignore=True}${5: .ignorenumbering}\\}}$6
-      '''
-    'description': 'Inserts general header'
-  'MPE: Ignore numberings':
-    'prefix': 'ignores'
-    'body':
-      '''
-      ${1:{${2:ignore=True}${3: .ignorenumbering}\\}}$4
-      '''
-    'description': 'Inserts snippet to ignore TOC and/or preview numberings'
-  'MPE: Slide cell':
-    'prefix': 'sc'
-    'body':
-      '''
-      <!-- slide -->
-      $1
-      '''
-    'description': 'Inserts slide cell with MPE-previewing'
-
-
-### MathJax Support ###
-'.text.md, .source.weave.md, .source.pweave.md, .source.gfm.rmd':
-
-  'MathJax: Inline MathJax block':
-    'prefix': 'mi'
-    'body': "\$${1:expr}\$"
-    'description': 'Inserts inline MathJax block'
-  'MathJax: MathJax block':
-    'prefix': 'mb'
-    'body':
-      '''
-      \$\$
-      \t${1:expr}
-      \$\$
-      '''
-    'description': 'Inserts MathJax block'
-
-
-### GFM ###
-'.source.gfm':
-
-  ## GFM
-  'GFM: Table of Contents':
-    'prefix': 'toc'
-    'body':
-      '''
-      <h2> TOC </h2>
-
-      <!-- @import "[TOC]" {cmd="toc" depthFrom=${1:2} depthTo=${2:3} orderedList=${3:false}} -->
-      '''
-    'description':
-      '''
-      Creates code chunk for auto-generating TOC via MPE-previewing (tuned for GFM rendering)
-      '''
-
-  ## README.md
-  'README: Conclusion':
-    'prefix': 'conclusion-README'
-    'body':
-      '''
-      <!-- ## License -->
-
-
-      <!-- ## Acknowledgements -->
-
-
-      <!-- ## References -->
-
-
-      ## Author
-
-      - **KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk]
-
-
-      <!-- Links -->
-
-      [aviatesk]: https://github.com/aviatesk
-      '''
-    'description': 'Inserts conclusion sections for README'
-
-
-### Weave.jl ###
-'.source.weave.md':
-
-  ## Meta
-  'Weave.jl: Meta settings for weaving to Markdown':
-    'prefix': 'meta-jmd2md'
-    'body':
-      '''
-      ---
-      ### MPE
-      html:
-          embed_local_images: true
-          toc: true
-      toc:
-          depth_from: 2
-          depth_to: 4
-          ordered: true
-      export_on_save:
-          # html: true
-
-      ### Weave
-      options:
-          ## output settings
-          doctype: github
-          # out_path:
-          fig_path: figs
-          ## default code chunk options
-          echo: true
-          eval: true
-          results: "markup"
-          term: false
-          hold: false
-          wrap: false
-          fig_width: 8
-          fig_height: 5
-          fig_ext: ".svg"
-      ---
-      '''
-    'description':
-      '''
-      Inserts Weave.jl meta settings for weaving to Markdown,
-      which is supposed to be rendered as HTML with Markdown-Preview-Enhanced after weaving
-      '''
-  'Weave.jl: Meta settings for weaving to HTML':
-    'prefix': 'meta-jmd2html'
-    'body':
-      '''
-      ---
-      ### Weave
-      title: ${1:Title}
-      author: KADOWAKI, Shuhei
-      date: 2019/${2:MM}/${3:DD}
-      options:
-          ## output settings
-          # out_path:
-          fig_path: figs
-          ## default code chunk options
-          echo: true
-          eval: true
-          results: "markup"
-          term: false
-          hold: false
-          wrap: false
-          fig_width: 8
-          fig_height: 5
-          fig_ext: ".svg"
-      ---
-      '''
-    'description':
-      '''
-      Inserts Weave.jl meta settings for weaving to HTML document
-      '''
-
-  ## Code block
-  'Weave.jl: Julia code block':
-    'prefix': 'jb'
-    'body':
-      '''
-      ```julia
-      $1
-      ```
-      '''
-    'description': 'Inserts Julia code block'
-  'Wweave.jl: Julia inline code block':
-    'prefix': 'ji'
-    'body': '`j $1`'
-    'description': 'Inserts Julia inline code block'
-  'Weave.jl: Julia code block (hold)':
-    'prefix': 'jbh'
-    'body':
-      '''
-      ```julia hold = true
-      $1
-      ```
-      '''
-    'description': 'Inserts Julia code block holding generated results'
-
-
-### pweave ###
-'.source.pweave.md':
-
-  # Meta
-  'pweave: Meta settings for pweave (-f markdown)':
-    'prefix': 'meta-pweave-markdown'
-    'body':
-      """
-      ---
-      # This front-matter would only be used in generated markdown document via Markdown-Preview-Enhanced package,
-      # and thus no html file would be generated from this pweave document.
-      # To render the final html file, first execute "Dqs Shell Commands: Pmd2md" and then
-      # open a generated markdown file, do "Markdown Preview Enhanced: Toggle" and finally save it.
-      # This process should render html file with all fancy rendering facilities available.
-      ```python name='meta-setup', echo=False, results='asis'
-      print('''
-      html:
-          embed_local_images: true
-          toc: true
-      export_on_save:
-          html: true
-      ''')
-      ```
-      ---
-      """
-    'description':
-      '''
-      Inserts pweave meta settings for generating markdown document,
-      which is supposed to be rendered as HTML with Markdown-Preview-Enhanced after weaving
-      '''
-  'pweave: Meta settings for pweave (-f md2html)':
-    'prefix': 'meta-pweave-md2html'
-    'body':
-      '''
-      % ${1:Title}
-      % ${2:KADOWAKI, Shuhei}
-      % ${3:Date}
-      $4
-      '''
-    'description': 'Inserts pweave meta settings for directly weaving pweave document as HTML file (deprecated)'
-
-  ## General
-  'pweave: Utilities set-up':
-    'prefix': 'pweave-utils'
-    'body':
-      """
-      ```python name='utilities-setup', echo=${1:False}
-      import os
-      import sys
-      import numpy as np
-      import pandas as pd
-      import matplotlib.pyplot as plt
-      %matplotlib inline
-
-      def print_df(df, stralign='center', showindex=True):
-          '''
-          Renders pandas.DataFrame object in markdown files.
-          (Supposed to be used in .pmd file with code chunk `results='asis'`)
-
-          ## Args
-          - df: pd.DataFrame object (Note: Use `df.head` for large data !)
-          - stralign: {'center', 'right', ...}
-          - showindex: {True, False, 'always', 'never', iterator}
-          '''
-
-          from tabulate import tabulate
-          print(tabulate(df, df.columns, tablefmt='pipe', stralign=stralign, showindex=showindex))
-      ```$2
-      """
-    'description':
-      '''
-      Inserts Python code block defining pweave utilities
-      - imports utility libraries
-      - sets matplotlib rendered inline
-      - defines function to render pandas.DataFrame beautifully
-      '''
-
-  ## Code block
-  'pweave: Python code block':
-    'prefix': 'pb'
-    'body':
-      '''
-      ```python
-      $1
-      ```
-      '''
-    'description': 'Inserts Python code block'
-  'pweave: Python inline code block':
-    'prefix': 'pi'
-    'body': '<% $1 %>'
-    'description': 'Inserts Python inline code block'
-  'pweave: Python code block (asis)':
-    'prefix': 'pba'
-    'body':
-      '''
-      ```python results='asis'
-      $1
-      ```
-      '''
-    'description': 'Inserts Python code block for rendering results without reformatting'
-  'pweave: Python code block (hidden)':
-    'prefix': 'pbh'
-    'body':
-      '''
-      ```python results='hidden'
-      $1
-      ```
-      '''
-    'description': 'Inserts Python code block with its results hidden in final document'
-  'pweave: Python code block (wrapping)':
-    'prefix': 'pbw'
-    'body':
-      '''
-      ```python wrap=${1:False}
-      $2
-      '''
-    'description': 'Inserts Python code block with results-wrapping option'
-  'pweave: Python code block (full default options)':
-    'prefix': 'pbfull'
-    'body':
-      '''
-      ```python name=None, echo=True, evaluate=True, results='verbatim', term=False, include=True, caption='', complete=True, wrap=True
-      $1
-      ```
-      '''
-    'description': 'Inserts Python code block with full options set to default values'
-
-
-### RMarkdown ###
-'.source.gfm.rmd':
-
-  ## Meta
-  'R-markdown: Meta settings for R-markdown':
-    'prefix': 'meta-R-markdown'
-    'body':
-      '''
-      ---
-      title: ${1:Title}
-      subtitle: ${2:# Subtitle}
-      author: ${3:KADOWAKI, Shuhei}
-      date: ${4:Date}
-      output:
-        html_document:
-          toc: true
-          toc_float: true
-          number_sections: true
-          theme: cosmo
-          code_folding: show
-          df_print: paged
-      ---
-      ```{r echo=FALSE}
-      ### Setting the global code chunk options ###
-      # Args
-      #   comment='': won't append any string to the start of each line of results
-      #   fig.align='center': align figures to the center of document
-      knitr::opts_chunk$set(comment="", fig.align="center")
-      ```
-      $5
-      '''
-    'description':
-      '''
-      Inserts meta settings for R-markdown rendering: YAML and knitr settings
-      '''
-
-  ## Code block
-  'R-markdown: R code block':
-    'prefix': 'rb'
-    'body':
-      '''
-      ```{r}
-      $1
-      ```
-      '''
-    'description': 'Inserts R code block'
-  'R-markdown: R inline code block':
-    'prefix': 'ri'
-    'body':
-      '''
-      `r $1`
-      '''
-    'description': 'Inserts R inline code block'
-  'R-markdown: R code block (multiple plots)':
-    'prefix': 'rbmp'
-    'body':
-      '''
-      ```{r fig.show="hold", out.width="50%", out.height="100%", fig.align="default"}
-      ${1:# This options puts 2 plots horizontally}
-      ```
-      '''
-    'description': 'Inserts R code block for rendering multiple plots in one figure'
-  'R-markdown: R code block (data.frame)':
-    'prefix': 'rbd'
-    'body':
-      '''
-      ```{r rows.print=5, max.print=25}
-      ${1:# only the first 25 rows gonna be rendered (5 rows per page)}
-      ${2:data.frame}
-      ```
-      '''
-    'description': 'Inserts R code block for rendering data.frame object with df_print set'
-  'R-markdown: R code block (full default options)':
-    'prefix': 'rbfull'
-    'body':
-      '''
-      ```{r echo=TRUE, eval=TRUE, results="markup", fig.show="asis", fig.cap=NULL, fig.align="default", out.width=NULL, out.height=NULL, include=TRUE, warning=FALSE, comment=""}
-      $1
-      ```
-      '''
-    'description': 'Inserts R code block with full options set to default values'

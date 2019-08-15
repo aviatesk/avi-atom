@@ -219,6 +219,7 @@
     ]
     packagesWithSnippetsDisabled: [
       "language-julia"
+      "language-weave"
     ]
     projectHome: "C:\\Users\\aviat\\github\\atom-pkgs"
     telemetryConsent: "limited"

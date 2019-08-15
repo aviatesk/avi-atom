@@ -4,7 +4,6 @@ atom-beautify@0.33.4
 atom-clock@0.1.17
 atom-ide-debugger-python@0.7.3
 atom-ide-ui@0.13.0
-atom-language-r@1.4.8
 atom-path-intellisense@1.1.1
 atom-typescript@13.3.0
 atomic-management@0.3.1
