@@ -3,8 +3,6 @@ Juno startup code
 =#
 
 @doc """
-    AviJuno
-
 Sets up Juno environment **without polluting the `Main` namespace**.
 Each setting is *conditionally* activated by `ARGS`, which would be passed as
 the values of `"julia-client".juliaOptions.arguments` defined in

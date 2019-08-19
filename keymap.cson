@@ -373,6 +373,8 @@
   ## Cursor History
   'ctrl-p': 'cursor-history:prev'
   'ctrl-shift-p': 'cursor-history:next'
+  'alt-p': 'cursor-history:prev-within-editor'
+  'alt-shift-p': 'cursor-history:next-within-editor'
   'ctrl-left': 'cursor-history:prev'
   'ctrl-right': 'cursor-history:next'
 
@@ -472,10 +474,6 @@
   'alt-d': 'datatip:toggle'
   # Diagnostics
   'ctrl-alt-d': 'diagnostics:toggle-table'
-  'alt-p': 'diagnostics:go-to-previous-diagnostic'
-  'alt-end': 'diagnostics:go-to-first-diagnostic'
-  'alt-n': 'diagnostics:go-to-next-diagnostic'
-  'alt-home': 'diagnostics:go-to-last-diagnostic'
   # Find-Reference
   'alt-f': 'find-references:activate'
   # Outline-View
@@ -685,7 +683,6 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'ctrl-@': 'julia-client:focus-last-terminal'
   'ctrl-c ctrl-f': 'julia-client:format-code'
   'alt-enter': 'julia-client:goto-symbol'
-  'ctrl-shift-left': 'julia-client:return-from-goto'
   # Julia-Debug
   'ctrl-x space': 'julia-debug:toggle-breakpoint'
   'ctrl-x ctrl-space': 'julia-debug:toggle-conditional-breakpoint'
@@ -749,8 +746,7 @@ atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
   'ctrl-alt-o': 'typescript:toggle-semantic-view'
   'ctrl-alt-f': 'typescript:find-references'
   'ctrl-alt-r': 'typescript:rename-refactor'
-  'ctrl-shift-left': 'typescript:return-from-declaration'
-  'ctrl-shift-right': 'typescript:show-editor-position-history'
+  'ctrl-alt-shift-p': 'typescript:show-editor-position-history'
 
 ## LESS
 ## Atom-Beautify: Switch beautifier according to selection
