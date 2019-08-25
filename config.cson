@@ -146,7 +146,9 @@
       }
     ]
   "autocomplete-plus":
+    enableExtendedUnicodeSupport: true
     minimumWordLength: 2
+    similarSuggestionRemoval: "textOrSnippet"
   "bracket-matcher": {}
   core:
     allowPendingPaneItems: true
@@ -248,7 +250,6 @@
     userId: "9e026ba7-7268-13e9-0769-5cb4ad435f2f"
   "file-icons": {}
   "find-and-replace":
-    autocompleteSearches: true
     closeFindPanelAfterSearch: true
     enablePCRE2: true
     useRipgrep: true
@@ -600,7 +601,8 @@
     visible: true
   "tree-view":
     squashDirectoryNames: true
-  "tree-view-autoresize": {}
+  "tree-view-autoresize":
+    maximumWidth: 300
   "tree-view-git-status": {}
   welcome:
     showOnStartup: false

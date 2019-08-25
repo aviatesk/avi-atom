@@ -315,7 +315,7 @@
     'description': 'Inserts begin block'
   'do':
     'prefix': 'do'
-    'body': 'do\n\t$1\nend'
+    'body': 'do ${1:args}\n\t$2\nend'
     'rightLabelHTML': '<span>Base</span>'
     'description': 'Inserts do block'
   'quote':
