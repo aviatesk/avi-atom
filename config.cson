@@ -601,7 +601,7 @@
     visible: true
   "tree-view":
     squashDirectoryNames: true
-  "tree-view-autoresize":
+  "tree-view-autoadjust":
     maximumWidth: 300
   "tree-view-git-status": {}
   welcome:

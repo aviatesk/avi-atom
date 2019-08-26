@@ -13,7 +13,7 @@ cursor-history@0.13.2
 document-outline@2.1.2
 dqs-shell-commands@2.2.4
 emacs-plus@0.12.0
-file-icons@2.1.34
+file-icons@2.1.35
 git-diff-plus@0.4.0
 git-plus@8.7.1
 git-time-machine@2.1.0
@@ -56,7 +56,7 @@ status-bar-blame@2.0.3
 termination@0.7.4
 todo-show@2.3.2
 tool-bar@1.1.12
-tree-view-autoresize@2.3.0
+tree-view-autoadjust@0.2.0
 tree-view-git-status@1.5.2
 wordcount@3.1.0
 Zen@0.18.0

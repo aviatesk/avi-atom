@@ -85,7 +85,7 @@ All values for the other Per-project configs are set as default
     toggles:
       cursorBlink: false
       runInsertedText: false
-  "tree-view-autoresize":
+  "tree-view-autoadjust":
     minimumWidth: 0 # Set `300` for MPE previewing in Tree-View pane
 
 ### Config for specific file types ###
