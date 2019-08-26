@@ -441,6 +441,7 @@
     ignoreTypings: true
     useGlobalTslint: true
   "markdown-preview-enhanced":
+    automaticallyShowPreviewOfMarkdownBeingEdited: false
     codeBlockTheme: "github.css"
     enableCriticMarkupSyntax: true
     enableExtendedTableSyntax: true

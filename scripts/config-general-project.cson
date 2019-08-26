@@ -39,8 +39,10 @@ All values are set as default.
   "linter-tslint":
     fixOnSave: false # Set `true` to activate auto fix
   "markdown-preview-enhanced":
+    automaticallyShowPreviewOfMarkdownBeingEdited: false
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
     previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred
+    scrollSync: true
   "spell-check":
     knownWords: [
       "aviatesk"

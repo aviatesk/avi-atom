@@ -57,10 +57,10 @@ All values for the other Per-project configs are set as default
     # E.g.: "C:\\Users\\aviat\\Anaconda3\\envs\\py36\\python.exe"
     python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
   "markdown-preview-enhanced":
-    automaticallyShowPreviewOfMarkdownBeingEdited: true # Set `false` when editting Weave documents
+    automaticallyShowPreviewOfMarkdownBeingEdited: false
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
     previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred
-    scrollSync: true # Set `false` when editting Weave documents
+    scrollSync: true
   "spell-check":
     knownWords: [
       "aviatesk"

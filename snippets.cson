@@ -99,7 +99,7 @@
     'description': 'Inserts H6 header'
   'code block':
     'prefix': 'cc'
-    'body': '```${1:syntax}\n${1:code}\n```'
+    'body': '```${1:syntax}\n${2:code}\n```'
     'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
     'description': 'Inserts code block'
   'inline code block':
