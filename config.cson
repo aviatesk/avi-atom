@@ -514,7 +514,8 @@
     defaultApplication: "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
   "package-generator":
     createInDevMode: true
-  "pdf-view": {}
+  "pdf-view-plus":
+    closeViewWhenFileDeleted: true
   "spell-check":
     addKnownWords: true
     excludedScopes: [
