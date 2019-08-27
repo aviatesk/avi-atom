@@ -25,6 +25,7 @@ All values for the other Per-project configs are set as default
       #   "--project=PATH_TO_PROJECT_DIRECTORY"
       # ]
       workingDir: ""
+    juliaPath: "julia"
 
   core:
     disabledPackages: [

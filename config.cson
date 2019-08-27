@@ -397,9 +397,11 @@
       bootMode: "Cycler"
       noAutoParenthesis: true
       optimisationLevel: 2
+      persistWorkingDir: false
       startupArguments: [
         "--project=C:\\Users\\aviat\\julia\\JunoLab"
       ]
+      workingDir: ""
     juliaPath: "julia"
     uiOptions:
       enableMenu: true
