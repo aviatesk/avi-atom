@@ -5,56 +5,83 @@
 
 ENV["JULIA_PKG_DEVDIR"] = joinpath(homedir(), "julia", "packages")
 
+macro err(expr)
+    mod = @__MODULE__
+    quote
+        try
+            @eval $(mod) $(expr)
+        catch err
+            @error err
+        end
+    end
+end
 
 atreplinit() do repl
     try
-        @info "Importing OhMyREPL ..."
         @eval using REPL
-
         if !isdefined(repl, :interface)
             repl.interface = REPL.setup_interface(repl)
         end
-
-        # @TODO: This insert new lines every time the REPL has change.
-        #        Seemingly needs change in julia/stdlib/REPL
-        # repl.interface.modes[1].prompt = "$(pwd())\njulia> "
-
-        @eval using OhMyREPL
     catch err
         @error err
     end
 
-    # Don't use Revise within Juno
+    @info "Importing OhMyREPL ..."
+    # @TODO: make this work
+    # repl.interface.modes[1].prompt = "$(pwd())\njulia> "
+    @err @eval using OhMyREPL
+
+    # I don't like Revise in Juno
     isdefined(Main, :Juno) || begin
         @info "Importing Revise ..."
-        try
+        @err begin
             @eval using Revise
             @async Revise.wait_steal_repl_backend()
-        catch err
-            @error err
         end
     end
 
-    # Load Juno specific scripts when in Juno
+    # load Juno specific scripts if appropriate
     isdefined(Main, :Juno) && begin
-        joinpath(@__DIR__, "junostartup.jl") |> include
+        @err joinpath(@__DIR__, "junostartup.jl") |> include
     end
 
     if "PLOTS" ∈ ARGS
-        try
-            @info "Importing Plots ..."
-            @eval using Plots
-        catch err
-            @error err
-        end
+        @info "Importing Plots ..."
+        @err @eval using Plots
     end
 
     if "WEAVE" ∈ ARGS
-        try
-            @info "Importing Weave ..."
-            @eval using Weave
-        catch err
-            @error err
+        @info "Importing Weave ..."
+        @err @eval using Weave
+    end
+
+    # when in developing Julia itself
+    if "JULIA_DEV" ∈ ARGS
+        @err begin
+            @eval using Suppressor
+            @eval @suppress @eval Base DATAROOTDIR = "..\\..\\.."
+            @info "Overwrote `Base.DATAROOTDIR`"
+        end
+
+        @err begin
+            @eval Base begin
+                mutable struct MethodList
+                    ms::Array{Method,1}
+                    mt::Core.MethodTable
+                    MethodList(ms::Array{Method,1}, mt::Core.MethodTable) = begin
+                        map(ms) do m
+                            originalpath = string(m.file)
+                            m.file = try
+                                realpath(originalpath)
+                            catch err
+                                originalpath
+                            end |> Symbol
+                        end
+                        new(ms, mt)
+                    end
+                end
+            end
+            @info "Overwrote `Base.MethodList`"
         end
     end
 end

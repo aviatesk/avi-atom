@@ -291,38 +291,50 @@
 ### Julia ###
 '.source.julia':
 
-  ## Base
+  ## Julia itself
   'function':
     'prefix': 'function'
     'body': 'function ${1:name}(${2:args})\n\t${3:body}\nend'
-    'rightLabelHTML': '<span>Base</span>'
+    'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts function block'
   'function assignment':
     'prefix': 'func'
     'body': '${1:name}(${2:args}) = ${3:begin\n\t${4:body}\nend}'
-    'rightLabelHTML': '<span>Base</span>'
+    'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts function block in the assignment form'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/functions/#man-functions-1'
   'for':
     'prefix': 'for'
     'body': 'for ${1:val} ∈ ${2:iterator}\n\t${3:body}\nend'
-    'rightLabelHTML': '<span>Base</span>'
+    'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts for loop block'
   'begin':
     'prefix': 'begin'
     'body': 'begin\n\t$1\nend'
-    'rightLabelHTML': '<span>Base</span>'
+    'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts begin block'
   'do':
     'prefix': 'do'
     'body': 'do ${1:args}\n\t$2\nend'
-    'rightLabelHTML': '<span>Base</span>'
+    'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts do block'
   'quote':
     'prefix': 'quote'
     'body': 'quote\n\t$1\nend'
-    'rightLabelHTML': '<span>Base</span>'
+    'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts quote block'
+  'try catch':
+    'prefix': 'try'
+    'body': 'try\n\t${1:body}\ncatch err\n\t@error err\nend$2'
+    'rightLabelHTML': '<span>Julia</span>'
+    'description': 'Inserts try/catch block'
+  'comment block':
+    'prefix': 'cb'
+    'body': '#=\n$1\n=#'
+    'rightLabelHTML': '<span>Julia</span>'
+    'description': 'Inserts comment block'
+
+  ## Base
   'function chaining':
     'prefix': 'pi'
     'body': '|>$1'
@@ -332,26 +344,22 @@
     'prefix': 'doc'
     'body': '@doc """\n\t${1:something}\n\n${2:docstrings}\n"""'
     'rightLabelHTML': '<span>Base</span>'
-    'description': 'Inserts document string block'
-  'comment block':
-    'prefix': 'cb'
-    'body': '#=\n$1\n=#'
-    'rightLabelHTML': '<span>Base</span>'
-    'description': 'Inserts comment block'
+    'description': 'Inserts documentation string block'
 
   ## DataFrames
   '@linq chaining':
-    'prefix': 'li'
+    'prefix': 'linq'
     'body': '@linq ${1:df} |>\n\t$2'
     'rightLabelHTML': '<span>DataFramesMeta</span>'
     'description': 'Inserts @linq pipe line block'
+    'descriptionMoreURL': 'https://github.com/JuliaData/DataFramesMeta.jl#linq-macro'
 
 ## Scope specific
 '.source.julia .meta.bracket.julia':
   'for':
     'prefix': 'for'
     'body': '${1:val} for ${1:val} ∈ ${2:iterator}'
-    'rightLabelHTML': '<span>DataFramesMeta</span>'
+    'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts for loop comprehension'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1'
 

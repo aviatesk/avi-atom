@@ -31,22 +31,14 @@ import Juno: syntaxcolors
 @info "Juno: Start setups ..."
 
 # Doesn't work on Windows
-Sys.iswindows() || if  "JUNO_OHMYREPL" ∈ ARGS
-    try
-        @info "Juno: Setting up OhMyREPL ..."
-        include("junoohmyrepl.jl")
-    catch err
-        @error err
-    end
+if !Sys.iswindows() && "JUNO_OHMYREPL" ∈ ARGS
+    @info "Juno: Setting up OhMyREPL ..."
+    include("junoohmyrepl.jl")
 end
 
 if "JUNO_PLOTS" ∈ ARGS
-    try
-        @info "Juno: Setting up Plots ..."
-        include("junoplots.jl")
-    catch err
-        @error err
-    end
+    @info "Juno: Setting up Plots ..."
+    include("junoplots.jl")
 end
 
 end  # module AviJuno
