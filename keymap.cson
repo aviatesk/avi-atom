@@ -393,12 +393,6 @@
   'ctrl-alt-p': 'git-diff-plus:move-to-previous-diff'
   'ctrl-alt-n': 'git-diff-plus:move-to-next-diff'
 
-  ## Find-and-Replace
-  'ctrl-s': 'find-and-replace:find-next'
-  'ctrl-shift-s': 'find-and-replace:find-next'
-  'ctrl-r': 'find-and-replace:find-previous'
-  'ctrl-shift-r': 'find-and-replace:find-previous'
-
   ## Spell-Check
   'alt-;': 'spell-check:correct-misspelling'
   'ctrl-alt-;': 'spell-check:toggle'
@@ -451,10 +445,10 @@
   'ctrl-;': 'editor:newline'
   'ctrl-x g': 'go-to-line:toggle'
   'ctrl-x t': 'emacs-plus:recenter-top-bottom'
-  'ctrl-s': 'find-and-replace:show'
-  'ctrl-shift-s': 'find-and-replace:find-next'
-  'ctrl-r': 'find-and-replace:show'
-  'ctrl-shift-r': 'find-and-replace:find-previous'
+  'ctrl-shift-s': 'find-and-replace:toggle'
+  'ctrl-shift-r': 'find-and-replace:toggle'
+  'ctrl-s': 'find-and-replace:find-next'
+  'ctrl-r': 'find-and-replace:find-previous'
   'ctrl-t': 'tree-view:toggle-focus'
   'ctrl-w': 'unset!'
   'ctrl-alt-c': 'color-picker:open'
@@ -528,11 +522,14 @@
   'ctrl-w': 'emacs-plus:kill-region'
   'alt-a': 'emacs-plus:append-next-kill'
   'ctrl-shift-a': 'core:select-all'
-  'alt-p': 'find-and-replace:find-previous-selected'
-  'alt-n': 'find-and-replace:find-next-selected'
+  ## find-and-replace
+  'ctrl-s': 'find-and-replace:find-next-selected'
+  'ctrl-r': 'find-and-replace:find-previous-selected'
 
-## Find-and-Replace
+## find-and-replace
 '.find-and-replace':
+  'ctrl-shift-s': 'find-and-replace:toggle'
+  'ctrl-shift-r': 'find-and-replace:toggle'
   'ctrl-f r': 'find-and-replace:toggle-regex-option'
   'ctrl-f c': 'find-and-replace:toggle-case-option'
   'ctrl-f s': 'find-and-replace:toggle-selection-option'

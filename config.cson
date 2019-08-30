@@ -252,6 +252,7 @@
   "find-and-replace":
     closeFindPanelAfterSearch: true
     enablePCRE2: true
+    focusEditorAfterSearch: true
     useRipgrep: true
   "fuzzy-finder": {}
   "git-diff-plus": {}
