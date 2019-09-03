@@ -329,7 +329,6 @@
         dark: "#86b1e0"
   "julia-client":
     consoleOptions:
-      prompt: "juno>"
       rendererType: true
       whitelistedKeybindingsREPL: [
         "Alt-W"
@@ -359,6 +358,12 @@
         "Ctrl-M"
         "Ctrl-H"
         "Alt-X"
+        "F8"
+        "Shift-F8"
+        "F9"
+        "F10"
+        "Ctrl-F10"
+        "Shift-F10"
       ]
       whitelistedKeybindingsTerminal: [
         "Alt-W"
@@ -395,7 +400,7 @@
         "JUNO_OHMYREPL"
       ]
       autoCompletionSuggestionPriority: 1
-      bootMode: "Cycler"
+      bootMode: "Basic"
       noAutoParenthesis: true
       optimisationLevel: 2
       persistWorkingDir: false
@@ -411,6 +416,7 @@
         debuggerPane:
           split: "up"
         defaultPanes:
+          outline: true
           plotPane: false
         documentation:
           defaultLocation: "right"
@@ -419,6 +425,9 @@
           defaultLocation: "right"
           split: "down"
         openDefaultPanesOnStartUp: false
+        outline:
+          defaultLocation: "right"
+          split: "up"
         plotPane:
           defaultLocation: "right"
           split: "down"

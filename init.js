@@ -295,14 +295,19 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
       callback: 'julia-client:open-documentation-browser',
     });
     tb.addButton({
-      icon: 'graph',
-      tooltip: 'Open Plot Pane',
-      callback: 'julia-client:open-plot-pane',
+      icon: 'list-unordered',
+      tooltip: 'Open Outline Pane',
+      callback: 'julia-client:open-outline-pane',
     });
     tb.addButton({
       icon: 'bug',
       tooltip: 'Open Debugger Pane',
       callback: 'julia-debug:open-debugger-pane',
+    });
+    tb.addButton({
+      icon: 'graph',
+      tooltip: 'Open Plot Pane',
+      callback: 'julia-client:open-plot-pane',
     });
 
     tb.addSpacer();

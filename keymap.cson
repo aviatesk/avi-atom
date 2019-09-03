@@ -681,12 +681,17 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'ctrl-c ctrl-f': 'julia-client:format-code'
   'alt-enter': 'julia-client:goto-symbol'
   'alt-shift': 'julia-client:return-from-goto'
+  'ctrl-alt-o': 'julia-client:open-outline-pane'
   # Julia-Debug
   'ctrl-x space': 'julia-debug:toggle-breakpoint'
   'ctrl-x ctrl-space': 'julia-debug:toggle-conditional-breakpoint'
   'f8': 'julia-debug:continue'
+  'shift-f8': 'julia-debug:stop-debugging'
   'f9': 'julia-debug:step-to-next-line'
-  'f10': 'julia-debug:finish-function'
+  'ctrl-f9': 'julia-debug:step-to-selected-line'
+  'f10': 'julia-debug:step-to-next-expression'
+  'ctrl-f10': 'julia-debug:step-into-function'
+  'shift-f10': 'julia-debug:finish-function'
 ## Ink
 "ink-terminal":
   'alt-w': 'ink-terminal:copy'
@@ -713,6 +718,13 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'alt-:': 'termination:toggle'
   'ctrl-:': 'termination:focus'
   'alt-h': 'github:toggle-git-tab'
+  'f8': 'julia-debug:continue'
+  'shift-f8': 'julia-debug:stop-debugging'
+  'f9': 'julia-debug:step-to-next-line'
+  'ctrl-f9': 'julia-debug:step-to-selected-line'
+  'f10': 'julia-debug:step-to-next-expression'
+  'ctrl-f10': 'julia-debug:step-into-function'
+  'shift-f10': 'julia-debug:finish-function'
 "ink-terminal .search .searchinput atom-text-editor":
   'ctrl-r': 'ink-terminal:find-previous'
   'ctrl-s': 'ink-terminal:find-next'
