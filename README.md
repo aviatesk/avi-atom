@@ -144,7 +144,7 @@ link ~/.atom/mpe-styles/style.less ~/.mume/style.less
 
 (Other .less style sheets in [mpe-styles directory](mpe-styles/) can be accessed via snippets, thus we don't need to link them to somewhere else.)
 
-#### Enable Juno startup config
+#### Enable Julia startup config
 
 [scripts/junostartup.jl](scripts/junostartup.jl) contains Juno-specific Julia startup configs:
 - Use Atom syntax-highlight scheme within [OhMyREPL.jl](https://github.com/KristofferC/OhMyREPL.jl)

@@ -29,16 +29,19 @@ atreplinit() do repl
     @info "Importing OhMyREPL ..."
     # @TODO: make this work
     # repl.interface.modes[1].prompt = "$(pwd())\njulia> "
-    @err @eval using OhMyREPL
-
-    # I don't like Revise in Juno
-    isdefined(Main, :Juno) || begin
-        @info "Importing Revise ..."
-        @err begin
-            @eval using Revise
-            @async Revise.wait_steal_repl_backend()
-        end
+    @err @eval begin
+        using OhMyREPL
+        enable_autocomplete_brackets(true)
     end
+
+    # # I don't like Revise in Juno
+    # isdefined(Main, :Juno) || begin
+    #     @info "Importing Revise ..."
+    #     @err begin
+    #         @eval using Revise
+    #         @async Revise.wait_steal_repl_backend()
+    #     end
+    # end
 
     # load Juno specific scripts if appropriate
     isdefined(Main, :Juno) && begin

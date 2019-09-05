@@ -9,7 +9,7 @@ atom-typescript@13.3.0
 atomic-management@0.3.1
 autocomplete-paths@2.12.2
 color-picker@2.3.0
-cursor-history@0.13.2
+cursor-history@0.14.0
 document-outline@2.1.2
 dqs-shell-commands@2.2.4
 emacs-plus@0.12.0
@@ -20,13 +20,13 @@ git-time-machine@2.1.0
 hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.16.0
-Hydrogen@2.10.3
+Hydrogen@2.12.0
 hyperlink-hyperclick@3.0.0
 ide-css@0.3.3
 ide-python@1.4.2
 indent-detective@0.4.0
 ink@0.11.0
-julia-client@0.10.0
+julia-client@0.10.1
 language-babel@2.85.0
 language-julia@0.19.1
 language-markdown@0.37.0
@@ -49,7 +49,7 @@ minimap-split-diff@0.3.7
 nord-atom-syntax@0.10.0
 nord-atom-ui@0.12.0
 open-in-app@0.2.0
-pdf-view-plus@1.0.7
+pdf-view-plus@1.7.2
 project-manager@3.3.7
 split-diff@1.6.0
 status-bar-blame@2.0.3
