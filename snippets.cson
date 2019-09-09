@@ -303,6 +303,16 @@
     'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts function block in the assignment form'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/functions/#man-functions-1'
+  'struct':
+    'prefix': 'struct'
+    'body': 'struct ${1:name}\n\t${3:field}\nend'
+    'rightLabelHTML': '<span>Julia</span>'
+    'description': 'Inserts struct block'
+  'mutable struct':
+    'prefix': 'mutable struct'
+    'body': 'mutable struct ${1:name}\n\t${3:field}\nend'
+    'rightLabelHTML': '<span>Julia</span>'
+    'description': 'Inserts mutable struct block'
   'for':
     'prefix': 'for'
     'body': 'for ${1:val} ∈ ${2:iterator}\n\t${3:body}\nend'
