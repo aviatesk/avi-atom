@@ -500,8 +500,6 @@
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
-      "lens-mode": true
-      "lens-modeDecorationsZIndex": 0
       linter: true
       linterDecorationsZIndex: 0
       "minimap-autohider": true
@@ -515,8 +513,6 @@
     scrollAnimationDuration: 500
   "minimap-autohider": {}
   "minimap-git-diff": {}
-  "minimap-lens":
-    lensHeight: 250
   "minimap-linter": {}
   "minimap-selection":
     highlightCursorsLines: true
