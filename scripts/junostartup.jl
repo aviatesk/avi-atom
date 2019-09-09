@@ -24,13 +24,26 @@ Possible value of an argument in `ARGS`:
 module AviJuno
 
 import Juno: syntaxcolors
+import REPL
 
 
 # @XXX: Needs `@info` to initialize `ARGS` ...
 # @TODO: Fix Juno's code loading order
 @info "Juno: Start setups ..."
 
-# Doesn't work on Windows
+# suppress too many completions in REPL
+@eval @info "Juno: Too many completions will be suppressed in REPL"
+@eval REPL begin
+    function complete_line(c::REPLCompletionProvider, s)
+        partial = beforecursor(s.input_buffer)
+        full = LineEdit.input_string(s)
+        ret, range, should_complete = completions(full, lastindex(partial))
+        length(ret) > 100 && return [], 1:0, false
+        return unique!(map(completion_text, ret)), partial[range], should_complete
+    end
+end
+
+# doesn't work on Windows
 if !Sys.iswindows() && "JUNO_OHMYREPL" ∈ ARGS
     @info "Juno: Setting up OhMyREPL ..."
     include("junoohmyrepl.jl")
