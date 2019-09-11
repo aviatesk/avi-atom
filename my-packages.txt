@@ -32,9 +32,9 @@ language-julia@0.19.1
 language-markdown@0.37.0
 language-weave@0.6.4
 latex-completions@0.3.6
-linter-coffeelint@2.0.19
+linter-coffeelint@2.0.20
 linter-eslint@8.5.5
-linter-tslint@1.10.28
+linter-tslint@1.10.31
 markdown-preview-enhanced@0.16.3
 markdown-writer@2.11.7
 minimap@4.29.9
@@ -48,7 +48,7 @@ minimap-split-diff@0.3.7
 nord-atom-syntax@0.10.0
 nord-atom-ui@0.12.0
 open-in-app@0.2.0
-pdf-view-plus@1.7.2
+pdf-view-plus@1.7.3
 project-manager@3.3.7
 split-diff@1.6.0
 status-bar-blame@2.0.3

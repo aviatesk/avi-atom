@@ -2,7 +2,7 @@
 Juno startup code
 =#
 
-@doc """
+"""
 Sets up Juno environment **without polluting the `Main` namespace**.
 Each setting is *conditionally* activated by `ARGS`, which would be passed as
 the values of `"julia-client".juliaOptions.arguments` defined in
@@ -27,8 +27,8 @@ import Juno: syntaxcolors
 import REPL
 
 
-# @XXX: Needs `@info` to initialize `ARGS` ...
-# @TODO: Fix Juno's code loading order
+# @XXX: needs `@info` to initialize `ARGS` ...
+# @TODO: fix Juno's code loading order
 @info "Juno: Start setups ..."
 
 # suppress too many completions in REPL
@@ -37,8 +37,8 @@ import REPL
     function complete_line(c::REPLCompletionProvider, s)
         partial = beforecursor(s.input_buffer)
         full = LineEdit.input_string(s)
-        ret, range, should_complete = "JULIA_DEV" ∈ ARGS ? completions(full, lastindex(partial)) : completions(full, lastindex(partial), context_module[])
-        length(ret) > 100 && return [], 1:0, false
+        ret, range, should_complete = "JULIA_DEV" ∈ ARGS ? completions(full, lastindex(partial), context_module[]) : completions(full, lastindex(partial))
+        length(ret) > 200 && return [], 1:0, false
         return unique!(map(completion_text, ret)), partial[range], should_complete
     end
 end

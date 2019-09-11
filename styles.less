@@ -1,21 +1,13 @@
 @import "ui-variables";
 @import "syntax-variables";
 
-
-/**
- * Override UI font
- */
-
+/** UI */
 atom-workspace {
   font-family: 'Segoe UI', 'Meiryo UI';
 }
 
 
-/**
- * Fine-tune Ariake-Dark-Syntax
- */
-
-/* Define colors */
+/** fine-tune ariake-dark-syntax */
 @selected: rgba(63, 17, 175, 0.25);
 @selected-focused: rgba(63, 17, 175, 0.5);
 @current: rgba(24, 17, 168, 0.25);
@@ -26,7 +18,7 @@ atom-workspace {
 @minimap-indicator: rgba(255, 255, 255, 0.75);
 @hydrogen-cell: rgb(35, 38, 46);
 
-/* Inside of editor */
+/* in editor */
 atom-text-editor.editor {
   // Highlight-Selection style
   .highlights .highlight.selection .region {
@@ -88,50 +80,73 @@ atom-text-editor.editor.is-focused {
     z-index: -2;
   }
 }
-// Julia-specific tweaks
-atom-text-editor.editor[data-grammar$="source julia"],
-atom-text-editor.editor[data-grammar$="source weave md"],
-atom-text-editor.editor[data-grammar$="source weave latex"] {
-  .syntax--operator {
-    color: @hue-2;
+
+/* language specific */
+.syntax--source {
+  // julia
+  &.syntax--julia {
+    .syntax--operator {
+      color: @hue-2;
+    }
+    // @HACK: make up atom-language-julia's unability to capture assignment form function declaration
+    .syntax--name.syntax--function {
+      color: @syntax-color-tag;
+    }
+    .syntax--type {
+      color: @syntax-color-class;
+    }
+    .syntax--symbol {
+      color: @hue-5-2;
+    }
+    .syntax--keyword.syntax--end {
+      opacity: 0.5;
+    }
+    .syntax--string.syntax--docstring {
+      font-style: italic;
+    }
   }
-  .syntax--name.syntax--function {
+  // gfm
+  &.syntax--gfm {
+    .syntax--comment.syntax--quote {
+      color: @syntax-color-tag;
+    }
+  }
+}
+// markdown
+.syntax--markup {
+  &.syntax--underline {
+    font-style: italic;
+  }
+  &.syntax--quote {
     color: @syntax-color-tag;
-  }
-  .syntax--type {
-    color: @syntax-color-class;
-  }
-  .syntax--symbol {
-    color: @hue-5-2;
-  }
-  .syntax--keyword.syntax--end {
-    opacity: 0.5;
   }
 }
 
-/* Outside of editor */
-// Pane border style
+/* outside editor */
+// pane borders
 .panes {
   .pane-column>*, .pane-row>* {
     border: 0.5px solid @pane-frame;
   }
 }
-// Scrollbar style
+// scrollbar
 .scrollbars-visible-always ::-webkit-scrollbar-thumb {
   background: @current;
 }
-// Tree-view style
+// tree-view
 .tree-view .selected:before {
   background: linear-gradient(@tree-view-background-color, @current)  !important;
 }
 .tree-view:focus .selected:before {
   background: linear-gradient(@tree-view-background-color, @current-focused)  !important;
 }
-// Tooltip style
+// tooltips
 .tooltip .tooltip-inner {
   background-color: @pane-frame;
 }
-// Cursor-History
+
+/* package specific */
+// cursor-history
 @current-flash: rgb(24, 17, 168);
 @keyframes cursor-history-flash {
   from {
@@ -141,7 +156,7 @@ atom-text-editor.editor[data-grammar$="source weave latex"] {
 atom-text-editor.editor .line.cursor-history-flash-line {
   animation-duration: 1s;
 }
-// Minimap style
+// minimap
 .minimap-selection {
   .region {
     background: @selected-focused;
@@ -160,7 +175,17 @@ atom-text-editor atom-text-editor-minimap {
     width: 2px;
   }
 }
-// Hydrogen style
+// ink
+.ink.docpane,
+.ink-workspace {
+  .syntax--type {
+    color: @syntax-color-class;
+  }
+  .syntax--constant.syntax--symbol {
+    color: @hue-5-2;
+  }
+}
+// hydrogen
 .hydrogen {
   blockquote {
     font-size: @font-size;
@@ -185,20 +210,8 @@ atom-text-editor atom-text-editor-minimap {
     }
   }
 }
-// Juno style
-.ink.docpane,
-.ink-workspace {
-  .syntax--type {
-    color: @syntax-color-class;
-  }
-  .syntax--constant.syntax--symbol {
-    color: @hue-5-2;
-  }
-}
 
-
-/* package-specific tweaks */
-
+/** package-specific */
 // find-and-replace
 autocomplete-suggestion-list {
   font-size: var(--editor-font-size);
@@ -227,8 +240,7 @@ atom-text-editor:not([data-grammar$="source python"]) {
 .termination.status-bar {
   display: none;
 }
-
-/* tree-view tweaks */
+// tree-view
 .tree-view .full-menu {
   padding-left: 4px;
 }
@@ -261,8 +273,7 @@ atom-text-editor:not([data-grammar$="source python"]) {
   height: 1.5rem;
 }
 
-/* File-Icon tweaks */
-// Directories
+/** file-icons */
 @import "packages/file-icons/styles/colours";
 .icon[data-name="data"]:before {
   font-family: "Octicons Regular";
@@ -304,7 +315,7 @@ atom-text-editor:not([data-grammar$="source python"]) {
   font-family: "Octicons Regular";
   content: "\f0b2"
 }
-// Github-Flavor-Markdowns
+// gfm
 .icon[data-name="_draft.md"]:before,
 .icon[data-name="CHANGELOG.md"]:before,
 .icon[data-name="CODE_OF_CONDUCT.md"]:before,
@@ -314,14 +325,14 @@ atom-text-editor:not([data-grammar$="source python"]) {
   font-family: "Octicons Regular";
   content: "\f00a";
 }
-// Weave.jl
+// weave
 .icon[data-name$=".jmd"]:before {
   font-family: "Octicons Regular";
   content: "\f0c9";
   color: @purple;
   font-size: 16px;
 }
-// pweave document
+// pweave
 .icon[data-name$=".pmd"]:before {
   color: @dark-blue;
 }
@@ -329,7 +340,7 @@ atom-text-editor:not([data-grammar$="source python"]) {
 .icon[data-name$=".Rmd"]:before {
   color: @blue;
 }
-/* Cson */
+// cson
 .icon[data-name$=".cson"]:before {
   font-family: file-icons;
   content: "\eabe";

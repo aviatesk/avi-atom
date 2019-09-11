@@ -89,7 +89,6 @@
       "string.quoted"
     ]
   "atom-typescript":
-    allowJS: true
     tsserverInstancePerTsconfig: true
   "atomic-management": {}
   "autocomplete-paths":
