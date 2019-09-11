@@ -190,6 +190,7 @@
 
   ## Avi-Atom
   'ctrl-@': 'avi-atom:focus-last-dock-item'
+  'ctrl-alt-@': 'avi-atom:focus-last-dock-item'
 
 
 ### Per-mode settings -- NOT IN atom-editor-space ###
@@ -197,6 +198,7 @@
 ## Avi-Atom
 'atom-dock':
   'ctrl-@': 'avi-atom:focus-last-workspace-center-item'
+  'ctrl-alt-@': 'avi-atom:focus-last-workspace-center-item'
 
 ## Tree-View
 '.tree-view':

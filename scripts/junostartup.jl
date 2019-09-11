@@ -37,7 +37,7 @@ import REPL
     function complete_line(c::REPLCompletionProvider, s)
         partial = beforecursor(s.input_buffer)
         full = LineEdit.input_string(s)
-        ret, range, should_complete = completions(full, lastindex(partial))
+        ret, range, should_complete = "JULIA_DEV" ∈ ARGS ? completions(full, lastindex(partial)) : completions(full, lastindex(partial), context_module[])
         length(ret) > 100 && return [], 1:0, false
         return unique!(map(completion_text, ret)), partial[range], should_complete
     end

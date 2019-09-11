@@ -329,7 +329,6 @@
         dark: "#86b1e0"
   "julia-client":
     consoleOptions:
-      rendererType: true
       whitelistedKeybindingsREPL: [
         "Alt-W"
         "Ctrl-Y"
