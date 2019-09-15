@@ -21,14 +21,13 @@ atreplinit() do repl
         @eval using REPL
         if !isdefined(repl, :interface)
             repl.interface = REPL.setup_interface(repl)
+            repl.interface.modes[1].prompt = "jμλια> "
         end
     catch err
         @error err
     end
 
     @info "Importing OhMyREPL ..."
-    # @TODO: make this work
-    # repl.interface.modes[1].prompt = "$(pwd())\njulia> "
     @err @eval begin
         using OhMyREPL
         enable_autocomplete_brackets(true)
