@@ -81,7 +81,15 @@ atom-text-editor.editor.is-focused {
   }
 }
 
-/* language specific */
+/* syntax highlights */
+// link
+.syntax--markup {
+  &.syntax--link {
+    &.syntax--underline {
+      font-style: italic;
+    }
+  }
+}
 .syntax--source {
   // julia
   &.syntax--julia {
@@ -105,6 +113,23 @@ atom-text-editor.editor.is-focused {
       font-style: italic;
     }
   }
+  // css
+  &.syntax--css {
+    .syntax--entity {
+      &.syntax--name.syntax--tag {
+        color: @mono-1;
+        &.syntax--custom {
+          color: @hue-5-2;
+        }
+      }
+      &.syntax--attribute-name {
+        color: @syntax-color-class;
+      }
+    }
+    .syntax--support.syntax--constant.syntax--property-value {
+      color: @syntax-color-constant;
+    }
+  }
   // gfm
   &.syntax--gfm {
     .syntax--comment.syntax--quote {
@@ -114,9 +139,6 @@ atom-text-editor.editor.is-focused {
 }
 // markdown
 .syntax--markup {
-  &.syntax--underline {
-    font-style: italic;
-  }
   &.syntax--quote {
     color: @syntax-color-tag;
   }

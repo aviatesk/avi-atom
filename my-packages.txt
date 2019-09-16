@@ -1,5 +1,5 @@
 advanced-open-file@0.16.8
-ariake-dark-syntax@0.1.3
+ariake-dark-syntax@0.2.1
 atom-beautify@0.33.4
 atom-clock@0.1.17
 atom-ide-debugger-python@0.7.3
