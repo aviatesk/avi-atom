@@ -21,8 +21,8 @@ atreplinit() do repl
         @eval using REPL
         if !isdefined(repl, :interface)
             repl.interface = REPL.setup_interface(repl)
-            repl.interface.modes[1].prompt = "jμλια> "
         end
+        repl.interface.modes[1].prompt = "jμλια> "
     catch err
         @error err
     end

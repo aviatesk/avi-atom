@@ -112,6 +112,9 @@ atom-text-editor.editor.is-focused {
     .syntax--string.syntax--docstring {
       font-style: italic;
     }
+    .syntax--constant.syntax--escape {
+      color: @syntax-color-constant;
+    }
   }
   // css
   &.syntax--css {
@@ -138,9 +141,13 @@ atom-text-editor.editor.is-focused {
   }
 }
 // markdown
-.syntax--markup {
-  &.syntax--quote {
+.syntax--text.syntax--md {
+  .syntax--markup.syntax--quote {
     color: @syntax-color-tag;
+    font-style: italic;
+  }
+  .syntax--language.syntax--constant {
+    font-weight: bold;
   }
 }
 
