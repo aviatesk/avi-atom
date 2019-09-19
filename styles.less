@@ -1,5 +1,6 @@
-@import "ui-variables";
-@import "syntax-variables";
+@import 'ui-variables';
+@import 'syntax-variables';
+@import 'mpe-styles/fancy-one-dark';
 
 /** UI */
 atom-workspace {
@@ -148,6 +149,47 @@ atom-text-editor.editor.is-focused {
   }
   .syntax--language.syntax--constant {
     font-weight: bold;
+  }
+  .syntax--heading.syntax--md {
+    .syntax--heading-1 {
+      color: @h1-color;
+      .syntax--punctuation.syntax--md {
+        color: @h1-color;
+      }
+    }
+    .syntax--heading-2 {
+      color: @h2-color;
+      .syntax--punctuation.syntax--md {
+        color: @h2-color;
+      }
+    }
+    .syntax--heading-3 {
+      color: @h3-color;
+      .syntax--punctuation.syntax--md {
+        color: @h3-color;
+      }
+    }
+    .syntax--heading-4 {
+      color: @h4-color;
+      .syntax--punctuation.syntax--md {
+        color: @h4-color;
+      }
+    }
+    .syntax--heading-5 {
+      color: @h5-color;
+      .syntax--punctuation.syntax--md {
+        color: @h5-color;
+      }
+    }
+    .syntax--heading-6 {
+      color: @h6-color;
+      .syntax--punctuation.syntax--md {
+        color: @h6-color;
+      }
+    }
+  }
+  .syntax--punctuation.syntax--md {
+    color: @hue-5-2;
   }
 }
 
