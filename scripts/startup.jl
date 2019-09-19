@@ -22,7 +22,6 @@ atreplinit() do repl
         if !isdefined(repl, :interface)
             repl.interface = REPL.setup_interface(repl)
         end
-        repl.interface.modes[1].prompt = "jμλια> "
     catch err
         @error err
     end
@@ -44,6 +43,7 @@ atreplinit() do repl
 
     # load Juno specific scripts if appropriate
     isdefined(Main, :Juno) && begin
+        @err @eval OhMyREPL.input_prompt!("jμλια>")
         @err joinpath(@__DIR__, "junostartup.jl") |> include
     end
 
