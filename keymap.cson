@@ -731,6 +731,14 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'ctrl-r': 'ink-terminal:find-previous'
   'ctrl-s': 'ink-terminal:find-next'
   'ctrl-g': 'ink-terminal:close-search'
+".ink-debugger-container":
+  'f8': 'julia-debug:continue'
+  'shift-f8': 'julia-debug:stop-debugging'
+  'f9': 'julia-debug:step-to-next-line'
+  'ctrl-f9': 'julia-debug:step-to-selected-line'
+  'f10': 'julia-debug:step-to-next-expression'
+  'ctrl-f10': 'julia-debug:step-into-function'
+  'shift-f10': 'julia-debug:finish-function'
 
 ## Python
 "atom-text-editor[data-grammar='source python'].emacs-plus:not([mini])":
