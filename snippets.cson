@@ -313,16 +313,16 @@
     'body': 'mutable struct ${1:name}\n\t${3:field}\nend'
     'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts mutable struct block'
-  'for':
-    'prefix': 'for'
-    'body': 'for ${1:val} ∈ ${2:iterator}\n\t${3:body}\nend'
-    'rightLabelHTML': '<span>Julia</span>'
-    'description': 'Inserts for loop block'
   'begin':
     'prefix': 'begin'
     'body': 'begin\n\t$1\nend'
     'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts begin block'
+  'let':
+    'prefix': 'let'
+    'body': 'let $1\n\t$2\nend'
+    'rightLabelHTML': '<span>Julia</span>'
+    'description': 'Inserts let block'
   'do':
     'prefix': 'do'
     'body': 'do ${1:args}\n\t$2\nend'
@@ -333,11 +333,21 @@
     'body': 'quote\n\t$1\nend'
     'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts quote block'
+  'if':
+    'prefix': 'if'
+    'body': 'if ${1:cond}\n\t$2\nend'
+    'rightLabelHTML': '<span>Julia</span>'
+    'description': 'Inserts if block'
   'try catch':
     'prefix': 'try'
     'body': 'try\n\t${1:body}\ncatch err\n\t@error err\nend$2'
     'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts try/catch block'
+  'for':
+    'prefix': 'for'
+    'body': 'for ${1:val} ∈ ${2:iterator}\n\t${3:body}\nend'
+    'rightLabelHTML': '<span>Julia</span>'
+    'description': 'Inserts for loop block'
   'comment block':
     'prefix': 'cb'
     'body': '#=\n$1\n=#'

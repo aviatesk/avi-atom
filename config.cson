@@ -147,7 +147,6 @@
   "autocomplete-plus":
     enableExtendedUnicodeSupport: true
     minimumWordLength: 2
-    similarSuggestionRemoval: "textOrSnippet"
   "bracket-matcher": {}
   core:
     allowPendingPaneItems: true
