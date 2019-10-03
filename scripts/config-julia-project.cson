@@ -53,6 +53,13 @@ All values for the other Per-project configs are set as default
     maxFileCount: 2000
   "document-outline":
     maxHeadingDepth: 4 # Limit outlined depth
+  "hey-pane":
+    expandedWidth: 95
+    followLocations:
+      bottom: false
+      left: false
+      right: false
+    followModeByDefault: false
   "ide-python":
     # Another python with Python-Language-Server installed can be specified.
     # E.g.: "C:\\Users\\aviat\\Anaconda3\\envs\\py36\\python.exe"
