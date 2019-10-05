@@ -83,6 +83,34 @@ atom-text-editor.editor.is-focused {
 }
 
 /* syntax highlights */
+// julia & ink
+.syntax--source.syntax--julia,
+.ink.docpane,
+.ink-workspace,
+.ink.result.julia {
+  .syntax--operator {
+    color: @hue-2;
+  }
+  // @HACK: make up atom-language-julia's unability to capture assignment form function declaration
+  .syntax--name.syntax--function {
+    color: @syntax-color-tag;
+  }
+  .syntax--type {
+    color: @syntax-color-class;
+  }
+  .syntax--symbol {
+    color: @hue-5-2;
+  }
+  .syntax--keyword.syntax--end {
+    opacity: 0.5;
+  }
+  .syntax--string.syntax--docstring {
+    font-style: italic;
+  }
+  .syntax--constant.syntax--escape {
+    color: @syntax-color-constant;
+  }
+}
 // link
 .syntax--markup {
   &.syntax--link {
@@ -91,54 +119,27 @@ atom-text-editor.editor.is-focused {
     }
   }
 }
-.syntax--source {
-  // julia
-  &.syntax--julia {
-    .syntax--operator {
-      color: @hue-2;
+// css
+.syntax--css {
+  .syntax--entity {
+    &.syntax--name.syntax--tag {
+      color: @mono-1;
+      &.syntax--custom {
+        color: @hue-5-2;
+      }
     }
-    // @HACK: make up atom-language-julia's unability to capture assignment form function declaration
-    .syntax--name.syntax--function {
-      color: @syntax-color-tag;
-    }
-    .syntax--type {
+    &.syntax--attribute-name {
       color: @syntax-color-class;
     }
-    .syntax--symbol {
-      color: @hue-5-2;
-    }
-    .syntax--keyword.syntax--end {
-      opacity: 0.5;
-    }
-    .syntax--string.syntax--docstring {
-      font-style: italic;
-    }
-    .syntax--constant.syntax--escape {
-      color: @syntax-color-constant;
-    }
   }
-  // css
-  &.syntax--css {
-    .syntax--entity {
-      &.syntax--name.syntax--tag {
-        color: @mono-1;
-        &.syntax--custom {
-          color: @hue-5-2;
-        }
-      }
-      &.syntax--attribute-name {
-        color: @syntax-color-class;
-      }
-    }
-    .syntax--support.syntax--constant.syntax--property-value {
-      color: @syntax-color-constant;
-    }
+  .syntax--support.syntax--constant.syntax--property-value {
+    color: @syntax-color-constant;
   }
-  // gfm
-  &.syntax--gfm {
-    .syntax--comment.syntax--quote {
-      color: @syntax-color-tag;
-    }
+}
+// gfm
+.syntax--gfm {
+  .syntax--comment.syntax--quote {
+    color: @syntax-color-tag;
   }
 }
 // markdown
@@ -247,15 +248,14 @@ atom-text-editor atom-text-editor-minimap {
   }
 }
 // ink
-.ink.docpane,
-.ink-workspace {
-  .syntax--type {
-    color: @syntax-color-class;
-  }
-  .syntax--constant.syntax--symbol {
-    color: @hue-5-2;
-  }
-}
+//  {
+//   .syntax--type {
+//     color: @syntax-color-class;
+//   }
+//   .syntax--constant.syntax--symbol {
+//     color: @hue-5-2;
+//   }
+// }
 // hydrogen
 .hydrogen {
   blockquote {
@@ -283,6 +283,10 @@ atom-text-editor atom-text-editor-minimap {
 }
 
 /** package-specific */
+// status-bar
+status-bar .status-bar-right .package-updates-status-view {
+  display: none;
+}
 // find-and-replace
 autocomplete-suggestion-list {
   font-size: var(--editor-font-size);

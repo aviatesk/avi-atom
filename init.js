@@ -254,7 +254,7 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
 
     // In Process
     tb.addButton({
-      icon: 'play',
+      icon: 'md-play',
       iconset: 'ion',
       tooltip: 'Run A Whole File',
       callback: 'julia-client:run-all',
