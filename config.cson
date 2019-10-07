@@ -259,6 +259,7 @@
       useSplitDiff: true
       wordDiff: true
     experimental:
+      autoFetch: 30
       customCommands: true
       diffBranches: true
     general:
