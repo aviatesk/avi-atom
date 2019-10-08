@@ -162,7 +162,7 @@
 
   ## Julia-client
   'alt-j': 'unset!'
-  'alt-j o': 'julia-client:open-console'
+  'alt-j o': 'julia-client:open-REPL'
   'alt-j d': 'julia-debug:open-debugger-pane'
   'alt-j i': 'julia-client:open-documentation-browser'
   'alt-j p': 'julia-client:open-plot-pane'
@@ -171,7 +171,7 @@
   'alt-j ctrl-s': 'julia-client:start-julia'
   'alt-j ctrl-c': 'julia-client:interrupt-julia'
   'alt-j ctrl-k': 'julia-client:kill-julia'
-  'alt-j ctrl-l': 'julia-client:clear-console'
+  'alt-j ctrl-l': 'julia-client:clear-REPL'
   'alt-j ctrl-f': 'julia-client:select-working-folder'
   'alt-j ctrl-m': 'julia-client:set-working-module'
   'alt-m': 'julia-client:set-working-module'
@@ -704,7 +704,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'ctrl-shift-s': 'ink-terminal:show-search'
   'ctrl-@': 'julia-client:focus-last-editor'
   'ctrl-c': 'julia-client:interrupt-julia'
-  'ctrl-l': 'julia-client:clear-console'
+  'ctrl-l': 'julia-client:clear-REPL'
   'alt-d': 'julia-debug:open-debugger-pane'
   'alt-i': 'julia-client:open-documentation-browser'
   'alt-p': 'julia-client:open-plot-pane'

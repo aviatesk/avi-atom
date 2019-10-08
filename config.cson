@@ -2,7 +2,7 @@
   Hydrogen:
     autocompleteSuggestionPriority: 1
     gateways: "[{ \"name\": \"Local notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthToken\" } }]"
-    languageMappings: "{ \"python\": \"pweave markdown\", \"julia\": \"weave.jl markdown\", \"r\": \"r markdown\" }"
+    languageMappings: "{ \"julia\": \"weave.jl markdown\", \"common-lisp\": \"common lisp\", \"python\": \"pweave markdown\", \"r\": \"r markdown\" }"
     outputAreaDock: true
     showInspectorResultsInAutocomplete: true
     startDir: "dirOfFile"
@@ -410,6 +410,7 @@
     uiOptions:
       enableMenu: true
       enableToolBar: false
+      errorInRepl: true
       layouts:
         debuggerPane:
           split: "up"

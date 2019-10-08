@@ -281,8 +281,8 @@ const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
     // Panes
     tb.addButton({
       icon: 'terminal',
-      tooltip: 'Open Console Pane',
-      callback: 'julia-client:open-console',
+      tooltip: 'Open REPL Pane',
+      callback: 'julia-client:open-REPL',
     });
     tb.addButton({
       icon: 'book',
