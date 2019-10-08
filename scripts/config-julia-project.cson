@@ -12,12 +12,11 @@ All values for the other Per-project configs are set as default
       rendererType: true
     juliaOptions:
       arguments: [
-        "JUNO_OHMYREPL"
-        # # Comment-in the line below to set-up Plots.jl for Juno
-        # "JUNO_PLOTS"
         # # Comment-in the line below to import Weave.jl/Plots.jl on Juno startup
         # "PLOTS"
         # "WEAVE"
+        # # Comment-in the line below when hacking on julia itself
+        # "JULIA_DEV"
       ]
       optimisationLevel: 2
       persistWorkingDir: false
@@ -59,7 +58,7 @@ All values for the other Per-project configs are set as default
       bottom: false
       left: false
       right: false
-    followModeByDefault: false
+    followModeByDefault: true
   "ide-python":
     # Another python with Python-Language-Server installed can be specified.
     # E.g.: "C:\\Users\\aviat\\Anaconda3\\envs\\py36\\python.exe"

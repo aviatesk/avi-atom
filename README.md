@@ -155,11 +155,9 @@ Since importing Plots.jl takes long time, I made the settings above _loaded/acti
 Enable this by making symbolic links in scripts directory to ~/.julia/config:
 
 ```bash {cmd}
-rm ~/.julia/config/startup.jl ~/.julia/config/junostartup.jl ~/.julia/config/junoohmyrepl.jl ~/.julia/config/junoplots.jl
+rm ~/.julia/config/startup.jl ~/.julia/config/junostartup.jl
 link ~/.atom/scripts/startup.jl ~/.julia/config/startup.jl
 link ~/.atom/scripts/junostartup.jl ~/.julia/config/junostartup.jl
-link ~/.atom/scripts/junoohmyrepl.jl ~/.julia/config/junoohmyrepl.jl
-link ~/.atom/scripts/junoplots.jl ~/.julia/config/junoplots.jl
 ```
 
 #### Fix a bug within Atom-IDE-Debugger-Python
