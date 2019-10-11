@@ -34,7 +34,7 @@ commands: [
     command: "python"
     arguments: [
       "C:\\Users\\aviat\\.atom\\scripts\\create-config.py"
-      "C:\\Users\\aviat\\.atom\\scripts\\config-general-project.cson"
+      "C:\\Users\\aviat\\.atom\\scripts\\project-config.cson"
     ]
     options:
       cwd: "{ProjectDir}"
