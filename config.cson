@@ -273,7 +273,7 @@
       bottom: false
       left: false
       right: false
-    followModeByDefault: true
+    followModeByDefault: false
   "highlight-line":
     enableBackgroundColor: false
     hideHighlightOnSelect: true

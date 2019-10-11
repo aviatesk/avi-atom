@@ -35,7 +35,7 @@ All values are set as default.
       bottom: false
       left: false
       right: false
-    followModeByDefault: true
+    followModeByDefault: false
   "ide-python":
     # Another python with Python-Language-Server installed can be specified.
     # E.g.: "C:\\Users\\aviat\\Anaconda3\\envs\\py36\\python.exe"
