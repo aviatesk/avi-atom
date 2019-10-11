@@ -75,7 +75,6 @@
       "atom-ide-code-format": "never"
       "atom-ide-console": "never"
       "atom-ide-debugger": "never"
-      "atom-ide-find-references": "never"
       "atom-ide-outline-view": "never"
       "atom-ide-refactor": "never"
       "atom-ide-terminal": "never"
