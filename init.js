@@ -1,4 +1,4 @@
-/** @babel */
+'use babel';
 
 import { TextEditor } from 'atom';
 
@@ -147,182 +147,19 @@ atom.commands.add('atom-text-editor', 'hydrogen:attach-commands-to-current-scope
 
 
 /*
-Tweak Julia-Client & Tool-Bar
+Tweak Julia-Client
 */
 
-// Attach Hydrogen keybindings to .jl/.jmd files
-// @NOTE: These commands work as a fallback runner for Julia when Julia-Client is not activated
-const hydrogenKeybindsForJulia = atom.keymaps.add(
-  'init.js', {
-    'atom-text-editor[data-grammar=\'source julia\'].emacs-plus:not([mini])': hydrogenKeybinds,
-    'atom-text-editor[data-grammar=\'source weave md\'].emacs-plus:not([mini])': hydrogenKeybinds,
-    'atom-text-editor[data-grammar=\'source julia\'].emacs-plus.mark-mode:not([mini])': hydrogenMarkKeybinds,
-    'atom-text-editor[data-grammar=\'source weave md\'].emacs-plus.mark-mode:not([mini])': hydrogenMarkKeybinds,
+atom.commands.add('atom-workspace', {
+  // Restart Julia Process
+  'julia-client:restart-julia': async () => {
+    const element = atom.workspace.getElement();
+    if (!element) return;
+    await atom.commands.dispatch(element, 'julia-client:kill-julia');
+    atom.commands.dispatch(element, 'julia-client:start-julia');
   },
-  1,
-);
-
-const juliaClientWatcher = atom.packages.onDidActivatePackage((pkg) => {
-  if (pkg.name !== 'julia-client') return;
-
-  // Dispose Hydrogen keybindings for Julia files
-  hydrogenKeybindsForJulia.dispose();
-
-  // Create custom Julia-Client commands
-  atom.commands.add('atom-workspace', {
-    // Restart Julia Process
-    'julia-client:restart-julia': async () => {
-      const element = atom.workspace.getElement();
-      if (!element) return;
-      await atom.commands.dispatch(element, 'julia-client:kill-julia');
-      atom.commands.dispatch(element, 'julia-client:start-julia');
-    },
-  });
-
-  // Mimic Hydrogen's keybindings
-  const juliaClientCommands = {
-    'ctrl-c ctrl-c': 'julia-client:run-block',
-    'ctrl-c ctrl-n': 'julia-client:run-and-move',
-    'ctrl-c ctrl-d': 'julia-client:run-cell',
-    'ctrl-c ctrl-b': 'julia-client:run-cell-and-move',
-    'ctrl-c ctrl-r': 'julia-client:run-all',
-    'ctrl-enter': 'julia-client:run-block',
-    'shift-enter': 'julia-client:run-and-move',
-    'alt-ctrl-enter': 'julia-client:run-cell',
-    'alt-shift-enter': 'julia-client:run-cell-and-move',
-    'ctrl-alt-shift-enter': 'julia-client:run-all',
-    'alt-i': 'julia-client:show-documentation',
-    'ctrl-c space': 'inline:clear-current',
-    'ctrl-c ctrl-space': 'inline-results:clear-all',
-  };
-  const juliaClientMarkCommands = {
-    'ctrl-c ctrl-d': 'julia-client:run-block',
-    'ctrl-c ctrl-b': 'julia-client:run-and-move',
-    'alt-ctrl-enter': 'julia-client:run-block',
-    'alt-shift-enter': 'julia-client:run-and-move',
-  };
-  // Attach Julia-Client commands to .jl/.jmd files
-  atom.keymaps.add(
-    'init.js', {
-      'atom-workspace': { 'alt-j ctrl-r': 'julia-client:restart-julia' },
-      'atom-text-editor[data-grammar=\'source julia\'].emacs-plus:not([mini])': juliaClientCommands,
-      'atom-text-editor[data-grammar=\'source weave md\'].emacs-plus:not([mini])': juliaClientCommands,
-      'atom-text-editor[data-grammar=\'source julia\'].emacs-plus.mark-mode:not([mini])': juliaClientMarkCommands,
-      'atom-text-editor[data-grammar=\'source weave md\'].emacs-plus.mark-mode:not([mini])': juliaClientMarkCommands,
-    },
-    1,
-  );
-
-  // Tweak Tool-Bar integration if activated
-  if (atom.packages.isPackageLoaded('tool-bar')) {
-    const toolBar = atom.packages.getLoadedPackage('tool-bar');
-    if (!toolBar) {
-      // eslint-disable-next-line no-console
-      console.warning('Julia-Client: Failed to customize Tool-Bar integration');
-      return;
-    }
-    const tb = toolBar.mainModule.provideToolBar()('julia-client');
-
-    // Process
-    tb.addButton({
-      icon: 'flame',
-      tooltip: 'Start Julia Process',
-      callback: 'julia-client:start-julia',
-    });
-    tb.addButton({
-      icon: 'globe',
-      tooltip: 'Start Remote Julia Process',
-      callback: 'julia-client:start-remote-julia-process',
-    });
-    tb.addButton({
-      icon: 'zap',
-      tooltip: 'Interrupt Julia Process',
-      callback: 'julia-client:interrupt-julia',
-    });
-    tb.addButton({
-      icon: 'sync',
-      tooltip: 'Restart Julia Process',
-      callback: 'julia-client:restart-julia',
-    });
-    tb.addButton({
-      icon: 'trashcan',
-      tooltip: 'Kill Julia Process',
-      callback: 'julia-client:kill-julia',
-    });
-
-    tb.addSpacer();
-
-    // In Process
-    tb.addButton({
-      icon: 'md-play',
-      iconset: 'ion',
-      tooltip: 'Run A Whole File',
-      callback: 'julia-client:run-all',
-    });
-    tb.addButton({
-      icon: 'format-float-none',
-      iconset: 'mdi',
-      tooltip: 'Format Code',
-      callback: 'julia-client:format-code',
-    });
-    tb.addButton({
-      icon: 'file-directory',
-      tooltip: 'Set Working Directory',
-      callback: 'julia-client:select-working-folder',
-    });
-    tb.addButton({
-      icon: 'package',
-      tooltip: 'Set Working Module',
-      callback: 'julia-client:set-working-module',
-    });
-
-    tb.addSpacer();
-
-    // Panes
-    tb.addButton({
-      icon: 'terminal',
-      tooltip: 'Open REPL Pane',
-      callback: 'julia-client:open-REPL',
-    });
-    tb.addButton({
-      icon: 'book',
-      tooltip: 'Open Workspace Pane',
-      callback: 'julia-client:open-workspace',
-    });
-    tb.addButton({
-      icon: 'info',
-      tooltip: 'Open Documentation Pane',
-      callback: 'julia-client:open-documentation-browser',
-    });
-    tb.addButton({
-      icon: 'list-unordered',
-      tooltip: 'Open Outline Pane',
-      callback: 'julia-client:open-outline-pane',
-    });
-    tb.addButton({
-      icon: 'bug',
-      tooltip: 'Open Debugger Pane',
-      callback: 'julia-debug:open-debugger-pane',
-    });
-    tb.addButton({
-      icon: 'graph',
-      tooltip: 'Open Plot Pane',
-      callback: 'julia-client:open-plot-pane',
-    });
-
-    tb.addSpacer();
-
-    // Meta
-    tb.addButton({
-      icon: 'gear',
-      tooltip: 'Open Settings',
-      callback: 'julia-client:settings',
-    });
-  }
-
-  // Dispose this package watcher
-  juliaClientWatcher.dispose();
 });
+
 
 /*
 Use Atom-TypeScript for JavaScript files even for non-TypeScript projects

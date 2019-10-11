@@ -41,19 +41,6 @@ commands: [
       keymap: 'ctrl-alt-shift-p'
   }
 
-  # Create Julia-project configs
-  {
-    name: "create-julia-project-config"
-    command: "python"
-    arguments: [
-      "C:\\Users\\aviat\\.atom\\scripts\\create-config.py"
-      "C:\\Users\\aviat\\.atom\\scripts\\config-julia-project.cson"
-    ]
-    options:
-      cwd: "{ProjectDir}"
-      keymap: 'ctrl-alt-shift-j'
-  }
-
   # Process pweave document or R-markdown
   # The specified .sh & .bat file will automatically detect the file type,
   #  and then run processing command accordingly.

@@ -51,7 +51,6 @@ split-diff@1.6.1
 status-bar-blame@2.0.3
 termination@0.7.4
 todo-show@2.3.2
-tool-bar@1.2.0
 tree-view-autoadjust@3.0.0
 tree-view-git-status@1.5.2
 wordcount@3.1.0

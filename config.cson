@@ -178,7 +178,6 @@
         "md"
       ]
     disabledPackages: [
-      "julia-client"
       "git-diff"
       "markdown-preview"
     ]
@@ -213,7 +212,6 @@
       "split-diff"
       "termination"
       "todo-show"
-      "tool-bar"
       "spell-check"
       "tree-view"
     ]
@@ -375,18 +373,15 @@
     juliaOptions:
       arguments: []
       autoCompletionSuggestionPriority: 1
-      bootMode: "Basic"
+      bootMode: "Cycler"
       noAutoParenthesis: true
       optimisationLevel: 2
       persistWorkingDir: false
-      startupArguments: [
-        "--project=C:\\Users\\aviat\\julia\\JunoLab"
-      ]
+      startupArguments: []
       workingDir: ""
     juliaPath: "julia"
     uiOptions:
       enableMenu: true
-      enableToolBar: false
       errorInRepl: true
       layouts:
         debuggerPane:
@@ -581,10 +576,6 @@
     ]
     sortBy: "Path"
     statusBarIndicator: true
-  "tool-bar":
-    iconSize: "24px"
-    position: "Left"
-    visible: true
   "tree-view":
     squashDirectoryNames: true
   "tree-view-autoadjust":

@@ -171,6 +171,7 @@
   'alt-j ctrl-s': 'julia-client:start-julia'
   'alt-j ctrl-c': 'julia-client:interrupt-julia'
   'alt-j ctrl-k': 'julia-client:kill-julia'
+  'alt-j ctrl-r': 'julia-client:restart-julia'
   'alt-j ctrl-l': 'julia-client:clear-REPL'
   'alt-j ctrl-f': 'julia-client:select-working-folder'
   'alt-j ctrl-m': 'julia-client:set-working-module'
@@ -672,18 +673,39 @@ atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini])
   'ctrl-alt-shift-enter': 'markdown-preview-enhanced:run-all-code-chunks'
 
 ## Julia
+# Juno
 "
 atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
 ":
-  ## Julia-Client
-  # Code execution commands are not listed here. It would be automatically attached in init.js ##
-  'ctrl-@': 'julia-client:focus-last-terminal'
-  'ctrl-c ctrl-f': 'julia-client:format-code'
+  'ctrl-c ctrl-c': 'julia-client:run-block'
+  'ctrl-c ctrl-n': 'julia-client:run-and-move'
+  'ctrl-c ctrl-d': 'julia-client:run-cell'
+  'ctrl-c ctrl-b': 'julia-client:run-cell-and-move'
+  'ctrl-c ctrl-r': 'julia-client:run-all'
+  'ctrl-enter': 'julia-client:run-block'
+  'shift-enter': 'julia-client:run-and-move'
+  'alt-ctrl-enter': 'julia-client:run-cell'
+  'alt-shift-enter': 'julia-client:run-cell-and-move'
+  'ctrl-alt-shift-enter': 'julia-client:run-all'
+  'ctrl-c space': 'inline:clear-current'
+  'ctrl-c ctrl-space': 'inline-results:clear-all'
+  'alt-i': 'julia-client:show-documentation'
   'alt-enter': 'julia-client:goto-symbol'
   'alt-shift': 'julia-client:return-from-goto'
   'ctrl-alt-o': 'julia-client:open-outline-pane'
-  # Julia-Debug
+  'ctrl-@': 'julia-client:focus-last-terminal'
+  'ctrl-c ctrl-f': 'julia-client:format-code'
+"
+atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
+atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini])
+":
+  'ctrl-c ctrl-d': 'julia-client:run-block'
+  'ctrl-c ctrl-b': 'julia-client:run-and-move'
+  'alt-ctrl-enter': 'julia-client:run-block'
+  'alt-shift-enter': 'julia-client:run-and-move'
+# Juno debugger
+"atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini])":
   'ctrl-x space': 'julia-debug:toggle-breakpoint'
   'ctrl-x ctrl-space': 'julia-debug:toggle-conditional-breakpoint'
   'f8': 'julia-debug:continue'
