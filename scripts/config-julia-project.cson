@@ -30,8 +30,6 @@ All values for the other Per-project configs are set as default
     disabledPackages: [
       # # Comment-IN the line below to disable Spell-Checker (Note it will work only with American-English)
       # "spell-check"
-      # Comment-OUT the line below to enable atom-ide-debugger-python
-      "atom-ide-debugger-python"
       # # Enable Julia packages ! #
       # "julia-client"
       # "tool-bar"
@@ -42,12 +40,6 @@ All values for the other Per-project configs are set as default
   ### General Per-project configs ###
   Zen:
     width: 80 # Set Zen width
-  "atom-ide-ui":
-    use:
-      "atom-ide-console": "never" # Should be removed to enable atom-ide-debugger-python
-      "atom-ide-debugger": "never" # Should be removed to enable atom-ide-debugger-python
-      "atom-ide-refactor": "never"
-      "atom-ide-terminal": "never"
   "autocomplete-paths":
     maxFileCount: 2000
   "document-outline":
@@ -59,10 +51,6 @@ All values for the other Per-project configs are set as default
       left: false
       right: false
     followModeByDefault: false
-  "ide-python":
-    # Another python with Python-Language-Server installed can be specified.
-    # E.g.: "C:\\Users\\aviat\\Anaconda3\\envs\\py36\\python.exe"
-    python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
   "markdown-preview-enhanced":
     automaticallyShowPreviewOfMarkdownBeingEdited: false
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred

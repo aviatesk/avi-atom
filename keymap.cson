@@ -176,9 +176,6 @@
   'alt-j ctrl-m': 'julia-client:set-working-module'
   'alt-m': 'julia-client:set-working-module'
 
-  ## Atom-IDE-Debugger-Python
-  'alt-y d': 'debugger:toggle'
-
   ## Termination
   'alt-:': 'termination:toggle'
   'ctrl-:': 'termination:focus'
@@ -741,21 +738,6 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'f10': 'julia-debug:step-to-next-expression'
   'ctrl-f10': 'julia-debug:step-into-function'
   'shift-f10': 'julia-debug:finish-function'
-
-## Python
-"atom-text-editor[data-grammar='source python'].emacs-plus:not([mini])":
-  ## Atom-IDE-Debugger-Python
-  'ctrl-x space': 'debugger:toggle-breakpoint'
-  'ctrl-x ctrl-space': 'debugger:edit-breakpoint'
-  'ctrl-x d': 'debugger:show-launch-dialog'
-  'ctrl-x ctrl-d': 'debugger:show-launch-dialog'
-  'f8': 'debugger:continue-debugging'
-  'f9': 'debugger:step-into'
-  'f10': 'debugger:step-over'
-  'ctrl-f10': 'debugger:step-out'
-  ## IDE-Python
-  # Code format
-  'ctrl-c ctrl-f': 'code-format:format-code'
 
 ## TypeScript
 "

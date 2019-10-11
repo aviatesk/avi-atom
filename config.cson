@@ -72,8 +72,11 @@
     hyperclick:
       darwinTriggerKeys: "ctrlKey"
     use:
+      "atom-ide-code-format": "never"
       "atom-ide-console": "never"
       "atom-ide-debugger": "never"
+      "atom-ide-find-references": "never"
+      "atom-ide-outline-view": "never"
       "atom-ide-refactor": "never"
       "atom-ide-terminal": "never"
   "atom-package-deps":
@@ -177,8 +180,6 @@
       ]
     disabledPackages: [
       "julia-client"
-      "tool-bar"
-      "atom-ide-debugger-python"
       "git-diff"
       "markdown-preview"
     ]
@@ -280,26 +281,6 @@
   "highlight-selected":
     onlyHighlightWholeWords: false
   "ide-css": {}
-  "ide-python":
-    pylsPlugins:
-      autopep8:
-        enabled: false
-      jedi_definition:
-        follow_imports: true
-      pycodestyle:
-        ignore: [
-          "E121"
-          "E123"
-          "E126"
-          "E226"
-          "E24"
-          "E704"
-          "W503"
-          "E127"
-        ]
-      yapf:
-        enabled: true
-    python: "C:\\Users\\aviat\\Anaconda3\\python.exe"
   ink:
     terminal:
       ansiBlue:

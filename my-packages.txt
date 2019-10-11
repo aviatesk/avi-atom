@@ -2,7 +2,6 @@ advanced-open-file@0.16.8
 ariake-dark-syntax@0.2.1
 atom-beautify@0.33.4
 atom-clock@0.1.17
-atom-ide-debugger-python@0.7.3
 atom-ide-ui@0.13.0
 atom-path-intellisense@1.1.1
 atom-typescript@13.3.0
@@ -23,14 +22,13 @@ highlight-selected@0.16.0
 Hydrogen@2.12.1
 hyperlink-hyperclick@3.0.0
 ide-css@0.3.3
-ide-python@1.4.2
 indent-detective@0.4.0
-ink@0.11.2
-julia-client@0.11.0
+ink@0.11.5
+julia-client@0.11.2
 language-babel@2.85.0
 language-julia@0.19.1
 language-markdown@0.37.0
-language-weave@0.6.4
+language-weave@0.6.5
 latex-completions@0.3.6
 linter-coffeelint@2.0.20
 linter-eslint@8.5.5
