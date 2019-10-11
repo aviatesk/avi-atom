@@ -21,7 +21,6 @@ highlight-line@0.12.0
 highlight-selected@0.16.0
 Hydrogen@2.12.1
 hyperlink-hyperclick@3.0.0
-ide-css@0.3.3
 indent-detective@0.4.0
 ink@0.11.5
 julia-client@0.11.2

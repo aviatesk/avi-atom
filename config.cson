@@ -280,7 +280,6 @@
     hideHighlightOnSelect: true
   "highlight-selected":
     onlyHighlightWholeWords: false
-  "ide-css": {}
   ink:
     terminal:
       ansiBlue:
