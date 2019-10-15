@@ -257,7 +257,7 @@
       useSplitDiff: true
       wordDiff: true
     experimental:
-      autoFetch: 30
+      autoFetch: 5
       customCommands: true
       diffBranches: true
     general:
@@ -616,6 +616,7 @@
     enabled: true
 ".gfm.rmd.source":
   editor:
+    tabLength: 2
     tabType: "soft"
   whitespace:
     ensureSingleTrailingNewline: false
@@ -659,6 +660,7 @@
     removeTrailingWhitespace: false
 ".md.text":
   editor:
+    tabLength: 2
     tabType: "soft"
   whitespace:
     ensureSingleTrailingNewline: false
