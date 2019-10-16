@@ -1,7 +1,7 @@
 "*":
   Hydrogen:
     autocompleteSuggestionPriority: 1
-    gateways: "[{ \"name\": \"Local notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthToken\" } }]"
+    gateways: "[{ \"name\": \"Local notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthToken\" } }, { \"name\": \"WSL notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthTokenWSL\"} }]"
     languageMappings: "{ \"julia\": \"weave.jl markdown\", \"common-lisp\": \"common lisp\", \"python\": \"pweave markdown\", \"r\": \"r markdown\" }"
     outputAreaDock: true
     showInspectorResultsInAutocomplete: true
