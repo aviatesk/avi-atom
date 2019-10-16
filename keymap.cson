@@ -613,7 +613,7 @@ atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
   'ctrl-m c': 'markdown-writer:toggle-code-text'
   'ctrl-m ctrl-c': 'markdown-writer:toggle-codeblock-text'
   'ctrl-m m': 'markdown-writer:toggle-math-text'
-  'ctrl-m shift-m': 'markdown-writer:toggle-mathblock-text'
+  'ctrl-m ctrl-m': 'markdown-writer:toggle-mathblock-text'
   'ctrl-m k': 'markdown-writer:toggle-keystroke-text'
   'ctrl-m q': 'markdown-writer:toggle-blockquote'
   'ctrl-m s': 'markdown-writer:toggle-strikethrough-text'
@@ -647,7 +647,6 @@ atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
   'ctrl-m n': 'markdown-writer:jump-to-next-heading'
   'alt-n': 'markdown-writer:jump-to-next-heading'
   'ctrl-m enter': 'markdown-writer:jump-to-reference-definition'
-  'ctrl-m ctrl-m': 'markdown-writer:jump-to-next-table-cell'
   'alt-m': 'markdown-writer:jump-to-next-table-cell'
 '.markdown-writer atom-text-editor[mini]':
   'enter': 'core:confirm'
