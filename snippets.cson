@@ -351,7 +351,7 @@
     'description': 'Inserts try/catch block'
   'for':
     'prefix': 'for'
-    'body': 'for ${1:val} ∈ ${2:iterator}\n\t${3:body}\nend'
+    'body': 'for ${1:val} ${2:in} ${3:itr}\n\t${4:body}\nend'
     'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts for loop block'
   'comment block':
@@ -368,7 +368,7 @@
     'description': 'Inserts |> operator'
   'document':
     'prefix': 'doc'
-    'body': '@doc """\n\t${1:something}\n\n${2:docstrings}\n"""'
+    'body': '"""\n\t${1:something}\n\n${2:docstrings}\n"""'
     'rightLabelHTML': '<span>Base</span>'
     'description': 'Inserts documentation string block'
 
@@ -380,11 +380,26 @@
     'description': 'Inserts @linq pipe line block'
     'descriptionMoreURL': 'https://github.com/JuliaData/DataFramesMeta.jl#linq-macro'
 
+## docstring
+'.source.julia .string.docstring.julia':
+  'inline mathblock':
+    'prefix': 'mi'
+    'body': '``$1``'
+    'rightLabelHTML': '<span>Docs</span>'
+    'descrition': 'Inserts inline math block inside a docstring'
+    'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/documentation/index.html'
+  'mathblock':
+    'prefix': 'mb'
+    'body': '\\\\$$1\\\\$'
+    'rightLabelHTML': '<span>Docs</span>'
+    'descrition': 'Inserts math block inside a docstring'
+    'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/documentation/index.html'
+
 ## Scope specific
 '.source.julia .meta.bracket.julia':
   'for':
     'prefix': 'for'
-    'body': '${1:val} for ${1:val} ∈ ${2:iterator}'
+    'body': '${1:body} for ${2:val} ${3:in} ${4:itr}'
     'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts for loop comprehension'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1'

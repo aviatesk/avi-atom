@@ -305,6 +305,7 @@
         dark: "#86b1e0"
   "julia-client":
     consoleOptions:
+      shell: "C:\\cygwin64\\bin\\bash.exe"
       whitelistedKeybindingsREPL: [
         "Alt-W"
         "Ctrl-Y"
