@@ -368,7 +368,7 @@
     'description': 'Inserts |> operator'
   'document':
     'prefix': 'doc'
-    'body': '"""\n\t${1:something}\n\n${2:docstrings}\n"""'
+    'body': '"""\n    ${1:something}\n\n${2:docstrings}\n"""'
     'rightLabelHTML': '<span>Base</span>'
     'description': 'Inserts documentation string block'
 

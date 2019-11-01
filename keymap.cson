@@ -436,6 +436,7 @@
   'ctrl-x u': 'unset!'
   'ctrl-x ctrl-u': 'unset!'
   'ctrl-x ctrl-l': 'unset!'
+  'ctrl-r': 'unset!'
   'alt-q': 'unset!'
 
 
@@ -532,6 +533,8 @@
 '.find-and-replace':
   'ctrl-shift-s': 'find-and-replace:toggle'
   'ctrl-shift-r': 'find-and-replace:toggle'
+  'ctrl-s': 'find-and-replace:find-next'
+  'ctrl-r': 'find-and-replace:find-previous'
   'ctrl-f r': 'find-and-replace:toggle-regex-option'
   'ctrl-f c': 'find-and-replace:toggle-case-option'
   'ctrl-f s': 'find-and-replace:toggle-selection-option'
@@ -695,6 +698,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'ctrl-alt-o': 'julia-client:open-outline-pane'
   'ctrl-@': 'julia-client:focus-last-terminal'
   'ctrl-c ctrl-f': 'julia-client:format-code'
+  'ctrl-alt-r': 'julia-client:rename-refactor'
 "
 atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini])
