@@ -19,7 +19,7 @@ git-time-machine@2.1.0
 hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.16.0
-Hydrogen@2.13.0
+Hydrogen@2.13.1
 hyperlink-hyperclick@3.0.0
 indent-detective@0.4.0
 ink@0.11.6

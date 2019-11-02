@@ -235,7 +235,7 @@
   "dqs-shell-commands": {}
   editor:
     fontFamily: "Fira Code, Source Han Code JP"
-    fontSize: 12
+    fontSize: 13
     scrollPastEnd: true
     showIndentGuide: true
     softWrap: true
