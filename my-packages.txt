@@ -3,7 +3,6 @@ ariake-dark-syntax@0.2.1
 atom-beautify@0.33.4
 atom-clock@0.1.17
 atom-ide-ui@0.13.0
-atom-path-intellisense@1.1.1
 atom-typescript@13.3.0
 atomic-management@0.3.1
 autocomplete-paths@2.12.2

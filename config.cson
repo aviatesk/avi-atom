@@ -85,11 +85,6 @@
       "linter-tslint"
       "minimap-linter"
     ]
-  "atom-path-intellisense":
-    "manual-suggest": true
-    "scope-descriptors": [
-      "string.quoted"
-    ]
   "atom-typescript":
     tsserverInstancePerTsconfig: true
   "atomic-management": {}
@@ -306,7 +301,7 @@
         dark: "#86b1e0"
   "julia-client":
     consoleOptions:
-      shell: "C:\\cygwin64\\bin\\bash.exe"
+      shell: "C:\\Program Files\\Git\\bin\\bash.exe"
       whitelistedKeybindingsREPL: [
         "Alt-W"
         "Ctrl-Y"
