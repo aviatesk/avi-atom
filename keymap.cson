@@ -176,10 +176,8 @@
   'alt-j ctrl-f': 'julia-client:select-working-folder'
   'alt-j ctrl-m': 'julia-client:set-working-module'
   'alt-m': 'julia-client:set-working-module'
-
-  ## Termination
-  'alt-:': 'termination:toggle'
-  'ctrl-:': 'termination:focus'
+  'alt-:': 'julia-client:new-terminal'
+  'ctrl-:': 'julia-client:focus-last-terminal'
 
   ## Todo-Show
   'ctrl-alt-t': 'todo-show:toggle'
@@ -303,42 +301,6 @@
   'ctrl-n': 'github:select-next-hunk'
 '.github-CommitView-editor atom-text-editor:not([mini])':
   'alt-;': 'github:toggle-expanded-commit-message-editor'
-
-## Termination
-".termination .terminal":
-  'alt-backspace': 'editor:delete-to-beginning-of-word'
-  'alt-1': 'termination:insert-custom-text-1' # Renew ~/.atom/my-packages.txt from bash
-  'alt-2': 'termination:insert-custom-text-2' # Process .pmd or .Rmd file from bash
-  'alt-"': 'termination:insert-custom-text-3' # Process .pmd or .Rmd file from command prompt
-  'alt-3': 'termination:insert-custom-text-4'
-  'alt-w': 'termination:copy'
-  'alt-v': 'termination:paste'
-  'alt-i': 'termination:insert-text'
-  'alt-n': 'termination:new'
-  'alt-k': 'termination:prev'
-  'alt-l': 'termination:next'
-  'alt-r': 'termination:rename'
-  'alt-x': 'command-palette:toggle'
-  'alt-t': 'tree-view:toggle-focus'
-  'alt-h': 'github:toggle-git-tab-focus'
-
-# ## PDF-View
-# '.pdf-view':
-#   'o': 'core:move-up'
-#   'l': 'core:move-right'
-#   'n': 'core:move-down'
-#   'k': 'core:move-left'
-#   'p': 'pdf-view:go-to-previous-page'
-#   'shift-p': 'pdf-view:go-to-next-page'
-#   'ctrl-o': 'core:move-up'
-#   'ctrl-l': 'core:move-right'
-#   'ctrl-n': 'core:move-down'
-#   'ctrl-k': 'core:move-left'
-#   'ctrl-u': 'pdf-view:go-to-previous-page'
-#   'ctrl-b': 'pdf-view:go-to-next-page'
-#   'g': 'pdf-view:go-to-page'
-#   'ctrl-x g': 'pdf-view:go-to-page'
-#   'ctrl-x ctrl-f': 'advanced-open-file:toggle'
 
 ## Spell-Check
 '.corrections':
@@ -696,7 +658,6 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'alt-enter': 'julia-client:goto-symbol'
   'alt-shift': 'julia-client:return-from-goto'
   'ctrl-alt-o': 'julia-client:open-outline-pane'
-  'ctrl-@': 'julia-client:focus-last-terminal'
   'ctrl-c ctrl-f': 'julia-client:format-code'
   'ctrl-alt-r': 'julia-client:rename-refactor'
 "
@@ -720,30 +681,28 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'shift-f10': 'julia-debug:finish-function'
 ## Ink
 "ink-terminal":
-  'alt-w': 'ink-terminal:copy'
-  'ctrl-y': 'ink-terminal:paste'
+  'ctrl-:': 'julia-client:focus-last-editor'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab': 'pane:show-previous-item'
+  'ctrl-w': 'tabs:close-tab'
+  'ctrl-t': 'tree-view:toggle-focus'
+  'alt-t': 'tree-view:toggle'
+  'alt-b': 'window:toggle-bottom-dock'
+  'alt-l': 'window:toggle-right-dock'
+  'alt-h': 'github:toggle-git-tab'
+  'alt-shift-h': 'github:toggle-github-tab'
   'ctrl-shift-r': 'ink-terminal:show-search'
   'ctrl-shift-s': 'ink-terminal:show-search'
-  'ctrl-@': 'julia-client:focus-last-editor'
+"ink-terminal.julia-terminal":
   'ctrl-c': 'julia-client:interrupt-julia'
   'ctrl-l': 'julia-client:clear-REPL'
-  'alt-d': 'julia-debug:open-debugger-pane'
   'alt-i': 'julia-client:open-documentation-browser'
   'alt-p': 'julia-client:open-plot-pane'
   'alt-j': 'julia-client:open-workspace'
   'alt-,': 'julia-client:settings'
   'alt-f': 'julia-client:select-working-folder'
   'alt-m': 'julia-client:set-working-module'
-  'ctrl-tab': 'pane:show-next-item'
-  'ctrl-shift-tab': 'pane:show-previous-item'
-  'ctrl-w': 'tabs:close-tab'
-  'alt-b': 'window:toggle-bottom-dock'
-  'alt-l': 'window:toggle-left-dock'
-  'alt-t': 'tree-view:toggle'
-  'ctrl-t': 'tree-view:toggle-focus'
-  'alt-:': 'termination:toggle'
-  'ctrl-:': 'termination:focus'
-  'alt-h': 'github:toggle-git-tab'
+  'alt-d': 'julia-debug:open-debugger-pane'
   'f8': 'julia-debug:continue'
   'shift-f8': 'julia-debug:stop-debugging'
   'f9': 'julia-debug:step-to-next-line'
