@@ -80,8 +80,7 @@ We can make git globally ignore .atom/config.cson files by following steps:
 
 ```git
 # Ignore Atom per-project config settings except the root config setting
-**/.atom
-**/.atom/*
+/**/.atom/
 ```
 
 

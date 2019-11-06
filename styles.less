@@ -3,7 +3,8 @@
 @import 'mpe-styles/fancy-one-dark';
 
 /** UI */
-atom-workspace {
+atom-workspace,
+.github-Git {
   font-family: 'Segoe UI', 'Meiryo UI';
   font-size: 13px;
 }
@@ -213,6 +214,13 @@ atom-text-editor.editor.is-focused {
 .tree-view:focus .selected:before {
   background: linear-gradient(@tree-view-background-color, @current-focused)  !important;
 }
+// status-bar
+status-bar {
+  .github-StatusBarTile,
+  .package-updates-status-view {
+    display: none;
+  }
+}
 
 /* package specific */
 // cursor-history
@@ -248,6 +256,9 @@ atom-text-editor atom-text-editor-minimap {
 .hydrogen {
   blockquote {
     font-size: @font-size;
+  }
+  .markdown {
+    font-family: 'Segoe UI', 'Meiryo UI';
   }
   .inline-container {
     z-index: 1;

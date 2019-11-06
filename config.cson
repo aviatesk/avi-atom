@@ -304,7 +304,10 @@
       whitelistedKeybindingsREPL: [
         "ctrl-tab"
         "ctrl-shift-tab"
+        "ctrl-alt-right"
+        "ctrl-alt-left"
         "ctrl-w"
+        "ctrl-v"
         "alt-:"
         "ctrl-t"
         "alt-t"
@@ -333,7 +336,10 @@
       whitelistedKeybindingsTerminal: [
         "ctrl-tab"
         "ctrl-shift-tab"
+        "ctrl-alt-right"
+        "ctrl-alt-left"
         "ctrl-w"
+        "ctrl-v"
         "alt-:"
         "ctrl-t"
         "alt-t"
