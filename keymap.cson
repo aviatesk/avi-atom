@@ -18,7 +18,7 @@
 
   ## Tabs
   'ctrl-w': 'tabs:close-tab'
-  'ctrl-shift-w': 'tabs:close-all-tabs'
+  'ctrl-shift-w': 'tabs:keep-pending-tab'
   'ctrl-shift-a': 'core:select-all'
   'ctrl-tab ^ctrl': 'unset!'
   'ctrl-tab': 'pane:show-next-item'
@@ -177,6 +177,7 @@
   'alt-j ctrl-m': 'julia-client:set-working-module'
   'alt-m': 'julia-client:set-working-module'
   'alt-:': 'julia-client:new-terminal'
+  'alt-*': 'julia-client:new-terminal-from-current-folder'
   'ctrl-:': 'julia-client:focus-last-terminal'
 
   ## Todo-Show
