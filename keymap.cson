@@ -523,7 +523,8 @@
 atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source js'].emacs-plus:not([mini]),
-atom-text-editor[data-grammar='source java'].emacs-plus:not([mini])
+atom-text-editor[data-grammar='source java'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source ruby'].emacs-plus:not([mini])
 ":
   'ctrl-c ctrl-c': 'hydrogen:run'
   'ctrl-c ctrl-n': 'hydrogen:run-and-move-down'
@@ -545,7 +546,9 @@ atom-text-editor[data-grammar='source java'].emacs-plus:not([mini])
 "
 atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
-atom-text-editor[data-grammar='source java'].emacs-plus.mark-mode:not([mini])
+atom-text-editor[data-grammar='source js'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source java'].emacs-plus.mark-mode:not([mini]),
+atom-text-editor[data-grammar='source ruby'].emacs-plus.mark-mode:not([mini])
 ":
   'ctrl-c ctrl-d': 'hydrogen:run'
   'ctrl-c ctrl-b': 'hydrogen:run-and-move-down'

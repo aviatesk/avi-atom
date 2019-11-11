@@ -34,7 +34,7 @@
 
 
 ### Code cells ###
-'.source.julia, .source.python, .source.r':
+'.source.julia, .source.python, .source.ruby':
 
   'code cell':
     'prefix': 'cc'
@@ -833,3 +833,11 @@
     'prefix': 'ci'
     'body': '/** ${1:Comment} */'
     'description': 'Insert line comment block'
+
+
+
+### Ruby ###
+'.source.ruby':
+  'do block':
+    'prefix': 'do'
+    'body': 'do${1: |${2:args}|}\n\t$3\nend'
