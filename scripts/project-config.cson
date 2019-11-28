@@ -15,6 +15,7 @@ All values are set as default.
       # "spell-check"
       "git-diff"
       "markdown-preview"
+      "deprecation-cop"
     ]
   "document-outline":
     maxHeadingDepth: 4 # Limit outlined depth
@@ -53,30 +54,6 @@ All values are set as default.
     codeBlockTheme: "github.css" # Set `"one-dark.css"` if preferred
     previewTheme: "github-light.css" # Set `"one-dark.css"` if preferred
     scrollSync: true
-  "spell-check":
-    knownWords: [
-      "aviatesk"
-      "aviat"
-      "kbd"
-      "th"
-      "s"
-      # # Additional known (ignored) words would come here
-    ]
-  termination:
-    core:
-      shell: "C:\\Program Files\\Git\\bin\\bash.exe"
-      workingDirectory: "Project" # Setn `"Active File"` in order to start every shell session from active file's directory
-    customTexts:
-      customText1: "apm list --installed --dev false --bare > ~/.atom/my-packages.txt"
-      customText2: "bash ~/.atom/scripts/process-md.sh $F"
-      customText3: "C:\\Users\\aviat\\.atom\\scripts\\process-md.bat $F"
-    style:
-      fontFamily: "Myrica M"
-      fontSize: "14"
-      theme: "one-dark"
-    toggles:
-      cursorBlink: false
-      runInsertedText: false
   "tree-view-autoadjust":
     minimumWidth: 0 # Set `300` for MPE previewing in Tree-View pane
 

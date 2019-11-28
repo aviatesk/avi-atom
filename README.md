@@ -8,7 +8,7 @@ Let me show off my Atom customs a bit and explain how to restore them.
 
 > Juno
 
-![](assets/juno.png)
+![](./assets/juno.png)
 
 > Hydrogen
 

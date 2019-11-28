@@ -85,6 +85,8 @@
       "linter-tslint"
       "minimap-linter"
     ]
+  "atom-path-intellisense":
+    "allowed-scopes": ".string.quoted"
   "atom-typescript":
     tsserverInstancePerTsconfig: true
   "atomic-management": {}
@@ -97,12 +99,10 @@
           "png"
           "svg"
         ]
-        includeCurrentDirectory: true
         prefixes: [
           "\\<img\\ssrc="
           "\\!\\[.*\\]\\("
         ]
-        relative: true
         scopes: [
           "source.gfm"
           "source.weave.md"
@@ -111,33 +111,15 @@
         ]
       }
       {
-        extensions: [
-          ".*"
-        ]
-        includeCurrentDirectory: true
         prefixes: [
           "\\[.*\\]\\("
           "\\[.*\\]\\:\\s"
         ]
-        relative: true
         scopes: [
           "source.gfm"
           "source.weave.md"
           "source.pweave.md"
           "text.md"
-        ]
-      }
-      {
-        extensions: [
-          "jl"
-        ]
-        includeCurrentDirectory: false
-        prefixes: [
-          "include\\(\""
-        ]
-        relative: true
-        scopes: [
-          "source.julia"
         ]
       }
     ]
@@ -175,6 +157,7 @@
     disabledPackages: [
       "git-diff"
       "markdown-preview"
+      "deprecation-cop"
     ]
     excludeVcsIgnoredPaths: true
     ignoredNames: [
@@ -192,7 +175,6 @@
       "Hydrogen"
       "Zen"
       "atom-beautify"
-      "atom-html-preview"
       "atom-typescript"
       "git-diff"
       "git-diff-plus"
@@ -203,7 +185,6 @@
       "language-weave"
       "markdown-preview-enhanced"
       "markdown-writer"
-      "script"
       "split-diff"
       "todo-show"
       "spell-check"
@@ -220,6 +201,9 @@
       "ariake-dark-syntax"
     ]
     uriHandlerRegistration: "always"
+    versionPinnedPackages: [
+      "github"
+    ]
     warnOnLargeFileLimit: 10
   "cursor-history":
     openInPendingState: true
@@ -229,7 +213,6 @@
   "dqs-shell-commands": {}
   editor:
     fontFamily: "Fira Code, Source Han Code JP"
-    fontSize: 13
     scrollPastEnd: true
     showIndentGuide: true
     softWrap: true
@@ -252,7 +235,7 @@
       useSplitDiff: true
       wordDiff: true
     experimental:
-      autoFetch: 5
+      autoFetch: 0
       customCommands: true
       diffBranches: true
     general:
@@ -589,6 +572,9 @@
 ".gfm.source":
   editor:
     tabType: "soft"
+  whitespace:
+    ensureSingleTrailingNewline: false
+    removeTrailingWhitespace: false
 ".java.source":
   editor:
     preferredLineLength: 100
