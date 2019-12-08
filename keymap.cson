@@ -161,21 +161,23 @@
 
   ## Julia-client
   'alt-j': 'unset!'
-  'alt-j o': 'julia-client:open-REPL'
-  'alt-j d': 'julia-debug:open-debugger-pane'
-  'alt-j i': 'julia-client:open-documentation-browser'
-  'alt-j p': 'julia-client:open-plot-pane'
-  'alt-j w': 'julia-client:open-workspace'
-  'alt-j ,': 'julia-client:settings'
+  'alt-j ctrl-o': 'julia-client:open-REPL'
+  'alt-j ctrl-d': 'julia-debug:open-debugger-pane'
+  'alt-j ctrl-i': 'julia-client:open-documentation-browser'
+  'alt-j ctrl-p': 'julia-client:open-plot-pane'
+  'alt-j ctrl-w': 'julia-client:open-workspace'
+  'alt-j ctrl-,': 'julia-client:settings'
   'alt-j ctrl-s': 'julia-client:start-julia'
   'alt-j ctrl-c': 'julia-client:interrupt-julia'
   'alt-j ctrl-k': 'julia-client:kill-julia'
   'alt-j ctrl-r': 'julia-client:restart-julia'
   'alt-j ctrl-l': 'julia-client:clear-REPL'
-  'alt-j ctrl-f': 'julia-client:select-working-folder'
-  'alt-j ctrl-m': 'julia-client:set-working-module'
   'alt-j m': 'julia-client:set-working-module'
   'ctrl-x m': 'julia-client:set-working-module'
+  'alt-j f': 'julia-client:work-in-project-folder'
+  'alt-j ctrl-f': 'julia-client:work-in-current-folder'
+  'alt-j e': 'julia-client:activate-default-environment'
+  'alt-j ctrl-e': 'julia-client:activate-environment-in-current-folder'
   'alt-:': 'julia-client:new-terminal'
   'alt-*': 'julia-client:new-terminal-from-current-folder'
   'ctrl-:': 'julia-client:focus-last-terminal'
@@ -661,9 +663,6 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'alt-i': 'julia-client:show-documentation'
   'alt-enter': 'julia-client:goto-symbol'
   'alt-backspace': 'julia-client:return-from-goto'
-  'ctrl-alt-o': 'julia-client:open-outline-pane'
-  'ctrl-c ctrl-f': 'julia-client:format-code'
-  'ctrl-alt-r': 'julia-client:rename-refactor'
 "
 atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini])
@@ -672,8 +671,13 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'ctrl-c ctrl-b': 'julia-client:run-and-move'
   'alt-ctrl-enter': 'julia-client:run-block'
   'alt-shift-enter': 'julia-client:run-and-move'
-# Juno debugger
+# julia source text
 "atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini])":
+  # Juno
+  'ctrl-alt-o': 'julia-client:open-outline-pane'
+  'ctrl-c ctrl-f': 'julia-client:format-code'
+  'ctrl-alt-r': 'julia-client:rename-refactor'
+  # debugger
   'ctrl-x space': 'julia-debug:toggle-breakpoint'
   'ctrl-x ctrl-space': 'julia-debug:toggle-conditional-breakpoint'
   'f8': 'julia-debug:continue'
