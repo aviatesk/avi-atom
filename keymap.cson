@@ -522,6 +522,8 @@
 
 ## Hydrogen
 "
+atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source js'].emacs-plus:not([mini]),
@@ -616,7 +618,7 @@ atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
   'alt-p': 'markdown-writer:jump-to-previous-heading'
   'ctrl-m n': 'markdown-writer:jump-to-next-heading'
   'alt-n': 'markdown-writer:jump-to-next-heading'
-  'ctrl-m enter': 'markdown-writer:jump-to-reference-definition'
+  'alt-enter': 'markdown-writer:jump-to-reference-definition'
   'alt-m': 'markdown-writer:jump-to-next-table-cell'
 '.markdown-writer atom-text-editor[mini]':
   'enter': 'core:confirm'
@@ -634,12 +636,9 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
 ":
   'ctrl-shift-m': 'markdown-preview-enhanced:toggle'
-"
-atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
-atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini])
-":
-  'ctrl-enter': 'markdown-preview-enhanced:run-code-chunk'
-  'ctrl-alt-shift-enter': 'markdown-preview-enhanced:run-all-code-chunks'
+  'ctrl-m enter': 'markdown-preview-enhanced:run-code-chunk'
+  'ctrl-m ctrl-enter': 'markdown-preview-enhanced:run-all-code-chunks'
+
 
 ## Julia
 # Juno
