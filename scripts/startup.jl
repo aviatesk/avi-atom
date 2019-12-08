@@ -43,7 +43,7 @@ atreplinit() do repl
 
     # load Juno specific scripts if appropriate
     isdefined(Main, :Juno) && begin
-        @err @eval OhMyREPL.input_prompt!("jμλια>") # unicodes are beautifully rendered within xterm
+        @err @eval OhMyREPL.input_prompt!("jυλια>") # unicodes are beautifully rendered within xterm
         @err include(joinpath(@__DIR__, "junostartup.jl"))
     end
 
