@@ -173,7 +173,6 @@
   'alt-j ctrl-r': 'julia-client:restart-julia'
   'alt-j ctrl-l': 'julia-client:clear-REPL'
   'alt-j m': 'julia-client:set-working-module'
-  'ctrl-x m': 'julia-client:set-working-module'
   'alt-j f': 'julia-client:work-in-project-folder'
   'alt-j ctrl-f': 'julia-client:work-in-current-folder'
   'alt-j e': 'julia-client:activate-default-environment'

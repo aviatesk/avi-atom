@@ -93,22 +93,23 @@ atom-text-editor.editor.is-focused {
   .syntax--operator {
     color: @hue-2;
   }
-  // @HACK: make up atom-language-julia's unability to capture assignment form function declaration
+  .syntax--symbol {
+    color: @hue-5-2;
+  }
+  // HACK: make up atom-language-julia's unability to capture assignment form function declaration
   .syntax--name.syntax--function {
     color: @syntax-color-tag;
   }
   .syntax--type {
     color: @syntax-color-class;
   }
-  .syntax--symbol {
-    color: @hue-5-2;
-  }
-  .syntax--keyword.syntax--end {
-    opacity: 0.5;
+  .syntax--function.syntax--macro {
+    color: @syntax-color-snippet;
   }
   .syntax--string.syntax--docstring {
     font-style: italic;
   }
+  // escaped characters in strings
   .syntax--constant.syntax--escape {
     color: @syntax-color-constant;
   }
