@@ -288,10 +288,10 @@
 
 
 
-### Julia ###
+### julia ###
 '.source.julia':
 
-  ## Julia itself
+  ## julia itself
   'function':
     'prefix': 'function'
     'body': 'function ${1:name}(${2:args})\n\t${3:body}\nend'
@@ -344,6 +344,16 @@
     'body': 'if ${1:cond}\n\t$2\nend'
     'rightLabelHTML': '<span>Julia</span>'
     'description': 'Inserts if block'
+  'else':
+    'prefix': 'else'
+    'body': 'else\n\t${1:body}'
+    'rightLabelHTML': '<span>Julia</span>'
+    'description': 'Inserts else block'
+  'elseif':
+    'prefix': 'elseif'
+    'body': 'elseif ${1:cond}\n\t${2:body}'
+    'rightLabelHTML': '<span>Julia</span>'
+    'description': 'Inserts elseif block'
   'try catch':
     'prefix': 'try'
     'body': 'try\n\t${1:body}\ncatch err\n\t@error err\nend$2'
@@ -395,7 +405,7 @@
     'descrition': 'Inserts math block inside a docstring'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/documentation/index.html'
 
-## Scope specific
+## scope specific
 '.source.julia .meta.bracket.julia':
   'for':
     'prefix': 'for'
