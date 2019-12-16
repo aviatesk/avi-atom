@@ -85,7 +85,7 @@ atom-text-editor.editor.is-focused {
 }
 
 /* syntax highlights */
-// julia & ink
+// julia
 .syntax--source.syntax--julia,
 .ink.docpane,
 .ink-workspace,
@@ -112,6 +112,12 @@ atom-text-editor.editor.is-focused {
   // escaped characters in strings
   .syntax--constant.syntax--escape {
     color: @syntax-color-constant;
+  }
+  .syntax--keyword {
+    font-style: italic;
+    &.syntax--operator {
+      font-style: normal;
+    }
   }
 }
 // link
@@ -367,6 +373,11 @@ autocomplete-suggestion-list {
 .icon[data-name*="update"]:before {
   font-family: "Octicons Regular";
   content: "\f0b2"
+}
+// text
+.icon[data-name$=".in"]:before {
+  font-family: "Octicons Regular";
+  content: "\f011";
 }
 // gfm
 .icon[data-name="_draft.md"]:before,
