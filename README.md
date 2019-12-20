@@ -1,7 +1,6 @@
-# Atom customs - aviatesk
+# avi-atom
 
-Let me show off my Atom customs a bit and explain how to restore them.
-
+Let me show off my :atom: customs.
 
 
 ## Overview
@@ -134,7 +133,7 @@ link ~/.atom/scripts/junostartup.jl ~/.julia/config/junostartup.jl
 
 ## Author
 
-- **KADOWAKI, Shuhei** - _Undergraduate@Kyoto Univ._ - [aviatesk]
+- **Shuhei Kadowaki** - _Undergraduate@Kyoto Univ._ - [aviatesk]
 
 [aviatesk]: https://github.com/aviatesk
 

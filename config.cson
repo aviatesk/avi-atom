@@ -390,13 +390,13 @@
     useGlobalTslint: true
   "markdown-preview-enhanced":
     automaticallyShowPreviewOfMarkdownBeingEdited: false
-    codeBlockTheme: "github.css"
     enableCriticMarkupSyntax: true
     enableExtendedTableSyntax: true
     enableScriptExecution: true
     enableTypographer: true
     fileExtension: ".md, .MD, .jmd, Jmd, .pmd, .Pmd, .rmd, .Rmd"
     openPreviewPaneAutomatically: false
+    previewTheme: "one-dark.css"
     printBackground: true
   "markdown-writer":
     grammars: [
