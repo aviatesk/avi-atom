@@ -157,7 +157,6 @@
     disabledPackages: [
       "git-diff"
       "markdown-preview"
-      "deprecation-cop"
     ]
     excludeVcsIgnoredPaths: true
     ignoredNames: [
@@ -305,6 +304,7 @@
         "ctrl-l"
         "alt-i"
         "alt-p"
+        "alt-w"
         "alt-j"
         "alt-,"
         "alt-f"

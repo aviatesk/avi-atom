@@ -347,11 +347,20 @@ autocomplete-suggestion-list {
   content: "\f012";
 }
 .icon[data-name="src"]:before,
-.icon[data-name^="script"]:before,
-.icon[data-name="code"]:before {
+.icon[data-name="code"]:before,
+.icon[data-name="lib"]:before,
+.icon[data-name^="script"]:before {
   font-family: "Octicons Regular";
   content: "\f05f";
 }
+.icon[data-name="spec"]:before,
+.icon[data-name^="test"]:before {
+  font-family: file-icons;
+  content: "\ea63";
+}
+.icon[data-name="doc"]:before,
+.icon[data-name="docs"]:before,
+.icon[data-name="note"]:before,
 .icon[data-name="notes"]:before {
   font-family: "Octicons Regular";
   content: "\f007";
@@ -375,6 +384,13 @@ autocomplete-suggestion-list {
 .icon[data-name*="update"]:before {
   font-family: "Octicons Regular";
   content: "\f0b2"
+}
+.icon[data-name="bin"]:before,
+.icon[data-name="exe"]:before {
+  font-family: file-icons;
+  content: "\f0c8";
+  top: 2px;
+  font-size: 14px;
 }
 // text
 .icon[data-name$=".in"]:before {

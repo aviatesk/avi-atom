@@ -4,7 +4,7 @@ atom-beautify@0.33.4
 atom-clock@0.1.17
 atom-ide-ui@0.13.0
 atom-path-intellisense@1.2.2
-atom-typescript@13.4.3
+atom-typescript@13.4.8
 atomic-management@0.3.1
 autocomplete-paths@2.12.2
 color-picker@2.3.0
@@ -30,7 +30,7 @@ language-julia@0.19.2
 language-markdown@0.37.0
 language-weave@0.6.5
 latex-completions@0.3.6
-linter-coffeelint@2.0.28
+linter-coffeelint@2.0.29
 linter-eslint@8.5.5
 linter-tslint@1.10.37
 markdown-preview-enhanced@0.17.0

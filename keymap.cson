@@ -16,19 +16,23 @@
   'ctrl-;': 'core:confirm'
   'ctrl-g': 'core:cancel'
 
-  ## Tabs
+  ## tabs
   'ctrl-w': 'tabs:close-tab'
   'ctrl-shift-w': 'tabs:keep-pending-tab'
-  'ctrl-shift-a': 'core:select-all'
-  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-alt-space': 'core:select-all'
   'ctrl-tab': 'pane:show-next-item'
-  'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-shift-tab': 'pane:show-previous-item'
 
-  ## Commands
+  ## commands
   'ctrl-h': 'command-palette:toggle'
   'alt-x': 'command-palette:toggle'
   'alt-,': 'key-binding-resolver:toggle'
+
+  ## unsets
+  'ctrl-shift-a': 'unset!'
+  'ctrl-shift-s': 'unset!'
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab ^ctrl': 'unset!'
 
 ### All the atom-workspace ###
 'atom-workspace':
@@ -143,16 +147,18 @@
   'alt-g shift-r': 'git-plus:rebase-abort'
   'alt-g alt-g': 'git-plus:run'
 
-  ## Project-Find
+  ## project-find
   'ctrl-alt-s': 'project-find:toggle'
   'ctrl-alt-r': 'project-find:toggle'
+  'ctrl-alt-shift-s': 'project-find:show-in-current-directory'
+  'ctrl-alt-shift-r': 'project-find:show-in-current-directory'
 
-  ## Atom-IDE
-  # Diagnostics
+  ## atom-ide
+  # diagnostics
   'ctrl-alt-d': 'window:toggle-bottom-dock'
-  # Find references
+  # find-references
   'alt-f': 'window:toggle-bottom-dock'
-  # Outline-View
+  # outline
   'ctrl-alt-o': 'window:focus-pane-on-left'
 
   ## Hydrogen
@@ -173,6 +179,7 @@
   'alt-j ctrl-r': 'julia-client:restart-julia'
   'alt-j ctrl-l': 'julia-client:clear-REPL'
   'alt-j m': 'julia-client:set-working-module'
+  'ctrl-x ctrl-j': 'julia-client:set-working-module'
   'alt-j f': 'julia-client:work-in-project-folder'
   'alt-j ctrl-f': 'julia-client:work-in-current-folder'
   'alt-j e': 'julia-client:activate-default-environment'
@@ -252,13 +259,16 @@
   'ctrl-d': 'advanced-open-file:delete-path-component'
   'ctrl-z': 'advanced-open-file:undo'
 
-## Project-Find
+## project-find
 '.project-find':
-  'ctrl-f r': 'project-find:toggle-regex-option'
-  'ctrl-f c': 'project-find:toggle-case-option'
-  'ctrl-f w': 'project-find:toggle-whole-word-option'
-  'ctrl-enter': 'project-find:find-all'
-  'ctrl-shift-alt-enter': 'project-find:replace-all'
+  'ctrl-alt-s': 'project-find:toggle'
+  'ctrl-alt-r': 'project-find:toggle'
+  'ctrl-shift-s': 'find-and-replace:toggle'
+  'ctrl-shift-r': 'find-and-replace:toggle'
+  'alt-r': 'project-find:toggle-regex-option'
+  'alt-c': 'project-find:toggle-case-option'
+  'alt-w': 'project-find:toggle-whole-word-option'
+  'alt-d': 'project-find:show-in-current-directory'
 
 ## Git ##
 '.github-StagingView':
@@ -362,8 +372,8 @@
   'alt-;': 'spell-check:correct-misspelling'
   'ctrl-alt-;': 'spell-check:toggle'
 
-  ## Unsets
-  # make ctrl-k prefix-keybinding unavailable
+  ## unsets
+  # turn off emacs-plus's ctrl-k prefix-keybinding
   'ctrl-k t down': 'unset!'
   'ctrl-k t left': 'unset!'
   'ctrl-k ctrl-0': 'unset!'
@@ -407,67 +417,55 @@
 ### Atom-text-editor space, not including mini(one-line) editor space ###
 'atom-text-editor.emacs-plus:not([mini])':
 
-  ## Operations
+  ## operations
   'ctrl-;': 'editor:newline'
   'ctrl-x g': 'go-to-line:toggle'
   'ctrl-x t': 'emacs-plus:recenter-top-bottom'
-  'ctrl-shift-s': 'find-and-replace:toggle'
-  'ctrl-shift-r': 'find-and-replace:toggle'
-  'ctrl-s': 'find-and-replace:find-next'
-  'ctrl-r': 'find-and-replace:find-previous'
   'ctrl-t': 'tree-view:toggle-focus'
   'ctrl-w': 'unset!'
   'ctrl-alt-c': 'color-picker:open'
   'ctrl-alt-up': 'editor:select-larger-syntax-node'
   'ctrl-alt-down': 'editor:select-smaller-syntax-node'
 
-  ## Unsets
+  ## atom-ide
+  # datatip
+  'alt-d': 'datatip:toggle'
+  # diagnostics
+  'ctrl-alt-d': 'diagnostics:toggle-table'
+  # find-references
+  'alt-f': 'find-references:activate'
+  # outline
+  'ctrl-alt-o': 'outline-view:toggle'
+
+  ## find-and-replace
+  'ctrl-shift-s': 'find-and-replace:toggle'
+  'ctrl-shift-r': 'find-and-replace:toggle'
+  'ctrl-s': 'find-and-replace:find-next'
+  'ctrl-r': 'find-and-replace:find-previous'
+
+  ## packages
+  'shift-space': 'autocomplete-plus:activate'
+  'ctrl-x ctrl-e': 'encoding-selector:show'
+  'ctrl-x ctrl-m': 'grammar-selector:show'
+  'ctrl-x ctrl-i': 'indent-detective:choose-indent'
+  'ctrl-x e': 'line-ending-selector:show'
+  'alt-enter': 'hyperclick:confirm-cursor'
+  'alt-s': 'split-diff:toggle'
+  'ctrl-c ctrl-f': 'atom-beautify:beautify-editor'
+
+  ## unsets
   'alt-m': 'unset!'
   'alt-down': 'unset!'
   'alt-right': 'unset!'
   'alt-left': 'unset!'
   'alt-backspace': 'unset!'
 
-  ## Atom-Beautify
-  'ctrl-c ctrl-f': 'atom-beautify:beautify-editor'
 
-  ## Atom-IDE
-  # Datatip
-  'alt-d': 'datatip:toggle'
-  # Diagnostics
-  'ctrl-alt-d': 'diagnostics:toggle-table'
-  # Find-Reference
-  'alt-f': 'find-references:activate'
-  # Outline-View
-  'ctrl-alt-o': 'outline-view:toggle'
+### per-mode/grammar settings in atom-editor-space ###
 
-  ## Autocomplete-Plus
-  'shift-space': 'autocomplete-plus:activate'
-
-  ## Encoding-Selector
-  'ctrl-x ctrl-e': 'encoding-selector:show'
-
-  ## Grammer
-  'ctrl-x ctrl-m': 'grammar-selector:show'
-
-  ## Indent-Detective
-  'ctrl-x ctrl-i': 'indent-detective:choose-indent'
-
-  ## Line-Ending-Selector
-  'ctrl-x e': 'line-ending-selector:show'
-
-  ## Hyperclick
-  'alt-enter': 'hyperclick:confirm-cursor'
-
-  ## Split-diff
-  'alt-s': 'split-diff:toggle'
-
-
-### Per-mode & Per-filetype settings IN atom-editor-space ###
-
-## Mark mode (i.e. after ctrl-space)
+## mark mode (i.e. after ctrl-space)
 'atom-text-editor.emacs-plus.mark-mode:not([mini])':
-  ## Movements
+  ## movements
   # up
   'ctrl-o': 'core:select-up'
   'ctrl-u': 'editor:select-to-beginning-of-previous-paragraph'
@@ -484,12 +482,13 @@
   'ctrl-k': 'core:select-left'
   'ctrl-,': 'editor:select-to-beginning-of-word'
   'ctrl-a': 'editor:select-to-first-character-of-line'
-  ## Operations
+
+  ## operations
   'ctrl-alt-[': 'editor:fold-selection'
   'ctrl-alt-]': 'editor:unfold-current-row'
   'ctrl-w': 'emacs-plus:kill-region'
   'alt-a': 'emacs-plus:append-next-kill'
-  'ctrl-shift-a': 'core:select-all'
+
   ## find-and-replace
   'ctrl-s': 'find-and-replace:find-next-selected'
   'ctrl-r': 'find-and-replace:find-previous-selected'
@@ -498,18 +497,16 @@
 '.find-and-replace':
   'ctrl-shift-s': 'find-and-replace:toggle'
   'ctrl-shift-r': 'find-and-replace:toggle'
+  'alt-r': 'find-and-replace:toggle-regex-option'
+  'alt-c': 'find-and-replace:toggle-case-option'
+  'alt-s': 'find-and-replace:toggle-selection-option'
+  'alt-w': 'find-and-replace:toggle-whole-word-option'
   'ctrl-s': 'find-and-replace:find-next'
   'ctrl-r': 'find-and-replace:find-previous'
-  'ctrl-f r': 'find-and-replace:toggle-regex-option'
-  'ctrl-f c': 'find-and-replace:toggle-case-option'
-  'ctrl-f s': 'find-and-replace:toggle-selection-option'
-  'ctrl-f w': 'find-and-replace:toggle-whole-word-option'
-  'ctrl-enter': 'find-and-replace:find-all'
-  'shift-enter': 'find-and-replace:replace-next'
-  'alt-enter': 'find-and-replace:replace-previous'
-  'ctrl-shift-alt-enter': 'find-and-replace:replace-all'
+  'enter': 'find-and-replace:find-all'
+  'ctrl-enter': 'find-and-replace:replace-all'
 
-## Split-diff
+## split-diff
 '.split-diff':
   'ctrl-alt-p': 'split-diff:prev-diff'
   'ctrl-alt-l': 'split-diff:copy-to-right'
@@ -708,9 +705,10 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'ctrl-l': 'julia-client:clear-REPL'
   'alt-i': 'julia-client:open-documentation-browser'
   'alt-p': 'julia-client:open-plot-pane'
-  'alt-j': 'julia-client:open-workspace'
+  'alt-w': 'julia-client:open-workspace'
   'alt-,': 'julia-client:settings'
   'alt-f': 'julia-client:select-working-folder'
+  'alt-j': 'julia-client:set-working-module'
   'alt-m': 'julia-client:set-working-module'
   'alt-d': 'julia-debug:open-debugger-pane'
   'f8': 'julia-debug:continue'
@@ -744,7 +742,7 @@ atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
   'alt-enter': 'typescript:go-to-declaration'
   'alt-backspace': 'typescript:return-from-declaration'
   'ctrl-alt-o': 'typescript:toggle-semantic-view'
-  'ctrl-alt-f': 'typescript:find-references'
+  'alt-f': 'typescript:find-references'
   'ctrl-alt-r': 'typescript:rename-refactor'
   'ctrl-alt-shift-p': 'typescript:show-editor-position-history'
 

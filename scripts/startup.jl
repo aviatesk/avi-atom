@@ -5,15 +5,14 @@
 
 ENV["JULIA_PKG_DEVDIR"] = joinpath(homedir(), "julia", "packages")
 
-macro err(expr)
-    mod = @__MODULE__
-    quote
+macro err(ex)
+    return quote
         try
-            @eval $(mod) $(expr)
+            Core.eval($(__module__), $(ex))
         catch err
             @error err
         end
-    end
+    end |> esc
 end
 
 atreplinit() do repl
