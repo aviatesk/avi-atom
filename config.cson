@@ -200,9 +200,6 @@
       "ariake-dark-syntax"
     ]
     uriHandlerRegistration: "always"
-    versionPinnedPackages: [
-      "github"
-    ]
     warnOnLargeFileLimit: 10
   "cursor-history":
     openInPendingState: true
@@ -455,7 +452,7 @@
     outlineSelection: true
   "one-dark-ui": {}
   "open-in-app":
-    defaultApplication: "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+    defaultApplication: "C:/\"Program Files (x86)\"/Google/Chrome/Application/chrome.exe"
   "package-generator":
     createInDevMode: true
   "pdf-view-plus":
