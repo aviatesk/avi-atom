@@ -155,7 +155,10 @@
         "md"
       ]
     disabledPackages: [
+      "bookmarks"
       "git-diff"
+      "atomic-management"
+      "language-babel"
       "markdown-preview"
     ]
     excludeVcsIgnoredPaths: true
@@ -458,6 +461,7 @@
     createInDevMode: true
   "pdf-view-plus":
     closeViewWhenFileDeleted: true
+    enableSynctex: true
   "spell-check":
     addKnownWords: true
     excludedScopes: [
