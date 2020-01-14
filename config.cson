@@ -217,8 +217,8 @@
     scrollPastEnd: true
     showIndentGuide: true
     softWrap: true
-    softWrapHangingIndent: 2
-    tabLength: 4
+    softWrapHangingIndent: 1
+    tabLength: 2
     zoomFontWhenCtrlScrolling: false
   "emacs-plus": {}
   "exception-reporting":
@@ -541,34 +541,15 @@
   "wrap-guide":
     enabled: false
 ".coffee.source":
-  editor:
-    preferredLineLength: 80
-    softWrapHangingIndent: 1
-    tabLength: 2
   "wrap-guide":
     enabled: true
-".css.less.source":
-  editor:
-    softWrapHangingIndent: 1
-    tabLength: 2
-".css.source":
-  editor:
-    softWrapHangingIndent: 1
-    tabLength: 2
-".css.source.styled":
-  editor:
-    softWrapHangingIndent: 1
-    tabLength: 2
 ".flow.source":
   editor:
     preferredLineLength: 100
-    softWrapHangingIndent: 1
-    tabLength: 2
   "wrap-guide":
     enabled: true
 ".gfm.rmd.source":
   editor:
-    tabLength: 2
     tabType: "soft"
   whitespace:
     ensureSingleTrailingNewline: false
@@ -581,24 +562,19 @@
 ".java.source":
   editor:
     preferredLineLength: 100
-    tabType: "soft"
   "wrap-guide":
     enabled: true
 ".js.jsx.source":
   editor:
-    preferredLineLength: 100
-    softWrapHangingIndent: 1
-    tabLength: 2
+    preferredLineLength: 120
 ".js.source":
   editor:
-    preferredLineLength: 100
-    softWrapHangingIndent: 1
-    tabLength: 2
+    preferredLineLength: 120
   "wrap-guide":
     enabled: true
 ".julia.source":
   editor:
-    preferredLineLength: 80
+    preferredLineLength: 92
   "wrap-guide":
     enabled: true
 ".md.pweave.source":
@@ -615,32 +591,22 @@
     removeTrailingWhitespace: false
 ".md.text":
   editor:
-    tabLength: 2
     tabType: "soft"
   whitespace:
     ensureSingleTrailingNewline: false
     removeTrailingWhitespace: false
 ".python.source":
   editor:
-    preferredLineLength: 80
     tabType: "soft"
   "wrap-guide":
     enabled: true
-".source.sql":
-  editor:
-    softWrapHangingIndent: 1
-    tabLength: 2
 ".source.ts":
   editor:
     preferredLineLength: 120
-    softWrapHangingIndent: 1
-    tabLength: 2
   "wrap-guide":
     enabled: true
 ".source.tsx":
   editor:
     preferredLineLength: 120
-    softWrapHangingIndent: 1
-    tabLength: 2
   "wrap-guide":
     enabled: true
