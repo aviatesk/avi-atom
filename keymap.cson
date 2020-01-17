@@ -114,10 +114,6 @@
   'alt-t': 'tree-view:toggle'
   'ctrl-x ctrl-t': 'tree-view:toggle'
 
-  ## Dqs-Shell-Commands
-  'alt-q': 'dqs-shell-commands-config:toggle'
-  'ctrl-g': 'dqs-shell-commands-config:hide'
-
   ## Git
   'alt-h': 'github:toggle-git-tab'
   'alt-shift-h': 'github:toggle-github-tab'
@@ -564,11 +560,6 @@ atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
 ":
-  ## Dqs-Shell-Commands: Process .pmd & .Rmd documents (Same as Script)
-  # The appropriate shell command to process either pweave document or R-markdown gonna be automatically detected
-  #  from file-extension by shell scripts kept in scripts directory
-  'ctrl-x r': 'dqs-shell-commands:process-md'
-  'ctrl-x ctrl-r': 'dqs-shell-commands:process-md-remain'
   ## Document-Outline
   'ctrl-alt-o': 'document-outline:toggle'
   ## Markdown-Writer
@@ -669,6 +660,8 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'alt-shift-enter': 'julia-client:run-and-move'
 # julia source text
 "atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini])":
+  # avi-atom
+  'alt-/': 'avi-atom:insert-comment-at-EOL'
   # Juno
   'ctrl-alt-o': 'julia-client:open-outline-pane'
   'ctrl-c ctrl-f': 'julia-client:format-code'

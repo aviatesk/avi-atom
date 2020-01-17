@@ -157,7 +157,6 @@
     disabledPackages: [
       "bookmarks"
       "git-diff"
-      "atomic-management"
       "language-babel"
       "markdown-preview"
     ]
@@ -209,7 +208,6 @@
     rowDeltaToRemember: 3
   "document-outline":
     showByDefault: false
-  "dqs-shell-commands": {}
   editor:
     fontFamily: "Fira Code, Source Han Code JP"
     fontSize: 15
