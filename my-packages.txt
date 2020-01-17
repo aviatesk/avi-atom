@@ -5,12 +5,10 @@ atom-clock@0.1.17
 atom-ide-ui@0.13.0
 atom-path-intellisense@1.2.2
 atom-typescript@13.4.8
-atomic-management@0.3.1
 autocomplete-paths@2.12.2
 color-picker@2.3.0
 cursor-history@0.14.0
 document-outline@2.1.2
-dqs-shell-commands@2.2.4
 emacs-plus@0.12.0
 file-icons@2.1.38
 git-diff-plus@0.4.1
@@ -18,7 +16,7 @@ git-plus@8.7.1
 git-time-machine@2.1.0
 hey-pane@1.2.0
 highlight-line@0.12.0
-highlight-selected@0.16.0
+highlight-selected@0.17.0
 Hydrogen@2.13.1
 hyperlink-hyperclick@3.0.1
 indent-detective@0.4.0
@@ -51,6 +49,5 @@ status-bar-blame@2.0.3
 todo-show@2.3.2
 tree-view-autoadjust@3.0.0
 tree-view-git-status@1.5.2
-wordcount@3.1.0
 Zen@0.18.0
 

@@ -46,18 +46,18 @@ atreplinit() do repl
         @err include(joinpath(@__DIR__, "junostartup.jl"))
     end
 
-    if "PLOTS" ∈ ARGS
+    if "PLOTS" in Base.ARGS
         @info "Importing Plots ..."
         @err @eval using Plots
     end
 
-    if "WEAVE" ∈ ARGS
+    if "WEAVE" in Base.ARGS
         @info "Importing Weave ..."
         @err @eval using Weave
     end
 
     # when in developing Julia itself
-    if "JULIA_DEV" ∈ ARGS
+    if "JULIA_DEV" in Base.ARGS
         @err begin
             @eval using Suppressor
             @eval @suppress @eval Base DATAROOTDIR = "..\\..\\.."

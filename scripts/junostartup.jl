@@ -2,23 +2,12 @@
 Juno startup code
 =#
 
-"""
-    AviJuno
-
-Sets up Juno environment without polluting the `Main` namespace.
-"""
-module AviJuno
-
-# @XXX: needs `@info` to initialize `ARGS` ...
-# @TODO: fix Juno's code loading order
-@info "Juno: Start setups ..."
-
 # doesn't work on Windows
 if !Sys.iswindows()
     @info "Juno: Setting up OhMyREPL ..."
 
     # use Juno's syntax highlights within OhMyREPL.
-    @eval begin
+    let
         using Crayons: Crayon
         using OhMyREPL: Passes.SyntaxHighlighter, colorscheme!
         using Juno: syntaxcolors
@@ -42,5 +31,3 @@ if !Sys.iswindows()
         colorscheme!("AviJuno")
     end
 end
-
-end  # module AviJuno

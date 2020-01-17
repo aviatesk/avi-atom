@@ -89,7 +89,6 @@
     "allowed-scopes": ".string.quoted"
   "atom-typescript":
     tsserverInstancePerTsconfig: true
-  "atomic-management": {}
   "autocomplete-paths":
     scopes: [
       {
@@ -533,9 +532,6 @@
   "tree-view-git-status": {}
   welcome:
     showOnStartup: false
-  wordcount:
-    ignorecode: true
-    ignorecomments: true
   "wrap-guide":
     enabled: false
 ".coffee.source":
