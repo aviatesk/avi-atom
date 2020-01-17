@@ -163,6 +163,7 @@
 
   ## Julia-client
   'alt-j': 'unset!'
+  'alt-j ctrl-n': 'julia:new-julia-file'
   'alt-j ctrl-o': 'julia-client:open-REPL'
   'alt-j ctrl-d': 'julia-debug:open-debugger-pane'
   'alt-j ctrl-i': 'julia-client:open-documentation-browser'
@@ -176,10 +177,11 @@
   'alt-j ctrl-l': 'julia-client:clear-REPL'
   'alt-j m': 'julia-client:set-working-module'
   'ctrl-x ctrl-j': 'julia-client:set-working-module'
-  'alt-j f': 'julia-client:work-in-project-folder'
-  'alt-j ctrl-f': 'julia-client:work-in-current-folder'
-  'alt-j e': 'julia-client:activate-default-environment'
-  'alt-j ctrl-e': 'julia-client:activate-environment-in-current-folder'
+  'alt-j f': 'julia-client:work-in-current-folder'
+  'alt-j ctrl-f': 'julia-client:work-in-project-folder'
+  'alt-j e': 'julia-client:activate-environment-in-current-folder'
+  'alt-j ctrl-e': 'julia-client:activate-environment-in-parent-folder'
+  'alt-j alt-e': 'julia-client:activate-default-environment'
   'alt-:': 'julia-client:new-terminal'
   'alt-*': 'julia-client:new-terminal-from-current-folder'
   'ctrl-:': 'julia-client:focus-last-terminal'
