@@ -89,10 +89,7 @@
   "atom-package-deps":
     ignored: [
       "hyperclick-latex"
-      "linter-coffeelint"
       "linter-eslint"
-      "linter-tslint"
-      "minimap-linter"
     ]
   "atom-path-intellisense":
     "allowed-scopes": ".string.quoted"
@@ -438,15 +435,9 @@
     updateFreq: "Medium"
   "latex-wordcount":
     enableShellEscape: true
-  "linter-coffeelint":
-    disableIfNoConfig: true
   "linter-eslint":
     global:
       useGlobalEslint: true
-  "linter-tslint":
-    fixOnSave: false
-    ignoreTypings: true
-    useGlobalTslint: true
   "markdown-preview-enhanced":
     automaticallyShowPreviewOfMarkdownBeingEdited: false
     enableCriticMarkupSyntax: true
@@ -489,26 +480,17 @@
     independentMinimapScroll: true
     moveCursorOnMinimapClick: true
     plugins:
-      "find-and-replace": true
-      "find-and-replaceDecorationsZIndex": 0
       "git-diff": true
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
-      linter: true
-      linterDecorationsZIndex: 0
       "minimap-autohider": true
       "minimap-autohiderDecorationsZIndex": 0
       selection: true
       selectionDecorationsZIndex: 0
-      "split-diff": true
-      "split-diffDecorationsZIndex": 0
     redrawDelay: 200
     scrollAnimation: true
     scrollAnimationDuration: 500
-  "minimap-autohider": {}
-  "minimap-git-diff": {}
-  "minimap-linter": {}
   "minimap-selection":
     highlightCursorsLines: true
     outlineSelection: true
