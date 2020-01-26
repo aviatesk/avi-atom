@@ -2,7 +2,9 @@ advanced-open-file@0.16.8
 ariake-dark-syntax@0.2.1
 atom-beautify@0.33.4
 atom-clock@0.1.17
+atom-folding@0.0.9
 atom-ide-ui@0.13.0
+atom-latex@0.9.0
 atom-path-intellisense@1.2.2
 atom-typescript@13.4.8
 autocomplete-paths@2.12.2
@@ -11,6 +13,7 @@ cursor-history@0.14.0
 document-outline@2.1.2
 emacs-plus@0.12.0
 file-icons@2.1.38
+folding-markdown@0.1.4
 git-diff-plus@0.4.1
 git-plus@8.7.1
 git-time-machine@2.1.0
@@ -18,6 +21,7 @@ hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.17.0
 Hydrogen@2.13.1
+hyperclick-latex@0.5.8
 hyperlink-hyperclick@3.0.1
 indent-detective@0.4.0
 ink@0.11.7
@@ -28,6 +32,9 @@ language-latex2e@0.18.1
 language-markdown@0.37.0
 language-weave@0.6.5
 latex-completions@0.3.6
+latex-folding@1.5.0
+latex-tree@0.5.0
+latex-wordcount@0.6.0
 linter-coffeelint@2.0.29
 linter-eslint@8.5.5
 linter-tslint@1.10.38

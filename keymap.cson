@@ -412,13 +412,13 @@
   'alt-q': 'unset!'
 
 
-### Atom-text-editor space, not including mini(one-line) editor space ###
+### atom-text-editor space, not including [mini] editor space ###
 'atom-text-editor.emacs-plus:not([mini])':
-
   ## operations
   'ctrl-;': 'editor:newline'
+  'ctrl-alt-[': 'editor:fold-current-row'
+  'ctrl-alt-]': 'editor:unfold-current-row'
   'ctrl-x g': 'go-to-line:toggle'
-  'ctrl-x t': 'emacs-plus:recenter-top-bottom'
   'ctrl-t': 'tree-view:toggle-focus'
   'ctrl-w': 'unset!'
   'ctrl-alt-c': 'color-picker:open'
@@ -483,7 +483,6 @@
 
   ## operations
   'ctrl-alt-[': 'editor:fold-selection'
-  'ctrl-alt-]': 'editor:unfold-current-row'
   'ctrl-w': 'emacs-plus:kill-region'
   'alt-a': 'emacs-plus:append-next-kill'
 
@@ -511,7 +510,7 @@
   'ctrl-alt-n': 'split-diff:next-diff'
   'ctrl-alt-k': 'split-diff:copy-to-left'
 
-## Autocomplete-Plus
+## autocomplete-plus
 'atom-text-editor:not(mini).emacs-plus.autocomplete-active':
   'ctrl-;': 'editor:newline'
   'ctrl-l': 'autocomplete-plus:cancel'
@@ -555,7 +554,7 @@ atom-text-editor[data-grammar='source ruby'].emacs-plus.mark-mode:not([mini])
   'alt-ctrl-enter': 'hydrogen:run'
   'alt-shift-enter': 'hydrogen:run-and-move-down'
 
-## Markdown
+## markdown
 "
 atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source gfm'].emacs-plus:not([mini]),
@@ -618,7 +617,7 @@ atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
   'escape': 'core:cancel'
   'ctrl-g': 'core:cancel'
 
-## Markdown-Preview-Enhanced
+## markdown-preview-enhanced
 "
 atom-text-editor[data-grammar='text plain'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='text md'].emacs-plus:not([mini]),
@@ -630,8 +629,17 @@ atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini])
   'ctrl-m enter': 'markdown-preview-enhanced:run-code-chunk'
   'ctrl-m ctrl-enter': 'markdown-preview-enhanced:run-all-code-chunks'
 
+## latex
+"atom-text-editor[data-grammar='text tex latex'].emacs-plus:not([mini])":
+  'ctrl-alt-o': 'latex-tree:toggle-tree-view'
+  'ctrl-shift-l': 'atom-latex:preview-tab'
+  'ctrl-enter': 'atom-latex:synctex'
+  'alt-l s': 'atom-latex:build'
+  'alt-l ctrl-s': 'atom-latex:build-here'
+  'alt-l ctrl-k': 'atom-latex:kill'
+  'alt-l ctrl-o': 'atom-latex:toggle-panel'
 
-## Julia
+## julia
 # Juno
 "
 atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini]),
@@ -678,7 +686,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'f10': 'julia-debug:step-to-next-expression'
   'ctrl-f10': 'julia-debug:step-into-function'
   'shift-f10': 'julia-debug:finish-function'
-## Ink
+# ink
 "ink-terminal":
   'ctrl-:': 'julia-client:focus-last-editor'
   'ctrl-tab': 'pane:show-next-item'
@@ -732,7 +740,7 @@ atom-text-editor[data-grammar='source js'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source ts'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
 ":
-  ## Atom-TypeScript
+  ## atom-typescript
   'alt-i': 'typescript:show-tooltip'
   'alt-enter': 'typescript:go-to-declaration'
   'alt-backspace': 'typescript:return-from-declaration'

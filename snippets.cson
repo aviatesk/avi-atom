@@ -514,6 +514,17 @@
     'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/chunk_options/'
 
 
+### latex ###
+'.text.tex.latex':
+  'verbatim text':
+    'prefix': 'v'
+    'body': 'verb|${1:code}|'
+  'minted inline code':
+    'prefix': 'ci'
+    'body': 'mintinline\{${1:lang}\}\{${2:code}\}'
+  'minted inline julia code':
+    'prefix': 'jl'
+    'body': 'jlinline\{${1:code}\}'
 
 ### Python ###
 '.source.python':

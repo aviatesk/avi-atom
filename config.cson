@@ -78,8 +78,17 @@
       "atom-ide-outline-view": "never"
       "atom-ide-refactor": "never"
       "atom-ide-terminal": "never"
+  "atom-latex":
+    build_after_save: false
+    completion_suggestion_priority: 1
+    delayed_minimap_refresh: true
+    hide_log_if_success: true
+    latexmk_param: "-synctex=1 -interaction=nonstopmode -file-line-error -shell-escape"
+    preview_after_build: "Do nothing"
+    toolchain: "latexmk toolchain"
   "atom-package-deps":
     ignored: [
+      "hyperclick-latex"
       "linter-coffeelint"
       "linter-eslint"
       "linter-tslint"
@@ -119,6 +128,52 @@
           "source.weave.md"
           "source.pweave.md"
           "text.md"
+        ]
+      }
+      {
+        extensions: [
+          ".tex"
+          ".bib"
+          ".tikz"
+        ]
+        prefixes: [
+          "\\\\input{"
+          "\\\\include(?:only)?{([^\\}]*?\\,\\s*)*"
+          "\\\\(?:addbibresource|add(?:global|section)bib)(?:\\[.*?\\])?{"
+          "^%\\s*!T[eE]X\\s+(root|bib)\\s*=\\s*"
+        ]
+        relative: true
+        scopes: [
+          "text.tex.latex"
+          "text.tex.latex.tikz"
+        ]
+      }
+      {
+        extensions: [
+          ".jpeg"
+          ".jpg"
+          ".png"
+        ]
+        prefixes: [
+          "\\\\includegraphics(\\[.*?\\])?{"
+        ]
+        relative: true
+        scopes: [
+          "text.tex.latex"
+          "text.tex.latex.tikz"
+        ]
+      }
+      {
+        extensions: [
+          ".*"
+        ]
+        prefixes: [
+          "\\\\inputminted(\\[.*?\\])?\\{.*\\}\\{"
+        ]
+        relative: true
+        scopes: [
+          "text.tex.latex"
+          "text.tex.latex.tikz"
         ]
       }
     ]
@@ -175,6 +230,7 @@
       "Hydrogen"
       "Zen"
       "atom-beautify"
+      "atom-latex"
       "atom-typescript"
       "git-diff"
       "git-diff-plus"
@@ -183,6 +239,7 @@
       "hey-pane"
       "julia-client"
       "language-weave"
+      "latex-tree"
       "markdown-preview-enhanced"
       "markdown-writer"
       "split-diff"
@@ -377,6 +434,10 @@
     showPreview: false
   "latex-completions":
     selector: ".source.julia, .source.weave.md, .source.gfm, .text"
+  "latex-tree":
+    updateFreq: "Medium"
+  "latex-wordcount":
+    enableShellEscape: true
   "linter-coffeelint":
     disableIfNoConfig: true
   "linter-eslint":
@@ -457,7 +518,6 @@
   "package-generator":
     createInDevMode: true
   "pdf-view-plus":
-    closeViewWhenFileDeleted: true
     enableSynctex: true
   "spell-check":
     addKnownWords: true
@@ -534,6 +594,9 @@
     showOnStartup: false
   "wrap-guide":
     enabled: false
+".beamer.latex.tex.text":
+  editor:
+    tabLength: 2
 ".coffee.source":
   "wrap-guide":
     enabled: true
@@ -571,6 +634,20 @@
     preferredLineLength: 92
   "wrap-guide":
     enabled: true
+".knitr.latex.tex.text":
+  editor:
+    tabLength: 2
+".latex.memoir.tex.text":
+  editor:
+    tabLength: 2
+".latex.tex.text":
+  editor:
+    tabLength: 2
+  "wrap-guide":
+    enabled: true
+".latex.tex.text.tikz":
+  editor:
+    tabLength: 2
 ".md.pweave.source":
   editor:
     tabType: "soft"
