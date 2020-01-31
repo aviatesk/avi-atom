@@ -4,7 +4,7 @@ atom-beautify@0.33.4
 atom-clock@0.1.17
 atom-folding@0.0.9
 atom-ide-ui@0.13.0
-atom-latex@0.9.0
+atom-latex@0.9.1
 atom-path-intellisense@1.2.2
 atom-typescript@13.4.8
 autocomplete-paths@2.12.2
@@ -14,9 +14,10 @@ document-outline@2.1.2
 emacs-plus@0.12.0
 file-icons@2.1.38
 folding-markdown@0.1.4
-git-diff-plus@0.4.1
+git-diff-plus@0.4.2
 git-plus@8.7.1
 git-time-machine@2.1.0
+github@0.31.0
 hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.17.0
@@ -24,7 +25,7 @@ Hydrogen@2.13.1
 hyperclick-latex@0.5.8
 hyperlink-hyperclick@3.0.1
 indent-detective@0.4.0
-ink@0.11.7
+ink@0.11.8
 julia-client@0.11.3
 language-babel@2.85.0
 language-julia@0.19.2
@@ -36,7 +37,7 @@ latex-folding@1.5.0
 latex-tree@0.5.0
 latex-wordcount@0.6.0
 linter-eslint@8.5.5
-markdown-preview-enhanced@0.17.3
+markdown-preview-enhanced@0.17.5
 markdown-writer@2.11.9
 minimap@4.29.9
 minimap-autohider@1.6.0

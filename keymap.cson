@@ -242,20 +242,23 @@
   'ctrl-c': 'tree-view:copy-project-path'
   'alt-c': 'tree-view:copy-full-path'
 
-  ## Unsets
+  ## unset!s
   'alt-left': 'unset!'
   'alt-right': 'unset!'
 
-## Advanced-open-file
+## advanced-open-file
 '.advanced-open-file atom-text-editor':
+  'ctrl-a': 'advanced-open-file:move-cursor-top'
   'ctrl-o': 'advanced-open-file:move-cursor-up'
   'ctrl-n': 'advanced-open-file:move-cursor-down'
+  'ctrl-e': 'advanced-open-file:move-cursor-bottom'
   'ctrl-m': 'core:confirm'
   'ctrl-;': 'core:confirm'
   'ctrl-i': 'advanced-open-file:autocomplete'
   'ctrl-:': 'advanced-open-file:autocomplete'
-  'ctrl-d': 'advanced-open-file:delete-path-component'
+  'ctrl-alt-backspace': 'advanced-open-file:delete-path-component'
   'ctrl-z': 'advanced-open-file:undo'
+  'ctrl-p': 'application:add-project-folder'
 
 ## project-find
 '.project-find':

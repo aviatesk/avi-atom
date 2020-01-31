@@ -1,6 +1,5 @@
-### Global ###
+### global ###
 '*':
-
   '\\':
     'prefix': 'bs'
     'body': '\\\\$1'
@@ -26,16 +25,32 @@
     'body': '"""$1"""'
     'rightLabelHTML': '<span>""""""</span>'
     'description': 'Inserts triple double quotations'
-  '@TODO':
+'* .comment':
+  'TODO':
     'prefix': 'todo'
-    'body': '@TODO: $1'
-    'rightLabelHTML': '<span>@TODO</span>'
-    'description': 'Inserts @TODO annotations'
+    'body': 'TODO: $1'
+    'rightLabelHTML': '<span>TODO</span>'
+    'description': 'Inserts TODO annotation'
+  'NOTE':
+    'prefix': 'note'
+    'body': 'NOTE: $1'
+    'rightLabelHTML': '<span>NOTE</span>'
+    'description': 'Inserts NOTE annotation'
+  'XXX':
+    'prefix': 'xxx'
+    'body': 'XXX: $1'
+    'rightLabelHTML': '<span>XXX</span>'
+    'description': 'Inserts XXX annotation'
+  'REVIEW':
+    'prefix': 'review'
+    'body': 'REVIEW: $1'
+    'rightLabelHTML': '<span>REVIEW</span>'
+    'description': 'Inserts REVIEW annotation'
 
 
-### Code cells ###
+
+### code cells ###
 '.source.julia, .source.python, .source.ruby':
-
   'code cell':
     'prefix': 'cc'
     'body': '# %%$1'
@@ -44,7 +59,6 @@
     'prefix': 'mc'
     'body': '# %% markdown$1'
     'description': 'Inserts markdown cell comment'
-
 '.source.js, .source.java':
   'code cell':
     'prefix': 'cc'

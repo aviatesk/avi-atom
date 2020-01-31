@@ -207,6 +207,7 @@
       ]
     disabledPackages: [
       "bookmarks"
+      "deprecation-cop"
       "git-diff"
       "language-babel"
       "markdown-preview"
@@ -255,6 +256,9 @@
       "ariake-dark-syntax"
     ]
     uriHandlerRegistration: "always"
+    versionPinnedPackages: [
+      "github"
+    ]
     warnOnLargeFileLimit: 10
   "cursor-history":
     openInPendingState: true
