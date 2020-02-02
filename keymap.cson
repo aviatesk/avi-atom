@@ -186,13 +186,13 @@
   'alt-*': 'julia-client:new-terminal-from-current-folder'
   'ctrl-:': 'julia-client:focus-last-terminal'
 
-  ## Todo-Show
+  ## todo-show
   'ctrl-alt-t': 'todo-show:toggle'
 
   ## Zen
-  'alt-z': 'zen:toggle'
+  'alt-z': 'zen-plus:toggle'
 
-  ## Avi-Atom
+  ## avi-atom
   'ctrl-@': 'avi-atom:focus-last-dock-item'
   'ctrl-alt-@': 'avi-atom:focus-last-dock-item'
 

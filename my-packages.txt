@@ -52,5 +52,5 @@ status-bar-blame@2.0.3
 todo-show@2.3.2
 tree-view-autoadjust@3.0.0
 tree-view-git-status@1.5.2
-Zen@0.18.0
+Zen-plus@1.1.0
 

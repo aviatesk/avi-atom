@@ -8,8 +8,9 @@
     startDir: "dirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
     wrapOutput: true
-  Zen:
+  "Zen-plus":
     fullscreen: false
+    minimap: true
   "advanced-open-file":
     fuzzyMatch: true
     helmDirSwitch: true
@@ -226,7 +227,7 @@
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "Hydrogen"
-      "Zen"
+      "Zen-plus"
       "atom-beautify"
       "atom-latex"
       "atom-typescript"
