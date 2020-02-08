@@ -97,6 +97,8 @@
   "atom-typescript":
     tsserverInstancePerTsconfig: true
   "autocomplete-paths":
+    ignoredPatterns: []
+    maxFileCount: 5000
     scopes: [
       {
         extensions: [
@@ -257,9 +259,6 @@
       "ariake-dark-syntax"
     ]
     uriHandlerRegistration: "always"
-    versionPinnedPackages: [
-      "github"
-    ]
     warnOnLargeFileLimit: 10
   "cursor-history":
     openInPendingState: true
@@ -403,6 +402,10 @@
       workingDir: ""
     juliaPath: "julia"
     uiOptions:
+      cellDelimiter: [
+        "#%%"
+        "# %%"
+      ]
       enableMenu: true
       errorInRepl: true
       layouts:
@@ -445,6 +448,7 @@
       useGlobalEslint: true
   "markdown-preview-enhanced":
     automaticallyShowPreviewOfMarkdownBeingEdited: false
+    breakOnSingleNewLine: false
     enableCriticMarkupSyntax: true
     enableExtendedTableSyntax: true
     enableScriptExecution: true
@@ -505,6 +509,7 @@
   "package-generator":
     createInDevMode: true
   "pdf-view-plus":
+    autoreloadDebounce: 3000
     enableSynctex: true
   "spell-check":
     addKnownWords: true

@@ -1,12 +1,7 @@
 /** @babel */
 
-import { TextEditor } from 'atom';
 
-
-/*
-Focus utility
-*/
-
+// focus utlities
 const workspaceCenter = atom.workspace.getCenter();
 let lastCenterItem = workspaceCenter.getActivePaneItem();
 let lastDock = atom.workspace.getRightDock();
@@ -39,10 +34,24 @@ atom.commands.add('atom-workspace', 'avi-atom:focus-last-dock-item', () => {
 });
 
 
-/*
-Create an easy access to my TODO-list
-*/
+// edit utilities
+function insertCommentAtEOL(character = '#') {
+  const editor = atom.workspace.getActiveTextEditor();
+  if (!editor) return;
+  // TODO: maybe handle multiple line selection ?
+  editor.moveToEndOfLine();
+  editor.insertText(` ${character} `);
+}
+atom.commands.add(
+  "atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini])",
+  'avi-atom:insert-comment-at-EOL',
+  () => {
+    insertCommentAtEOL();
+  }
+);
 
+
+// an easy access to my TODO-list
 const TODO_LIST_PATH = 'C:\\Users\\aviat\\todo.md';
 atom.packages.onDidActivateInitialPackages(() => {
   const isSpellCheckActivated = atom.packages.isPackageActive('spell-check');
@@ -77,10 +86,7 @@ atom.packages.onDidActivateInitialPackages(() => {
 });
 
 
-/*
-Create an easy access to my TODO-list
-*/
-
+// an easy access to my general purpose draft
 const GITHUB_DRAFT_PATH = 'C:\\Users\\aviat\\_draft.md';
 atom.commands.add('atom-workspace', 'Avi-Atom:Open-GitHub-Draft', async () => {
   atom.workspace.open(GITHUB_DRAFT_PATH);
@@ -90,11 +96,7 @@ atom.keymaps.add(
 );
 
 
-/*
-Tweak Hydrogen
-*/
-
-// Set Hydrogen keybinds
+// Hydrogen
 const hydrogenKeybinds = {
   'ctrl-c ctrl-c': 'hydrogen:run',
   'ctrl-c ctrl-n': 'hydrogen:run-and-move-down',
@@ -121,16 +123,13 @@ const hydrogenMarkKeybinds = {
   'alt-shift-enter': 'hydrogen:run-and-move-down',
 };
 
-/**
- * Attaches Hydrogen keybinds to the current editor's scope
- */
+// attatch Hydrogen keybinds to the current editor's scope
 function attachHydrogenCommands() {
   const editor = atom.workspace.getActiveTextEditor();
   const cursor = editor.getLastCursor();
   const { scopes } = cursor.getScopeDescriptor();
-  const scope = scopes[0]; // Should be like `source.js
+  const scope = scopes[0]; // should be like `source.js
   if (scope) {
-    // Attach Hydrogen's commands to the scope
     atom.keymaps.add('init.js', {
       [`atom-text-editor[data-grammar='${scope.replace('.', ' ')}'].emacs-plus:not([mini])`]: hydrogenKeybinds,
       [`atom-text-editor[data-grammar='${scope.replace('.', ' ')}'].emacs-plus.mark-mode:not([mini])`]: hydrogenMarkKeybinds,
@@ -145,26 +144,21 @@ atom.commands.add('atom-text-editor', 'hydrogen:attach-commands-to-current-scope
   attachHydrogenCommands();
 });
 
-
-/*
-Tweak Julia-Client
-*/
-
+// Juno
 atom.commands.add('atom-workspace', {
-  // Restart Julia Process
-  'julia-client:restart-julia': async () => {
+  // restart Julia Process
+  'julia-client:restart-julia': () => {
     const element = atom.workspace.getElement();
     if (!element) return;
-    await atom.commands.dispatch(element, 'julia-client:kill-julia');
-    atom.commands.dispatch(element, 'julia-client:start-julia');
+    atom.commands.dispatch(element, 'julia-client:kill-julia');
+    setTimeout(() => {
+      atom.commands.dispatch(element, 'julia-client:start-julia');
+    }, 1000);
   },
 });
 
 
-/*
-Use Atom-TypeScript for JavaScript files even for non-TypeScript projects
-*/
-
+// atom-typescript
 let atomtsKeyBindings;
 atom.packages.onDidActivateInitialPackages(() => {
   const atomts = atom.packages.getLoadedPackage('atom-typescript');
@@ -193,115 +187,10 @@ atom.packages.onDidActivateInitialPackages(() => {
   });
 });
 
-/*
-Register extended commands for Git-Plus
-*/
 
-class InputView {
-  constructor() {
-    this.element = document.createElement('div');
+import InputView from './input-view'
 
-    this.miniEditor = new TextEditor({ mini: true });
-    this.miniEditor.element.addEventListener('blur', this.close.bind(this));
-
-    this.message = document.createElement('div');
-    this.element.appendChild(this.miniEditor.element);
-    this.element.appendChild(this.message);
-
-    this.panel = atom.workspace.addModalPanel({
-      item: this,
-      visible: false,
-    });
-
-    this.defaultCallbackOnConfirm = (_text) => {
-      atom.notifications.addWarning('Avi-Atom: init.js', {
-        details: '`InputView`\'s `open` method seems to be called without an argument',
-        description: 'No callback is set !',
-      });
-    };
-    this.callbackOnConfirm = this.defaultCallbackOnConfirm;
-
-    atom.commands.add(this.miniEditor.element, 'core:confirm', () => {
-      this.confirm();
-    });
-    atom.commands.add(this.miniEditor.element, 'core:cancel', () => {
-      this.close();
-    });
-  }
-
-  setCallbackOnConfirm(callback) {
-    this.callbackOnConfirm = callback;
-  }
-
-  setPlaceholderText(placeholderText) {
-    this.miniEditor.setPlaceholderText(placeholderText);
-  }
-
-  setMessageText(messageText) {
-    this.message.textContent = messageText;
-  }
-
-  storeFocusedElement() {
-    this.previouslyFocusedElement = document.activeElement;
-    return this.previouslyFocusedElement;
-  }
-
-  /**
-   * Sets `callbackOnConfirm` and then opens the input prompt input.
-   *
-   * @param callback {Function} - The callback function that would be called on confirm taking the
-   *                              enterted input text.
-   * @param messageText {String} - The message text of input mini editor
-   * @param placeholderText {String} - The placeholer text of input mini editor
-   * @param defaultText {String} - The default value of input text
-   */
-  open(
-    callback = this.defaultCallbackOnConfirm,
-    messageText = '',
-    placeholderText = '',
-    defaultText = null,
-  ) {
-    if (this.panel.isVisible()) return;
-
-    this.setCallbackOnConfirm(callback);
-    this.setMessageText(messageText);
-    this.setPlaceholderText(placeholderText);
-    if (defaultText) this.miniEditor.setText(defaultText);
-
-    this.storeFocusedElement();
-    this.panel.show();
-    this.miniEditor.element.focus();
-  }
-
-  restoreFocus() {
-    if (this.previouslyFocusedElement && this.previouslyFocusedElement.parentElement) {
-      return this.previouslyFocusedElement.focus();
-    }
-    return atom.views.getView(atom.workspace).focus();
-  }
-
-  close() {
-    if (!this.panel.isVisible()) return;
-    this.miniEditor.setText('');
-    this.setCallbackOnConfirm(this.defaultCallbackOnConfirm);
-    this.setMessageText('');
-    this.setPlaceholderText('');
-    this.panel.hide();
-    if (this.miniEditor.element.hasFocus()) {
-      this.restoreFocus();
-    }
-  }
-
-  confirm() {
-    const text = this.miniEditor.getText();
-    this.callbackOnConfirm(text);
-    this.close();
-  }
-}
-
-/**
- * Add custom commands to Git-Plus
- */
+// git-plus
 atom.packages.onDidActivateInitialPackages(() => {
   const gitPlus = atom.packages.getActivePackage('git-plus');
   const inputView = new InputView();

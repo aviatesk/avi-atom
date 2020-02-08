@@ -539,6 +539,13 @@
   'minted inline julia code':
     'prefix': 'jl'
     'body': 'jlinline\{${1:code}\}'
+  'inline math enviroment':
+    'prefix': 'mi'
+    'body': "(${1:expr}\\\\)$2"
+  'MathJax block':
+    'prefix': 'mb'
+    'body': '[\n\t${1:expr}\n\\\\]$2'
+
 
 ### Python ###
 '.source.python':

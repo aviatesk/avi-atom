@@ -12,12 +12,12 @@ color-picker@2.3.0
 cursor-history@0.14.0
 document-outline@2.1.2
 emacs-plus@0.12.0
-file-icons@2.1.38
+file-icons@2.1.39
 folding-markdown@0.1.4
 git-diff-plus@0.4.2
 git-plus@8.7.1
 git-time-machine@2.1.0
-github@0.31.0
+github@0.34.0
 hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.17.0
@@ -45,7 +45,7 @@ minimap-git-diff@4.3.1
 minimap-highlight-selected@4.6.1
 minimap-selection@4.5.0
 open-in-app@1.0.1
-pdf-view-plus@1.9.0
+pdf-view-plus@1.10.1
 project-manager@3.3.8
 split-diff@1.6.1
 status-bar-blame@2.0.3
