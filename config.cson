@@ -17,23 +17,6 @@
   "atom-clock":
     dateFormat: "YYYY/MM/DD/HH:mm"
     showTooltip: true
-  "atom-ide-datatip":
-    showDataTipOnCursorMove: false
-    showDataTipOnMouseMove: true
-  "atom-ide-ui":
-    "atom-ide-datatip":
-      datatipInteractedWithDebounceDelay: 500
-    "atom-ide-debugger":
-      showDebuggerOnBpSet: false
-    hyperclick:
-      darwinTriggerKeys: "ctrlKey"
-    use:
-      "atom-ide-code-format": "never"
-      "atom-ide-console": "never"
-      "atom-ide-debugger": "never"
-      "atom-ide-outline-view": "never"
-      "atom-ide-refactor": "never"
-      "atom-ide-terminal": "never"
   "atom-latex":
     build_after_save: false
     completion_suggestion_priority: 1
@@ -45,7 +28,6 @@
   "atom-package-deps":
     ignored: [
       "hyperclick-latex"
-      "linter-eslint"
     ]
   "atom-path-intellisense":
     "allowed-scopes": ".string.quoted"
@@ -390,9 +372,6 @@
     updateFreq: "Medium"
   "latex-wordcount":
     enableShellEscape: true
-  "linter-eslint":
-    global:
-      useGlobalEslint: true
   "markdown-preview-enhanced":
     automaticallyShowPreviewOfMarkdownBeingEdited: false
     breakOnSingleNewLine: false

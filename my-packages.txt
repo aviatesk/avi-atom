@@ -2,7 +2,6 @@ advanced-open-file@0.16.8
 ariake-dark-syntax@0.2.1
 atom-clock@0.1.17
 atom-folding@0.0.9
-atom-ide-ui@0.13.0
 atom-latex@0.9.1
 atom-path-intellisense@1.2.2
 autocomplete-paths@2.12.2
@@ -20,6 +19,7 @@ hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.17.0
 Hydrogen@2.13.1
+hyperclick@0.1.5
 hyperclick-latex@0.5.8
 hyperlink-hyperclick@3.0.1
 indent-detective@0.4.0
@@ -33,7 +33,6 @@ latex-completions@0.3.6
 latex-folding@1.5.0
 latex-tree@0.5.0
 latex-wordcount@0.6.0
-linter-eslint@8.5.5
 markdown-preview-enhanced@0.17.5
 markdown-writer@2.11.9
 minimap@4.29.9

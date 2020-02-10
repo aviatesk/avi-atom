@@ -149,14 +149,6 @@
   'ctrl-alt-shift-s': 'project-find:show-in-current-directory'
   'ctrl-alt-shift-r': 'project-find:show-in-current-directory'
 
-  ## atom-ide
-  # diagnostics
-  'ctrl-alt-d': 'window:toggle-bottom-dock'
-  # find-references
-  'alt-f': 'window:toggle-bottom-dock'
-  # outline
-  'ctrl-alt-o': 'window:focus-pane-on-left'
-
   ## Hydrogen
   'alt-k o': 'hydrogen:toggle-output-area'
   'alt-k m': 'hydrogen:toggle-kernel-monitor'
@@ -185,6 +177,7 @@
   'alt-:': 'julia-client:new-terminal'
   'alt-*': 'julia-client:new-terminal-from-current-folder'
   'ctrl-:': 'julia-client:focus-last-terminal'
+  'ctrl-alt-o': 'window:focus-pane-on-left' # outline
 
   ## todo-show
   'ctrl-alt-t': 'todo-show:toggle'
@@ -199,18 +192,18 @@
 
 ### Per-mode settings -- NOT IN atom-editor-space ###
 
-## Avi-Atom
+## avi-atom
 'atom-dock':
   'ctrl-@': 'avi-atom:focus-last-workspace-center-item'
   'ctrl-alt-@': 'avi-atom:focus-last-workspace-center-item'
 
-## Tree-View
+## tree-view
 '.tree-view':
 
-  ## Meta
+  ## meta
   'ctrl-x o': 'tree-view:toggle-focus'
 
-  ## Movements
+  ## movements
   'a': 'core:move-to-top'
   'o': 'core:move-up'
   'n': 'core:move-down'
@@ -218,7 +211,7 @@
   'ctrl-a': 'core:move-to-top'
   'ctrl-e': 'core:move-to-bottom'
 
-  ## Operations
+  ## operations
   # select & view
   'enter': 'tree-view:open-selected-entry'
   'm': 'tree-view:open-selected-entry'
@@ -427,16 +420,6 @@
   'ctrl-alt-c': 'color-picker:open'
   'ctrl-alt-up': 'editor:select-larger-syntax-node'
   'ctrl-alt-down': 'editor:select-smaller-syntax-node'
-
-  ## atom-ide
-  # datatip
-  'alt-d': 'datatip:toggle'
-  # diagnostics
-  'ctrl-alt-d': 'diagnostics:toggle-table'
-  # find-references
-  'alt-f': 'find-references:activate'
-  # outline
-  'ctrl-alt-o': 'outline-view:toggle'
 
   ## find-and-replace
   'ctrl-shift-s': 'find-and-replace:toggle'
