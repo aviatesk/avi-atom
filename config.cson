@@ -14,51 +14,6 @@
   "advanced-open-file":
     fuzzyMatch: true
     helmDirSwitch: true
-  "atom-beautify":
-    coffeescript:
-      indent_size: 2
-    css:
-      align_assignments: true
-      end_with_newline: true
-      newline_between_rules: false
-      preserve_newlines: true
-    general:
-      _analyticsUserId: "363e3982-c20c-4871-b3aa-b60bce401914"
-    html:
-      end_with_newline: true
-      indent_size: 2
-    js:
-      brace_style: "collapse-preserve-inline"
-      end_with_newline: true
-      keep_array_indentation: true
-      object_curly_spacing: true
-      space_after_anon_function: true
-    json:
-      end_with_newline: true
-      indent_size: 2
-    jsx:
-      brace_style: "collapse-preserve-inline"
-      default_beautifier: "JS Beautify"
-      end_with_newline: true
-      indent_size: 2
-      keep_array_indentation: true
-      object_curly_spacing: true
-      space_after_anon_function: true
-    less:
-      align_assignments: true
-      indent_comments: false
-      indent_size: 2
-      newline_between_rules: false
-    markdown:
-      disabled: true
-    sql:
-      identifiers: "lower"
-      indent_size: 2
-      reindent: false
-    tsx:
-      indent_size: 2
-    typescript:
-      indent_size: 2
   "atom-clock":
     dateFormat: "YYYY/MM/DD/HH:mm"
     showTooltip: true
@@ -94,8 +49,6 @@
     ]
   "atom-path-intellisense":
     "allowed-scopes": ".string.quoted"
-  "atom-typescript":
-    tsserverInstancePerTsconfig: true
   "autocomplete-paths":
     ignoredPatterns: []
     maxFileCount: 5000
@@ -212,7 +165,6 @@
       "bookmarks"
       "deprecation-cop"
       "git-diff"
-      "language-babel"
       "markdown-preview"
     ]
     excludeVcsIgnoredPaths: true
@@ -230,9 +182,7 @@
     packagesWithKeymapsDisabled: [
       "Hydrogen"
       "Zen-plus"
-      "atom-beautify"
       "atom-latex"
-      "atom-typescript"
       "git-diff"
       "git-diff-plus"
       "git-plus"
@@ -430,9 +380,6 @@
         workspace:
           defaultLocation: "right"
           split: "down"
-  "language-babel":
-    allowLocalOverride: true
-    emmetCSSAutocomplete: true
   "language-markdown":
     disableLanguageGfm: false
   "language-weave":

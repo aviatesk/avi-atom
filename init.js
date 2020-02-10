@@ -158,36 +158,6 @@ atom.commands.add('atom-workspace', {
 });
 
 
-// atom-typescript
-let atomtsKeyBindings;
-atom.packages.onDidActivateInitialPackages(() => {
-  const atomts = atom.packages.getLoadedPackage('atom-typescript');
-  if (!atomts) return;
-
-  atom.commands.add('atom-workspace', {
-    'typescript:activate-for-javascript': () => {
-      atom.config.set('atom-typescript.allowJS', true);
-      // Activate Atom-TypeScript
-      atom.packages.triggerActivationHook(atomts.getActivationHooks()[0]);
-      atomtsKeyBindings = atom.keymaps.add(
-        'init.js', {
-          'atom-text-editor[data-grammar=\'source js\'].emacs-plus:not([mini])': {
-            'ctrl-alt-r': 'typescript:rename-refactor',
-            'ctrl-shift-left': 'typescript:return-from-declaration',
-            'ctrl-shift-right': 'typescript:show-editor-position-history',
-          },
-        },
-        1,
-      );
-    },
-    'typescript:deactivate-for-javascript': () => {
-      atom.config.set('atom-typescript.allowJS', false);
-      if (atomtsKeyBindings) atomtsKeyBindings.dispose();
-    },
-  });
-});
-
-
 import InputView from './input-view'
 
 // git-plus

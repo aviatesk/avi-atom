@@ -452,7 +452,6 @@
   'ctrl-x e': 'line-ending-selector:show'
   'alt-enter': 'hyperclick:confirm-cursor'
   'alt-s': 'split-diff:toggle'
-  'ctrl-c ctrl-f': 'atom-beautify:beautify-editor'
 
   ## unsets
   'alt-m': 'unset!'
@@ -736,25 +735,3 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'f10': 'julia-debug:step-to-next-expression'
   'ctrl-f10': 'julia-debug:step-into-function'
   'shift-f10': 'julia-debug:finish-function'
-
-## TypeScript
-"
-atom-text-editor[data-grammar='source js'].emacs-plus:not([mini]),
-atom-text-editor[data-grammar='source ts'].emacs-plus:not([mini]),
-atom-text-editor[data-grammar='source tsx'].emacs-plus:not([mini])
-":
-  ## atom-typescript
-  'alt-i': 'typescript:show-tooltip'
-  'alt-enter': 'typescript:go-to-declaration'
-  'alt-backspace': 'typescript:return-from-declaration'
-  'ctrl-alt-o': 'typescript:toggle-semantic-view'
-  'alt-f': 'typescript:find-references'
-  'ctrl-alt-r': 'typescript:rename-refactor'
-  'ctrl-alt-shift-p': 'typescript:show-editor-position-history'
-
-## LESS
-## Atom-Beautify: Switch beautifier according to selection
-"atom-text-editor[data-grammar='source css less'].emacs-plus:not([mini])":
-  'ctrl-c ctrl-f': 'atom-beautify:beautify-language-css'
-"atom-text-editor[data-grammar='source css less'].emacs-plus.mark-mode:not([mini])":
-  'ctrl-c ctrl-f': 'atom-beautify:beautify-language-less'
