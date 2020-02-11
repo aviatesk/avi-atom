@@ -183,6 +183,7 @@
     packagesWithSnippetsDisabled: [
       "language-julia"
       "language-weave"
+      "language-haskell"
     ]
     projectHome: "C:\\Users\\aviat\\github\\atom-pkgs"
     telemetryConsent: "limited"

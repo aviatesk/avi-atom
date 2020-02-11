@@ -548,6 +548,26 @@
     'body': '[\n\t${1:expr}\n\\\\]$2'
 
 
+
+### Haskell ###
+'.source.haskell':
+  'code cell':
+    'prefix': 'cc'
+    'body': '-- %%$1'
+    'rightLabelHTML': '<span>Haskell</span>'
+    'description': 'Inserts code cell comment'
+  'markdown cell':
+    'prefix': 'mc'
+    'body': '-- %% markdown$1'
+    'rightLabelHTML': '<span>Haskell</span>'
+    'description': 'Inserts markdown cell comment'
+  'comment block':
+    'prefix': 'cb'
+    'body': '{-\n$1\n-}'
+    'rightLabelHTML': '<span>Haskell</span>'
+    'description': 'Inserts comment block'
+
+
 ### Python ###
 '.source.python':
 

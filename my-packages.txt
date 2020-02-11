@@ -25,6 +25,7 @@ hyperlink-hyperclick@3.0.1
 indent-detective@0.4.0
 ink@0.11.8
 julia-client@0.11.3
+language-haskell@1.19.4
 language-julia@0.19.2
 language-latex2e@0.18.1
 language-markdown@0.37.0

@@ -139,8 +139,8 @@
   'ctrl-alt-shift-r': 'project-find:show-in-current-directory'
 
   # Hydrogen
-  'alt-k o': 'hydrogen:toggle-output-area'
-  'alt-k m': 'hydrogen:toggle-kernel-monitor'
+  'alt-k ctrl-o': 'hydrogen:toggle-output-area'
+  'alt-k ctrl-m': 'hydrogen:toggle-kernel-monitor'
 
   # Juno
   'alt-j': 'unset!'
@@ -578,7 +578,8 @@ atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source js'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source java'].emacs-plus:not([mini]),
-atom-text-editor[data-grammar='source ruby'].emacs-plus:not([mini])
+atom-text-editor[data-grammar='source ruby'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source haskell'].emacs-plus:not([mini])
 ":
   'ctrl-c ctrl-c': 'hydrogen:run'
   'ctrl-c ctrl-n': 'hydrogen:run-and-move-down'
@@ -602,7 +603,8 @@ atom-text-editor[data-grammar='source python'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus.mark-mode:not([mini]),
 atom-text-editor[data-grammar='source js'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source java'].emacs-plus.mark-mode:not([mini]),
-atom-text-editor[data-grammar='source ruby'].emacs-plus.mark-mode:not([mini])
+atom-text-editor[data-grammar='source ruby'].emacs-plus.mark-mode:not([mini]),
+atom-text-editor[data-grammar='source haskell'].emacs-plus.mark-mode:not([mini])
 ":
   'ctrl-c ctrl-d': 'hydrogen:run'
   'ctrl-c ctrl-b': 'hydrogen:run-and-move-down'
