@@ -33,7 +33,7 @@ latex-completions@0.3.6
 latex-folding@1.5.0
 latex-tree@0.5.0
 latex-wordcount@0.6.0
-markdown-preview-enhanced@0.17.5
+markdown-preview-enhanced@0.17.7
 markdown-writer@2.11.9
 minimap@4.29.9
 minimap-autohider@1.6.0
