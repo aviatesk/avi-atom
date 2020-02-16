@@ -101,7 +101,6 @@
   # tree-view
   'ctrl-t': 'tree-view:toggle-focus'
   'alt-t': 'tree-view:toggle'
-  'ctrl-x ctrl-t': 'tree-view:toggle'
 
   # git
   'alt-h': 'github:toggle-git-tab'
@@ -324,6 +323,7 @@
   'ctrl-shift-j': 'editor:delete-to-end-of-word'
   'alt-j': 'emacs-plus:kill-word'
   'ctrl-alt-i': 'window:toggle-invisibles'
+  'ctrl-x ctrl-t': 'emacs-plus:recenter-top-bottom'
 
   # cursor-history
   'ctrl-p': 'cursor-history:prev'
@@ -339,7 +339,6 @@
 
   # tree-view
   'alt-t': 'tree-view:toggle'
-  'ctrl-x ctrl-t': 'tree-view:toggle'
 
   # git
   'ctrl-alt-g': 'github:view-unstaged-changes-for-current-file'

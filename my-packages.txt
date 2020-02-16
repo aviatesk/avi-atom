@@ -18,7 +18,7 @@ github@0.34.0
 hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.17.0
-Hydrogen@2.13.1
+Hydrogen@2.14.0
 hyperclick@0.1.5
 hyperclick-latex@0.5.8
 hyperlink-hyperclick@3.0.1

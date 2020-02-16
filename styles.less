@@ -265,6 +265,13 @@ atom-text-editor atom-text-editor-minimap {
   blockquote {
     font-size: @font-size;
   }
+  code {
+    color: @syntax-text-color  !important;
+    background-color: @syntax-selection-color  !important;
+  }
+  pre {
+    background-color: @syntax-background-color  !important;
+  }
   .markdown {
     font-family: 'Segoe UI', 'Meiryo UI';
   }
@@ -282,10 +289,8 @@ atom-text-editor atom-text-editor-minimap {
     font-size: var(--editor-font-size)  !important;
   }
   &.inspector, &.datatip {
-    code {
-      font-family: var(--editor-font-family);
-      font-size: 12px;
-    }
+    font-family: var(--editor-font-family);
+    font-size: 12px;
   }
 }
 
