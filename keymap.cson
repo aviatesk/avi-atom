@@ -485,6 +485,7 @@
 atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
 ":
+  'alt-/': 'avi-atom:insert-comment-at-EOL'
   'ctrl-c ctrl-c': 'julia-client:run-block'
   'ctrl-c ctrl-n': 'julia-client:run-and-move'
   'ctrl-c ctrl-d': 'julia-client:run-cell'
@@ -500,16 +501,6 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
   'alt-i': 'julia-client:show-documentation'
   'alt-enter': 'julia-client:goto-symbol'
   'alt-backspace': 'julia-client:return-from-goto'
-"
-atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
-atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini])
-":
-  'ctrl-c ctrl-d': 'julia-client:run-block'
-  'ctrl-c ctrl-b': 'julia-client:run-and-move'
-  'alt-ctrl-enter': 'julia-client:run-block'
-  'alt-shift-enter': 'julia-client:run-and-move'
-"atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini])":
-  'alt-/': 'avi-atom:insert-comment-at-EOL'
   'ctrl-alt-o': 'julia-client:open-outline-pane'
   'ctrl-c ctrl-f': 'julia-client:format-code'
   'ctrl-alt-r': 'julia-client:rename-refactor'
@@ -520,8 +511,16 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'f9': 'julia-debug:step-to-next-line'
   'ctrl-f9': 'julia-debug:step-to-selected-line'
   'f10': 'julia-debug:step-to-next-expression'
-  'ctrl-f10': 'julia-debug:step-into-function'
-  'shift-f10': 'julia-debug:finish-function'
+  'ctrl-f10': 'julia-debug:step-into'
+  'shift-f10': 'julia-debug:step-out'
+"
+atom-text-editor[data-grammar='source julia'].emacs-plus.mark-mode:not([mini]),
+atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini])
+":
+  'ctrl-c ctrl-d': 'julia-client:run-block'
+  'ctrl-c ctrl-b': 'julia-client:run-and-move'
+  'alt-ctrl-enter': 'julia-client:run-block'
+  'alt-shift-enter': 'julia-client:run-and-move'
 # ink
 "ink-terminal":
   'ctrl-:': 'julia-client:focus-last-editor'
@@ -555,8 +554,8 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'f9': 'julia-debug:step-to-next-line'
   'ctrl-f9': 'julia-debug:step-to-selected-line'
   'f10': 'julia-debug:step-to-next-expression'
-  'ctrl-f10': 'julia-debug:step-into-function'
-  'shift-f10': 'julia-debug:finish-function'
+  'ctrl-f10': 'julia-debug:step-into'
+  'shift-f10': 'julia-debug:step-out'
 "ink-terminal .search .searchinput atom-text-editor":
   'ctrl-r': 'ink-terminal:find-previous'
   'ctrl-s': 'ink-terminal:find-next'
@@ -567,8 +566,8 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'f9': 'julia-debug:step-to-next-line'
   'ctrl-f9': 'julia-debug:step-to-selected-line'
   'f10': 'julia-debug:step-to-next-expression'
-  'ctrl-f10': 'julia-debug:step-into-function'
-  'shift-f10': 'julia-debug:finish-function'
+  'ctrl-f10': 'julia-debug:step-into'
+  'shift-f10': 'julia-debug:step-out'
 
 # Hydrogen
 "

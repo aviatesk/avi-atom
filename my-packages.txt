@@ -23,13 +23,13 @@ hyperclick@0.1.5
 hyperclick-latex@0.5.8
 hyperlink-hyperclick@3.0.1
 indent-detective@0.4.0
-ink@0.11.8
-julia-client@0.11.3
+ink@0.12.0
+julia-client@0.12.0
 language-haskell@1.19.4
 language-julia@0.19.2
 language-latex2e@0.18.1
 language-markdown@0.37.0
-language-weave@0.6.5
+language-weave@0.6.7
 latex-completions@0.3.6
 latex-folding@1.5.0
 latex-tree@0.5.0

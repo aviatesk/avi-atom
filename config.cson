@@ -333,10 +333,9 @@
       persistWorkingDir: false
       startupArguments: []
       workingDir: ""
-    juliaPath: "julia"
+    juliaPath: "C:\\Users\\aviat\\julia\\julia\\usr\\bin\\julia.exe"
     uiOptions:
       cellDelimiter: [
-        "#%%"
         "# %%"
       ]
       enableMenu: true
