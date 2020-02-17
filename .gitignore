@@ -13,4 +13,3 @@ storage
 .eslintrc.json
 package-lock.json
 package.json
-projects.cson

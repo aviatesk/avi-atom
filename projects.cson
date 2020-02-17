@@ -1,0 +1,50 @@
+[
+  {
+    title: "atom settings"
+    paths: [
+      "C:\\Users\\aviat\\.atom"
+    ]
+    icon: "atom-icon"
+    color: "#40a977"
+  }
+  {
+    title: "grad thesis"
+    paths: [
+      "C:\\Users\\aviat\\grad-thesis"
+      "C:\\Users\\aviat\\grad-thesis\\thesis\\thesis"
+      "C:\\Users\\aviat\\julia\\packages\\TypeProfiler"
+      "C:\\Users\\aviat\\julia\\julia"
+      "C:\\Users\\aviat\\julia\\packages\\JuliaInterpreter"
+      "C:\\Users\\aviat\\grad-thesis\\ruby-type-profiler\\ruby-type-profiler"
+    ]
+    icon: "julia-icon"
+    color: "#9558B2"
+  }
+  {
+    title: "Juno development"
+    paths: [
+      "C:\\Users\\aviat\\julia\\JunoLab"
+      "C:\\Users\\aviat\\julia\\JunoLab\\JunoDocs"
+      "C:\\Users\\aviat\\julia\\JunoLab\\junowebsite"
+      "C:\\Users\\aviat\\julia\\packages\\Atom"
+      "C:\\Users\\aviat\\julia\\packages\\Juno"
+      "C:\\Users\\aviat\\julia\\packages\\MacroTools"
+      "C:\\Users\\aviat\\julia\\packages\\Lazy"
+      "C:\\Users\\aviat\\julia\\packages\\CodeTools"
+      "C:\\Users\\aviat\\julia\\packages\\DocSeeker"
+      "C:\\Users\\aviat\\julia\\packages\\JuliaInterpreter"
+      "C:\\Users\\aviat\\julia\\packages\\CSTParser"
+      "C:\\Users\\aviat\\julia\\packages\\JuliaFormatter"
+      "C:\\Users\\aviat\\julia\\packages\\SourceWalk"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-julia-client"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-ink"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-language-julia"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-indent-detective"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-latex-completions"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\language-weave"
+    ]
+    icon: "julia-icon"
+    color: "#282c34"
+    devMode: true
+  }
+]
