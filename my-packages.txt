@@ -14,7 +14,6 @@ folding-markdown@0.1.4
 git-diff-plus@0.4.2
 git-plus@8.7.1
 git-time-machine@2.1.0
-github@0.34.0
 hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.17.0
@@ -23,12 +22,14 @@ hyperclick@0.1.5
 hyperclick-latex@0.5.8
 hyperlink-hyperclick@3.0.1
 indent-detective@0.4.0
-ink@0.12.0
-julia-client@0.12.0
+ink@0.12.3
+julia-client@0.12.3
 language-haskell@1.19.4
 language-julia@0.19.2
 language-latex2e@0.18.1
+language-lisp@0.2.0
 language-markdown@0.37.0
+language-scheme@1.4.0
 language-weave@0.6.7
 latex-completions@0.3.6
 latex-folding@1.5.0
@@ -48,6 +49,6 @@ split-diff@1.6.1
 status-bar-blame@2.0.3
 todo-show@2.3.2
 tree-view-autoadjust@3.0.0
-tree-view-git-status@1.5.2
+tree-view-git-status@1.5.3
 Zen-plus@1.1.0
 

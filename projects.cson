@@ -1,11 +1,40 @@
 [
   {
-    title: "atom settings"
+    title: "misc"
+    group: "misc"
     paths: [
-      "C:\\Users\\aviat\\.atom"
+      "C:\\Users\\aviat\\misc"
     ]
-    icon: "atom-icon"
-    color: "#40a977"
+    icon: "icon-search"
+  }
+  {
+    title: "Juno development"
+    paths: [
+      "C:\\Users\\aviat\\julia\\JunoLab"
+      "C:\\Users\\aviat\\julia\\packages\\Atom"
+      "C:\\Users\\aviat\\julia\\packages\\Juno"
+      "C:\\Users\\aviat\\julia\\packages\\MacroTools"
+      "C:\\Users\\aviat\\julia\\packages\\Lazy"
+      "C:\\Users\\aviat\\julia\\packages\\CodeTools"
+      "C:\\Users\\aviat\\julia\\packages\\FuzzyCompletions"
+      "C:\\Users\\aviat\\julia\\packages\\DocSeeker"
+      "C:\\Users\\aviat\\julia\\packages\\JuliaInterpreter"
+      "C:\\Users\\aviat\\julia\\packages\\CSTParser"
+      "C:\\Users\\aviat\\julia\\packages\\JuliaFormatter"
+      "C:\\Users\\aviat\\julia\\packages\\SourceWalk"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-julia-client"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-ink"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-language-julia"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-indent-detective"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-latex-completions"
+      "C:\\Users\\aviat\\github\\atom-pkgs\\language-weave"
+      "C:\\Users\\aviat\\julia\\packages\\JunoDocs"
+      "C:\\Users\\aviat\\julia\\junowebsite"
+      "C:\\Users\\aviat\\julia\\packages\\Weave"
+    ]
+    icon: "julia-icon"
+    color: "#282c34"
+    devMode: true
   }
   {
     title: "grad thesis"
@@ -21,30 +50,11 @@
     color: "#9558B2"
   }
   {
-    title: "Juno development"
+    title: "atom settings"
     paths: [
-      "C:\\Users\\aviat\\julia\\JunoLab"
-      "C:\\Users\\aviat\\julia\\JunoLab\\JunoDocs"
-      "C:\\Users\\aviat\\julia\\JunoLab\\junowebsite"
-      "C:\\Users\\aviat\\julia\\packages\\Atom"
-      "C:\\Users\\aviat\\julia\\packages\\Juno"
-      "C:\\Users\\aviat\\julia\\packages\\MacroTools"
-      "C:\\Users\\aviat\\julia\\packages\\Lazy"
-      "C:\\Users\\aviat\\julia\\packages\\CodeTools"
-      "C:\\Users\\aviat\\julia\\packages\\DocSeeker"
-      "C:\\Users\\aviat\\julia\\packages\\JuliaInterpreter"
-      "C:\\Users\\aviat\\julia\\packages\\CSTParser"
-      "C:\\Users\\aviat\\julia\\packages\\JuliaFormatter"
-      "C:\\Users\\aviat\\julia\\packages\\SourceWalk"
-      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-julia-client"
-      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-ink"
-      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-language-julia"
-      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-indent-detective"
-      "C:\\Users\\aviat\\github\\atom-pkgs\\atom-latex-completions"
-      "C:\\Users\\aviat\\github\\atom-pkgs\\language-weave"
+      "C:\\Users\\aviat\\.atom"
     ]
-    icon: "julia-icon"
-    color: "#282c34"
-    devMode: true
+    icon: "atom-icon"
+    color: "#40a977"
   }
 ]

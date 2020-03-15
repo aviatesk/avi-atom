@@ -164,7 +164,7 @@
   'alt-j alt-e': 'julia-client:activate-default-environment'
   'alt-:': 'julia-client:new-terminal'
   'alt-*': 'julia-client:new-terminal-from-current-folder'
-  'ctrl-:': 'julia-client:focus-last-terminal'
+  'ctrl-@': 'julia-client:focus-last-terminal'
   'ctrl-alt-o': 'window:focus-pane-on-left' # outline
 
   # todo-show
@@ -174,13 +174,11 @@
   'alt-z': 'zen-plus:toggle'
 
   # avi-atom
-  'ctrl-@': 'avi-atom:focus-last-dock-item'
-  'ctrl-alt-@': 'avi-atom:focus-last-dock-item'
+  'ctrl-:': 'avi-atom:focus-last-dock-item'
 
 # avi-atom
 'atom-dock':
-  'ctrl-@': 'avi-atom:focus-last-workspace-center-item'
-  'ctrl-alt-@': 'avi-atom:focus-last-workspace-center-item'
+  'ctrl-:': 'avi-atom:focus-last-workspace-center-item'
 
 # tree-view
 '.tree-view':
@@ -212,8 +210,11 @@
   'ctrl-w': 'tree-view:cut'
   'ctrl-v': 'tree-view:paste'
   'ctrl-y': 'tree-view:paste'
-  'ctrl-c': 'tree-view:copy-project-path'
+  'alt-shift-c': 'tree-view:copy-project-path'
   'alt-c': 'tree-view:copy-full-path'
+
+  'ctrl-c ctrl-r': 'julia-client:run-all'
+  'ctrl-alt-shift-enter': 'julia-client:run-all'
 
   ## unset!s
   'alt-left': 'unset!'
@@ -221,10 +222,8 @@
 
 # advanced-open-file
 '.advanced-open-file atom-text-editor':
-  'ctrl-a': 'advanced-open-file:move-cursor-top'
   'ctrl-o': 'advanced-open-file:move-cursor-up'
   'ctrl-n': 'advanced-open-file:move-cursor-down'
-  'ctrl-e': 'advanced-open-file:move-cursor-bottom'
   'ctrl-m': 'core:confirm'
   'ctrl-;': 'core:confirm'
   'ctrl-i': 'advanced-open-file:autocomplete'
@@ -323,7 +322,7 @@
   'ctrl-shift-j': 'editor:delete-to-end-of-word'
   'alt-j': 'emacs-plus:kill-word'
   'ctrl-alt-i': 'window:toggle-invisibles'
-  'ctrl-x ctrl-t': 'emacs-plus:recenter-top-bottom'
+  'ctrl-x ctrl-t': 'tree-view:reveal-active-file'
 
   # cursor-history
   'ctrl-p': 'cursor-history:prev'
@@ -397,6 +396,7 @@
 # atom-text-editor space, not including [mini] editor space
 'atom-text-editor.emacs-plus:not([mini])':
   # operations
+  'ctrl-x t': 'emacs-plus:recenter-top-bottom'
   'ctrl-;': 'editor:newline'
   'ctrl-alt-[': 'editor:fold-current-row'
   'ctrl-alt-]': 'editor:unfold-current-row'
@@ -478,13 +478,13 @@
 'atom-text-editor:not(mini).emacs-plus.autocomplete-active':
   'ctrl-;': 'editor:newline'
   'ctrl-l': 'autocomplete-plus:cancel'
+  'ctrl-shift-space': 'autocomplete-plus:navigate-to-description-more-link'
 
 # Juno
 "
 atom-text-editor[data-grammar='source julia'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source weave md'].emacs-plus:not([mini])
 ":
-  'alt-/': 'avi-atom:insert-comment-at-EOL'
   'ctrl-c ctrl-c': 'julia-client:run-block'
   'ctrl-c ctrl-n': 'julia-client:run-and-move'
   'ctrl-c ctrl-d': 'julia-client:run-cell'
@@ -522,7 +522,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'alt-shift-enter': 'julia-client:run-and-move'
 # ink
 "ink-terminal":
-  'ctrl-:': 'julia-client:focus-last-editor'
+  'ctrl-@': 'julia-client:focus-last-editor'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-alt-right': 'pane:move-item-right'

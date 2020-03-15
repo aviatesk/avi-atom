@@ -141,6 +141,11 @@
     'body': '<br>\n$1'
     'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
     'description': 'Inserts break line'
+  'keyboard':
+    'prefix': 'kbd'
+    'body': '<kbd>$1</kbd>'
+    'leftLabelHTML': '<span class="icon icon-markdown" style="color: #6a9fb5"></span>'
+    'description': 'Inserts keyboard block'
   '@TODO list':
     'prefix': 'todo-list'
     'body': '[ ] @TODO $1'
