@@ -11,78 +11,90 @@ atom-dock .atom-dock-toggle-button {
   display: none;
 }
 
-
-/** fine-tune ariake-dark-syntax */
-@selected: rgba(63, 17, 175, 0.25);
+/** colors */
+// fine-tune ariake-dark-syntax
 @selected-focused: rgba(63, 17, 175, 0.5);
-@current: rgba(24, 17, 168, 0.25);
+@selected: fade(@selected-focused, 25%);
 @current-focused: rgba(24, 17, 168, 0.5);
+@current: fade(@current-focused, 25%);
+@current-flash: fade(@current-focused, 100%);
 @cursor: rgba(255, 255, 255, 0.85);
-@matched: rgb(63, 17, 175);
-@pane-frame: rgba(63, 17, 175, 0.75);
-@minimap-indicator: rgba(255, 255, 255, 0.75);
+@matched: fade(@current-focused, 100%);
+@pane-frame: fade(@selected-focused, 75%);
+@minimap-indicator: fade(@cursor, 75%);
 @hydrogen-cell: rgb(35, 38, 46);
+
+// // fine-tune one-light syntax
+// @selected-focused: rgba(137, 151, 224, 0.5);
+// @selected: fade(@selected-focused, 25%);
+// @current-focused: rgba(105, 220, 222, 0.5);
+// @current: fade(@current-focused, 25%);
+// @current-flash: fade(@current-focused, 100%);
+// @cursor: rgba(13, 223, 62, 0.85);
+// @matched: fade(@current-focused, 100%);
+// @pane-frame: fade(@selected-focused, 75%);
+// @minimap-indicator: fade(@cursor, 100%);
+// @hydrogen-cell: @background-color-selected; // highlight ?
 
 /* in editor */
 atom-text-editor.editor {
-  // Highlight-Selection style
+  // highlight-selection style
   .highlights .highlight.selection .region {
     background-color: @selected;
   }
-  // Highlight-Line style
+  // highlight-line style
   .line.cursor-line,
   .line.highlight-line {
-    background: linear-gradient(@syntax-background-color 10%, @current)  !important;
-    z-index: -2;
+    background: linear-gradient(@syntax-background-color 10%, @current);
   }
-  // Embedded code cell style for .jmd, .pmd & .Rmd files
-  // @TODO: Find good styles for the embedded code block
+  // embedded code cell
   .line {
-    position: relative;
-    .syntax--embedded {
-      &.syntax--julia::before,
-      &.syntax--python::before,
-      &.syntax--r::before {
-        background-color: @hydrogen-cell;
-        opacity: 0.75;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        content: '';
-        display: block;
-        z-index: -1;
+    &.avi-atom-cell {
+      background: fade(@hydrogen-cell, 75%);
+      &.cursor-line, &.highlight-line {
+        background: linear-gradient(fade(@hydrogen-cell, 75%), @current);
       }
     }
   }
-  // Stop cursor from blinking
+  .line-number {
+    &.avi-atom-cell {
+      background-color: @hydrogen-cell;
+    }
+  }
+  // stop cursor from blinking
   .cursor {
     border-color: @cursor  !important;
   }
   .cursors.blink-off .cursor {
     opacity: 1;
   }
-  // Bracket-Matcher style
+  // bracket-matcher style
   .bracket-matcher .region {
     background: @matched;
     position: absolute;
   }
-  // Turn-off scroll bar for text editors
+  // turn-off scroll bar for text editors
   ::-webkit-scrollbar {
     display: none;
   }
 }
 atom-text-editor.editor.is-focused {
-  // Highlight-Selection style
+  // highlight-selection style
   .highlights .highlight.selection .region {
     background-color: @selected-focused;
   }
-  // Highlight-Line style
+  // highlight-hine style
   .line.cursor-line,
   .line.highlight-line {
-    background: linear-gradient(@syntax-background-color 10%, @current-focused)  !important;
-    z-index: -2;
+    background: linear-gradient(@syntax-background-color 10%, @current-focused);
+  }
+  // embedded code cell
+  .line {
+    &.avi-atom-cell {
+      &.cursor-line, &.highlight-line {
+        background: linear-gradient(fade(@hydrogen-cell, 75%), @current-focused);
+      }
+    }
   }
 }
 
@@ -147,61 +159,65 @@ atom-text-editor.editor.is-focused {
     color: @syntax-color-constant;
   }
 }
-// gfm
-.syntax--gfm {
-  .syntax--comment.syntax--quote {
-    color: @syntax-color-tag;
-  }
-}
 // markdown
-.syntax--text.syntax--md {
-  .syntax--markup.syntax--quote {
+.syntax--gfm, .syntax--text.syntax--md {
+  .syntax--quote {
     color: @syntax-color-tag;
     font-style: italic;
   }
-  .syntax--language.syntax--constant {
-    font-weight: bold;
-  }
-  .syntax--heading.syntax--md {
-    .syntax--heading-1 {
+  .syntax--heading-1 {
+    color: @h1-color;
+    .syntax--punctuation.syntax--md,
+    .syntax--heading.syntax--marker.syntax--gfm {
       color: @h1-color;
-      .syntax--punctuation.syntax--md {
-        color: @h1-color;
-      }
     }
-    .syntax--heading-2 {
+  }
+  .syntax--heading-2 {
+    color: @h2-color;
+    .syntax--punctuation.syntax--md,
+    .syntax--heading.syntax--marker.syntax--gfm {
       color: @h2-color;
-      .syntax--punctuation.syntax--md {
-        color: @h2-color;
-      }
     }
-    .syntax--heading-3 {
+  }
+  .syntax--heading-3 {
+    color: @h3-color;
+    .syntax--punctuation.syntax--md,
+    .syntax--heading.syntax--marker.syntax--gfm {
       color: @h3-color;
-      .syntax--punctuation.syntax--md {
-        color: @h3-color;
-      }
     }
-    .syntax--heading-4 {
+  }
+  .syntax--heading-4 {
+    color: @h4-color;
+    .syntax--punctuation.syntax--md,
+    .syntax--heading.syntax--marker.syntax--gfm {
       color: @h4-color;
-      .syntax--punctuation.syntax--md {
-        color: @h4-color;
-      }
     }
-    .syntax--heading-5 {
+  }
+  .syntax--heading-5 {
+    color: @h5-color;
+    .syntax--punctuation.syntax--md,
+    .syntax--heading.syntax--marker.syntax--gfm {
       color: @h5-color;
-      .syntax--punctuation.syntax--md {
-        color: @h5-color;
-      }
     }
-    .syntax--heading-6 {
+  }
+  .syntax--heading-6 {
+    color: @h6-color;
+    .syntax--punctuation.syntax--md,
+    .syntax--heading.syntax--marker.syntax--gfm {
       color: @h6-color;
-      .syntax--punctuation.syntax--md {
-        color: @h6-color;
-      }
     }
   }
   .syntax--punctuation.syntax--md {
     color: @hue-5-2;
+  }
+  .syntax--raw {
+    border-style: solid;
+    border-width: 1px;
+    border-color: @text-color-subtle;
+    border-radius: 3px 3px 3px 3px;
+  }
+  .syntax--strike {
+    text-decoration: line-through;
   }
 }
 
@@ -232,7 +248,6 @@ status-bar {
 
 /* package specific */
 // cursor-history
-@current-flash: rgb(24, 17, 168);
 @keyframes cursor-history-flash {
   from {
     background-color: @current-flash;
@@ -262,9 +277,6 @@ atom-text-editor atom-text-editor-minimap {
 }
 // hydrogen
 .hydrogen {
-  blockquote {
-    font-size: @font-size;
-  }
   code {
     color: @syntax-text-color  !important;
     background-color: @syntax-selection-color  !important;

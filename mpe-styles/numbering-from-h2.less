@@ -1,17 +1,10 @@
 /**
- * This .less sheet numbers headers in markdown preview, which is supposed
- * to be used with Markdown-Preview-Enhanced.
- * The numbering starts from H2, which would be good when writing
- * documents in which we want to use H1 as tittle (e.g. README.md)
- * Note that this file location is specified in .atom/snippets.cson
- * with "numbering-from-h2" prefix for easy usage.
+ * Numbers headers starting from H2 in markdown-preview-enhanced package
+ * NOTE: H1s are supposed to be used as titles for a document, etc
  */
 
 .markdown-preview.markdown-preview {
-
-  /**
-   * Numbers sections with skipping numbering H1s
-   */
+  // numbers sections with skipping numbering H1s
   h2 {
     counter-increment: h2counter;
     counter-reset: h3counter;
@@ -54,7 +47,7 @@
     content: none;
   }
 
-  /** Skips numbering in presentation mode */
+  // skips numbering in presentation mode
   &[data-presentation-mode],
   .preview-slides .slide {
     h2:before {
@@ -67,5 +60,4 @@
       content: none !important;
     }
   }
-
 }

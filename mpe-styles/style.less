@@ -1,16 +1,11 @@
 /**
- * This is the style.less sheet with Markdown-Preview-Enhanced,
- * which gonna be applied globally, and the default style defined
- * in this file is for writing Github's README.
- * Note that this file should be in the directory that
- * `Markdown Preview Enhanced: Customize Css` command leads to,
- * which is currently located at "~/.mume/"
+ * Default (user) styling for markdown-preview-enhanced package
+ *
+ * NOTE: this file should be in the directory where `Markdown Preview Enhanced: Customize Css` command leads to
  */
 
 .markdown-preview.markdown-preview {
-
-  /** Fonts */
-  // Helvetica
+  /** font */
   @font-face {
     font-family: "Helvetica Neue";
     src: local("Helvetica Neue Regular");
@@ -21,7 +16,6 @@
     src: local("Helvetica Neue Regular");
     font-weight: 200;
   }
-  // Yu Gothic
   @font-face {
     font-family: "Yu Gothic";
     src: local("Yu Gothic Medium");
@@ -47,7 +41,6 @@
     src: local("Yu Gothic Bold");
     font-weight: bold;
   }
-  // Raleway
   @font-face {
     font-family: 'Raleway';
     font-style: normal;
@@ -67,38 +60,25 @@
     font-weight: 600;
     src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(http://fonts.gstatic.com/s/raleway/v9/xkvoNo9fC8O2RDydKj12b_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
   }
-  // font family
+
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", YuGothic, sans-serif;
 
-  /** GitHub style */
-  // header
+  pre, code {
+    font-size: 0.9em; // can look weird otherwise
+  }
+
+  /** header */
   h1, h2, h3, h4, h5, h6 {
     font-family: Raleway, "Yu Gothic", YuGothic, sans-serif;
   }
-  @header-line: #eaecef;
   h1 {
-    border-bottom: 4px solid @header-line;
+    border-bottom: 4px solid;
   }
   h2 {
-    border-bottom: 2px solid @header-line;
-  }
-  // table
-  th {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
-  }
-  td {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
-  }
-  tr {
-    background-color: #fff;
-  }
-  tr:nth-child(2n) {
-    background-color: #f6f8fa;
+    border-bottom: 2px solid;
   }
 
-  /** Presentation style */
+  /** presentation */
   .slides {
     p, li, h1, h2, h3, h4, h5, h6 {
       text-transform: none;
@@ -117,10 +97,9 @@
       text-align: right;
     }
   }
-
 }
 
-/** Sidebar TOC */
+/** sidebar TOC */
 .md-sidebar-toc {
   font-family: Raleway, 'Yu Gothic', YuGothic, sans-serif;
 }
