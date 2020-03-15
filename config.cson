@@ -524,14 +524,9 @@
 ".gfm.rmd.source":
   editor:
     tabType: "soft"
-  whitespace:
-    ensureSingleTrailingNewline: false
 ".gfm.source":
   editor:
     tabType: "soft"
-  whitespace:
-    ensureSingleTrailingNewline: false
-    removeTrailingWhitespace: false
 ".java.source":
   editor:
     preferredLineLength: 100
@@ -567,21 +562,12 @@
 ".md.pweave.source":
   editor:
     tabType: "soft"
-  whitespace:
-    ensureSingleTrailingNewline: false
-    removeTrailingWhitespace: false
 ".md.source.weave":
   editor:
     softWrap: true
-  whitespace:
-    ensureSingleTrailingNewline: false
-    removeTrailingWhitespace: false
 ".md.text":
   editor:
     tabType: "soft"
-  whitespace:
-    ensureSingleTrailingNewline: false
-    removeTrailingWhitespace: false
 ".python.source":
   editor:
     tabType: "soft"

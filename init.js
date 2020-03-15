@@ -62,6 +62,97 @@ atom.keymaps.add(
 )
 
 
+// cell decorator
+// const targetScopes = ['source.embedded.julia', 'source.embedded.python', 'source.embedded.js', 'source.embedded.r']
+const targetScopes = []
+function getCellRanges(editor) {
+  const ranges = []
+  const n = editor.getLineCount()
+  let inCell = false
+  let startPosition = new Point(0, 0)
+  for (let i = 0; i < n; i++) {
+    const bufferPosition = new Point(i, 0)
+    const scopeDescriptor = editor.syntaxTreeScopeDescriptorForBufferPosition(bufferPosition)
+    const scopes = scopeDescriptor.scopes
+    const cond = targetScopes.length === 0 ?
+      scopes.some(s => s.startsWith('source.embedded')) :
+      scopes.some(s => targetScopes.includes(s))
+    if (cond) {
+      if (!inCell) {
+        startPosition = bufferPosition
+        inCell = true
+      }
+    } else {
+      if (inCell) {
+        ranges.push(new Range(startPosition, bufferPosition))
+        inCell = false
+      }
+    }
+  }
+  return ranges
+}
+function decorateRanges(editor, ranges) {
+  return ranges.map(range => {
+    const marker = editor.markBufferRange(range)
+    editor.decorateMarker(marker, {
+        type: 'line-number',
+        class: 'avi-atom-cell'
+    })
+    editor.decorateMarker(marker, {
+        type: 'line',
+        class: 'avi-atom-cell'
+    })
+    return marker
+  })
+}
+function decorateCells(editor) {
+  const ranges = getCellRanges(editor)
+  return decorateRanges(editor, ranges)
+}
+const markdownGrammars = [
+  'text.md',
+  'source.gfm',
+  'source.weave.md',
+  'source.pweave.md'
+]
+const editorStore = new WeakSet()
+function observeEditor(editor) {
+  if (!editor || editorStore.has(editor)) return
+  let markerSubscription = new CompositeDisposable()
+  if (editor.getGrammar && markdownGrammars.includes(editor.getGrammar().id)) {
+    let markers = decorateCells(editor) // init
+    markerSubscription.add(editor.onDidStopChanging(() => {
+      markers.forEach(marker => marker.destroy())
+      markers = decorateCells(editor)
+    }))
+    markerSubscription.add(editor.onDidDestroy(() => {
+      markers.forEach(marker => marker.destroy())
+      markers = null
+      markerSubscription.dispose()
+      markerSubscription = null
+      editorStore.delete(editor)
+    }))
+    markerSubscription.add(editor.onDidChangeGrammar(grammar => {
+      markers.forEach(marker => marker.destroy())
+      markers = null
+      markerSubscription.dispose()
+      markerSubscription = null
+      editorStore.delete(editor)
+      setTimeout(() => observeEditor(editor), 1000) // TODO: use throttle
+    }))
+  } else {
+    markerSubscription.add(editor.onDidChangeGrammar(grammar => {
+      editorStore.delete(editor)
+      setTimeout(() => observeEditor(editor), 1000) // TODO: use throttle
+    }))
+  }
+  editorStore.add(editor)
+}
+atom.packages.onDidActivateInitialPackages(() => {
+  atom.workspace.observeTextEditors(observeEditor)
+})
+
+
 // Hydrogen
 const hydrogenKeybinds = {
   'ctrl-c ctrl-c': 'hydrogen:run',
