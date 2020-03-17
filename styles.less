@@ -14,27 +14,24 @@ atom-dock .atom-dock-toggle-button {
 /** colors */
 // fine-tune ariake-dark-syntax
 @selected-focused: rgba(63, 17, 175, 0.5);
-@selected: fade(@selected-focused, 25%);
 @current-focused: rgba(24, 17, 168, 0.5);
-@current: fade(@current-focused, 25%);
-@current-flash: fade(@current-focused, 100%);
 @cursor: rgba(255, 255, 255, 0.85);
-@matched: fade(@current-focused, 100%);
-@pane-frame: fade(@selected-focused, 75%);
 @minimap-indicator: fade(@cursor, 75%);
-@hydrogen-cell: rgb(35, 38, 46);
 
 // // fine-tune one-light syntax
 // @selected-focused: rgba(137, 151, 224, 0.5);
-// @selected: fade(@selected-focused, 25%);
 // @current-focused: rgba(105, 220, 222, 0.5);
-// @current: fade(@current-focused, 25%);
-// @current-flash: fade(@current-focused, 100%);
 // @cursor: rgba(13, 223, 62, 0.85);
-// @matched: fade(@current-focused, 100%);
-// @pane-frame: fade(@selected-focused, 75%);
 // @minimap-indicator: fade(@cursor, 100%);
-// @hydrogen-cell: @background-color-selected; // highlight ?
+
+// common
+@selected: fade(@selected-focused, 25%);
+@current: fade(@current-focused, 25%);
+@current-flash: fade(@current-focused, 100%);
+@matched: fade(@current-focused, 100%);
+@pane-frame: fade(@selected-focused, 75%);
+@hydrogen-cell: darken(@syntax-background-color, 3%);
+@hydrogen-cell-fade: fade(darken(@syntax-background-color, 75%), 15%);
 
 /* in editor */
 atom-text-editor.editor {
@@ -49,16 +46,16 @@ atom-text-editor.editor {
   }
   // embedded code cell
   .line {
-    &.avi-atom-cell {
-      background: fade(@hydrogen-cell, 75%);
+    &.markdown-cell-highlight {
+      background: @hydrogen-cell-fade;
       &.cursor-line, &.highlight-line {
-        background: linear-gradient(fade(@hydrogen-cell, 75%), @current);
+        background: linear-gradient(@hydrogen-cell-fade, @current);
       }
     }
   }
   .line-number {
-    &.avi-atom-cell {
-      background-color: @hydrogen-cell;
+    &.markdown-cell-highlight {
+      background-color: @hydrogen-cell-fade;
     }
   }
   // stop cursor from blinking
@@ -90,9 +87,9 @@ atom-text-editor.editor.is-focused {
   }
   // embedded code cell
   .line {
-    &.avi-atom-cell {
+    &.markdown-cell-highlight {
       &.cursor-line, &.highlight-line {
-        background: linear-gradient(fade(@hydrogen-cell, 75%), @current-focused);
+        background: linear-gradient(@hydrogen-cell-fade, @current-focused);
       }
     }
   }
@@ -134,6 +131,7 @@ atom-text-editor.editor.is-focused {
     }
   }
 }
+
 // link
 .syntax--markup {
   &.syntax--link {
@@ -159,8 +157,9 @@ atom-text-editor.editor.is-focused {
     color: @syntax-color-constant;
   }
 }
+
 // markdown
-.syntax--gfm, .syntax--text.syntax--md {
+.syntax--gfm, .syntax--text.syntax--md, .syntax--weave.syntax--md {
   .syntax--quote {
     color: @syntax-color-tag;
     font-style: italic;
