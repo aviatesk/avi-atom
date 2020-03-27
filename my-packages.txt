@@ -3,7 +3,6 @@ ariake-dark-syntax@0.2.1
 atom-clock@0.1.17
 atom-folding@0.0.9
 atom-latex@0.9.1
-atom-path-intellisense@1.2.2
 autocomplete-paths@2.12.2
 color-picker@2.3.0
 cursor-history@0.14.0
@@ -17,7 +16,7 @@ git-time-machine@2.1.0
 hey-pane@1.2.0
 highlight-line@0.12.0
 highlight-selected@0.17.0
-Hydrogen@2.14.0
+Hydrogen@2.14.1
 hyperclick@0.1.5
 hyperclick-latex@0.5.8
 hyperlink-hyperclick@3.0.1
@@ -35,7 +34,7 @@ latex-completions@0.3.6
 latex-folding@1.5.0
 latex-tree@0.5.0
 latex-wordcount@0.6.0
-markdown-cell-highlight@0.1.0
+markdown-cell-highlight@1.0.0
 markdown-preview-enhanced@0.17.7
 markdown-writer@2.11.9
 minimap@4.29.9

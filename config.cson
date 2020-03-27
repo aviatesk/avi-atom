@@ -28,8 +28,6 @@
     ignored: [
       "hyperclick-latex"
     ]
-  "atom-path-intellisense":
-    "allowed-scopes": ".string.quoted"
   "autocomplete-paths":
     ignoredPatterns: []
     maxFileCount: 5000
@@ -374,7 +372,6 @@
     automaticallyShowPreviewOfMarkdownBeingEdited: false
     breakOnSingleNewLine: false
     enableCriticMarkupSyntax: true
-    enableExtendedTableSyntax: true
     enableScriptExecution: true
     enableTypographer: true
     fileExtension: ".md, .MD, .jmd, Jmd, .pmd, .Pmd, .rmd, .Rmd"
