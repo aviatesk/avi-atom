@@ -1,6 +1,5 @@
 @import 'ui-variables';
 @import 'syntax-variables';
-@import 'mpe-styles/fancy-one-dark';
 
 /** UI */
 atom-workspace, .github-Git {
@@ -16,46 +15,49 @@ atom-dock .atom-dock-toggle-button {
 @selected-focused: rgba(63, 17, 175, 0.5);
 @current-focused: rgba(24, 17, 168, 0.5);
 @cursor: rgba(255, 255, 255, 0.85);
-@minimap-indicator: fade(@cursor, 75%);
+@import 'mpe-styles/fancy-one-dark';
 
 // // fine-tune one-light syntax
 // @selected-focused: rgba(137, 151, 224, 0.5);
 // @current-focused: rgba(105, 220, 222, 0.5);
 // @cursor: rgba(13, 223, 62, 0.85);
-// @minimap-indicator: fade(@cursor, 100%);
+// @import 'mpe-styles/fancy-github-light';
 
 // common
 @selected: fade(@selected-focused, 25%);
 @current: fade(@current-focused, 25%);
 @current-flash: fade(@current-focused, 100%);
-@matched: fade(@current-focused, 100%);
+@matched: fade(@current-focused, 75%);
 @pane-frame: fade(@selected-focused, 75%);
-@hydrogen-cell: darken(@syntax-background-color, 3%);
-@hydrogen-cell-fade: fade(darken(@syntax-background-color, 75%), 15%);
+@hydrogen-cell: fade(darken(@syntax-background-color, 75%), 15%);
 
 /* in editor */
 atom-text-editor.editor {
   // highlight-selection style
-  .highlights .highlight.selection .region {
-    background-color: @selected;
+  .highlights {
+    .highlight.selection .region,
+    .highlight-selected .region {
+      border-color: @selected;
+      background-color: @selected;
+    }
   }
-  // highlight-line style
-  .line.cursor-line,
-  .line.highlight-line {
-    background: linear-gradient(@syntax-background-color 10%, @current);
-  }
-  // embedded code cell
   .line {
+    // highlight-line style
+    &.cursor-line, &.highlight-line {
+      background: linear-gradient(transparent 10%, @current);
+    }
+    // embedded code cell
     &.markdown-cell-highlight {
-      background: @hydrogen-cell-fade;
+      background: @hydrogen-cell;
       &.cursor-line, &.highlight-line {
-        background: linear-gradient(@hydrogen-cell-fade, @current);
+        background: linear-gradient(@hydrogen-cell, @current);
       }
     }
   }
   .line-number {
+    // embedded code cell
     &.markdown-cell-highlight {
-      background-color: @hydrogen-cell-fade;
+      background-color: @hydrogen-cell;
     }
   }
   // stop cursor from blinking
@@ -77,19 +79,22 @@ atom-text-editor.editor {
 }
 atom-text-editor.editor.is-focused {
   // highlight-selection style
-  .highlights .highlight.selection .region {
-    background-color: @selected-focused;
+  .highlights {
+    .highlight.selection .region,
+    .highlight-selected .region {
+      border-color: @selected-focused;
+      background-color: @selected-focused;
+    }
   }
-  // highlight-hine style
-  .line.cursor-line,
-  .line.highlight-line {
-    background: linear-gradient(@syntax-background-color 10%, @current-focused);
-  }
-  // embedded code cell
   .line {
+    // highlight-line style
+    &.cursor-line, &.highlight-line {
+      background: linear-gradient(transparent 10%, @current-focused);
+    }
+    // embedded code cell
     &.markdown-cell-highlight {
       &.cursor-line, &.highlight-line {
-        background: linear-gradient(@hydrogen-cell-fade, @current-focused);
+        background: linear-gradient(@hydrogen-cell, @current-focused);
       }
     }
   }
@@ -256,12 +261,15 @@ atom-text-editor.editor .line.cursor-history-flash-line {
   animation-duration: 1s;
 }
 // minimap
+.minimap .highlight-selected {
+  background-color: fade(@cursor, 100%);
+}
 .minimap-selection {
   .region {
     background: @selected-focused;
   }
   .cursor-line {
-    background: @minimap-indicator;
+    background: @cursor;
   }
 }
 atom-text-editor atom-text-editor-minimap {
@@ -270,7 +278,7 @@ atom-text-editor atom-text-editor-minimap {
   }
   // emphasize scroll-indicator in minimap instead of scroll
   .minimap-scroll-indicator {
-    background-color: @minimap-indicator;
+    background-color: @current-focused;
     width: 2px;
   }
 }
