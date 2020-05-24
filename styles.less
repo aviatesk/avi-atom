@@ -101,6 +101,16 @@ atom-text-editor.editor.is-focused {
 }
 
 /* syntax highlights */
+// general
+.syntax--source {
+  .syntax--keyword {
+    font-style: italic;
+    &.syntax--operator {
+      font-style: normal;
+    }
+  }
+}
+
 // julia
 .syntax--source.syntax--julia,
 .ink.docpane,
@@ -129,11 +139,12 @@ atom-text-editor.editor.is-focused {
   .syntax--constant.syntax--escape {
     color: @syntax-color-constant;
   }
-  .syntax--keyword {
+}
+
+// python
+.syntax--source.syntax--python {
+  .syntax--storage.syntax--type {
     font-style: italic;
-    &.syntax--operator {
-      font-style: normal;
-    }
   }
 }
 

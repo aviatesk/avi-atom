@@ -8,7 +8,7 @@ color-picker@2.3.0
 cursor-history@0.14.0
 document-outline@2.1.2
 emacs-plus@0.12.0
-file-icons@2.1.39
+file-icons@2.1.40
 folding-markdown@0.1.4
 git-diff-plus@0.4.2
 git-plus@8.7.1
@@ -22,9 +22,9 @@ hyperclick-latex@0.5.8
 hyperlink-hyperclick@3.0.1
 indent-detective@0.4.0
 ink@0.12.3
-julia-client@0.12.3
+julia-client@0.12.4
 language-haskell@1.19.4
-language-julia@0.19.2
+language-julia@0.19.3
 language-latex2e@0.18.1
 language-lisp@0.2.0
 language-markdown@0.37.0
@@ -36,7 +36,7 @@ latex-tree@0.5.0
 latex-wordcount@0.6.0
 markdown-cell-highlight@1.0.0
 markdown-preview-enhanced@0.17.7
-markdown-writer@2.11.9
+markdown-writer@2.11.10
 minimap@4.29.9
 minimap-autohider@1.6.0
 minimap-git-diff@4.3.1

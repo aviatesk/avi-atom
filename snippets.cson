@@ -401,14 +401,6 @@
     'rightLabelHTML': '<span>Base</span>'
     'description': 'Inserts documentation string block'
 
-  ## DataFrames
-  '@linq chaining':
-    'prefix': 'linq'
-    'body': '@linq ${1:df} |>\n\t$2'
-    'rightLabelHTML': '<span>DataFramesMeta</span>'
-    'description': 'Inserts @linq pipe line block'
-    'descriptionMoreURL': 'https://github.com/JuliaData/DataFramesMeta.jl#linq-macro'
-
 ## docstring
 '.source.julia .string.docstring.julia':
   'inline mathblock':

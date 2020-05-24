@@ -1,8 +1,40 @@
 "*":
   Hydrogen:
     autocompleteSuggestionPriority: 1
-    gateways: "[{ \"name\": \"Local notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthToken\" } }, { \"name\": \"WSL notebook\", \"options\": { \"baseUrl\": \"http://localhost:8888\", \"token\": \"JupyterLocalAuthTokenWSL\"} }]"
-    languageMappings: "{ \"julia\": \"weave.jl markdown\", \"common-lisp\": \"lisp\", \"python\": \"pweave markdown\", \"r\": \"r markdown\" }"
+    centerOnMoveDown: true
+    gateways: '''
+      [
+        {
+          "name": "Local notebook",
+          "options": {
+            "baseUrl": "http://localhost:8888",
+            "token": "LocalJupyterAuthToken"
+          }
+        },
+        {
+          "name": "WSL notebook",
+          "options": {
+            "baseUrl": "http://localhost:8888",
+            "token": "WSLJupyterAuthToken"
+          }
+        },
+        {
+          "name": "Docker notebook",
+          "options": {
+            "baseUrl": "http://localhost:8888",
+            "token" :"DockerJupyterAuthToken"
+          }
+        }
+      ]
+    '''
+    languageMappings: '''
+      {
+        "julia": "weave.jl markdown",
+        "common-lisp": "lisp",
+        "python": "pweave markdown",
+        "r": "r markdown"
+      }
+    '''
     outputAreaDock: true
     startDir: "dirOfFile"
     startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
@@ -241,6 +273,8 @@
     hideHighlightOnSelect: true
   "highlight-selected":
     onlyHighlightWholeWords: false
+  hyperclick:
+    darwinTriggerKeys: "ctrlKey"
   ink:
     terminal:
       ansiBlue:
@@ -270,6 +304,7 @@
   "julia-client":
     consoleOptions:
       shell: "C:\\Program Files\\Git\\bin\\bash.exe"
+      prompt: "juno>"
       whitelistedKeybindingsREPL: [
         "ctrl-tab"
         "ctrl-shift-tab"
@@ -320,22 +355,20 @@
         "ctrl-h"
         "alt-x"
       ]
+    currentVersion: "0.12.5"
     firstBoot: false
     juliaOptions:
       arguments: []
       autoCompletionSuggestionPriority: 1
       bootMode: "Basic"
       noAutoParenthesis: true
-      optimisationLevel: 2
-      persistWorkingDir: false
       startupArguments: []
-    juliaPath: "C:\\Users\\aviat\\julia\\julia\\usr\\bin\\julia.exe"
+    juliaPath: "julia"
     uiOptions:
       cellDelimiter: [
-        "# %%"
+        "#\\s%%"
       ]
       enableMenu: true
-      errorInRepl: true
       layouts:
         debuggerPane:
           split: "up"
@@ -345,9 +378,7 @@
         documentation:
           defaultLocation: "right"
           split: "up"
-        linter:
-          defaultLocation: "right"
-          split: "down"
+        linter: {}
         openDefaultPanesOnStartUp: false
         outline:
           defaultLocation: "right"
@@ -360,14 +391,26 @@
           split: "down"
   "language-markdown":
     disableLanguageGfm: false
-  "language-weave":
-    showPreview: false
+  "language-weave": {}
   "latex-completions":
     selector: ".source.julia, .source.weave.md, .source.gfm, .text"
   "latex-tree":
     updateFreq: "Medium"
   "latex-wordcount":
     enableShellEscape: true
+  "markdown-preview":
+    grammars: [
+      "source.gfm"
+      "source.gfm.rmd"
+      "source.gfm.nvatom"
+      "source.litcoffee"
+      "source.pweave.md"
+      "source.weave.md"
+      "text.html.basic"
+      "text.md"
+      "text.plain"
+      "text.plain.null-grammar"
+    ]
   "markdown-preview-enhanced":
     automaticallyShowPreviewOfMarkdownBeingEdited: false
     breakOnSingleNewLine: false
@@ -376,8 +419,8 @@
     enableTypographer: true
     fileExtension: ".md, .MD, .jmd, Jmd, .pmd, .Pmd, .rmd, .Rmd"
     openPreviewPaneAutomatically: false
-    previewTheme: "one-dark.css"
     printBackground: true
+    usePandocParser: false
   "markdown-writer":
     grammars: [
       "source.gfm"
@@ -465,6 +508,7 @@
       "th"
       "s"
     ]
+    useLocales: false
   "split-diff":
     ignoreWhitespace: true
     muteNotifications: true
@@ -558,13 +602,22 @@
     tabLength: 2
 ".md.pweave.source":
   editor:
+    preferredLineLength: 100
     tabType: "soft"
+  "wrap-guide":
+    enabled: true
 ".md.source.weave":
   editor:
+    preferredLineLength: 100
     softWrap: true
+  "wrap-guide":
+    enabled: true
 ".md.text":
   editor:
+    preferredLineLength: 120
     tabType: "soft"
+  "wrap-guide":
+    enabled: true
 ".python.source":
   editor:
     tabType: "soft"
