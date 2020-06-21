@@ -5,23 +5,30 @@
     gateways: '''
       [
         {
-          "name": "Local notebook",
+          "name": "Local 8888",
           "options": {
             "baseUrl": "http://localhost:8888",
             "token": "LocalJupyterAuthToken"
           }
         },
         {
-          "name": "WSL notebook",
+          "name": "WSL 8888",
           "options": {
             "baseUrl": "http://localhost:8888",
             "token": "WSLJupyterAuthToken"
           }
         },
         {
-          "name": "Docker notebook",
+          "name": "Docker 8888",
           "options": {
             "baseUrl": "http://localhost:8888",
+            "token" :"DockerJupyterAuthToken"
+          }
+        },
+        {
+          "name": "Docker 8000",
+          "options": {
+            "baseUrl": "http://localhost:8000",
             "token" :"DockerJupyterAuthToken"
           }
         }
@@ -37,7 +44,12 @@
     '''
     outputAreaDock: true
     startDir: "dirOfFile"
-    startupCode: "{\"Python 3\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\", \"Python 3.6\": \"%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')\"}"
+    startupCode: '''
+      {
+        "Python 3": "%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')",
+        "Python 3.6": "%matplotlib inline\\nimport matplotlib.pyplot as plt\\nplt.style.use('dark_background')"
+      }
+    '''
     wrapOutput: true
   "Zen-plus":
     fullscreen: false
@@ -176,7 +188,6 @@
       "bookmarks"
       "deprecation-cop"
       "git-diff"
-      "markdown-preview"
     ]
     excludeVcsIgnoredPaths: true
     ignoredNames: [
@@ -214,7 +225,7 @@
       "language-weave"
       "language-haskell"
     ]
-    projectHome: "C:\\Users\\aviat\\github\\atom-pkgs"
+    projectHome: "~/github"
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
@@ -229,7 +240,7 @@
     showByDefault: false
   editor:
     fontFamily: "Fira Code, Source Han Code JP"
-    fontSize: 15
+    fontSize: 17
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-…．。．、，（）「」［］｛｝《》てにをはがのともへでや"
     scrollPastEnd: true
     showIndentGuide: true
@@ -303,8 +314,8 @@
         dark: "#86b1e0"
   "julia-client":
     consoleOptions:
-      shell: "C:\\Program Files\\Git\\bin\\bash.exe"
       prompt: "juno>"
+      shell: "zsh"
       whitelistedKeybindingsREPL: [
         "ctrl-tab"
         "ctrl-shift-tab"
@@ -469,7 +480,7 @@
     outlineSelection: true
   "one-dark-ui": {}
   "open-in-app":
-    defaultApplication: "C:/\"Program Files (x86)\"/Google/Chrome/Application/chrome.exe"
+    defaultApplication: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
   "package-generator":
     createInDevMode: true
   "pdf-view-plus":

@@ -13,6 +13,9 @@
   'ctrl-m': 'core:confirm'
   'ctrl-;': 'core:confirm'
   'ctrl-g': 'core:cancel'
+  'cmd-w': 'core:copy' # macOS
+  'ctrl-z': 'core:undo' # macOS
+  'ctrl-shift-z': 'core:redo' # macOS
 
   # tabs
   'ctrl-w': 'tabs:close-tab'
@@ -20,6 +23,7 @@
   'ctrl-alt-space': 'core:select-all'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'
+  'ctrl-shift-t': 'pane:reopen-closed-item' # macOS
 
   # commands
   'ctrl-h': 'command-palette:toggle'
@@ -164,8 +168,11 @@
   'alt-j ctrl-e': 'julia-client:activate-environment-in-parent-folder'
   'alt-j alt-e': 'julia-client:activate-default-environment'
   'alt-:': 'julia-client:new-terminal'
+  'alt-\'': 'julia-client:new-terminal'
   'alt-*': 'julia-client:new-terminal-from-current-folder'
+  'alt-"': 'julia-client:new-terminal-from-current-folder'
   'ctrl-@': 'julia-client:focus-last-terminal'
+  'ctrl-"': 'julia-client:focus-last-terminal' # macOS
   'ctrl-alt-o': 'window:focus-pane-on-left' # outline
 
   # todo-show
@@ -176,10 +183,12 @@
 
   # avi-atom
   'ctrl-:': 'avi-atom:focus-last-dock-item'
+  'ctrl-\'': 'avi-atom:focus-last-dock-item' # macOS
 
 # avi-atom
 'atom-dock':
   'ctrl-:': 'avi-atom:focus-last-workspace-center-item'
+  'ctrl-\'': 'avi-atom:focus-last-workspace-center-item' # macOS
 
 # tree-view
 '.tree-view':
@@ -208,6 +217,7 @@
   'ctrl-r': 'tree-view:rename'
   'ctrl-d': 'tree-view:remove'
   'alt-w': 'tree-view:copy'
+  'cmd-w': 'tree-view:copy' # macOS
   'ctrl-w': 'tree-view:cut'
   'ctrl-v': 'tree-view:paste'
   'ctrl-y': 'tree-view:paste'
@@ -242,6 +252,7 @@
   'alt-r': 'project-find:toggle-regex-option'
   'alt-c': 'project-find:toggle-case-option'
   'alt-w': 'project-find:toggle-whole-word-option'
+  'cmd-w': 'project-find:toggle-whole-word-option' # macOS
   'alt-d': 'project-find:show-in-current-directory'
 
 # git
@@ -324,6 +335,7 @@
   'alt-j': 'emacs-plus:kill-word'
   'ctrl-alt-i': 'window:toggle-invisibles'
   'ctrl-x ctrl-t': 'tree-view:reveal-active-file'
+  'ctrl-backspace': 'editor:delete-to-beginning-of-word' # macOS
 
   # cursor-history
   'ctrl-p': 'cursor-history:prev'
@@ -392,6 +404,12 @@
   # other unsets
   'ctrl-r': 'unset!'
   'alt-q': 'unset!'
+  'ctrl-alt-right': 'unset!' # macOS
+  'ctrl-alt-left': 'unset!' # macOS
+  'alt-h': 'unset!' # macOS
+  'ctrl-alt-b': 'unset!' # macOS
+  'ctrl-alt-h': 'unset!' # macOS
+  'ctrl-shift-w': 'unset!' # macOS
 
 
 # atom-text-editor space, not including [mini] editor space
@@ -407,6 +425,10 @@
   'ctrl-alt-c': 'color-picker:open'
   'ctrl-alt-up': 'editor:select-larger-syntax-node'
   'ctrl-alt-down': 'editor:select-smaller-syntax-node'
+  'ctrl-/': 'editor:toggle-line-comments' # macOS
+  'ctrl-[': 'editor:outdent-selected-rows' # macOS
+  'ctrl-]': 'editor:indent-selected-rows' # macOS
+  'cmd-w': 'emacs-plus:copy' # macOS
 
   # find-and-replace
   'ctrl-shift-s': 'find-and-replace:toggle'
@@ -463,6 +485,7 @@
   'alt-c': 'find-and-replace:toggle-case-option'
   'alt-s': 'find-and-replace:toggle-selection-option'
   'alt-w': 'find-and-replace:toggle-whole-word-option'
+  'cmd-w': 'find-and-replace:toggle-whole-word-option' # macOS
   'ctrl-s': 'find-and-replace:find-next'
   'ctrl-r': 'find-and-replace:find-previous'
   'enter': 'find-and-replace:find-all'
@@ -524,6 +547,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
 # ink
 "ink-terminal":
   'ctrl-@': 'julia-client:focus-last-editor'
+  'ctrl-"': 'julia-client:focus-last-editor' # macOS
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-alt-right': 'pane:move-item-right'
@@ -544,6 +568,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'alt-i': 'julia-client:open-documentation-browser'
   'alt-p': 'julia-client:open-plot-pane'
   'alt-w': 'julia-client:open-workspace'
+  'cmd-w': 'julia-client:open-workspace' # macOS
   'alt-,': 'julia-client:settings'
   'alt-f': 'julia-client:select-working-folder'
   'alt-j': 'julia-client:set-working-module'
@@ -577,6 +602,7 @@ atom-text-editor[data-grammar='source python'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source pweave md'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source js'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source java'].emacs-plus:not([mini]),
+atom-text-editor[data-grammar='source scala'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source ruby'].emacs-plus:not([mini]),
 atom-text-editor[data-grammar='source haskell'].emacs-plus:not([mini])
 ":

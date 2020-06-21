@@ -59,7 +59,7 @@
     'prefix': 'mc'
     'body': '# %% markdown$1'
     'description': 'Inserts markdown cell comment'
-'.source.js, .source.java':
+'.source.js, .source.java, .source.scala':
   'code cell':
     'prefix': 'cc'
     'body': '// %%$1'
