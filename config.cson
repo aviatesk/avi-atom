@@ -468,6 +468,8 @@
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
+      "lens-mode": true
+      "lens-modeDecorationsZIndex": 0
       "minimap-autohider": true
       "minimap-autohiderDecorationsZIndex": 0
       selection: true
@@ -475,6 +477,9 @@
     redrawDelay: 200
     scrollAnimation: true
     scrollAnimationDuration: 500
+  "minimap-lens":
+    lensDelay: 500
+    lensHeight: 500
   "minimap-selection":
     highlightCursorsLines: true
     outlineSelection: true
