@@ -232,6 +232,9 @@
       "ariake-dark-syntax"
     ]
     uriHandlerRegistration: "always"
+    versionPinnedPackages: [
+      "minimap-lens"
+    ]
     warnOnLargeFileLimit: 10
   "cursor-history":
     openInPendingState: true
