@@ -1,4 +1,4 @@
-Hydrogen@2.14.2
+Hydrogen@2.14.4
 Zen-plus@1.1.0
 advanced-open-file@0.16.8
 ariake-dark-syntax@0.2.1
@@ -24,11 +24,12 @@ hyperlink-hyperclick@3.0.1
 indent-detective@0.4.0
 ink@0.12.4
 julia-client@0.12.5
-language-haskell@1.19.4
+language-haskell@1.20.0
 language-julia@0.19.3
 language-latex2e@0.18.1
 language-lisp@0.2.0
 language-markdown@0.37.0
+language-scala@1.1.10
 language-scheme@1.4.0
 language-weave@0.7.2
 latex-completions@0.3.6
@@ -42,7 +43,7 @@ minimap@4.29.9
 minimap-autohider@1.6.0
 minimap-git-diff@4.3.1
 minimap-highlight-selected@4.6.1
-minimap-lens@0.4.0
+minimap-lens@0.6.0
 minimap-selection@4.5.0
 open-in-app@1.0.1
 pdf-view-plus@1.11.0

@@ -9,17 +9,22 @@ fonts:
 - [Source Han Code JP](https://github.com/adobe-fonts/source-han-code-jp/releases/tag/2.011R)
 
 packages:
-```bash {cmd}
+```zsh {cmd}
 apm install --packages-file my-packages.txt
 ```
 
+update packages:
+```zsh {cmd}
+apm list --installed --bare --dev=false >! ~/.atom/my-packages.txt
+```
+
 links:
-```bash {cmd}
+```zsh {cmd}
 rm ~/.mume/style.less
 link ~/.atom/mpe-styles/style.less ~/.mume/style.less
 ```
 
-```bash {cmd}
+```zsh {cmd}
 rm ~/.julia/config/startup.jl ~/.julia/config/junostartup.jl
 link ~/.atom/scripts/startup.jl ~/.julia/config/startup.jl
 link ~/.atom/scripts/junostartup.jl ~/.julia/config/junostartup.jl
