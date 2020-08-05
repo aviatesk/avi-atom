@@ -25,7 +25,7 @@ atreplinit() do repl
         @error err
     end
 
-    @info "Importing OhMyREPL ..."
+    @info "Enabling OhMyREPL ..."
     @err @eval begin
         using OhMyREPL
         enable_autocomplete_brackets(true)
@@ -57,10 +57,9 @@ atreplinit() do repl
     end
 
     # when in developing Julia itself
-    if "JULIA_DEV" in Base.ARGS
+    if occursin("DEV", string(VERSION))
         @err begin
-            @eval using Suppressor
-            @eval @suppress @eval Base DATAROOTDIR = "..\\..\\.."
+            @eval Base DATAROOTDIR = joinpath("..", "..", "..")
             @info "Overwrote `Base.DATAROOTDIR`"
         end
 

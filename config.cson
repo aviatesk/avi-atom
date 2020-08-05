@@ -242,7 +242,7 @@
   "document-outline":
     showByDefault: false
   editor:
-    fontFamily: "Fira Code, Source Han Code JP"
+    fontFamily: "JuliaMono, Source Han Code JP"
     fontSize: 17
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-…．。．、，（）「」［］｛｝《》てにをはがのともへでや"
     scrollPastEnd: true

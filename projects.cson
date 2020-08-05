@@ -1,8 +1,9 @@
 [
   {
-    title: "kick start"
+    title: "programming contest"
     paths: [
-      "/Users/aviatesk/code/google-kick-start"
+      "/Users/aviatesk/code/programming-contest/google-kick-start"
+      "/Users/aviatesk/code/programming-contest/atcoder"
     ]
     icon: "icon-code"
     color: "green"
@@ -47,5 +48,17 @@
     ]
     icon: "atom-icon"
     color: "#40a977"
+  }
+  {
+    title: "grad-thesis"
+    paths: [
+      "/Users/aviatesk/grad-thesis/TypeProfiler.jl"
+      "/Users/aviatesk/julia/julia"
+      "/Users/aviatesk/julia/packages/JuliaInterpreter"
+      "/Users/aviatesk/grad-thesis"
+      "/Users/aviatesk/grad-thesis/Compiler3.jl"
+    ]
+    icon: "julia-icon"
+    color: "#9558B2"
   }
 ]
