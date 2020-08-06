@@ -13,12 +13,10 @@
   'ctrl-m': 'core:confirm'
   'ctrl-;': 'core:confirm'
   'ctrl-g': 'core:cancel'
-  'cmd-w': 'core:copy' # macOS
   'ctrl-z': 'core:undo' # macOS
   'ctrl-shift-z': 'core:redo' # macOS
 
   # tabs
-  'ctrl-w': 'tabs:close-tab'
   'ctrl-shift-w': 'tabs:keep-pending-tab'
   'ctrl-alt-space': 'core:select-all'
   'ctrl-tab': 'pane:show-next-item'
@@ -217,7 +215,6 @@
   'ctrl-r': 'tree-view:rename'
   'ctrl-d': 'tree-view:remove'
   'alt-w': 'tree-view:copy'
-  'cmd-w': 'tree-view:copy' # macOS
   'ctrl-w': 'tree-view:cut'
   'ctrl-v': 'tree-view:paste'
   'ctrl-y': 'tree-view:paste'
@@ -252,7 +249,6 @@
   'alt-r': 'project-find:toggle-regex-option'
   'alt-c': 'project-find:toggle-case-option'
   'alt-w': 'project-find:toggle-whole-word-option'
-  'cmd-w': 'project-find:toggle-whole-word-option' # macOS
   'alt-d': 'project-find:show-in-current-directory'
 
 # git
@@ -428,7 +424,6 @@
   'ctrl-/': 'editor:toggle-line-comments' # macOS
   'ctrl-[': 'editor:outdent-selected-rows' # macOS
   'ctrl-]': 'editor:indent-selected-rows' # macOS
-  'cmd-w': 'emacs-plus:copy' # macOS
 
   # find-and-replace
   'ctrl-shift-s': 'find-and-replace:toggle'
@@ -485,7 +480,6 @@
   'alt-c': 'find-and-replace:toggle-case-option'
   'alt-s': 'find-and-replace:toggle-selection-option'
   'alt-w': 'find-and-replace:toggle-whole-word-option'
-  'cmd-w': 'find-and-replace:toggle-whole-word-option' # macOS
   'ctrl-s': 'find-and-replace:find-next'
   'ctrl-r': 'find-and-replace:find-previous'
   'enter': 'find-and-replace:find-all'
@@ -552,7 +546,7 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-alt-right': 'pane:move-item-right'
   'ctrl-alt-left': 'pane:move-item-left'
-  'ctrl-w': 'tabs:close-tab'
+  'cmd-w': 'tabs:close-tab'
   'ctrl-v': 'ink-terminal:paste'
   'ctrl-t': 'tree-view:toggle-focus'
   'alt-t': 'tree-view:toggle'
@@ -568,7 +562,6 @@ atom-text-editor[data-grammar='source weave md'].emacs-plus.mark-mode:not([mini]
   'alt-i': 'julia-client:open-documentation-browser'
   'alt-p': 'julia-client:open-plot-pane'
   'alt-w': 'julia-client:open-workspace'
-  'cmd-w': 'julia-client:open-workspace' # macOS
   'alt-,': 'julia-client:settings'
   'alt-f': 'julia-client:select-working-folder'
   'alt-j': 'julia-client:set-working-module'
