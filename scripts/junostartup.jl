@@ -4,7 +4,7 @@ Juno startup code
 
 # doesn't work on Windows
 if !Sys.iswindows()
-    @info "Juno: Setting up OhMyREPL ..."
+    @info "Setting up Juno ..."
 
     # use Juno's syntax highlights within OhMyREPL.
     let

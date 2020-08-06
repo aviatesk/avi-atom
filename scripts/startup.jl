@@ -1,8 +1,3 @@
-#=
-@TODO: tree-view logging
-=#
-
-
 ENV["JULIA_PKG_DEVDIR"] = joinpath(homedir(), "julia", "packages")
 
 macro err(ex)
@@ -16,51 +11,27 @@ macro err(ex)
 end
 
 atreplinit() do repl
-    try
+    @err begin
         @eval using REPL
-        if !isdefined(repl, :interface)
-            repl.interface = REPL.setup_interface(repl)
-        end
-    catch err
-        @error err
+        isdefined(repl, :interface) || (repl.interface = REPL.setup_interface(repl))
     end
 
-    @info "Enabling OhMyREPL ..."
+    @info "Loading OhMyREPL ..."
     @err @eval begin
         using OhMyREPL
         enable_autocomplete_brackets(true)
+        OhMyREPL.input_prompt!("jυλια>")
     end
-
-    # # I don't like Revise in Juno
-    # isdefined(Main, :Juno) || begin
-    #     @info "Importing Revise ..."
-    #     @err begin
-    #         @eval using Revise
-    #         @async Revise.wait_steal_repl_backend()
-    #     end
-    # end
 
     # load Juno specific scripts if appropriate
-    isdefined(Main, :Juno) && begin
-        @err @eval OhMyREPL.input_prompt!("jυλια>") # unicodes are beautifully rendered within xterm
-        @err include(joinpath(@__DIR__, "junostartup.jl"))
-    end
+    isdefined(Main, :Juno) && @err include(joinpath(@__DIR__, "junostartup.jl"))
 
-    if "PLOTS" in Base.ARGS
-        @info "Importing Plots ..."
-        @err @eval using Plots
-    end
-
-    if "WEAVE" in Base.ARGS
-        @info "Importing Weave ..."
-        @err @eval using Weave
-    end
-
-    # when in developing Julia itself
+    # HACK:use actual source file as method location information when developing julia
     if occursin("DEV", string(VERSION))
+        @info "Overwriting `Base.DATAROOTDIR` and `Base.MethodList` ..."
+
         @err begin
             @eval Base DATAROOTDIR = joinpath("..", "..", "..")
-            @info "Overwrote `Base.DATAROOTDIR`"
         end
 
         @err begin
@@ -68,7 +39,7 @@ atreplinit() do repl
                 mutable struct MethodList
                     ms::Array{Method,1}
                     mt::Core.MethodTable
-                    MethodList(ms::Array{Method,1}, mt::Core.MethodTable) = begin
+                    function MethodList(ms::Array{Method,1}, mt::Core.MethodTable)
                         map(ms) do m
                             originalpath = string(m.file)
                             m.file = try
@@ -81,7 +52,6 @@ atreplinit() do repl
                     end
                 end
             end
-            @info "Overwrote `Base.MethodList`"
         end
     end
 end
