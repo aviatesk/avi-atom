@@ -287,8 +287,6 @@
     hideHighlightOnSelect: true
   "highlight-selected":
     onlyHighlightWholeWords: false
-  hyperclick:
-    darwinTriggerKeys: "ctrlKey"
   ink:
     terminal:
       ansiBlue:

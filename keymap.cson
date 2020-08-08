@@ -17,7 +17,7 @@
   'ctrl-shift-z': 'core:redo' # macOS
 
   # tabs
-  'ctrl-shift-w': 'tabs:keep-pending-tab'
+  'ctrl-q': 'tabs:keep-pending-tab'
   'ctrl-alt-space': 'core:select-all'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab': 'pane:show-previous-item'
@@ -437,7 +437,7 @@
   'ctrl-x ctrl-m': 'grammar-selector:show'
   'ctrl-x ctrl-i': 'indent-detective:choose-indent'
   'ctrl-x e': 'line-ending-selector:show'
-  'alt-enter': 'hyperclick:confirm-cursor'
+  'cmd-enter': 'hyperclick:confirm-cursor'
   'alt-s': 'split-diff:toggle'
 
   # unsets

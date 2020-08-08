@@ -56,7 +56,7 @@
       "/Users/aviatesk/julia/julia"
       "/Users/aviatesk/julia/packages/JuliaInterpreter"
       "/Users/aviatesk/grad-thesis"
-      "/Users/aviatesk/grad-thesis/Compiler3.jl"
+      "/Users/aviatesk/julia/packages/Compiler3.jl"
     ]
     icon: "julia-icon"
     color: "#9558B2"
