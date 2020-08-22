@@ -357,7 +357,9 @@
 
   # spell-check
   'alt-;': 'spell-check:correct-misspelling'
+  'cmd-.': 'spell-check:correct-misspelling'
   'ctrl-alt-;': 'spell-check:toggle'
+  'ctrl-cmd-.': 'spell-check:toggle'
 
   # unset!s
   # turn off emacs-plus's ctrl-k prefix-keybinding

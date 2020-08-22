@@ -4,7 +4,7 @@
 /** UI */
 atom-workspace, .github-Git {
   // font-family: 'Segoe UI', 'Meiryo UI';
-  font-size: 15px;
+  font-size: var(--editor-font-size);
 }
 atom-dock .atom-dock-toggle-button {
   display: none;
@@ -326,7 +326,7 @@ atom-text-editor atom-text-editor-minimap {
   }
   &.inspector, &.datatip {
     font-family: var(--editor-font-family);
-    font-size: 12px;
+    font-size: var(--editor-font-size)  !important;
   }
 }
 
@@ -337,10 +337,6 @@ autocomplete-suggestion-list {
   .left-label {
     display: inline-flex  !important;
   }
-}
-// dqs-shell-commands
-.dqs-shell-commands-console {
-  margin: -2px;
 }
 // tree-view
 .tree-view .full-menu {

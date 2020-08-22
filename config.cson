@@ -65,7 +65,7 @@
     completion_suggestion_priority: 1
     delayed_minimap_refresh: true
     hide_log_if_success: true
-    latexmk_param: "-synctex=1 -interaction=nonstopmode -file-line-error -shell-escape"
+    latexmk_param: "-shell-escape -synctex=1 -file-line-error -interaction=nonstopmode"
     preview_after_build: "Do nothing"
     toolchain: "latexmk toolchain"
   "atom-package-deps":
@@ -232,9 +232,6 @@
       "ariake-dark-syntax"
     ]
     uriHandlerRegistration: "always"
-    versionPinnedPackages: [
-      "minimap-lens"
-    ]
     warnOnLargeFileLimit: 10
   "cursor-history":
     openInPendingState: true
@@ -479,6 +476,7 @@
     scrollAnimation: true
     scrollAnimationDuration: 500
   "minimap-lens":
+    largeFileLinesNum: 2000
     lensDelay: 500
     lensHeight: 500
   "minimap-selection":
