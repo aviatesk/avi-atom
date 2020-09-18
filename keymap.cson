@@ -33,6 +33,7 @@
   'ctrl-shift-s': 'unset!'
   'ctrl-tab ^ctrl': 'unset!'
   'ctrl-shift-tab ^ctrl': 'unset!'
+  'cmd-q': 'unset!' # don't quit application
 
 # atom-workspace
 'atom-workspace':
