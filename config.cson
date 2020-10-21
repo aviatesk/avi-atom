@@ -152,6 +152,32 @@
           "text.tex.latex.tikz"
         ]
       }
+      {
+        extensions: [
+          ".jl"
+        ]
+        includeCurrentDirectory: false
+        prefixes: [
+          "include\\(\""
+        ]
+        scopes: [
+          "source.julia"
+          "source.embedded.julia"
+        ]
+      }
+      {
+        extensions: [
+          ".*"
+        ]
+        includeCurrentDirectory: false
+        prefixes: [
+          "\""
+        ]
+        scopes: [
+          "source.julia"
+          "source.embedded.julia"
+        ]
+      }
     ]
   "autocomplete-plus":
     enableExtendedUnicodeSupport: true
@@ -188,6 +214,7 @@
       "bookmarks"
       "deprecation-cop"
       "git-diff"
+      "markdown-preview"
     ]
     excludeVcsIgnoredPaths: true
     ignoredNames: [
@@ -319,6 +346,15 @@
         "ctrl-shift-tab"
         "ctrl-alt-right"
         "ctrl-alt-left"
+        "ctrl-1"
+        "ctrl-2"
+        "ctrl-3"
+        "ctrl-4"
+        "ctrl-5"
+        "ctrl-6"
+        "ctrl-7"
+        "ctrl-8"
+        "ctrl-9"
         "ctrl-w"
         "ctrl-v"
         "alt-:"
@@ -352,6 +388,15 @@
         "ctrl-shift-tab"
         "ctrl-alt-right"
         "ctrl-alt-left"
+        "ctrl-1"
+        "ctrl-2"
+        "ctrl-3"
+        "ctrl-4"
+        "ctrl-5"
+        "ctrl-6"
+        "ctrl-7"
+        "ctrl-8"
+        "ctrl-9"
         "ctrl-w"
         "ctrl-v"
         "alt-:"
@@ -364,7 +409,7 @@
         "ctrl-h"
         "alt-x"
       ]
-    currentVersion: "0.12.5"
+    currentVersion: "0.12.6"
     firstBoot: false
     juliaOptions:
       arguments: []
@@ -599,6 +644,8 @@
 ".julia.source":
   editor:
     preferredLineLength: 92
+    softWrapHangingIndent: 2
+    tabLength: 4
   "wrap-guide":
     enabled: true
 ".knitr.latex.tex.text":

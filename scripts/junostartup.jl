@@ -8,8 +8,7 @@ if !Sys.iswindows()
 
     # use Juno's syntax highlights within OhMyREPL.
     let
-        using Crayons: Crayon
-        using OhMyREPL: Passes.SyntaxHighlighter, colorscheme!
+        using OhMyREPL: Passes.SyntaxHighlighter, colorscheme!, Crayons.Crayon
         using Juno: syntaxcolors
 
         cs = SyntaxHighlighter.ColorScheme()

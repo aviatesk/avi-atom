@@ -10,6 +10,10 @@ macro err(ex)
     end |> esc
 end
 
+@static if occursin("atom-julia-client/script/boot_repl.jl", PROGRAM_FILE)
+    setup_juno() = @err include(joinpath(@__DIR__, "junostartup.jl"))
+end
+
 atreplinit() do repl
     @err begin
         @eval using REPL
@@ -20,13 +24,13 @@ atreplinit() do repl
     @err @eval begin
         using OhMyREPL
         enable_autocomplete_brackets(true)
-        OhMyREPL.input_prompt!("jυλια>")
+        OhMyREPL.input_prompt!("jυλια> ")
     end
 
     # load Juno specific scripts if appropriate
-    isdefined(Main, :Juno) && @err include(joinpath(@__DIR__, "junostartup.jl"))
+    @isdefined(Juno) && setup_juno()
 
-    # HACK:use actual source file as method location information when developing julia
+    # HACK: use actual source file for method location information when using julia built from source
     if occursin("DEV", string(VERSION))
         @info "Overwriting `Base.DATAROOTDIR` and `Base.MethodList` ..."
 
