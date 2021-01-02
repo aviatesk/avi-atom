@@ -85,6 +85,31 @@ atom.packages.onDidActivateInitialPackages(() => {
   if (gitPlus) {
     const gp = gitPlus.mainModule.provideService()
 
+    gp.registerCommand('atom-workspace', 'git-plus:undo-last-commit', () => {
+      gp.getRepo()
+        .then((repo) => {
+          gp.run(repo, 'reset --soft HEAD~1')
+        })
+    })
+
+    gp.registerCommand('atom-workspace', 'git-plus:undo-commits-interactive', () => {
+      gp.getRepo()
+        .then((repo) => {
+          inputView.open(
+            (numberText) => {
+              gp.run(repo, `reset --soft HEAD~${numberText}`)
+                .then(() => {
+                  atom.notifications.addInfo('Git-Plus: Undo-Commits-Interactive', {
+                    description: `Undoing HEAD for previouse ${numberText} commits ...`,
+                  })
+                })
+            },
+            'Enter the number of commits to be undone',
+            'E.g.: 3',
+          )
+        })
+    })
+
     gp.registerCommand('atom-workspace', 'git-plus:set-upstream', () => {
       gp.getRepo()
         .then((repo) => {
