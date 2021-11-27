@@ -207,7 +207,7 @@
       "source.tsx": [
         "tsx"
       ]
-      "text.md": [
+      "source.weave.md": [
         "md"
       ]
     disabledPackages: [
@@ -271,6 +271,7 @@
     nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-…．。．、，（）「」［］｛｝《》てにをはがのともへでや"
     scrollPastEnd: true
     showIndentGuide: true
+    showInvisibles: true
     softWrap: true
     softWrapHangingIndent: 1
     tabLength: 2
@@ -311,32 +312,6 @@
     hideHighlightOnSelect: true
   "highlight-selected":
     onlyHighlightWholeWords: false
-  ink:
-    terminal:
-      ansiBlue:
-        dark: "#f5faff"
-      ansiBrightBlue:
-        dark: "#f5faff"
-      ansiBrightCyan:
-        dark: "#93ddfb"
-      ansiBrightGreen:
-        dark: "#a571f4"
-      ansiBrightMagenta:
-        dark: "#dda2f6"
-      ansiBrightRed:
-        dark: "#4d8acb"
-      ansiBrightYellow:
-        dark: "#86b1e0"
-      ansiCyan:
-        dark: "#93ddfb"
-      ansiGreen:
-        dark: "#a571f4"
-      ansiMagenta:
-        dark: "#dda2f6"
-      ansiRed:
-        dark: "#4d8acb"
-      ansiYellow:
-        dark: "#86b1e0"
   "julia-client":
     consoleOptions:
       prompt: "juno>"
@@ -577,6 +552,11 @@
   "status-bar":
     cursorPositionFormat: "%L L | %C C"
     selectionCountFormat: "(%L L | %C Char)"
+  "theme-switch":
+    profiles: [
+      "one-dark-ui ariake-dark-syntax"
+      "one-light-ui one-light-syntax"
+    ]
   "todo-show":
     autoRefresh: false
     exportAs: "Table"

@@ -314,91 +314,91 @@
   'function':
     'prefix': 'function'
     'body': 'function ${1:name}(${2:args})\n\t${3:body}\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts function block'
   'function assignment':
     'prefix': 'func'
     'body': '${1:name}(${2:args}) = ${3:begin\n\t${4:body}\nend}'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts function block in the assignment form'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/functions/#man-functions-1'
   'macro':
     'prefix': 'macro'
     'body': 'macro ${1:name}(${2:args})\n\t${3:body}\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts macro block'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/metaprogramming/index.html#man-macros-1'
   'struct':
     'prefix': 'struct'
     'body': 'struct ${1:name}\n\t${3:field}\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts struct block'
   'mutable struct':
     'prefix': 'mutable struct'
     'body': 'mutable struct ${1:name}\n\t${3:field}\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts mutable struct block'
   'begin':
     'prefix': 'begin'
     'body': 'begin\n\t$1\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts begin block'
   'let':
     'prefix': 'let'
     'body': 'let $1\n\t$2\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts let block'
   'do':
     'prefix': 'do'
     'body': 'do ${1:args}\n\t$2\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts do block'
   'quote':
     'prefix': 'quote'
     'body': 'quote\n\t$1\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts quote block'
   'if':
     'prefix': 'if'
     'body': 'if ${1:cond}\n\t$2\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts if block'
   'else':
     'prefix': 'else'
     'body': 'else\n\t${1:body}'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts else block'
   'elseif':
     'prefix': 'elseif'
     'body': 'elseif ${1:cond}\n\t${2:body}'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts elseif block'
   'try catch':
     'prefix': 'try'
-    'body': 'try\n\t${1:body}\ncatch err\n\t@error err\nend$2'
-    'rightLabelHTML': '<span>Julia</span>'
+    'body': 'try\n\t${1:body}\ncatch ${2:err}\n\t$3\nend$4'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts try/catch block'
   'for':
     'prefix': 'for'
     'body': 'for ${1:val} ${2:in} ${3:itr}\n\t${4:body}\nend'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts for loop block'
   'comment block':
     'prefix': 'cb'
     'body': '#=\n$1\n=#'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts comment block'
 
   ## Base
   'function chaining':
     'prefix': 'pi'
     'body': '|>$1'
-    'rightLabelHTML': '<span>Base</span>'
+    'rightLabelHTML': '<span><code>Base</code></span>'
     'description': 'Inserts |> operator'
   'document':
     'prefix': 'doc'
     'body': '"""\n    ${1:something}\n\n${2:docstrings}\n"""'
-    'rightLabelHTML': '<span>Base</span>'
+    'rightLabelHTML': '<span><code>Base</code></span>'
     'description': 'Inserts documentation string block'
 
 ## docstring
@@ -406,13 +406,13 @@
   'inline mathblock':
     'prefix': 'mi'
     'body': '``$1``'
-    'rightLabelHTML': '<span>Docs</span>'
+    'rightLabelHTML': '<span><code>Docs</code></span>'
     'descrition': 'Inserts inline math block inside a docstring'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/documentation/index.html'
   'mathblock':
     'prefix': 'mb'
     'body': '\\\\$$1\\\\$'
-    'rightLabelHTML': '<span>Docs</span>'
+    'rightLabelHTML': '<span><code>Docs</code></span>'
     'descrition': 'Inserts math block inside a docstring'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/documentation/index.html'
 
@@ -421,7 +421,7 @@
   'for':
     'prefix': 'for'
     'body': '${1:body} for ${2:val} ${3:in} ${4:itr}'
-    'rightLabelHTML': '<span>Julia</span>'
+    'rightLabelHTML': '<span><code>Julia</code></span>'
     'description': 'Inserts for loop comprehension'
     'descriptionMoreURL': 'https://docs.julialang.org/en/v1/manual/arrays/#Comprehensions-1'
 
@@ -462,7 +462,7 @@
       \tfig_ext: ".svg"
       ---
       '''
-    'rightLabelHTML': '<span>Weave</span>'
+    'rightLabelHTML': '<span><code>Weave</code></span>'
     'description':
       '''
       Inserts Weave.jl header settings for weaving to Markdown,
@@ -494,7 +494,7 @@
       \tfig_ext: ".svg"
       ---
       '''
-    'rightLabelHTML': '<span>Weave</span>'
+    'rightLabelHTML': '<span><code>Weave</code></span>'
     'description': 'Inserts Weave.jl header settings for weaving to HTML document'
     'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/usage/#Setting-document-options-in-header-1'
 
@@ -502,25 +502,25 @@
   'code chunk':
     'prefix': 'jcc'
     'body': '```julia\n${1:code}\n```'
-    'rightLabelHTML': '<span>Weave</span>'
+    'rightLabelHTML': '<span><code>Weave</code></span>'
     'description': 'Inserts Weave code chunk'
     'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/chunk_options/'
   'code chunk (hold)':
     'prefix': 'jcch'
     'body': '```julia hold = true\n${1:code}\n```'
-    'rightLabelHTML': '<span>Weave</span>'
+    'rightLabelHTML': '<span><code>Weave</code></span>'
     'description': 'Inserts Weave code chunk whose outputs are holded until the end of the chunk'
     'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/chunk_options/'
   'code chunk (term)':
     'prefix': 'jcct'
     'body': '```julia term = true\n${1:code}\n```'
-    'rightLabelHTML': '<span>Weave</span>'
+    'rightLabelHTML': '<span><code>Weave</code></span>'
     'description': 'Inserts Weave code chunk whose outputs emulate a REPL session'
     'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/chunk_options/'
   'inline chunk block':
     'prefix': 'jci'
     'body': '`j ${1:code}`'
-    'rightLabelHTML': '<span>Weave</span>'
+    'rightLabelHTML': '<span><code>Weave</code></span>'
     'description': 'Inserts Weave inline code block'
     'descriptionMoreURL': 'http://weavejl.mpastell.com/stable/chunk_options/'
 
